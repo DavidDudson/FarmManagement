@@ -1,0 +1,18 @@
+{
+  "name": "farmknowledge",
+  "version": "0.1.1",
+  "description": "Farm Knowledge assessor for the Farm Management Institute, Massey University",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David J. Dudson, Anthony Crowcroft",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "^0.11.4",
+    "ui-router": "^0.2.15"
+  }
+}
