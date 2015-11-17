@@ -2,7 +2,7 @@
   "name": "farmknowledge",
   "version": "0.1.1",
   "description": "Farm Knowledge assessor for the Farm Management Institute, Massey University",
-  "main": "app.js",
+  "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server/server.js"
@@ -24,5 +24,8 @@
     "ui-router": "^0.2.15",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.6"
+  },
+  "engines": {
+    "node": "5.0"
   }
 }
