@@ -4,7 +4,8 @@
   "description": "Farm Knowledge assessor for the Farm Management Institute, Massey University",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/server.js"
   },
   "repository": "https://github.com/DavidDudson/FarmManagement.git",
   "author": "David J. Dudson, Anthony Crowcroft",
@@ -16,6 +17,7 @@
     "angular-material": "^0.11.4",
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
+    "express": "^4.13.3",
     "file-loader": "^0.8.4",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.1",
