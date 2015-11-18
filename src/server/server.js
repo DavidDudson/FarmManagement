@@ -6,8 +6,9 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-// 9000 works for deploy and develop
-var server = app.listen(9000, function () {
+port = process.env.PORT || 9000;
+
+var server = app.listen(port, function () {
     var host = server.address().address;
     var port = server.address().port;
 
