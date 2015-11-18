@@ -2,12 +2,12 @@
   "name": "farmknowledge",
   "version": "0.1.1",
   "description": "Farm Knowledge assessor for the Farm Management Institute, Massey University",
-  "main": "./src/server/server.js",
+  "main": "./src/start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server/server.js",
+    "start": "node ./src/start.js",
     "deploy": "git push heroku master",
-    "develop": "nodemon src/server/server.js --exec babel-node --ignore dist"
+    "develop": "nodemon src/start.js --exec babel-node --ignore dist"
   },
   "repository": "https://github.com/DavidDudson/FarmManagement.git",
   "author": "David J. Dudson, Anthony Crowcroft",
