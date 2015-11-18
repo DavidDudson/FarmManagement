@@ -5,8 +5,8 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-// Must be 5000 for heroku
-var server = app.listen(5000, function () {
+// 9000 works for deploy and develop
+var server = app.listen(9000, function () {
     var host = server.address().address;
     var port = server.address().port;
 
