@@ -17,7 +17,7 @@ var server = app.listen(9000, function () {
 
 webpack({
     entry: './src/client/webpack.js',
-    output: {path: '../dist/public', filename: 'bundle.js'},
+    output: {path: './dist/public', filename: 'bundle.js'},
     module: {
         loaders: [
             {test: /\.css$/, loader: "style!css"},
