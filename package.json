@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/server/server.js",
     "deploy": "git push heroku master",
-    "develop": "nodemon src/server/server.js --exec babel-node"
+    "develop": "nodemon src/server/server.js --exec babel-node --ignore dist"
   },
   "repository": "https://github.com/DavidDudson/FarmManagement.git",
   "author": "David J. Dudson, Anthony Crowcroft",

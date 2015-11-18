@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var app = express();
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.sendFile(__dirname + '/client/index.html');
 });
 
 port = process.env.PORT || 9000;
