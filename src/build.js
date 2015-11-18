@@ -19,4 +19,6 @@ module.exports = () => {
             modulesDirectories: ['node_modules']
         }
     });
+
+    console.log("Webpack Rebuilt")
 };
