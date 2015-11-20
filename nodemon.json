@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "ignore": ["node_modules/*", "dist/*"],
+  "events": {
+    "restart": "node ./src/build.js"
+  }
+}

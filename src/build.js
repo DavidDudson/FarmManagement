@@ -1,5 +1,10 @@
 module.exports = () => {
+
+    var rm = require('rimraf');
+    var path = require('path');
     var webpack = require('webpack');
+
+    rm(path.resolve('./dist'),() => console.log("Failed to delete dist"));
 
     webpack({
         entry: './src/client/webpack.js',

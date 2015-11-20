@@ -1,1 +1,1 @@
-console.log("Hello World");
+require('./app/app.js');
