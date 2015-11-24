@@ -1,14 +1,17 @@
 var angular = require('angular');
 
-require('angular-material');
+var ngMaterial = require('angular-material');
 
-var app = angular.module('StarterApp', []);
+var ngAnimate = require('angular-animate');
 
-app.controller('AppController', ($mdSidenav) => {
-    var vm = this;
+var ngTable = require('angular-material-data-table');
 
-    vm.toggleSidenav = function(menuId) {
-        $mdSidenav(menuId).toggle();
-    };
+angular.module('app', [ngTable, ngAnimate, ngMaterial])
+    .controller('AppCtrl', ($scope) => {
 
-});
+        $scope.examples = [
+            {title : 'SomeTitle', value : 35000},
+            {title : 'SomeTitle2', value : 33000},
+            {title : 'SomeTotal', value : 68000}
+        ]
+    });
