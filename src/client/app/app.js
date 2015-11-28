@@ -9,6 +9,8 @@ var ngTable = require('angular-material-data-table');
 
 require("angular_data_table_css");
 
+require("./app.sass");
+
 angular.module('app', [ngTable, ngAnimate, ngMaterial])
     .controller('AppCtrl', ($scope) => {
 
