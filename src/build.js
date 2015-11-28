@@ -5,8 +5,10 @@ module.exports = () => {
     var webpack = require('webpack');
 
     rm(path.resolve('./dist'), (err) => {
-        if(err) console.log("Failed to delete dist")
+        if (err) console.log("Failed to delete dist")
     });
+
+    console.log("Webpack Rebuilding...\n ");
 
     webpack({
         entry: './src/client/webpack.js',
@@ -25,13 +27,31 @@ module.exports = () => {
             ]
         },
         resolve: {
-            modulesDirectories: ['node_modules']
+            root: {
+                __dirname
+            },
+            alias : {
+                "angular_material_css": "angular-material/angular-material.min.css",
+                "angular_data_table_css": "angular-material-data-table/dist/md-data-table.min.css"
+            }
+
         }
     }, (err, stats) => {
-        if(err) console.warn(err);
+        if (err) console.warn(err);
 
-        console.log(stats.compilation.fileDependencies);
+        console.log("Files included in bundle\n");
 
-        console.log("Webpack Rebuilt")
+        stats.compilation.fileDependencies.forEach((file) => {
+            if (~file.indexOf("node_modules")) {
+                console.log(file.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/node_modules/",""))
+            } else {
+                console.log(file.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/src/client/",""))
+            }
+        });
+
+        if (stats.compilation.missingDependencies.size > 0) {
+            console.log("\nMissing Dependencies, usually a loader/path problem\n");
+            console.log(stats.compilation.missingDependencies);
+        }
     });
 };
