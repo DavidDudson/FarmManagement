@@ -11,7 +11,7 @@ module.exports = () => {
     console.log("Webpack Rebuilding...\n ");
 
     webpack({
-        entry: './src/client/webpack.js',
+        entry: './src/client/app/app.js',
         debug: true,
         devtool: 'source-map',
         output: {path: './dist/public', filename: 'bundle.js'},
@@ -39,19 +39,25 @@ module.exports = () => {
     }, (err, stats) => {
         if (err) console.warn(err);
 
-        console.log("Files included in bundle\n");
+        console.log("\nVendor module files: \n");
 
-        stats.compilation.fileDependencies.forEach((file) => {
-            if (~file.indexOf("node_modules")) {
-                console.log(file.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/node_modules/",""))
-            } else {
-                console.log(file.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/src/client/",""))
-            }
-        });
+        // Ignore loader files, since they don't really matter,
+        // remove that statement if debugging
+        stats.compilation.fileDependencies
+            .filter(f => ~f.indexOf("node_modules") && !~f.indexOf("loader"))
+            .map(f => f.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/node_modules/", ""))
+            .forEach(f => console.log(" - " + f));
+
+        console.log("\nApp files: \n");
+
+        stats.compilation.fileDependencies
+            .filter(f => ~f.indexOf("client"))
+            .map(f => f.replace("/Users/DavidD/Dropbox/Projects/SummerSchool/src/client/", ""))
+            .forEach(f => console.log(" - " + f));
 
         if (stats.compilation.missingDependencies.size > 0) {
             console.log("\nMissing Dependencies, usually a loader/path problem\n");
-            console.log(stats.compilation.missingDependencies);
+            stats.compilation.missingDependencies.forEach(f => console.log(" - " + f));
         }
     });
 };
