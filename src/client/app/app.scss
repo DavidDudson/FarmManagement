@@ -4,9 +4,13 @@
 
 @include font-face("UniverseLT", fonts/universltstd-lightcn);
 
-* {
+body {
   background-color: $AgriBackgroundWhite;
   font-family: arial, sans-serif;
+
+  .app {
+    background-color : white;
+  }
 }
 
 h1, h2, h3, h4, h5 {

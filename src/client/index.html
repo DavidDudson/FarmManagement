@@ -7,25 +7,27 @@
 
 <body ng-controller="AppCtrl">
     <div class="iframe">
-        <md-data-table-toolbar>
-            <h2 class="md-title">TestTitleBar</h2>
-        </md-data-table-toolbar>
+        <div class="app">
+            <md-data-table-toolbar>
+                <h2 class="md-title">TestTitleBar</h2>
+            </md-data-table-toolbar>
 
-        <md-data-table-container>
-            <table md-data-table md-progress="deferred">
-                <thead>
-                <tr>
-                    <th name="  "></th>
-                    <th name="Values" numeric></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr md-auto-select ng-repeat="example in examples">
-                    <td ng-repeat= "item in example">{{item}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </md-data-table-container>
+            <md-data-table-container>
+                <table md-data-table md-progress="deferred">
+                    <thead>
+                    <tr>
+                        <th name="  "></th>
+                        <th name="Values" numeric></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr md-auto-select ng-repeat="example in examples">
+                        <td ng-repeat= "item in example">{{item}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+        </div>
     </div>
     <script src="./bundle.js"></script>
 </body>
