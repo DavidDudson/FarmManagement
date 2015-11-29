@@ -1,5 +1,7 @@
 module.exports = () => {
 
+    var WebpackNotifierPlugin = require('webpack-notifier');
+
     var rm = require('rimraf');
     var path = require('path');
     var webpack = require('webpack');
@@ -23,12 +25,17 @@ module.exports = () => {
         module: {
             loaders: [
                 {test: /\.css$/, loader: "style!css"},
-                {test: /\.(scss|sass)$/, loader: "style!css!sass"},
+                {test: /\.(scss|sass)$/, loader: "style!css!resolve-url!sass"},
                 {test: /\.jsx?$/, loader: "babel", query: {presets: ['es2015']}},
                 {test: /\.html$/, loader: "html"},
                 {test: /\.(png|jpg|gif|bmp)$/, loader: "url?prefix=img/&limit=5000"},
                 {test: /\.(woff|woff2)(\?|$)/, loader: "url?limit=5000&minetype=application/font-woff"},
                 {test: /\.(eot|ttf|svg)(\?|$)/, loader: "file?prefix=font/"}
+            ]
+        },
+        sassLoader: {
+            includePaths: [
+                path.resolve(homedir, "node_modules/compass-mixins/lib")
             ]
         },
         resolve: {
@@ -40,7 +47,10 @@ module.exports = () => {
                 "angular_data_table_css": "angular-material-data-table/dist/md-data-table.min.css"
             }
 
-        }
+        },
+        plugins: [
+            new WebpackNotifierPlugin()
+        ]
     }, (err, stats) => {
         if (err) console.warn(err);
 
@@ -60,9 +70,18 @@ module.exports = () => {
             .map(f => f.replace(path.join(homedir, "src", "client"), ""))
             .forEach(f => console.log(" - " + f));
 
-        if (stats.compilation.missingDependencies.size > 0) {
-            console.log("\nMissing Dependencies, usually a loader/path problem\n");
-            stats.compilation.missingDependencies.forEach(f => console.log(" - " + f));
+        if (!!stats.compilation.missingDependencies.count) {
+            console.warn("\nMissing Dependencies, usually a loader/path problem\n");
+            stats.compilation.missingDependencies
+                .forEach(f => console.log(" - " + f));
+        }
+
+        if (!!stats.compilation.errors.count) {
+            console.warn("\nWebpack encountered errors\n");
+            stats.compilation.errors
+                .forEach(e => {
+                    console.warn(e.module.error)
+                });
         }
     });
 };

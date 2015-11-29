@@ -1,5 +1,14 @@
 @import "colours";
 
+@import "compass/css3/font-face";
+
+@include font-face("UniverseLT", fonts/universltstd-lightcn);
+
 * {
   background-color: $AgriBackgroundWhite;
+  font-family: arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "UniverseLT", sans-serif;
 }
