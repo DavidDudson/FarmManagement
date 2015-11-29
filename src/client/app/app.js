@@ -1,15 +1,15 @@
 var angular = require('angular');
 
+var ngAnimate = require('angular-animate');
+
 var ngMaterial = require('angular-material');
 require('angular_material_css');
 
-var ngAnimate = require('angular-animate');
 
 var ngTable = require('angular-material-data-table');
-
 require("angular_data_table_css");
 
-require("./app.sass");
+require("./app.scss");
 
 angular.module('app', [ngTable, ngAnimate, ngMaterial])
     .controller('AppCtrl', ($scope) => {
