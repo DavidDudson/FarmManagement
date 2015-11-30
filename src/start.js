@@ -1,5 +1,6 @@
 //Run the build
 require('./build.js')();
+
 var app = require('./server/server.js');
 
 port = process.env.PORT || 9000;

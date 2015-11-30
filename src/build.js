@@ -20,17 +20,18 @@ module.exports = () => {
         devtool: 'source-map',
         output: {
             path: path.resolve(homedir, 'dist/public'),
+            publicPath:  '/',
             filename: 'bundle.js'
         },
         module: {
             loaders: [
                 {test: /\.css$/, loader: "style!css"},
-                {test: /\.(scss|sass)$/, loader: "style!css!resolve-url!sass"},
+                {test: /\.(scss|sass)$/, loader: "style!css?sourceMap!resolve-url?sourceMap!sass?sourceMap"},
                 {test: /\.jsx?$/, loader: "babel", query: {presets: ['es2015']}},
                 {test: /\.html$/, loader: "html"},
                 {test: /\.(png|jpg|gif|bmp)$/, loader: "url?prefix=img/&limit=5000"},
-                {test: /\.(woff|woff2)(\?|$)/, loader: "url?limit=5000&minetype=application/font-woff"},
-                {test: /\.(eot|ttf|svg)(\?|$)/, loader: "file?prefix=font/"}
+                {test: /\.(woff|woff2)(\?|$)/, loader: "url?limit=5000&minetype=application/font-woff&name=fonts/[name].[ext]"},
+                {test: /\.(eot|ttf|svg)(\?|$)/, loader: "file?prefix=font/&name=fonts/[name].[ext]"}
             ]
         },
         sassLoader: {

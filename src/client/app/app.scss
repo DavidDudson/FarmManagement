@@ -1,8 +1,15 @@
 @import "colours";
 
-@import "compass/css3/font-face";
+@font-face {
+  font-family: 'UniverseLT';
+  src: url(fonts/universltstd-lightcn.woff) format('woff');
+  src: url(fonts/universltstd-lightcn.ttf) format('truetype');
+  src: url(fonts/universltstd-lightcn.svg) format('svg');
+  src: url(fonts/universltstd-lightcn.eot) format('eot');
+  font-weight: normal;
+  font-style: normal;
+}
 
-@include font-face("UniverseLT", fonts/universltstd-lightcn);
 
 body {
   background-color: $AgriBackgroundWhite;
@@ -14,5 +21,5 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "UniverseLT", sans-serif;
+  font-family: 'UniverseLT', sans-serif;
 }
