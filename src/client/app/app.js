@@ -11,24 +11,24 @@ require("angular_data_table_css");
 
 require("./app.scss");
 
-//Require all Components
-function requireAll(r) { r.keys().forEach(r) }
-
-// Broken :/
-//requireAll(require.context('./components/', true, /\.(js|sass)$/));
 
 class AppCtrl {
     constructor() {
         this.name = 'Farmville 9.0';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
+        this.headings = ['', 'Price', 'Quantity'];
         this.examples = [
-            {title : 'SomeTitle', value : 35000},
-            {title : 'SomeTitle2', value : 33000},
-            {title : 'SomeTotal', value : 68000}
+            ['Lambs', 4450, 90],
+            ['Ewe Hoggets', 100, 100],
+            ['Two tooths', 140, 115],
+            ['MA Ewes', 400, 120],
+            ['5+ yr Ewe', 250, 100]
         ]
     }
 }
 
 angular.module('app', [ngTable, ngAnimate, ngMaterial])
     .controller('AppCtrl', AppCtrl);
+
+require("./components/table/table");

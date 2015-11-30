@@ -1,4 +1,4 @@
-//Run the build
+// Run the build
 require('./build.js')();
 
 var app = require('./server/server.js');
@@ -9,7 +9,7 @@ var server = app.listen(port, function () {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log(`Example app listening at http://${host}:${port}`);
 });
 
 module.exports = app;

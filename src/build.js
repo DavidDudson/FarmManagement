@@ -47,7 +47,7 @@ module.exports = () => {
                 "angular_material_css": "angular-material/angular-material.min.css",
                 "angular_data_table_css": "angular-material-data-table/dist/md-data-table.min.css"
             },
-            extensions: ['', '.js', '.sass']
+            extensions: ['', '.js', '.scss']
 
         },
         plugins: [

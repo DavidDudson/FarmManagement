@@ -8,21 +8,25 @@
 <body ng-controller="AppCtrl as app">
     <div class="iframe">
         <div class="app">
-            <md-data-table-toolbar>
-                <h2 class="md-title">TestTitleBar</h2>
-            </md-data-table-toolbar>
+            <md-input-container>
+                <input type="text" value="Using the information in the table below calculate the total sheep sales income for the year">
+            </md-input-container>
 
             <md-data-table-container>
                 <table md-data-table md-progress="deferred">
                     <thead>
                     <tr>
-                        <th name="  "></th>
-                        <th name="Values" numeric></th>
+                        <th ng-repeat="heading in this.headings track by $index">{{heading}}</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr md-auto-select ng-repeat="example in app.examples">
-                        <td ng-repeat= "item in example">{{item}}</td>
+                    <tr md-auto-select ng-repeat="example in app.examples track by $index">
+                        <td ng-repeat="item in example track by $index">
+                            <md-input-container>
+                                <input type="text" ng-model="item" value="{{item}}">
+                            </md-input-container>
+                        </td>
+                        <td class="calculated">{{example[1] * example[2]}}</td>
                     </tr>
                     </tbody>
                 </table>

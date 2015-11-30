@@ -1,3 +1,5 @@
+require('./table.scss');
+
 class TableCtrl {
     constructor() {
         this.randomthing = test;
@@ -13,4 +15,4 @@ class TableDirective {
 
 angular.module('app')
     .controller('TableCtrl', TableCtrl)
-    .controller('AppCtrl', TableDirective);
+    .directive('farm-table', TableDirective);
