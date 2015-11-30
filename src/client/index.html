@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./iframe.css">
 </head>
 
-<body ng-controller="AppCtrl">
+<body ng-controller="AppCtrl as app">
     <div class="iframe">
         <div class="app">
             <md-data-table-toolbar>
@@ -21,7 +21,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr md-auto-select ng-repeat="example in examples">
+                    <tr md-auto-select ng-repeat="example in app.examples">
                         <td ng-repeat= "item in example">{{item}}</td>
                     </tr>
                     </tbody>

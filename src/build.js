@@ -46,7 +46,8 @@ module.exports = () => {
             alias: {
                 "angular_material_css": "angular-material/angular-material.min.css",
                 "angular_data_table_css": "angular-material-data-table/dist/md-data-table.min.css"
-            }
+            },
+            extensions: ['', '.js', '.sass']
 
         },
         plugins: [
@@ -80,9 +81,7 @@ module.exports = () => {
         if (!!stats.compilation.errors.count) {
             console.warn("\nWebpack encountered errors\n");
             stats.compilation.errors
-                .forEach(e => {
-                    console.warn(e.module.error)
-                });
+                .forEach(e => console.warn(e.module.error));
         }
     });
 };
