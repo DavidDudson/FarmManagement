@@ -12,25 +12,7 @@
                 <input type="text" value="Using the information in the table below calculate the total sheep sales income for the year">
             </md-input-container>
 
-            <md-data-table-container>
-                <table md-data-table md-progress="deferred">
-                    <thead>
-                    <tr>
-                        <th ng-repeat="heading in this.headings track by $index">{{heading}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr md-auto-select ng-repeat="example in app.examples track by $index">
-                        <td ng-repeat="item in example track by $index">
-                            <md-input-container>
-                                <input type="text" ng-model="item" value="{{item}}">
-                            </md-input-container>
-                        </td>
-                        <td class="calculated">{{example[1] * example[2]}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </md-data-table-container>
+            <spreadsheet></spreadsheet>
         </div>
     </div>
     <script src="./bundle.js"></script>

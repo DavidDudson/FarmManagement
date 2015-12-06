@@ -1,0 +1,19 @@
+<md-data-table-container ng-controller="TableCtrl as table">
+    <table md-data-table md-progress="deferred">
+        <thead>
+        <tr>
+            <th ng-repeat="heading in table.headings track by $index">{{heading}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr md-auto-select ng-repeat="row in table.rows track by $index">
+            <td ng-repeat="cell in row.cols track by $index">
+                <md-input-container ng-if="app.editable">
+                    <input type="text" ng-model="cell.value" value="{{table.calculate(cell.value)}}">
+                </md-input-container>
+                <p>{{table.calculate(cell.value)}}</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</md-data-table-container>
