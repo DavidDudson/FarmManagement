@@ -1,20 +1,20 @@
+var calculate = require('util/expression_parser.js');
+
 require('./table.scss');
 
 class TableCtrl {
     constructor(title, description) {
-        this.table = {};
+        this.table = {
+            '': ['Price', 'Quantity'],
+            'Lambs': [4450, 90],
+            'Ewe Hoggets': [100, 100],
+            'Two Tooths': [140, 115],
+            'MA Ewes': [400, 120],
+            '5+ Year Ewes': [400, 120]
+        };
+
         this.title = title;
         this.description = description;
-    }
-
-    calculate(value) {
-        if (_.isString(value) && value === "") {
-            return "";
-        } else if (_.isNumber(value)){
-            return value;
-        } else {
-            return "";
-        }
     }
 }
 

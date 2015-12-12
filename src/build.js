@@ -1,7 +1,7 @@
 module.exports = () => {
 
     var WebpackNotifierPlugin = require('webpack-notifier');
-
+    var _ = require('lodash');
     var rm = require('rimraf');
     var path = require('path');
     var webpack = require('webpack');
@@ -15,13 +15,15 @@ module.exports = () => {
     console.log("Webpack Rebuilding...\n");
 
     webpack({
-        entry: path.resolve(homedir ,'src/client/app/app.js'),
+        entry: {
+            bundle: path.resolve(homedir, 'src/client/app/app.js'),
+        },
         debug: true,
         devtool: 'source-map',
         output: {
             path: path.resolve(homedir, 'dist/public'),
-            publicPath:  '/',
-            filename: 'bundle.js'
+            publicPath: '/',
+            filename: '[name].js'
         },
         module: {
             loaders: [
@@ -40,12 +42,13 @@ module.exports = () => {
             ]
         },
         resolve: {
-            root: {
-                __dirname
-            },
+            root : [homedir],
             alias: {
-                "angular_material_css": "angular-material/angular-material.min.css",
-                "angular_data_table_css": "angular-material-data-table/dist/md-data-table.min.css"
+                util: "src/client/app/util",
+                app: "src/client/app",
+                client: "src/client",
+                angular_material_css: "angular-material/angular-material.min.css",
+                angular_data_table_css: "angular-material-data-table/dist/md-data-table.min.css",
             },
             extensions: ['', '.js', '.scss']
 
@@ -56,21 +59,40 @@ module.exports = () => {
     }, (err, stats) => {
         if (err) console.warn(err);
 
-        console.log("\nVendor module files: \n");
+        console.log("\nVendor modules: \n");
 
         // Ignore loader files, since they don't really matter,
         // remove that statement if debugging
-        stats.compilation.fileDependencies
+        var vendor = stats.compilation.fileDependencies
             .filter(f => f.includes("node_modules") && !f.includes("loader"))
             .map(f => f.replace(path.join(homedir, "node_modules"), ""))
+            .map(f => f.match(/^\/(.[^\/]*)\//)[1])
+
+        _.uniq(vendor)
             .forEach(f => console.log(" - " + f));
 
         console.log("\nApp files: \n");
 
         stats.compilation.fileDependencies
-            .filter(f => f.includes("client"))
+            .filter(f => f.includes("client") && !f.includes("test"))
             .map(f => f.replace(path.join(homedir, "src", "client"), ""))
             .forEach(f => console.log(" - " + f));
+
+
+        console.log("\nClient Test files: \n");
+
+        stats.compilation.fileDependencies
+            .filter(f => f.includes("test") && f.includes("client"))
+            .map(f => f.replace(path.join(homedir, "test", "client"), ""))
+            .forEach(f => console.log(" - " + f));
+
+        console.log("\nServer Test files: \n");
+
+        stats.compilation.fileDependencies
+            .filter(f => f.includes("test") && f.includes("server"))
+            .map(f => f.replace(path.join(homedir, "test", "server"), ""))
+            .forEach(f => console.log(" - " + f));
+
 
         if (!!stats.compilation.missingDependencies.count) {
             console.warn("\nMissing Dependencies, usually a loader/path problem\n");
