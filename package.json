@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/start.js",
+    "webpack": " webpack --config=\"webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
     "develop": "nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/"
