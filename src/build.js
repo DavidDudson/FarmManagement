@@ -3,6 +3,7 @@ module.exports = () => {
     var rm = require('rimraf');
     var path = require('path');
     var webpack = require('webpack');
+    var webpackConf = require('./webpack.conf.js');
     var homedir = path.resolve(__dirname + "/../");
 
 
@@ -12,7 +13,7 @@ module.exports = () => {
 
     console.log("Webpack Rebuilding...\n");
 
-    var webpackConf = require('webpack.conf.js');
+
 
     webpack(webpackConf, (err, stats) => {
         if (err) console.warn(err);
