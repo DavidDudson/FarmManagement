@@ -1,19 +1,45 @@
 <md-data-table-container ng-controller="TableCtrl as table">
+    <md-input-container>
+        <label>{{app.parsed ? app.parsed.value : "Default"}}</label>
+        <input type="text" ng-model="unparsed" ng-change="app.parsed=table.calculate(unparsed)"/>
+    </md-input-container>
     <table md-data-table md-progress="deferred">
-        <thead>
+        <thead md-table-head>
         <tr>
-            <th ng-repeat="heading in table.headings track by $index">{{heading}}</th>
+            <th md-column-header ng-repeat="heading in [' '].concat(table.data[' ']) track by $index">{{heading}}</th>
         </tr>
         </thead>
         <tbody>
-        <tr md-auto-select ng-repeat="row in table track by $index">
-            <td ng-repeat="cell in row.cols track by $index">
+        <tr md-auto-select ng-repeat="(key, values) in table.data track by $index" ng-if="$index > 0">
+            <td ng-repeat="item in [key].concat(values) track by $index">
                 <md-input-container ng-if="table.editable">
-                    <input type="text" ng-model="cell.value" value="{{table.calculate(cell.value)}}">
+                    <label ng-if="$index > 0">{{table.calculate(item.data ? item.data : item).value}}</label>
+                    <input required type="text" ng-model="item.data" ng-if="$index > 0">
+                    <input required type="text" ng-model="item" ng-if="$index === 0">
                 </md-input-container>
-                <p>{{table.calculate(cell.value)}}</p>
+                <p ng-if="!table.editable && $index > 0">{{table.calculate(item, true).value}}</p>
+                <p ng-if="!table.editable && $index === 0">{{item}}</p>
             </td>
         </tr>
         </tbody>
     </table>
+    <md-fab-speed-dial ng-hide="table.hidden" md-direction="left" md-open="demo.isOpen"
+                       class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': table.hover }"
+                       ng-mouseenter="table.isOpen=true" ng-mouseleave="table.isOpen=false">
+    <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab"
+                   ng-style="{'background-color': (table.editable) ? 'green' : 'red'}"
+                   ng-click="table.editable = !table.editable">
+            <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+            <i class="material-icons">{{table.editable ? "save" : "edit"}}</i>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button aria-label="Help" class="md-fab md-raised md-mini" ng-click="table.showHelp()">
+            <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+                Get help with using the table
+            </md-tooltip>
+            <i class="material-icons">help</i>
+    </md-fab-actions>
+
 </md-data-table-container>

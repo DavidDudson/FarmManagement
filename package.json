@@ -7,7 +7,7 @@
     "test": "karma start",
     "quicktest": "open ./dist/public/test.html",
     "start": "node ./src/start.js",
-    "webpack": " webpack --config=\"src\/webpack.conf.js\" --progress",
+    "webpack": " webpack --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
     "develop": "nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/"
@@ -31,6 +31,7 @@
     "file-loader": "^0.8.4",
     "html-loader": "^0.4.0",
     "lodash": "^3.10.1",
+    "material-design-icons-iconfont": "^2.0.3",
     "mathjs": "^2.5.0",
     "node-sass": "^3.4.2",
     "resolve-url-loader": "^1.4.2",

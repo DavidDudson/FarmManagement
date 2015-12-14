@@ -42,6 +42,7 @@ module.exports = {
             client: "src/client",
             angular_material_css: "angular-material/angular-material.min.css",
             angular_data_table_css: "angular-material-data-table/dist/md-data-table.min.css",
+            angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss"
         },
         extensions: ['', '.js', '.scss']
     },
