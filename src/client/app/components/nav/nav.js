@@ -2,7 +2,10 @@ require('angular_carousel_css');
 
 class NavCtrl {
     constructor() {
-        this.name = "farmville 9.0";
+        this.nav = [{"title" : "Topic One", "icon" : "image.jpg", "description" : "This is a descriptive topic"},
+                    {"title" : "Topic Two", "icon" : "image.jpg", "description" : "This is a descriptive topic"}]
+
+        ;
     }
 }
 
