@@ -10,7 +10,7 @@
         <div class="app">
             <p>{{app.parsed ? app.parsed : "Default"}}</p>
             <md-input-container>
-                <input type="text" ng-model="unparsed" ng-change="app.parsed=app.calculate(unparsed)" value="Using the information in the table below calculate the total sheep sales income for the year">
+                <input type="text" ng-model="unparsed" ng-change="app.parsed=app.calculate(unparsed, app.table)" value="Using the information in the table below calculate the total sheep sales income for the year">
             </md-input-container>
             <spreadsheet></spreadsheet>
         </div>

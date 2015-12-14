@@ -17,10 +17,22 @@ class AppCtrl {
         this.name = 'Farmville 9.0';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
-        this.calculate = (expression) => {
-            var value = calculate(expression);
-            console.log(value);
-            return value;
+        this.parsed = "Default";
+        this.table = {
+            '': ['Price', 'Quantity'],
+            'Lambs': [4450, 90],
+            'Ewe Hoggets': [100, 100],
+            'Two Tooths': [140, 115],
+            'MA Ewes': [400, 120],
+            '5+ Year Ewes': [400, 120]
+        };
+        this.calculate = (expression, table) => {
+            var result = calculate(expression, table);
+            if (result instanceof Success) {
+                return result.value
+            } else {
+                return result.value
+            }
         }
     }
 }

@@ -6,9 +6,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr md-auto-select ng-repeat="row in table.rows track by $index">
+        <tr md-auto-select ng-repeat="row in table track by $index">
             <td ng-repeat="cell in row.cols track by $index">
-                <md-input-container ng-if="app.editable">
+                <md-input-container ng-if="table.editable">
                     <input type="text" ng-model="cell.value" value="{{table.calculate(cell.value)}}">
                 </md-input-container>
                 <p>{{table.calculate(cell.value)}}</p>

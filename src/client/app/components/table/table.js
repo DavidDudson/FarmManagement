@@ -3,7 +3,7 @@ var calculate = require('util/expression_parser.js');
 require('./table.scss');
 
 class TableCtrl {
-    constructor(title, description) {
+    constructor() {
         this.table = {
             '': ['Price', 'Quantity'],
             'Lambs': [4450, 90],
@@ -13,13 +13,21 @@ class TableCtrl {
             '5+ Year Ewes': [400, 120]
         };
 
-        this.title = title;
-        this.description = description;
+        this.calculate = (expression, table) => {
+            var result = calculate(expression, table);
+            if (result instanceof Success) {
+                return result.value
+            } else {
+                return result.value
+            }
+        }
     }
 }
 
 class TableDirective {
-    constructor() {
+    constructor(title, description) {
+        this.title = title;
+        this.description = description;
         this.template = require('./table.html');
         this.restrict = 'E';
         this.replace = true;
