@@ -1,5 +1,5 @@
 {
-  "name": "farmknowledge",
+  "name": "farmFINANZ",
   "version": "0.1.1",
   "description": "Farm Knowledge assessor for the Farm Management Institute, Massey University",
   "main": "./src/start.js",
@@ -7,7 +7,7 @@
     "test": "karma start",
     "quicktest": "open ./dist/public/test.html",
     "start": "node ./src/start.js",
-    "webpack": " webpack --config=\"src/webpack.conf.js\" --progress",
+    "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
     "develop": "nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/"
@@ -19,10 +19,12 @@
     "angular": "^1.4.7",
     "angular-animate": "^1.4.7",
     "angular-aria": "^1.4.7",
+    "angular-carousel": "^1.0.1",
     "angular-data-table": "^0.4.8",
     "angular-material": "^0.11.4",
     "angular-material-data-table": "^0.8.11",
     "babel-core": "^6.3.15",
+    "angular-touch": "^1.4.8",
     "babel-loader": "^6.1.0",
     "babel-preset-es2015": "^6.1.18",
     "compass-mixins": "^0.12.7",

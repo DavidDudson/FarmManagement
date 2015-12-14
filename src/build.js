@@ -14,8 +14,8 @@ module.exports = () => {
 
     console.log("Webpack Rebuilding...\n");
 
-
     webpack(webpackConf, (err, stats) => {
+
         if (err) console.warn(err);
 
         console.log("\nVendor modules: \n");
