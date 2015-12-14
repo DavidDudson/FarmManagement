@@ -5,6 +5,7 @@ var ngAnimate = require('angular-animate');
 var ngMaterial = require('angular-material');
 require('angular_material_css');
 
+var rnCarousel = require('angular-carousel');
 
 var ngTable = require('angular-material-data-table');
 require("angular_data_table_css");
@@ -28,7 +29,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngTable, ngAnimate, ngMaterial])
+angular.module('app', [ngTable, ngAnimate, ngMaterial, rnCarousel])
     .controller('AppCtrl', AppCtrl);
 
 require("./components/table/table");
