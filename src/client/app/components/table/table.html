@@ -13,8 +13,8 @@
         <tr md-auto-select ng-repeat="(key, values) in table.data track by $index" ng-if="$index > 0">
             <td ng-repeat="item in [key].concat(values) track by $index">
                 <md-input-container ng-if="table.editable">
-                    <label ng-if="$index > 0">{{table.calculate(item.data ? item.data : item).value}}</label>
-                    <input required type="text" ng-model="item.data" ng-if="$index > 0">
+                    <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
+                    <input required type="text" ng-model="table.data[$parent.key][$index - 1]" ng-if="$index > 0">
                     <input required type="text" ng-model="item" ng-if="$index === 0">
                 </md-input-container>
                 <p ng-if="!table.editable && $index > 0">{{table.calculate(item, true).value}}</p>
