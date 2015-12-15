@@ -8,8 +8,6 @@ module.exports = {
     entry: {
         bundle: path.resolve(homedir, 'src/client/app/app.js')
     },
-    debug: true,
-    devtool: 'source-map',
     output: {
         path: path.resolve(homedir, 'dist/public'),
         publicPath: '/',
@@ -19,7 +17,7 @@ module.exports = {
         loaders: [
             {test: /\.css$/, loader: "style!css"},
             {test: /\.(scss|sass)$/, loader: "style!css?sourceMap!resolve-url?sourceMap!sass?sourceMap"},
-            {test: /\.jsx?$/, loader: "babel", query: {presets: ['es2015']}},
+            {test: /\.jsx?$/, loader: "babel"},
             {test: /\.html$/, loader: "html"},
             {test: /\.(png|jpg|gif|bmp)$/, loader: "url?prefix=img/&limit=5000"},
             {
@@ -35,7 +33,7 @@ module.exports = {
         ]
     },
     resolve: {
-        root: [homedir],
+        root: [homedir, path.resolve(homedir + "/node_modules")],
         alias: {
             util: "src/client/app/util",
             app: "src/client/app",
@@ -45,7 +43,7 @@ module.exports = {
             angular_carousel_css: "angular-carousel/src/css/angular-carousel.scss",
             angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss"
         },
-        extensions: ['', '.js', '.scss']
+        extensions: ['', '.js', '.scss', 'css', 'html']
     },
     plugins: [new WebpackNotifierPlugin()]
 };
