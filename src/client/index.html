@@ -9,10 +9,11 @@
     <div class="iframe">
         <nav-scroll> </nav-scroll>
         <div class="app">
-            <md-input-container class="md-block">
+            <md-input-container class="md-block" ng-if="app.editable">
                 <label>Description</label>
                 <textarea ng-model="app.awesomething" md-maxlength="150"></textarea>
             </md-input-container>
+            <blockquote>{{desciption}}</blockquote>
             <spreadsheet></spreadsheet>
         </div>
     </div>
