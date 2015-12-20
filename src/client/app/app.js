@@ -14,6 +14,8 @@ require("angular_data_table_css");
 
 require("./app.scss");
 
+var _ = require('lodash');
+
 
 class AppCtrl {
     constructor() {
@@ -21,6 +23,19 @@ class AppCtrl {
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = true;
+        this.topics = [];
+    }
+
+    addTopic(topic) {
+        this.topics.push(topic)
+    }
+
+    removeTopic(topic) {
+        _.remove(this.topics, topic)
+    }
+
+    getTopic(name) {
+        return _.find(this.topics, q => q.name === name)
     }
 }
 

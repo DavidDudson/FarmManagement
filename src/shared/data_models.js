@@ -8,8 +8,8 @@ class Topic {
     }
 
     addQuiz(quiz) {
-        this.quizzes.push(quiz)
-    }
+    this.quizzes.push(quiz)
+}
 
     removeQuiz(quiz) {
         _.remove(this.quizzes, quiz)
@@ -26,7 +26,25 @@ class Quiz {
         this.description = description;
         this.example = undefined;
         this.calculator = undefined;
-        this.test = undefined;
+        this.test = undefined; // This is a question.
+    }
+}
+
+// The only calculator use is table based
+class Calculator {
+    constructor(name, description, table) {
+        this.name = name;
+        this.description = description;
+        this.table = table;
+    }
+}
+
+// At this stage I believe the only examples are Table based
+class Example {
+    constructor(name, description, table) {
+        this.name = name;
+        this.description = description;
+        this.table = table;
     }
 }
 
