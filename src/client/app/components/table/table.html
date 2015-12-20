@@ -1,8 +1,4 @@
 <md-data-table-container ng-controller="TableCtrl as table">
-    <md-input-container>
-        <label>{{app.parsed ? app.parsed.value : "Default"}}</label>
-        <input type="text" ng-model="unparsed" ng-change="app.parsed=table.calculate(unparsed)"/>
-    </md-input-container>
     <table md-data-table md-progress="deferred">
         <thead md-table-head>
         <tr>
