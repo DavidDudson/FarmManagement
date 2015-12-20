@@ -20,6 +20,7 @@ class AppCtrl {
         this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
+        this.editable = true;
     }
 }
 

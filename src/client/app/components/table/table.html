@@ -8,26 +8,26 @@
         <tbody>
         <tr md-auto-select ng-repeat="(key, values) in table.data track by $index" ng-if="$index > 0">
             <td ng-repeat="item in [key].concat(values) track by $index">
-                <md-input-container ng-if="table.editable">
+                <md-input-container ng-if="app.editable">
                     <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
                     <input required type="text" ng-model="table.data[$parent.key][$index - 1]" ng-if="$index > 0">
                     <input required type="text" ng-model="item" ng-if="$index === 0">
                 </md-input-container>
-                <p ng-if="!table.editable && $index > 0">{{table.calculate(item, true).value}}</p>
-                <p ng-if="!table.editable && $index === 0">{{item}}</p>
+                <p ng-if="!app.editable && $index > 0">{{table.calculate(item, true).value}}</p>
+                <p ng-if="!app.editable && $index === 0">{{item}}</p>
             </td>
         </tr>
         </tbody>
     </table>
     <md-fab-speed-dial ng-hide="table.hidden" md-direction="left" md-open="demo.isOpen"
                        class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': table.hover }"
-                       ng-mouseenter="table.isOpen=true" ng-mouseleave="table.isOpen=false">
+                       ng-mouseenter="table.fabOpen=true" ng-mouseleave="table.fabOpen=false">
     <md-fab-trigger>
         <md-button aria-label="menu" class="md-fab"
-                   ng-style="{'background-color': (table.editable) ? 'green' : 'red'}"
-                   ng-click="table.editable = !table.editable">
+                   ng-style="{'background-color': (app.editable) ? 'green' : 'red'}"
+                   ng-click="app.editable = !app.editable">
             <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
-            <i class="material-icons">{{table.editable ? "save" : "edit"}}</i>
+            <i class="material-icons">{{app.editable ? "save" : "edit"}}</i>
         </md-button>
     </md-fab-trigger>
     <md-fab-actions>
