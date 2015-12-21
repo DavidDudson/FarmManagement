@@ -9,6 +9,8 @@ require('angular_material_design_icons');
 var ngTouch = require('angular-touch');
 var carousel = require('angular-carousel');
 
+var uiRouter = require('angular-ui-router');
+
 var ngTable = require('angular-material-data-table');
 require("angular_data_table_css");
 
@@ -39,9 +41,15 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngTable, ngAnimate, ngMaterial, 'angular-carousel'])
+angular.module('app', [ngTable, ngAnimate, ngMaterial, 'angular-carousel', uiRouter])
     .controller('AppCtrl', AppCtrl);
+
+require("./components/landing/landing");
 
 require("./components/table/table");
 
-require("./components/nav/nav");
+require("./components/nav/scroll/scroll");
+
+require("./components/nav/bottom/bottom");
+
+require("./components/introduction/introduction");

@@ -1,10 +1,17 @@
 var _ = require('lodash');
 
-class Topic {
+
+class Descriptable {
     constructor(name, description) {
-        this.quizzes = [];
         this.name = name;
         this.description = description;
+    }
+}
+
+class Topic extends Descriptable {
+    constructor(name, description) {
+        super(name, description)
+        this.quizzes = [];
     }
 
     addQuiz(quiz) {
@@ -20,38 +27,37 @@ class Topic {
     }
 }
 
-class Quiz {
+class Quiz extends Descriptable {
     constructor(name, description) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
         this.example = undefined;
         this.calculator = undefined;
-        this.test = undefined; // This is a question.
+        this.test = undefined; // This is a question. Should you go through a whole test in a single session?
     }
 }
 
 // The only calculator use is table based
-class Calculator {
+class Calculator extends Descriptable {
     constructor(name, description, table) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
         this.table = table;
     }
 }
 
 // At this stage I believe the only examples are Table based
-class Example {
+class Example extends Descriptable {
     constructor(name, description, table) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
         this.table = table;
     }
 }
 
-class Test {
+
+// A test contains a bunch of questions.
+// The main test page will list these
+class Test extends Descriptable {
     constructor(name, description) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
         this.questions = [];
     }
 
@@ -64,32 +70,29 @@ class Test {
     }
 }
 
-class Question {
-    constructor(description) {
-        this.description = description;
-        this.answer = undefined;
+class Question extends Descriptable {
+    constructor(name, description, answer) {
+        super(name, description);
+        this.answer = answer;
     }
 }
 
 class BasicQuestion extends Question {
-    constructor(description, answer) {
-        super(description);
-        this.answer = answer;
+    constructor(name, description, answer) {
+        super(name, description, answer);
     }
 }
 
 class TableQuestion extends Question {
-    constructor(description, table) {
-        super(description);
+    constructor(name, description, answer, table) {
+        super(name, description, answer);
         this.table = table;
-        this.answer = answer;
     }
 }
 
 class MultiChoiceQuestion extends Question {
-    constructor(description, options, answer) {
-        super(description);
+    constructor(name, description, answer, options) {
+        super(name, description, answer);
         this.options = options;
-        this.answer = answer;
     }
 }

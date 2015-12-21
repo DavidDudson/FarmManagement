@@ -20,9 +20,7 @@ class TableCtrl {
 }
 
 class TableDirective {
-    constructor(title, description) {
-        this.title = title;
-        this.description = description;
+    constructor() {
         this.template = require('./table.html');
         this.restrict = 'E';
         this.replace = true;

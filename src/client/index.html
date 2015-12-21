@@ -8,14 +8,8 @@
 <body ng-controller="AppCtrl as app">
     <div class="iframe">
         <nav-scroll> </nav-scroll>
-        <div class="app">
-            <md-input-container class="md-block" ng-if="app.editable">
-                <label>Description</label>
-                <textarea ng-model="app.awesomething" md-maxlength="150"></textarea>
-            </md-input-container>
-            <blockquote>{{description}}</blockquote>
-            <spreadsheet></spreadsheet>
-        </div>
+        <div ui-view></div>
+        <nav-footer></nav-footer>
     </div>
     <script src="./bundle.js"></script>
 </body>
