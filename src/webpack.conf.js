@@ -16,6 +16,7 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.css$/, loader: "style!css"},
+            {test: /\.json/, loader: "json"},
             {test: /\.(scss|sass)$/, loader: "style!css?sourceMap!resolve-url?sourceMap!sass?sourceMap"},
             {test: /\.jsx?$/, loader: "babel"},
             {test: /\.html$/, loader: "html"},

@@ -3,19 +3,18 @@ require('angular_carousel_css');
 require('./scroll.scss');
 
 class ScrollCtrl {
-    constructor(topics) {
-        this.topics = topics;
+    constructor() {
     }
 }
 
 class ScrollDirective {
     constructor() {
         this.template = `
-        <nav>
+        <nav ng-controller="ScrollCtrl as scroll">
             <ul rn-carousel rn-carousel-auto-slide>
-                <li>slide #1</li>
-                <li>slide #2</li>
-                <li>slide #3</li>
+                <li ng-repeat="topic in app.topics track by $index">
+                     <md-button class="md-raised"  ui-sref="/topic:{{$index}}">{{topic.title}}</md-button>
+                </li>
             </ul>
         </nav>`;
         this.restrict = 'E';
