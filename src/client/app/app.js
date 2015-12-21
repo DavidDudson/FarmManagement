@@ -25,7 +25,7 @@ class AppCtrl {
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = true;
-        this.topics = [];
+        this.topics = require('./example.json'); // Todo Add Call to database which returns example Json if nothing exists
     }
 
     addTopic(topic) {

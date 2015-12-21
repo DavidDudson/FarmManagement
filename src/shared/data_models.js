@@ -2,16 +2,26 @@ var _ = require('lodash');
 
 
 class Descriptable {
-    constructor(name, description) {
-        this.name = name;
-        this.description = description;
+
+    constructor(name, description, data = undefined) {
+        if (_.isUndefined(data)) {
+            this.name = name;
+            this.description = description;
+        } else {
+            Object.assign(this, data);
+        }
     }
 }
 
 class Topic extends Descriptable {
-    constructor(name, description) {
-        super(name, description)
-        this.quizzes = [];
+    constructor(name, description, data = undefined) {
+        if (_.isUndefined(data)) {
+            super(name, description);
+            this.quizzes = [];
+        } else {
+            Object.assign(this, data);
+        }
+
     }
 
     addQuiz(quiz) {
@@ -59,6 +69,7 @@ class Test extends Descriptable {
     constructor(name, description) {
         super(name, description);
         this.questions = [];
+        this.file = undefined;
     }
 
     addQuestion(question) {
@@ -71,28 +82,29 @@ class Test extends Descriptable {
 }
 
 class Question extends Descriptable {
-    constructor(name, description, answer) {
+    constructor(name, description, answer, type) {
         super(name, description);
+        this.type = type;
         this.answer = answer;
     }
 }
 
 class BasicQuestion extends Question {
     constructor(name, description, answer) {
-        super(name, description, answer);
+        super(name, description, answer, "basic");
     }
 }
 
 class TableQuestion extends Question {
     constructor(name, description, answer, table) {
-        super(name, description, answer);
+        super(name, description, answer, "table");
         this.table = table;
     }
 }
 
 class MultiChoiceQuestion extends Question {
     constructor(name, description, answer, options) {
-        super(name, description, answer);
+        super(name, description, answer, "multichoice");
         this.options = options;
     }
 }

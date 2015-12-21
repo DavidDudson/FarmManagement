@@ -3,17 +3,9 @@ var exprParser = require('util/expression_parser.js');
 require('./table.scss');
 
 class TableCtrl {
-    constructor() {
-        this.data = {
-            ' ': ['Price', 'Quantity'],
-            'Lambs': [4450, 90],
-            'Ewe Hoggets': [100, 100],
-            'Two Tooths': [140, 115],
-            'MA Ewes': [400, 120],
-            '5+ Year Ewes': [400, 120]
-        };
+    constructor(table) {
 
-        this.editable = true;
+        this.table = table;
 
         this.calculate = (expr) => exprParser.calculate(expr, this.data);
     }
