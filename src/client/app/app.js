@@ -20,12 +20,13 @@ var _ = require('lodash');
 
 
 class AppCtrl {
-    constructor() {
+    constructor($rootScope) {
         this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = true;
         this.topics = require('./example.json').topics; // Todo Add Call to database which returns example Json if nothing exists
+        $rootScope.app = this;
     }
 
     addTopic(topic) {
@@ -53,3 +54,5 @@ require("./components/nav/scroll/scroll");
 require("./components/nav/bottom/bottom");
 
 require("./components/introduction/introduction");
+
+require("./components/topic/topic");

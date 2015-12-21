@@ -1,0 +1,23 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{topic.title}}</span>
+            <span class="md-subhead">{{topic.description}}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-content>
+        <md-list>
+            <md-subheader class="md-no-sticky">Subtopics</md-subheader>
+            <!--Todo get topic id from app rather than using topic title-->
+            <md-list-item
+                    class="md-3-line" ui-sref="quiz({topic: topic.title, id : $index })"
+                    ng-repeat="quiz in topic.quizzes track by $index">
+                <h3>{{ quiz.title }}</h3>
+                <h4>{{ quiz.description }}</h4>
+            </md-list-item>
+        </md-list>
+    </md-content>
+    <md-card-actions layout="row" layout-align="end center" ng-if="app.editable">
+        <md-button>Edit</md-button>
+    </md-card-actions>
+</md-card>
