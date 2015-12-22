@@ -1,17 +1,19 @@
 <html lang="en" ng-app="app">
 
-<head>
-    <meta name="viewport" content="initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./iframe.css">
-</head>
+    <head>
+        <meta name="viewport" content="initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="./iframe.css">
+    </head>
 
-<body ng-controller="AppCtrl as app">
-    <div class="iframe">
-        <nav-scroll> </nav-scroll>
-        <div ui-view></div>
-        <nav-footer></nav-footer>
-    </div>
-    <script src="./bundle.js"></script>
-</body>
+    <body ng-controller="AppCtrl as app">
+        <div class="iframe">
+            <div class="app">
+                <nav-scroll> </nav-scroll>
+                <div ui-view></div>
+                <nav-footer></nav-footer>
+            </div>
+        </div>
+        <script src="./bundle.js"></script>
+    </body>
 
 </html>

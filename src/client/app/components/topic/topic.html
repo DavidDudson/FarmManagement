@@ -3,8 +3,8 @@
         <md-card class="ms-padding">
             <intro title="topic.title" description="topic.description"></intro>
             <md-content>
+                <md-subheader class="md-no-sticky">Subtopics</md-subheader>
                 <md-list>
-                    <md-subheader class="md-no-sticky">Subtopics</md-subheader>
                     <!--Todo get topic id from app rather than using topic title-->
                     <md-list-item
                             class="md-3-line" ui-sref="quiz({topic: topic.title, id : $index })"

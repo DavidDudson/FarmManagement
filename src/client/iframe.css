@@ -1,4 +1,6 @@
 .iframe {
     max-height: 700px;
     max-width: 900px;
+    padding-top: 10%;
+    padding-left: 20%;
 }
