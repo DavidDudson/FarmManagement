@@ -9,14 +9,7 @@ class ScrollCtrl {
 
 class ScrollDirective {
     constructor() {
-        this.template = `
-        <nav ng-controller="ScrollCtrl as scroll">
-            <ul rn-carousel rn-carousel-auto-slide>
-                <li ng-repeat="topic in app.topics track by $index">
-                     <md-button class="md-raised"  ui-sref="topic({id: $index})">{{topic.title}}</md-button>
-                </li>
-            </ul>
-        </nav>`;
+        this.template = require('./scroll.html');
         this.restrict = 'E';
     }
 }
