@@ -1,23 +1,24 @@
-<md-card>
-    <md-card-title>
-        <md-card-title-text>
-            <span class="md-headline">{{topic.title}}</span>
-            <span class="md-subhead">{{topic.description}}</span>
-        </md-card-title-text>
-    </md-card-title>
-    <md-content>
-        <md-list>
-            <md-subheader class="md-no-sticky">Subtopics</md-subheader>
-            <!--Todo get topic id from app rather than using topic title-->
-            <md-list-item
-                    class="md-3-line" ui-sref="quiz({topic: topic.title, id : $index })"
-                    ng-repeat="quiz in topic.quizzes track by $index">
-                <h3>{{ quiz.title }}</h3>
-                <h4>{{ quiz.description }}</h4>
-            </md-list-item>
-        </md-list>
-    </md-content>
-    <md-card-actions layout="row" layout-align="end center" ng-if="app.editable">
-        <md-button>Edit</md-button>
-    </md-card-actions>
-</md-card>
+<md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+    <div flex="100" flex-sm="100" flex-xs="100" layout="column">
+        <md-card class="ms-padding">
+            <intro title="topic.title" description="topic.description"></intro>
+            <md-content>
+                <md-list>
+                    <md-subheader class="md-no-sticky">Subtopics</md-subheader>
+                    <!--Todo get topic id from app rather than using topic title-->
+                    <md-list-item
+                            class="md-3-line" ui-sref="quiz({topic: topic.title, id : $index })"
+                            ng-repeat="quiz in topic.quizzes track by $index">
+                        <h3>{{ quiz.title }}</h3>
+                        <h4>{{ quiz.description }}</h4>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-if="app.editable">Delete</md-button>
+                <md-button ng-if="app.editable">Help</md-button>
+                <md-button ng-click="app.editable=!app.editable">{{app.editable ? "Save" : "Edit"}}</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>

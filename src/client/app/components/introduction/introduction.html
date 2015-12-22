@@ -1,11 +1,16 @@
-<md-input-container class="md-block" ng-if="app.editable" ng-controller="IntroCtrl as intro">
-    <h2 ng-if="!app.editable">{{intro.title}}</h2>
-    <blockquote ng-if="!app.editable">{{intro.description}}</blockquote>
-
-    <md-input-container ng-if="app.editable">
-        <label>Title</label>
-        <input required type="text" ng-model="intro.title">
-        <label>Description</label>
-        <textarea ng-model="intro.description" md-maxlength="150"></textarea>
-    </md-input-container>
-</md-input-container>
+<md-card-title>
+    <md-card-title-text>
+        <div ng-if="!app.editable">
+            <span class="md-headline">{{title}}</span>
+            <br>
+            <span class="md-subhead">{{description}}</span>
+        </div>
+        <div ng-if="app.editable">
+            <md-input-container ng-if="app.editable">
+                <label>Title</label>
+                <input required type="text" ng-model="title">
+                <label>Description</label>
+                <textarea ng-model="description" md-maxlength="150"></textarea>
+        </div>
+    </md-card-title-text>
+</md-card-title>
