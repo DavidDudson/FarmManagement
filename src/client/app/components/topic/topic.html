@@ -6,10 +6,9 @@
                 <md-list>
                     <md-divider ></md-divider>
                     <!--Todo get topic id from app rather than using topic title-->
-                    <md-list-item
-                            class="md-3-line" ui-sref="quiz({topic: topic.title, id : $index })"
-                            ng-repeat="quiz in topic.topic.quizzes track by $index">
-                        <div class="md-list-item-text" layout="column">
+                    <md-list-item class="md-3-line" ng-repeat="quiz in topic.topic.quizzes track by $index">
+                        <div class="md-list-item-text" layout="column"
+                             ui-sref="quiz({topic: topic.title, id : $index })">
                             <h3>{{ quiz.title }}</h3>
                             <h4>{{ quiz.description }}</h4>
                         </div>
