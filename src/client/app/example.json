@@ -5,7 +5,7 @@
       "description": "This is a topic that shows quiz types",
       "quizzes": [
         {
-          "name": "Example Quiz 1",
+          "title": "Example Quiz 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -158,7 +158,7 @@
           }
         },
         {
-          "name": "Example Quiz 2",
+          "title": "Example Quiz 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -174,7 +174,7 @@
           }
         },
         {
-          "name": "Example Quiz 3",
+          "title": "Example Quiz 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -191,7 +191,7 @@
       "description": "This is a really good description",
       "quizzes": [
         {
-          "name": "Example Quiz 1",
+          "title": "Example Quiz 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -344,7 +344,7 @@
           }
         },
         {
-          "name": "Example Quiz 2",
+          "title": "Example Quiz 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -360,7 +360,7 @@
           }
         },
         {
-          "name": "Example Quiz 3",
+          "title": "Example Quiz 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -377,7 +377,7 @@
       "description": "This is a really good description",
       "quizzes": [
         {
-          "name": "Example Quiz 1",
+          "title": "Example Quiz 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -530,7 +530,7 @@
           }
         },
         {
-          "name": "Example Quiz 2",
+          "title": "Example Quiz 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -546,7 +546,7 @@
           }
         },
         {
-          "name": "Example Quiz 3",
+          "title": "Example Quiz 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",

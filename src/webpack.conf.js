@@ -39,6 +39,7 @@ module.exports = {
             util: "src/client/app/util",
             app: "src/client/app",
             client: "src/client",
+            images: "src/client/images",
             angular_material_css: "angular-material/angular-material.min.css",
             angular_data_table_css: "angular-material-data-table/dist/md-data-table.min.css",
             angular_carousel_css: "angular-carousel/src/css/angular-carousel.scss",
