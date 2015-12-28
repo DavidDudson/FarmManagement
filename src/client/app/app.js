@@ -57,3 +57,5 @@ require("./components/nav/bottom/bottom");
 require("./components/card/card");
 
 require("./components/topic/topic");
+
+require("./components/quiz/quiz");

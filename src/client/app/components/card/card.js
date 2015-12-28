@@ -1,3 +1,5 @@
+require('./card.scss');
+
 class CardDirective {
     constructor() {
         this.template = require('./card.html');
