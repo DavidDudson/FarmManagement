@@ -1,10 +1,9 @@
 class TopicCtrl {
     constructor($rootScope, $stateParams) {
-        this.topic = $rootScope.app.topics[$stateParams.id];
-        this.title = this.topic.title;
-        this.description = this.topic.description;
-        // Todo retrieve topic based on ID,
-        // which will probably just be which element in the list it is
+        var topic = $rootScope.app.topics[$stateParams.id];
+        this.title = topic.title;
+        this.description = topic.description;
+        this.quizzes = topic.quizzes;
     }
 }
 
