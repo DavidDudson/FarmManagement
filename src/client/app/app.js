@@ -6,9 +6,6 @@ var ngMaterial = require('angular-material');
 require('angular_material_css');
 require('angular_material_design_icons');
 
-var ngTouch = require('angular-touch');
-var carousel = require('angular-carousel');
-
 var uiRouter = require('angular-ui-router');
 
 var ngTable = require('angular-material-data-table');
@@ -25,6 +22,7 @@ class AppCtrl {
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = false;
+        this.isMobile = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
         this.topics = require('./example.json').topics; // Todo Add Call to database which returns example Json if nothing exists
         $rootScope.app = this;
@@ -43,7 +41,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngTable, ngAnimate, ngMaterial, 'angular-carousel', uiRouter])
+angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
 require("./components/landing/landing");

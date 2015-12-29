@@ -1,7 +1,8 @@
 {
   "topics": [
     {
-      "title": "Example Topic",
+      "title": "Example Topic 1",
+      "id": 0,
       "description": "This is a topic that shows quiz types",
       "quizzes": [
         {
@@ -159,6 +160,7 @@
         },
         {
           "title": "Example Quiz 2",
+          "id": 1002,
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -188,6 +190,7 @@
     },
     {
       "title": "Example Topic 2",
+      "id": 1,
       "description": "This is a really good description",
       "quizzes": [
         {
@@ -412,6 +415,7 @@
     },
     {
       "title": "Example Topic 3",
+      "id": 3,
       "description": "This is a really good description",
       "quizzes": [
         {
@@ -598,6 +602,7 @@
     },
     {
       "title": "Example Topic 4",
+      "id": 3,
       "description": "This is a really good description",
       "quizzes": [
         {
@@ -784,6 +789,7 @@
     },
     {
       "title": "Example Topic 5",
+      "id": 4,
       "description": "This is a really good description",
       "quizzes": [
         {
@@ -970,6 +976,7 @@
     },
     {
       "title": "Example Topic 6",
+      "id": 5,
       "description": "This is a really good description",
       "quizzes": [
         {
@@ -1156,6 +1163,7 @@
     },
     {
       "title": "Example Topic 7",
+      "id": 6,
       "description": "This is a really good description",
       "quizzes": [
         {

@@ -1,3 +1,15 @@
-ul[rn-carousel] {
+.nav-list {
   height : 50px;
+  list-style-type: none;
+  margin-left: 14px;
+  padding: 0;
+}
+
+.scroll-button {
+  display: inline-block;
+  width: 16%;
+  margin: 2px;
+}
+.nav-tile {
+  margin:0;
 }

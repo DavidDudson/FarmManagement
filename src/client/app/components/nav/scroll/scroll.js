@@ -1,5 +1,3 @@
-require('angular_carousel_css');
-
 require('./scroll.scss');
 
 class ScrollDirective {

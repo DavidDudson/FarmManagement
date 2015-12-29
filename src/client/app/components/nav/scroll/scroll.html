@@ -1,7 +1,13 @@
 <nav>
-    <ul rn-carousel rn-carousel-auto-slide>
-        <li ng-repeat="topic in app.topics track by $index">
-            <md-button class="md-raised"  ui-sref="topic({id: $index})">{{topic.title}}</md-button>
+    <div ng-if="app.isMobile = false"> <!-- left control div -->
+
+    </div>
+    <ul class="nav-list"> <!-- main display nav -->
+        <li ng-repeat="topic in app.topics" class="scroll-button">
+            <md-button class="md-raised nav-tile"  ui-sref="topic/{{topic.id}}">{{topic.title}}</md-button>
         </li>
     </ul>
+    <div ng-if="app.isMobile = false"> <!-- left control div -->
+
+    </div>
 </nav>
