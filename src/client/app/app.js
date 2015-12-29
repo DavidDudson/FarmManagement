@@ -52,6 +52,8 @@ require("./components/nav/scroll/scroll");
 
 require("./components/nav/bottom/bottom");
 
-require("./components/introduction/introduction");
+require("./components/card/card");
 
 require("./components/topic/topic");
+
+require("./components/quiz/quiz");
