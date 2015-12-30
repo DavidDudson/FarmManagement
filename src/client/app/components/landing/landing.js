@@ -9,8 +9,13 @@ class LandingCtrl {
 
 
 angular.module('app')
-    .config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
         $urlRouterProvider.otherwise("/landing");
+
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
 
         $stateProvider
             .state("landing" , {
