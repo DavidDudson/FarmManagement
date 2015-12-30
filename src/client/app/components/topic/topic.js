@@ -10,7 +10,7 @@ class TopicCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("topic" , {
+            .state("top" , {
                 url:'/topic/{id}',
                 template: require('./topic.html'),
                 controller: TopicCtrl,

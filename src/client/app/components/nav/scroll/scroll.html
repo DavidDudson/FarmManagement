@@ -4,7 +4,7 @@
     </div>
     <ul class="nav-list"> <!-- main display nav -->
         <li ng-repeat="topic in app.topics" class="scroll-button">
-            <md-button class="md-raised nav-tile"  ui-sref="topic/{{topic.id}}">{{topic.title}}</md-button>
+            <md-button class="md-raised nav-tile"  ui-sref="top({ id: topic.id })">{{topic.title}}</md-button>
         </li>
     </ul>
     <div ng-if="app.isMobile = false"> <!-- left control div -->
