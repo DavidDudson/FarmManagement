@@ -1,13 +1,19 @@
 <nav>
-    <div ng-if="app.isMobile = false"> <!-- left control div -->
 
-    </div>
-    <ul class="nav-list"> <!-- main display nav -->
-        <li ng-repeat="topic in app.topics" class="scroll-button">
+    <ul class="nav-list" layout="row"> <!-- main display nav -->
+        <li ng-if="!app.isMobile" > <!-- left control div -->
+            <md-button ng-click="nav.scrollLeft()" class="md-button nav-arrow">
+                <md-icon> keyboard_arrow_left </md-icon>
+            </md-button>
+        </li>
+        <li ng-repeat="topic in nav.selected() track by $index" class="scroll-button">
             <md-button class="md-raised nav-tile"  ui-sref="top({ id: topic.id })">{{topic.title}}</md-button>
         </li>
+        <li ng-if="!app.isMobile"> <!-- left control div -->
+            <md-button ng-click="nav.scrollRight()" class="md-button nav-arrow">
+                <md-icon> keyboard_arrow_right </md-icon>
+            </md-button>
+        </li>
     </ul>
-    <div ng-if="app.isMobile = false"> <!-- left control div -->
 
-    </div>
 </nav>
