@@ -3,7 +3,7 @@
         <md-divider></md-divider>
         <md-list-item class="md-3-line" ng-repeat="quiz in topic.quizzes track by $index">
                 <div class="md-list-item-text" layout="column"
-                     ui-sref="quiz({topic: $parent.$index, id : $index})">
+                     ui-sref="quiz({top: topic.id, id : quiz.id})">
                     <button class="listButton">
                         <h3>{{ quiz.title }}</h3>
                         <h4>{{ quiz.description }}</h4>

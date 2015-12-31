@@ -1,4 +1,4 @@
-class LandingCtrl {
+class HomeCtrl {
     constructor() {
         // Infographics could be pairs of image/description
         // And a nice hover over to show description with negative text
@@ -21,6 +21,6 @@ angular.module('app')
             .state("home" , {
                 url:'/home',
                 template: require('./home.html'),
-                controller: LandingCtrl
+                controller: HomeCtrl
             })
     });

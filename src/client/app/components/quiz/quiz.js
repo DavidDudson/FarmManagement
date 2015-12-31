@@ -1,7 +1,9 @@
 class QuizCtrl {
     constructor($rootScope, $stateParams) {
         var topic = $rootScope.app.topics[$stateParams.topic];
-        var quiz = topic.quizzes[$stateParams.index];
+        console.log(topic);
+        var quiz = topic.quizzes[$stateParams.id];
+        console.log(quiz);
         this.title = quiz.title;
         this.description = quiz.description;
         this.example = quiz.example;
@@ -14,7 +16,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("quiz" , {
-                url: '/quiz/:topic/:index',
+                url: '/quiz/{top}/{id}',
                 template: require('./quiz.html'),
                 controller: QuizCtrl,
                 controllerAs: "quiz"

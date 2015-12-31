@@ -7,6 +7,7 @@
       "quizzes": [
         {
           "title": "Example Quiz 1",
+          "id": 1,
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -160,7 +161,7 @@
         },
         {
           "title": "Example Quiz 2",
-          "id": 1002,
+          "id": 2,
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -177,6 +178,7 @@
         },
         {
           "title": "Example Quiz 3",
+          "id": 3,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -195,6 +197,7 @@
       "quizzes": [
         {
           "title": "Example Quiz 1",
+          "id": 4,
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -348,6 +351,7 @@
         },
         {
           "title": "Example Quiz 2",
+          "id": 5,
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -364,6 +368,7 @@
         },
         {
           "title": "Example Quiz 3",
+          "id": 6,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -380,6 +385,7 @@
         },
         {
           "title": "Example Quiz 4",
+          "id": 7,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -391,6 +397,7 @@
         },
         {
           "title": "Example Quiz 5",
+          "id": 8,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -402,6 +409,7 @@
         },
         {
           "title": "Example Quiz 6",
+          "id": 9,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -415,11 +423,12 @@
     },
     {
       "title": "Example Topic 3",
-      "id": 3,
+      "id": 2,
       "description": "This is a really good description",
       "quizzes": [
         {
           "title": "Example Quiz 1",
+          "id": 11,
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -573,6 +582,7 @@
         },
         {
           "title": "Example Quiz 2",
+          "id": 12,
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -589,6 +599,7 @@
         },
         {
           "title": "Example Quiz 3",
+          "id": 13,
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
