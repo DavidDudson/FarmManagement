@@ -44,7 +44,7 @@ class AppCtrl {
 angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
-require("./components/landing/landing");
+require("./components/home/home");
 
 require("./components/table/table");
 

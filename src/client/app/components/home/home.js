@@ -10,7 +10,7 @@ class LandingCtrl {
 
 angular.module('app')
     .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
-        $urlRouterProvider.otherwise("/landing");
+        $urlRouterProvider.otherwise("/home");
 
         $locationProvider.html5Mode({
             enabled: true,
@@ -18,9 +18,9 @@ angular.module('app')
         });
 
         $stateProvider
-            .state("landing" , {
-                url:'/landing',
-                template: require('./landing.html'),
+            .state("home" , {
+                url:'/home',
+                template: require('./home.html'),
                 controller: LandingCtrl
             })
     });
