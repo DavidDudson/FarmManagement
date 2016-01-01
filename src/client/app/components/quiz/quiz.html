@@ -1,25 +1,11 @@
-<card title="quiz.title" description="quiz.description">
-    <md-tabs class="md-accent" md-selected="0" md-align-tabs='top'>
-        <md-tab ng-disabled="!example">
-            <md-tab-label>Example</md-tab-label>
-            <md-tab-body>
-                View for Item #1 <br/>
-                data.selectedIndex = 0;
-            </md-tab-body>
-        </md-tab>
-        <md-tab ng-disabled="!test">
-            <md-tab-label>Test</md-tab-label>
-            <md-tab-body>
-                View for Item #2 <br/>
-                data.selectedIndex = 1;
-            </md-tab-body>
-        </md-tab>
-        <md-tab ng-disabled="!calculator">
-            <md-tab-label>Calculator</md-tab-label>
-            <md-tab-body>
-                View for Item #3 <br/>
-                data.selectedIndex = 2;
-            </md-tab-body>
-        </md-tab>
-    </md-tabs>
-</card>
+<titled-card title="quiz.title" description="quiz.description" layout="row" layout-align="space-around center">
+    <md-button class="md-fab" aria-label="Tutorial">
+        <md-icon> cake </md-icon>
+    </md-button>
+    <md-button class="md-fab" aria-label="Test">
+        <md-icon> cake </md-icon>
+    </md-button>
+    <md-button class="md-fab" aria-label="Calculator">
+        <md-icon> cake </md-icon>
+    </md-button>
+</titled-card>

@@ -1,6 +1,7 @@
 class QuizCtrl {
     constructor($rootScope, $stateParams) {
-        var topic = $rootScope.app.topics[$stateParams.topic];
+        console.log($stateParams)
+        var topic = $rootScope.app.topics[$stateParams.top];
         console.log(topic);
         var quiz = topic.quizzes[$stateParams.id];
         console.log(quiz);
