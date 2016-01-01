@@ -1,9 +1,10 @@
-require('./titled-card.scss');
+require('../card.scss');
 
 class CardDirective {
     constructor() {
         this.template = require('./titled-card.html');
         this.restrict = 'E';
+        this.replace = true;
         this.transclude = true;
         this.scope = {
             title: '=',
@@ -13,4 +14,4 @@ class CardDirective {
 }
 
 angular.module('app')
-    .directive('card', () => new CardDirective);
+    .directive('titledCard', () => new CardDirective);

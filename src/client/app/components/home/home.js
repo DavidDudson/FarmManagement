@@ -21,6 +21,7 @@ angular.module('app')
             .state("home" , {
                 url:'/home',
                 template: require('./home.html'),
+                replace: true,
                 controller: HomeCtrl,
                 controllerAs: 'home'
             })
