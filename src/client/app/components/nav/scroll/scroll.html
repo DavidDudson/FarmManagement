@@ -1,16 +1,15 @@
 <nav>
-
-    <ul class="nav-list" layout="row"> <!-- main display nav -->
+    <ul class="nav-list" layout="row" layout-align="left center"> <!-- main display nav -->
         <li ng-if="!app.isMobile" > <!-- left control div -->
-            <md-button ng-click="nav.scrollLeft()" class="md-button nav-arrow">
+            <md-button ng-click="nav.scrollLeft()" class="nav-arrow">
                 <md-icon> keyboard_arrow_left </md-icon>
             </md-button>
         </li>
-        <li ng-repeat="topic in nav.selected() track by $index" class="scroll-button">
+        <li ng-repeat="topic in nav.selected() track by $index">
             <md-button class="md-raised nav-tile"  ui-sref="top({ id: topic.id })">{{topic.title}}</md-button>
         </li>
         <li ng-if="!app.isMobile"> <!-- left control div -->
-            <md-button ng-click="nav.scrollRight()" class="md-button nav-arrow">
+            <md-button ng-click="nav.scrollRight()" class="nav-arrow">
                 <md-icon> keyboard_arrow_right </md-icon>
             </md-button>
         </li>
