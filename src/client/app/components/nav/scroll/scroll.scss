@@ -1,7 +1,10 @@
 .nav-list {
   height : 80px;
-  list-style-type: none;
+}
+
+ol, li {
   margin: 0;
+  padding: 0;
 }
 
 .nav-tile {
@@ -9,6 +12,7 @@
   max-width: none;
   min-width: 0;
   white-space: normal;
+
 }
 
 .nav-arrow {

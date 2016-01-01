@@ -1,3 +1,5 @@
+require('normalize');
+
 var angular = require('angular');
 
 var ngAnimate = require('angular-animate');
