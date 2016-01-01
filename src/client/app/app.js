@@ -61,3 +61,5 @@ require("./components/card/plain-card/plain-card");
 require("./components/topic/topic");
 
 require("./components/quiz/quiz");
+
+require("util/preload/preload");

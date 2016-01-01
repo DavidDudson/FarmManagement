@@ -1,4 +1,4 @@
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" ng-cloak>
     <head>
         <meta name="viewport" content="initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="./iframe.css">
@@ -8,7 +8,7 @@
         <div class="iframe">
             <div class="app" layout="column" layout-align="center center">
                 <nav-scroll layout-padding></nav-scroll>
-                <div ui-view></div>
+                <div ui-view ng-cloak></div>
                 <nav-footer></nav-footer>
             </div>
         </div>
