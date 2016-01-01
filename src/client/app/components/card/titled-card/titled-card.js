@@ -1,8 +1,8 @@
-require('./card.scss');
+require('./titled-card.scss');
 
 class CardDirective {
     constructor() {
-        this.template = require('./card.html');
+        this.template = require('./titled-card.html');
         this.restrict = 'E';
         this.transclude = true;
         this.scope = {
