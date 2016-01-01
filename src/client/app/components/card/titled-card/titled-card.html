@@ -6,13 +6,14 @@
                     <span class="md-headline">{{title}}</span>
                     <span class="md-subhead">{{description}}</span>
                 </div>
-                <div ng-if="app.editable">
-                    <md-input-container ng-if="app.editable">
-                        <label>Title</label>
-                        <input required type="text" ng-model="title">
-                        <label>Description</label>
-                        <textarea ng-model="description" md-maxlength="150"></textarea>
-                </div>
+                <md-input-container ng-if="app.editable">
+                    <label>Title</label>
+                    <input required type="text" ng-model="title">
+                </md-input-container>
+                <md-input-container ng-if="app.editable">
+                    <label>Description</label>
+                    <textarea ng-model="description" md-maxlength="150"></textarea>
+                </md-input-container>
             </md-card-title-text>
         </md-card-title>
         <md-content ng-transclude layout="column"></md-content>
