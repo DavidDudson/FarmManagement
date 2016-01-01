@@ -1,33 +1,28 @@
-<md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
-    <div flex="100" flex-sm="100" flex-xs="100" layout="column">
-        <md-card class="ms-padding">
-            <md-card-title>
-                <md-card-title-text>
-                    <div ng-if="!app.editable">
-                        <span class="md-headline">{{title}}</span>
-                        <br>
-                        <span class="md-subhead">{{description}}</span>
-                    </div>
-                    <div ng-if="app.editable">
-                        <md-input-container ng-if="app.editable">
-                            <label>Title</label>
-                            <input required type="text" ng-model="title">
-                            <label>Description</label>
-                            <textarea ng-model="description" md-maxlength="150"></textarea>
-                    </div>
-                </md-card-title-text>
-            </md-card-title>
-            <md-content ng-transclude>
-
-            </md-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button ng-if="app.editable">Add</md-button>
-                <md-button ng-if="app.editable">Delete</md-button>
-                <md-button ng-if="app.editable">Help</md-button>
-                <md-button ng-click="app.editable=!app.editable">{{app.editable ? "Save" : "Edit"}}</md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
+<md-content class="md-padding">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text >
+                <div ng-if="!app.editable" layout="column">
+                    <span class="md-headline">{{title}}</span>
+                    <span class="md-subhead">{{description}}</span>
+                </div>
+                <div ng-if="app.editable">
+                    <md-input-container ng-if="app.editable">
+                        <label>Title</label>
+                        <input required type="text" ng-model="title">
+                        <label>Description</label>
+                        <textarea ng-model="description" md-maxlength="150"></textarea>
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+        <md-content ng-transclude layout="column"></md-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-if="app.editable">Add</md-button>
+            <md-button ng-if="app.editable">Delete</md-button>
+            <md-button ng-if="app.editable">Help</md-button>
+            <md-button ng-click="app.editable=!app.editable">{{app.editable ? "Save" : "Edit"}}</md-button>
+        </md-card-actions>
+    </md-card>
 </md-content>
 
 
