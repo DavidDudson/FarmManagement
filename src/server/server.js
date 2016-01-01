@@ -12,4 +12,10 @@ app.get('/', function (req, res) {
     res.sendFile(path2);
 });
 
+// TODO change this out of source once we have a production enviroment
+// This is a hack for HTML 5 mode
+app.use(function(req, res) {
+    res.sendfile('./src/client/index.html');
+});
+
 module.exports = app;
