@@ -1,3 +1,5 @@
+require('./quiz.scss');
+
 class QuizCtrl {
     constructor($rootScope, $stateParams) {
         console.log($stateParams)

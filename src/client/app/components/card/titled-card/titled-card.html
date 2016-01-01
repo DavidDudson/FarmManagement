@@ -1,7 +1,7 @@
 <md-content class="md-padding">
     <md-card>
         <md-card-title>
-            <md-card-title-text >
+            <md-card-title-text>
                 <div ng-if="!app.editable" layout="column">
                     <span class="md-headline">{{title}}</span>
                     <span class="md-subhead">{{description}}</span>
@@ -16,7 +16,10 @@
                 </md-input-container>
             </md-card-title-text>
         </md-card-title>
-        <md-content ng-transclude layout="column"></md-content>
+        <br>
+        <md-divider></md-divider>
+        <md-content ng-transclude layout="column">
+        </md-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button ng-if="app.editable">Add</md-button>
             <md-button ng-if="app.editable">Delete</md-button>

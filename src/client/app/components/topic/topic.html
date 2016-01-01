@@ -1,6 +1,5 @@
 <titled-card title="topic.title" description="topic.description">
     <md-list>
-        <md-divider></md-divider>
         <md-list-item class="md-3-line" ng-repeat="quiz in topic.quizzes track by $index">
                 <div class="md-list-item-text" layout="column"
                      ui-sref="quiz({top: topic.id, id : quiz.id})">
