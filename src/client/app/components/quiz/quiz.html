@@ -19,10 +19,11 @@
             <h2>Tool</h2>
         </div>
     </div>
-    <div ng-if="quiz.current === 'test'">
+    <div ng-if="quiz.current === 'test'" layout="column">
         <spreadsheet table="quiz.test.table" answer="quiz.test.answer" ng-if="quiz.test.type === 'table'"></spreadsheet>
         <multichoice options="quiz.test.options" answer="quiz.test.answer" ng-if="quiz.test.type === 'multichoice'"></multichoice>
         <basic answer="quiz.test.answer" ng-if="quiz.test.type === 'basic'"></basic>
+        <md-button class="md-raised md-primary">Check Answer</md-button>
     </div>
     <div ng-if="quiz.current === 'tool'">
         <spreadsheet table="quiz.tool.table" ng-if="quiz.tool.type === 'table'"></spreadsheet>
