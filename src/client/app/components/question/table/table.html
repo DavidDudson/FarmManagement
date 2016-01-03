@@ -9,11 +9,11 @@
         <tr md-auto-select ng-repeat="(key, values) in table track by $index" ng-if="$index > 0">
             <td ng-repeat="item in [key].concat(values) track by $index">
                 <md-input-container ng-if="app.editable">
-                    <label ng-if="$index > 0">{{calculate(item).value}}</label>
+                    <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
                     <input required type="text" ng-model="table.data[$parent.key][$index - 1]" ng-if="$index > 0">
                     <input required type="text" ng-model="item" ng-if="$index === 0">
                 </md-input-container>
-                <p ng-if="!app.editable && $index > 0">{{calculate(item, true).value}}</p>
+                <p ng-if="!app.editable && $index > 0">{{table.calculate(item, true).value}}</p>
                 <p ng-if="!app.editable && $index === 0">{{item}}</p>
             </td>
         </tr>

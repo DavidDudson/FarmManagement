@@ -1,3 +1,13 @@
-/**
- * Created by DavidD on 3/01/16.
- */
+class BasicDirective {
+    constructor() {
+        this.template = require('./basic.html');
+        this.restrict = 'E';
+        this.replace = true;
+        this.scope = {
+            answer: '='
+        }
+    }
+}
+
+angular.module('app')
+    .directive('basic', () => new BasicDirective);

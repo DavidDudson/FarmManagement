@@ -1,0 +1,6 @@
+<md-content layout="column">
+    <md-radio-group ng-model="selected">
+        <md-radio-button ng-repeat="option in options" value="{{option}}" class="md-primary">{{option}}</md-radio-button>
+    </md-radio-group>
+    <md-button class="md-raised md-primary">Check Answer</md-button>
+</md-content>

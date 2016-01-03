@@ -1,3 +1,14 @@
-/**
- * Created by DavidD on 3/01/16.
- */
+class MultichoiceDirective {
+    constructor() {
+        this.template = require('./multichoice.html');
+        this.restrict = 'E';
+        this.replace = true;
+        this.scope = {
+            options: '=',
+            answer: '='
+        }
+    }
+}
+
+angular.module('app')
+    .directive('multichoice', () => new MultichoiceDirective);

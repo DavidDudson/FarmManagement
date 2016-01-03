@@ -50,6 +50,10 @@ require("./components/home/home");
 
 require("./components/question/table/table");
 
+require("./components/question/multichoice/multichoice");
+
+require("./components/question/basic/basic");
+
 require("./components/nav/scroll/scroll");
 
 require("./components/nav/bottom/bottom");

@@ -9,9 +9,12 @@ class TableDirective {
         this.replace = true;
         this.scope = {
             table : '=',
-            answer : '=',
-            calculate : (expr) => exprParser.calculate(expr, this.data)
-        }
+            answer : '=?'
+        };
+        this.controller = {
+            calculate : (expr) => exprParser.calculate(expr, this.scope.table)
+        };
+        this.controllerAs = 'table'
     }
 }
 
