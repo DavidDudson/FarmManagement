@@ -1,22 +1,33 @@
 <titled-card title="quiz.title" description="quiz.description" >
-    <div layout="row" layout-align="space-around center" class="md-padding">
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Tutorial">
+    <div ng-if="quiz.current === undefined" layout="row" layout-align="space-around center" class="md-padding">
+        <div layout="column" layout-align="center center" disabled="quiz.tutorial === undefined">
+            <md-button class="md-fab" aria-label="Tutorial" ng-click="quiz.current = 'tutorial'">
                 <md-icon> cake </md-icon>
             </md-button>
             <h2>Tutorial</h2>
         </div>
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Test">
+        <div layout="column" layout-align="center center" disabled="quiz.test === undefined">
+            <md-button class="md-fab" aria-label="Test" ng-click="quiz.current = 'test'">
                 <md-icon> cake </md-icon>
             </md-button>
             <h2>Test</h2>
         </div>
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Calculator">
+        <div layout="column" layout-align="center center" disabled="quiz.tool === undefined">
+            <md-button class="md-fab" aria-label="Tool" ng-click="quiz.current = 'tool'">
                 <md-icon> cake </md-icon>
             </md-button>
-            <h2>Calculator</h2>
+            <h2>Tool</h2>
         </div>
+    </div>
+    <div ng-if="current === 'test'">
+        <spreadsheet table="quiz.test.table" answer="quiz.test.answer" ng-if="quiz.type === 'table'"></spreadsheet>
+        <multichoice options="quiz.test.options" answer="quiz.test.answer" ng-if="quiz.type === 'multichoice'"></multichoice>
+        <basic answer="quiz.test.answer" ng-if="quiz.type === 'basic'"></basic>
+    </div>
+    <div ng-if="current === 'tool'">
+        <spreadsheet table="quiz.tool.table" ng-if="quiz.type = 'table'"></spreadsheet>
+    </div>
+    <div ng-if="current === 'tutorial'">
+        <spreadsheet table="quiz.tutorial.table" ng-if="quiz.type = 'table'"></spreadsheet>
     </div>
 </titled-card>
