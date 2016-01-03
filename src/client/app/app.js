@@ -48,7 +48,7 @@ angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
 
 require("./components/home/home");
 
-require("./components/table/table");
+require("./components/question/table/table");
 
 require("./components/nav/scroll/scroll");
 
