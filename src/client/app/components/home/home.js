@@ -1,3 +1,5 @@
+require('./home.scss');
+
 class HomeCtrl {
     constructor() {
         this.infographics = [];
