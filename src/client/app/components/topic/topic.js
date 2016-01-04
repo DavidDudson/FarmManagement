@@ -2,6 +2,7 @@ class TopicCtrl {
     constructor($rootScope, $stateParams) {
         var topic = $rootScope.app.topics[$stateParams.id];
         this.title = topic.title;
+        this.id = topic.id;
         this.description = topic.description;
         this.quizzes = topic.quizzes;
     }
