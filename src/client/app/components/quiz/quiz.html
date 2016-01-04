@@ -19,16 +19,20 @@
             <h2>Tool</h2>
         </div>
     </div>
+
     <div ng-if="quiz.current === 'test'" layout="column">
+        <p>{{quiz.test.description}}</p>
         <spreadsheet table="quiz.test.table" answer="quiz.test.answer" ng-if="quiz.test.type === 'table'"></spreadsheet>
         <multichoice options="quiz.test.options" answer="quiz.test.answer" ng-if="quiz.test.type === 'multichoice'"></multichoice>
         <basic answer="quiz.test.answer" ng-if="quiz.test.type === 'basic'"></basic>
         <md-button class="md-raised md-primary">Check Answer</md-button>
     </div>
     <div ng-if="quiz.current === 'tool'">
+        <p>{{quiz.tool.description}}</p>
         <spreadsheet table="quiz.tool.table" ng-if="quiz.tool.type === 'table'"></spreadsheet>
     </div>
     <div ng-if="quiz.current === 'tutorial'">
+        <p>{{quiz.tutorial.description}}</p>
         <spreadsheet table="quiz.tutorial.table" ng-if="quiz.tutorial.type === 'table'"></spreadsheet>
         <basic answer="quiz.tutorial.answer" ng-if="quiz.tutorial.type === 'basic'"></basic>
         <multichoice options="quiz.tutorial.options" answer="quiz.tutorial.answer" ng-if="quiz.tutorial.type === 'multichoice'"></multichoice>
