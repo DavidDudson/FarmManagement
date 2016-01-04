@@ -5,7 +5,7 @@
                 <md-icon> keyboard_arrow_left </md-icon>
             </md-button>
         </md-list-item>
-        <md-list-item ng-repeat="topic in nav.selected() track by $index">
+        <md-list-item ng-repeat="topic in nav.selected()">
             <md-button class="md-raised nav-tile"  ui-sref="top({ id: topic.id })">{{topic.title}}</md-button>
         </md-list-item>
         <md-list-item ng-if="!app.isMobile"> <!-- left control div -->
