@@ -25,6 +25,7 @@ class AppCtrl {
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
+        this.isAdmin = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
         this.topics = require('./example.json').topics; // Todo Add Call to database which returns example Json if nothing exists
         $rootScope.app = this;
