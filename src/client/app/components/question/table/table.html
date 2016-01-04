@@ -13,7 +13,7 @@
                     <input required type="text" ng-model="table.data[$parent.key][$index - 1]" ng-if="$index > 0">
                     <input required type="text" ng-model="item" ng-if="$index === 0">
                 </md-input-container>
-                <p ng-if="!app.editable && $index > 0">{{table.calculate(item, true).value}}</p>
+                <p ng-if="!app.editable && $index > 0">{{table.calculate(item).value}}</p>
                 <p ng-if="!app.editable && $index === 0">{{item}}</p>
             </td>
         </tr>

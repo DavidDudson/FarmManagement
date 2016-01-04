@@ -11,8 +11,8 @@ class TableDirective {
             table : '=',
             answer : '=?'
         };
-        this.controller = {
-            calculate : (expr) => exprParser.calculate(expr, this.scope.table)
+        this.controller = () => {
+            this.calculate = (expr) => exprParser.calculate(expr, this.scope.table)
         };
         this.controllerAs = 'table'
     }
