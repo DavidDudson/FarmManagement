@@ -11,7 +11,13 @@ class ScrollDirective {
 class ScrollCtrl {
     constructor($rootScope) {
         this.index = 0;
-        this.displayCount = 6;
+        this.displayCount = 5;
+
+        this.centerIndex = function(id) {
+            this.index = id;
+            this.scrollLeft();
+            this.scrollLeft();
+        };
         this.scrollLeft = function() {
             if (this.index === 0) {
                 this.index = $rootScope.app.topics.length - 1;
