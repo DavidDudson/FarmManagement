@@ -27,20 +27,20 @@ class AppCtrl {
         this.isMobile = false;
         this.isAdmin = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
-        this.topics = require('./example.json').topics; // Todo Add Call to database which returns example Json if nothing exists
+        this.categories = require('./example.json').categories; // Todo Add Call to database which returns example Json if nothing exists
         $rootScope.app = this;
     }
 
-    addTopic(topic) {
-        this.topics.push(topic)
+    addCategory(category) {
+        this.categories.push(category)
     }
 
-    removeTopic(topic) {
-        _.remove(this.topics, topic)
+    removeCategory(category) {
+        _.remove(this.categories, category)
     }
 
-    getTopic(name) {
-        return _.find(this.topics, q => q.name === name)
+    getCategory(name) {
+        return _.find(this.categories, q => q.name === name)
     }
 }
 
@@ -63,7 +63,7 @@ require("./components/card/titled-card/titled-card");
 
 require("./components/card/plain-card/plain-card");
 
-require("./components/topic/topic");
+require("./components/category/category");
 
 require("./components/quiz/quiz");
 

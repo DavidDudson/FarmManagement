@@ -20,22 +20,22 @@ class ScrollCtrl {
         };
         this.scrollLeft = function() {
             if (this.index === 0) {
-                this.index = $rootScope.app.topics.length - 1;
+                this.index = $rootScope.app.categories.length - 1;
             } else {
                 this.index -= 1;
             }
         };
         this.scrollRight = function() {
             this.index += 1;
-            this.index = this.index % $rootScope.app.topics.length;
+            this.index = this.index % $rootScope.app.categories.length;
         };
         this.selected = function() {
-            var first = $rootScope.app.topics.slice(this.index);
+            var first = $rootScope.app.categories.slice(this.index);
             if (first.length > this.displayCount) {
                 first = first.slice(0,this.displayCount);
             } else if(first.length < this.displayCount) {
                 var toAdd = this.displayCount - first.length;
-                var second = $rootScope.app.topics.slice(0, toAdd);
+                var second = $rootScope.app.categories.slice(0, toAdd);
                 first = first.concat(second);
             }
             return first

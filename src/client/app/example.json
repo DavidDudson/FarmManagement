@@ -1,9 +1,9 @@
 {
-  "topics": [
+  "categories": [
     {
-      "title": "Example Topic 1",
+      "title": "Example Category 1",
       "id": 0,
-      "description": "This is a topic that shows quiz types",
+      "description": "This is a category that shows quiz types",
       "quizzes": [
         {
           "title": "Example Quiz 1",
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "title": "Example Topic 2",
+      "title": "Example Category 2",
       "id": 1,
       "description": "This is a really good description",
       "quizzes": [
@@ -422,7 +422,7 @@
       ]
     },
     {
-      "title": "Example Topic 3",
+      "title": "Example Category 3",
       "id": 2,
       "description": "This is a really good description",
       "quizzes": [
@@ -612,7 +612,7 @@
       ]
     },
     {
-      "title": "Example Topic 4",
+      "title": "Example Category 4",
       "id": 3,
       "description": "This is a really good description",
       "quizzes": [
@@ -799,7 +799,7 @@
       ]
     },
     {
-      "title": "Example Topic 5",
+      "title": "Example Category 5",
       "id": 4,
       "description": "This is a really good description",
       "quizzes": [
@@ -986,7 +986,7 @@
       ]
     },
     {
-      "title": "Example Topic 6",
+      "title": "Example Category 6",
       "id": 5,
       "description": "This is a really good description",
       "quizzes": [
@@ -1173,7 +1173,7 @@
       ]
     },
     {
-      "title": "Example Topic 7",
+      "title": "Example Category 7",
       "id": 6,
       "description": "This is a really good description",
       "quizzes": [

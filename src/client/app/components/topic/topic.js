@@ -1,12 +1,12 @@
 var _ = require('lodash');
 
-class TopicCtrl {
+class CategoryCtrl {
     constructor($rootScope, $stateParams) {
-        var topic = _.find($rootScope.app.topics, {id: _.parseInt($stateParams.id)});
-        this.title = topic.title;
-        this.id = topic.id;
-        this.description = topic.description;
-        this.quizzes = topic.quizzes;
+        var category = _.find($rootScope.app.categories, {id: _.parseInt($stateParams.id)});
+        this.title = category.title;
+        this.id = category.id;
+        this.description = category.description;
+        this.quizzes = category.quizzes;
     }
 }
 
@@ -14,9 +14,9 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("top" , {
-                url:'/topic/{id}',
-                template: require('./topic.html'),
-                controller: TopicCtrl,
-                controllerAs: "topic"
+                url:'/category/{id}',
+                template: require('./category.html'),
+                controller: CategoryCtrl,
+                controllerAs: "category"
             })
     });

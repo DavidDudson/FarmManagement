@@ -13,7 +13,7 @@ class Descriptable {
     }
 }
 
-class Topic extends Descriptable {
+class Category extends Descriptable {
     constructor(name, description, data = undefined) {
         if (_.isUndefined(data)) {
             super(name, description);
