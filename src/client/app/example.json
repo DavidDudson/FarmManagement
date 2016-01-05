@@ -3,10 +3,10 @@
     {
       "title": "Example Category 1",
       "id": 0,
-      "description": "This is a category that shows quiz types",
-      "quizzes": [
+      "description": "This is a category that shows Topic types",
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "id": 1,
           "description": "Test your maths knowledge",
           "example": {
@@ -160,7 +160,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "id": 2,
           "description": "Test your maths knowledge",
           "example": {
@@ -177,7 +177,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "id": 3,
           "description": "Test your maths knowledge",
           "example": {
@@ -194,9 +194,9 @@
       "title": "Example Category 2",
       "id": 1,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "id": 4,
           "description": "Test your maths knowledge",
           "example": {
@@ -350,7 +350,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "id": 5,
           "description": "Test your maths knowledge",
           "example": {
@@ -367,7 +367,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "id": 6,
           "description": "Test your maths knowledge",
           "example": {
@@ -384,7 +384,7 @@
           }
         },
         {
-          "title": "Example Quiz 4",
+          "title": "Example Topic 4",
           "id": 7,
           "description": "Test your maths knowledge",
           "example": {
@@ -396,7 +396,7 @@
           }
         },
         {
-          "title": "Example Quiz 5",
+          "title": "Example Topic 5",
           "id": 8,
           "description": "Test your maths knowledge",
           "example": {
@@ -408,7 +408,7 @@
           }
         },
         {
-          "title": "Example Quiz 6",
+          "title": "Example Topic 6",
           "id": 9,
           "description": "Test your maths knowledge",
           "example": {
@@ -425,9 +425,9 @@
       "title": "Example Category 3",
       "id": 2,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "id": 11,
           "description": "Test your maths knowledge",
           "example": {
@@ -581,7 +581,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "id": 12,
           "description": "Test your maths knowledge",
           "example": {
@@ -598,7 +598,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "id": 13,
           "description": "Test your maths knowledge",
           "example": {
@@ -615,9 +615,9 @@
       "title": "Example Category 4",
       "id": 3,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -770,7 +770,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -786,7 +786,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -802,9 +802,9 @@
       "title": "Example Category 5",
       "id": 4,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -957,7 +957,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -973,7 +973,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -989,9 +989,9 @@
       "title": "Example Category 6",
       "id": 5,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -1144,7 +1144,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -1160,7 +1160,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",
@@ -1176,9 +1176,9 @@
       "title": "Example Category 7",
       "id": 6,
       "description": "This is a really good description",
-      "quizzes": [
+      "Topiczes": [
         {
-          "title": "Example Quiz 1",
+          "title": "Example Topic 1",
           "description": "Test your maths knowledge",
           "example": {
             "type": "table",
@@ -1331,7 +1331,7 @@
           }
         },
         {
-          "title": "Example Quiz 2",
+          "title": "Example Topic 2",
           "description": "Test your maths knowledge",
           "example": {
             "type": "basic",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "title": "Example Quiz 3",
+          "title": "Example Topic 3",
           "description": "Test your maths knowledge",
           "example": {
             "type": "multichoice",

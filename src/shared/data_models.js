@@ -17,27 +17,27 @@ class Category extends Descriptable {
     constructor(name, description, data = undefined) {
         if (_.isUndefined(data)) {
             super(name, description);
-            this.quizzes = [];
+            this.Topiczes = [];
         } else {
             Object.assign(this, data);
         }
 
     }
 
-    addQuiz(quiz) {
-    this.quizzes.push(quiz)
+    addTopic(Topic) {
+    this.Topiczes.push(Topic)
 }
 
-    removeQuiz(quiz) {
-        _.remove(this.quizzes, quiz)
+    removeTopic(Topic) {
+        _.remove(this.Topiczes, Topic)
     }
 
-    getQuiz(name) {
-        return _.find(this.quizzes, q => q.name === name)
+    getTopic(name) {
+        return _.find(this.Topiczes, q => q.name === name)
     }
 }
 
-class Quiz extends Descriptable {
+class Topic extends Descriptable {
     constructor(name, description) {
         super(name, description);
         this.example = undefined;
