@@ -8,13 +8,23 @@ app.use(Express.static(path.resolve('./src/client/')));
 app.use(Express.static(path.resolve('./dist/public')));
 
     //APIs
-//app.use("/", require("./routes/topic.routes"));
-//app.use("/", require("./routes/category.routes"));
+app.use("/", require("./routes/topic.routes"));
+app.use("/", require("./routes/category.routes"));
 
-    //HTML5 configuration to catch nonexistent routes back to index
-var index = path.resolve('./src/client/index.html');
-app.all('/*', function(req, res) {
-    res.sendFile(index);
+
+app.get('/', function (req, res) {
+    var path2 = path.resolve('./src/client/index.html');
+    console.log(path2);
+    res.sendFile(path2);
 });
+
+app.use(function(req, res) {
+    res.sendFile('./src/client/index.html');
+});
+
+//var index = path.resolve('./src/client/index.html');
+//app.all('/*', function(req, res) {
+//    res.sendFile(index);
+//});
 
 module.exports = app;
