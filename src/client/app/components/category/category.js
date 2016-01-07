@@ -6,7 +6,7 @@ class CategoryCtrl {
         this.title = category.title;
         this.id = category.id;
         this.description = category.description;
-        this.topiczes = $scope.topiczesPromise.data
+        this.topics = $scope.topicsPromise.data
     }
 }
 
@@ -19,7 +19,7 @@ angular.module('app')
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topiczesPromise : ($http, $stateParams) => $http.get("/category?id=" + $stateParams.id)
+                    topicsPromise : ($http, $stateParams) => $http.get("/category?id=" + $stateParams.id)
                 }
             })
     });

@@ -11,7 +11,7 @@ var _ = require('lodash');
 var categories = JSON.parse(JSON.stringify(example)).categories;
 
 var categorySummary = JSON.parse(JSON.stringify(example));
-categorySummary.categories.forEach(c => delete c.Topiczes);
+categorySummary.categories.forEach(c => delete c.Topics);
 
 
     //get
@@ -22,7 +22,7 @@ router.get("/category", function(req, res) {
         res.json(categorySummary);
     } else {
         // Double Equals since we are comparing Str to Int
-        res.json(_.get(_.find(categories, c => c.id == req.query.id), "Topiczes"))
+        res.json(_.get(_.find(categories, c => c.id == req.query.id), "Topics"))
     }
 });
 

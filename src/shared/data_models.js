@@ -17,7 +17,7 @@ class Category extends Descriptable {
     constructor(name, description, data = undefined) {
         if (_.isUndefined(data)) {
             super(name, description);
-            this.Topiczes = [];
+            this.Topics = [];
         } else {
             Object.assign(this, data);
         }
@@ -25,15 +25,15 @@ class Category extends Descriptable {
     }
 
     addTopic(Topic) {
-    this.Topiczes.push(Topic)
+    this.Topics.push(Topic)
 }
 
     removeTopic(Topic) {
-        _.remove(this.Topiczes, Topic)
+        _.remove(this.Topics, Topic)
     }
 
     getTopic(name) {
-        return _.find(this.Topiczes, q => q.name === name)
+        return _.find(this.Topics, q => q.name === name)
     }
 }
 

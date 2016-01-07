@@ -4,7 +4,7 @@
       "title": "Example Category 1",
       "id": 0,
       "description": "This is a category that shows Topic types",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "id": 1,
@@ -194,7 +194,7 @@
       "title": "Example Category 2",
       "id": 1,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "id": 4,
@@ -425,7 +425,7 @@
       "title": "Example Category 3",
       "id": 2,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "id": 11,
@@ -615,7 +615,7 @@
       "title": "Example Category 4",
       "id": 3,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "description": "Test your maths knowledge",
@@ -802,7 +802,7 @@
       "title": "Example Category 5",
       "id": 4,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "description": "Test your maths knowledge",
@@ -989,7 +989,7 @@
       "title": "Example Category 6",
       "id": 5,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "description": "Test your maths knowledge",
@@ -1176,7 +1176,7 @@
       "title": "Example Category 7",
       "id": 6,
       "description": "This is a really good description",
-      "Topiczes": [
+      "Topics": [
         {
           "title": "Example Topic 1",
           "description": "Test your maths knowledge",
