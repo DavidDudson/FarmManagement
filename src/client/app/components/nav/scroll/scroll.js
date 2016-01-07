@@ -10,38 +10,43 @@ class ScrollDirective {
 
 class ScrollCtrl {
     constructor($rootScope) {
-        this.index = 0;
-        this.displayCount = 5;
 
-        this.centerIndex = function(id) {
-            this.index = id;
-            this.scrollLeft();
-            this.scrollLeft();
-        };
-        this.scrollLeft = function() {
-            if (this.index === 0) {
-                this.index = $rootScope.app.topics.length - 1;
-            } else {
-                this.index -= 1;
-            }
-        };
-        this.scrollRight = function() {
-            this.index += 1;
-            this.index = this.index % $rootScope.app.topics.length;
-        };
-        this.selected = function() {
-            var first = $rootScope.app.topics.slice(this.index);
-            if (first.length > this.displayCount) {
-                first = first.slice(0,this.displayCount);
-            } else if(first.length < this.displayCount) {
-                var toAdd = this.displayCount - first.length;
-                var second = $rootScope.app.topics.slice(0, toAdd);
-                first = first.concat(second);
-            }
-            return first
-        };
+        // HACK: Dont init the controller until we are certain that the categories are available
+        // Categories should really be in a service
+        $rootScope.app.categoryPromise.then(() => {
+            this.index = 0;
+            this.displayCount = 5;
 
-        $rootScope.nav = this;
+            this.centerIndex = function (id) {
+                this.index = id;
+                this.scrollLeft();
+                this.scrollLeft();
+            };
+            this.scrollLeft = function () {
+                if (this.index === 0) {
+                    this.index = $rootScope.app.categories.length - 1;
+                } else {
+                    this.index -= 1;
+                }
+            };
+            this.scrollRight = function () {
+                this.index += 1;
+                this.index = this.index % $rootScope.app.categories.length;
+            };
+            this.selected = function () {
+                var first = $rootScope.app.categories.slice(this.index);
+                if (first.length > this.displayCount) {
+                    first = first.slice(0, this.displayCount);
+                } else if (first.length < this.displayCount) {
+                    var toAdd = this.displayCount - first.length;
+                    var second = $rootScope.app.categories.slice(0, toAdd);
+                    first = first.concat(second);
+                }
+                return first
+            };
+
+            $rootScope.nav = this;
+        });
     }
 }
 

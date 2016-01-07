@@ -17,53 +17,36 @@ require("./app.scss");
 
 var _ = require('lodash');
 
-
 class AppCtrl {
-    constructor($rootScope) {
-        this.name = 'farmFINANZ';
+    constructor($http, $rootScope) {this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
+        this.isAdmin = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
-        this.topics = require('./example.json').topics; // Todo Add Call to database which returns example Json if nothing exists
+        this.categoryPromise = $http.get("/category");
+        this.categories = this.categoryPromise.then(r => this.categories = r.data.categories, err => console.log(err));
         $rootScope.app = this;
     }
 
-    addTopic(topic) {
-        this.topics.push(topic)
+    addCategory(category) {
+        this.categories.push(category)
     }
 
-    removeTopic(topic) {
-        _.remove(this.topics, topic)
+    removeCategory(category) {
+        _.remove(this.categories, category)
     }
 
-    getTopic(name) {
-        return _.find(this.topics, q => q.name === name)
+    getCategory(name) {
+        return _.find(this.categories, q => q.name === name)
     }
 }
 
 angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
-require("./components/home/home");
-
-require("./components/question/table/table");
-
-require("./components/question/multichoice/multichoice");
-
-require("./components/question/basic/basic");
-
-require("./components/nav/scroll/scroll");
-
-require("./components/nav/bottom/bottom");
-
-require("./components/card/titled-card/titled-card");
-
-require("./components/card/plain-card/plain-card");
-
-require("./components/topic/topic");
-
-require("./components/quiz/quiz");
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");
