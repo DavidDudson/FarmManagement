@@ -18,15 +18,14 @@ require("./app.scss");
 var _ = require('lodash');
 
 class AppCtrl {
-    constructor($rootScope) {
-        this.name = 'farmFINANZ';
+    constructor($http, $rootScope) {this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
         this.isAdmin = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
-        this.categories = require('./example.json').categories; // Todo Add Call to database which returns example Json if nothing exists
+        this.categories = $http.get("/category").then(r => this.categories = r.data.categories, err => console.log(err));
         $rootScope.app = this;
     }
 

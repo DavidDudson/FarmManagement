@@ -15,11 +15,11 @@ app.use("/", require("./routes/category.routes"));
 app.get('/', function (req, res) {
     var path2 = path.resolve('./src/client/index.html');
     console.log(path2);
-    res.sendFile(path2);
+    res.sendfile(path2);
 });
 
 app.use(function(req, res) {
-    res.sendFile('./src/client/index.html');
+    res.sendfile('./src/client/index.html');
 });
 
 //var index = path.resolve('./src/client/index.html');

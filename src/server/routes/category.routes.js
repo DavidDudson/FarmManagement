@@ -3,10 +3,17 @@ var Express = require('express');
 
 var router = Express.Router();
 
+var example = require('./example.json');
+
     //get
 router.get("/category", function(req, res) {
     //TODO waiting on database
-    res.json({"message": "to come"});
+
+    response = JSON.parse(JSON.stringify(example)); // Copy the object so we can reuse the example
+
+    response.categories.forEach(c => delete c.Topiczes);
+
+    res.json(response);
 });
 
     //create
