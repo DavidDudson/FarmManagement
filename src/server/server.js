@@ -11,20 +11,10 @@ app.use(Express.static(path.resolve('./dist/public')));
 app.use("/", require("./routes/topic.routes"));
 app.use("/", require("./routes/category.routes"));
 
-
-app.get('/', function (req, res) {
-    var path2 = path.resolve('./src/client/index.html');
-    console.log(path2);
-    res.sendFile(path2);
+    //HTML5 mode enabling route for client-side routing
+var index = path.resolve('./src/client/index.html');
+app.all('/*', function(req, res) {
+    res.sendFile(index);
 });
-
-app.use(function(req, res) {
-    res.sendFile('./src/client/index.html');
-});
-
-//var index = path.resolve('./src/client/index.html');
-//app.all('/*', function(req, res) {
-//    res.sendFile(index);
-//});
 
 module.exports = app;
