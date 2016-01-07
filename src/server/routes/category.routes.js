@@ -15,21 +15,19 @@ categorySummary.categories.forEach(c => delete c.Topics);
 
 
     //get
-router.get("/category", function(req, res) {
-    //TODO waiting on database
+router.get("/category", (req, res) => {
     if (!req.query.id) {
-        res.json(categorySummary);
+        res.json(categorySummary)
     } else {
-        // Double Equals since we are comparing Str to Int
         res.json(_.get(_.find(categories, c => c.id == req.query.id), "Topics"))
     }
 });
 
+
     //create
 router.post("/category/:id", function(req, res) {
     //TODO waiting on database
-    console.log(req);
-    res.json(_.find(categories, "id", req.id))
+    res.json({"message": "to come"})
 });
 
     //update
