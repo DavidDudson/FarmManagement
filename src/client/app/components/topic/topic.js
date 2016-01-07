@@ -5,12 +5,12 @@ var _ = require('lodash');
 class TopicCtrl {
     constructor($rootScope, $stateParams) {
         var category = _.find($rootScope.app.categories, {id: _.parseInt($stateParams.top)});
-        var Topic =  _.find(category.Topics, {id: _.parseInt($stateParams.id)});
-        this.title = Topic.title;
-        this.description = Topic.description;
-        this.tutorial = Topic.example;
-        this.test = Topic.test;
-        this.tool = Topic.tool;
+        var topic =  _.find(category.Topics, {id: _.parseInt($stateParams.id)});
+        this.title = topic.title;
+        this.description = topic.description;
+        this.tutorial = topic.example;
+        this.test = topic.test;
+        this.tool = topic.tool;
         this.current = undefined; // Can be undefined, tool, tutorial or test
     }
 }
@@ -18,10 +18,10 @@ class TopicCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("Topic" , {
-                url: '/Topic/{top}/{id}',
-                template: require('./Topic.html'),
+            .state("topic" , {
+                url: '/topic/{top}/{id}',
+                template: require('./topic.html'),
                 controller: TopicCtrl,
-                controllerAs: "Topic"
+                controllerAs: "topic"
             })
     });

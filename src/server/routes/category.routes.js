@@ -16,7 +16,6 @@ categorySummary.categories.forEach(c => delete c.Topics);
 
     //get
 router.get("/category", function(req, res) {
-    console.log(req.query.id);
     //TODO waiting on database
     if (!req.query.id) {
         res.json(categorySummary);

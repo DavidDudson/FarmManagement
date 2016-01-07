@@ -1,11 +1,11 @@
 <titled-card title="category.title" description="category.description">
     <md-list>
-        <md-list-item class="md-3-line" ng-repeat="Topic in category.Topics track by $index">
+        <md-list-item class="md-3-line" ng-repeat="topic in category.topics track by $index">
                 <div class="md-list-item-text" layout="column"
-                     ui-sref="Topic({top: category.id, id : Topic.id})">
+                     ui-sref="topic({top: category.id, id : Topic.id})">
                     <button class="listButton">
-                        <h3>{{ Topic.title }}</h3>
-                        <h4>{{ Topic.description }}</h4>
+                        <h3>{{ topic.title }}</h3>
+                        <h4>{{ topic.description }}</h4>
                     </button>
                 </div>
             <md-divider></md-divider>

@@ -1,12 +1,12 @@
 var _ = require('lodash');
 
 class CategoryCtrl {
-    constructor($rootScope, $scope ,$stateParams) {
+    constructor($rootScope, topics ,$stateParams) {
         var category = _.find($rootScope.app.categories, {id: _.parseInt($stateParams.id)});
         this.title = category.title;
         this.id = category.id;
         this.description = category.description;
-        this.topics = $scope.topicsPromise.data
+        this.topics = topics
     }
 }
 
@@ -19,7 +19,8 @@ angular.module('app')
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topicsPromise : ($http, $stateParams) => $http.get("/category?id=" + $stateParams.id)
+                    topics : ($http, $stateParams) => $http.get("/category?id=" + $stateParams.id)
+                        .then(res => res.data, err => console.log(err))
                 }
             })
     });
