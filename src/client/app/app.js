@@ -25,7 +25,8 @@ class AppCtrl {
         this.isMobile = false;
         this.isAdmin = false;
         this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
-        this.categories = $http.get("/category").then(r => this.categories = r.data.categories, err => console.log(err));
+        this.categoryPromise = $http.get("/category");
+        this.categories = this.categoryPromise.then(r => this.categories = r.data.categories, err => console.log(err));
         $rootScope.app = this;
     }
 
