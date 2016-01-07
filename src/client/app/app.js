@@ -17,7 +17,6 @@ require("./app.scss");
 
 var _ = require('lodash');
 
-
 class AppCtrl {
     constructor($rootScope) {
         this.name = 'farmFINANZ';
@@ -47,24 +46,7 @@ class AppCtrl {
 angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
-require("./components/home/home");
-
-require("./components/question/table/table");
-
-require("./components/question/multichoice/multichoice");
-
-require("./components/question/basic/basic");
-
-require("./components/nav/scroll/scroll");
-
-require("./components/nav/bottom/bottom");
-
-require("./components/card/titled-card/titled-card");
-
-require("./components/card/plain-card/plain-card");
-
-require("./components/category/category");
-
-require("./components/topic/topic");
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");
