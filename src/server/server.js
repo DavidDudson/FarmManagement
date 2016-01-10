@@ -8,7 +8,7 @@ app.use(Express.static(path.resolve('./src/client/')));
 app.use(Express.static(path.resolve('./dist/public')));
 
     //APIs
-app.use("/", require("./routes/topic.routes"));
+    // app.use("/", require("./routes/topic.routes")); TODO Temporarily unused
 app.use("/", require("./routes/category.routes"));
 
     //HTML5 mode enabling route for client-side routing
