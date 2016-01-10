@@ -22,18 +22,18 @@
 
     <div ng-if="topic.current === 'test'" layout="column">
         <p>{{topic.test.description}}</p>
-        <spreadsheet table="topic.test.table" answer="topic.test.answer" ng-if="topic.test.type === 'table'"></spreadsheet>
+        <spreadsheet data="topic.test.table" answer="topic.test.answer" ng-if="topic.test.type === 'table'"></spreadsheet>
         <multichoice options="topic.test.options" answer="topic.test.answer" ng-if="topic.test.type === 'multichoice'"></multichoice>
         <basic answer="topic.test.answer" ng-if="topic.test.type === 'basic'"></basic>
         <md-button class="md-raised md-primary">Check Answer</md-button>
     </div>
     <div ng-if="topic.current === 'tool'">
         <p>{{topic.tool.description}}</p>
-        <spreadsheet table="topic.tool.table" ng-if="topic.tool.type === 'table'"></spreadsheet>
+        <spreadsheet data="topic.tool.table" ng-if="topic.tool.type === 'table'"></spreadsheet>
     </div>
     <div ng-if="topic.current === 'tutorial'">
         <p>{{topic.tutorial.description}}</p>
-        <spreadsheet table="topic.tutorial.table" ng-if="topic.tutorial.type === 'table'"></spreadsheet>
+        <spreadsheet data="topic.tutorial.table" ng-if="topic.tutorial.type === 'table'"></spreadsheet>
         <basic answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'basic'"></basic>
         <multichoice options="topic.tutorial.options" answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'multichoice'"></multichoice>
     </div>

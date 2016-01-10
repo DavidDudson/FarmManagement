@@ -5,9 +5,6 @@ var _ = require('lodash');
 class TopicCtrl {
     constructor($rootScope, $stateParams) {
         var topic =  _.find($rootScope.app.topics, {id: _.parseInt($stateParams.id)});
-        console.log($rootScope.app.topics);
-        console.log($stateParams.id);
-        console.log(topic);
         this.title = topic.title;
         this.description = topic.description;
         this.tutorial = topic.example;

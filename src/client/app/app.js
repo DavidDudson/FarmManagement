@@ -11,6 +11,7 @@ require('angular_material_design_icons');
 var uiRouter = require('angular-ui-router');
 
 var ngTable = require('angular-material-data-table');
+
 require("angular_data_table_css");
 
 require("./app.scss");
