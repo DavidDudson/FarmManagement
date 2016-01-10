@@ -2,7 +2,7 @@
     <md-list>
         <md-list-item class="md-3-line" ng-repeat="topic in category.topics track by $index">
                 <div class="md-list-item-text" layout="column"
-                     ui-sref="topic({top: category.id, id : Topic.id})">
+                     ui-sref="topic({id: topic.id})">
                     <button class="listButton">
                         <h3>{{ topic.title }}</h3>
                         <h4>{{ topic.description }}</h4>
