@@ -1,40 +1,41 @@
-<titled-card title="Topic.title" description="Topic.description" >
-    <div ng-if="Topic.current === undefined" layout="row" layout-align="space-around center" class="md-padding">
+<titled-card title="topic.title" description="topic.description" add="topic.add" remove="topic.remove"
+             help="topic.help" save="topic.save">
+    <div ng-if="topic.current === undefined" layout="row" layout-align="space-around center" class="md-padding">
         <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Tutorial" ng-click="Topic.current = 'tutorial'" ng-disabled="!Topic.tutorial">
+            <md-button class="md-fab" aria-label="Tutorial" ng-click="topic.current = 'tutorial'" ng-disabled="!topic.tutorial">
                 <md-icon> cake </md-icon>
             </md-button>
             <h2>Tutorial</h2>
         </div>
         <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Test" ng-click="Topic.current = 'test'" ng-disabled="!Topic.test">
+            <md-button class="md-fab" aria-label="Test" ng-click="topic.current = 'test'" ng-disabled="!topic.test">
                 <md-icon> cake </md-icon>
             </md-button>
             <h2>Test</h2>
         </div>
         <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Tool" ng-click="Topic.current = 'tool'" ng-disabled="!Topic.tool">
+            <md-button class="md-fab" aria-label="Tool" ng-click="topic.current = 'tool'" ng-disabled="!topic.tool">
                 <md-icon> cake </md-icon>
             </md-button>
             <h2>Tool</h2>
         </div>
     </div>
 
-    <div ng-if="Topic.current === 'test'" layout="column">
-        <p>{{Topic.test.description}}</p>
-        <spreadsheet table="Topic.test.table" answer="Topic.test.answer" ng-if="Topic.test.type === 'table'"></spreadsheet>
-        <multichoice options="Topic.test.options" answer="Topic.test.answer" ng-if="Topic.test.type === 'multichoice'"></multichoice>
-        <basic answer="Topic.test.answer" ng-if="Topic.test.type === 'basic'"></basic>
+    <div ng-if="topic.current === 'test'" layout="column">
+        <p>{{topic.test.description}}</p>
+        <spreadsheet data="topic.test.table" answer="topic.test.answer" ng-if="topic.test.type === 'table'"></spreadsheet>
+        <multichoice options="topic.test.options" answer="topic.test.answer" ng-if="topic.test.type === 'multichoice'"></multichoice>
+        <basic answer="topic.test.answer" ng-if="topic.test.type === 'basic'"></basic>
         <md-button class="md-raised md-primary">Check Answer</md-button>
     </div>
-    <div ng-if="Topic.current === 'tool'">
-        <p>{{Topic.tool.description}}</p>
-        <spreadsheet table="Topic.tool.table" ng-if="Topic.tool.type === 'table'"></spreadsheet>
+    <div ng-if="topic.current === 'tool'">
+        <p>{{topic.tool.description}}</p>
+        <spreadsheet data="topic.tool.table" ng-if="topic.tool.type === 'table'"></spreadsheet>
     </div>
-    <div ng-if="Topic.current === 'tutorial'">
-        <p>{{Topic.tutorial.description}}</p>
-        <spreadsheet table="Topic.tutorial.table" ng-if="Topic.tutorial.type === 'table'"></spreadsheet>
-        <basic answer="Topic.tutorial.answer" ng-if="Topic.tutorial.type === 'basic'"></basic>
-        <multichoice options="Topic.tutorial.options" answer="Topic.tutorial.answer" ng-if="Topic.tutorial.type === 'multichoice'"></multichoice>
+    <div ng-if="topic.current === 'tutorial'">
+        <p>{{topic.tutorial.description}}</p>
+        <spreadsheet data="topic.tutorial.table" ng-if="topic.tutorial.type === 'table'"></spreadsheet>
+        <basic answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'basic'"></basic>
+        <multichoice options="topic.tutorial.options" answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'multichoice'"></multichoice>
     </div>
 </titled-card>

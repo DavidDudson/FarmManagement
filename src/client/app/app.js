@@ -11,6 +11,7 @@ require('angular_material_design_icons');
 var uiRouter = require('angular-ui-router');
 
 var ngTable = require('angular-material-data-table');
+
 require("angular_data_table_css");
 
 require("./app.scss");
@@ -18,35 +19,34 @@ require("./app.scss");
 var _ = require('lodash');
 
 class AppCtrl {
-    constructor($http, $rootScope) {this.name = 'farmFINANZ';
+    constructor($http, $rootScope) {
+        this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
-        this.isAdmin = false;
-        this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
+        this.isAdmin = true;
+        this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         this.categoryPromise = $http.get("/category");
         this.categories = this.categoryPromise.then(r => this.categories = r.data.categories, err => console.log(err));
         $rootScope.app = this;
     }
 
-    addCategory(category) {
-        this.categories.push(category)
+    save() {
+        console.log("Saved"); //Todo
+        this.editable = false;
     }
 
-    removeCategory(category) {
-        _.remove(this.categories, category)
-    }
-
-    getCategory(name) {
-        return _.find(this.categories, q => q.name === name)
+    help() {
+        console.log("Help");
     }
 }
 
 angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
-function requireAll(r) { r.keys().forEach(r); }
+var requireAll = r => r.keys().forEach(r);
+
 requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");

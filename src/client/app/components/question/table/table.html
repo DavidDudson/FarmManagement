@@ -1,22 +1,22 @@
-<md-data-table-container >
-    <table md-data-table md-progress="deferred">
-        <thead md-table-head>
-        <tr>
-            <th md-column-header ng-repeat="heading in [' '].concat(table[' ']) track by $index">{{heading}}</th>
+<md-table-container>
+    <table md-table ng-model="selected" md-progress="deferred">
+        <thead md-head>
+        <tr md-row>
+            <th md-column md-numeric ng-repeat="heading in table.getHeadings() track by $index"><span>{{heading}}</span></th>
         </tr>
         </thead>
-        <tbody>
-        <tr md-auto-select ng-repeat="(key, values) in table track by $index" ng-if="$index > 0">
-            <td ng-repeat="item in [key].concat(values) track by $index">
-                <md-input-container ng-if="app.editable">
-                    <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
-                    <input required type="text" ng-model="table.data[$parent.key][$index - 1]" ng-if="$index > 0">
-                    <input required type="text" ng-model="item" ng-if="$index === 0">
-                </md-input-container>
-                <p ng-if="!app.editable && $index > 0">{{table.calculate(item).value}}</p>
-                <p ng-if="!app.editable && $index === 0">{{item}}</p>
-            </td>
-        </tr>
+        <tbody md-body>
+            <tr md-row ng-repeat="(key, values) in data track by $index" ng-if="$index < table.dataSize - 1">
+                <td md-cell ng-repeat="item in [key].concat(values) track by $index">
+                    <md-input-container ng-if="app.editable">
+                        <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
+                        <input required type="text" ng-model="data[$parent.key][$index - 1]" ng-if="$index > 0">
+                        <input required type="text" ng-model="item" ng-if="$index === 0">
+                    </md-input-container>
+                    <p ng-if="!app.editable && $index > 0">{{table.calculate(item).value}}</p>
+                    <p ng-if="!app.editable && $index === 0">{{item}}</p>
+                </td>
+            </tr>
         </tbody>
     </table>
-</md-data-table-container>
+</md-table-container>
