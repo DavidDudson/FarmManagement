@@ -19,35 +19,41 @@ require("./app.scss");
 var _ = require('lodash');
 
 class AppCtrl {
-    constructor($http, $rootScope) {this.name = 'farmFINANZ';
+    constructor($http, $rootScope) {
+        this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
         this.isAdmin = false;
-        this.images = [require('images/Cows.jpg'),require('images/CowshedDude.jpg')];
+        this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         this.categoryPromise = $http.get("/category");
         this.categories = this.categoryPromise.then(r => this.categories = r.data.categories, err => console.log(err));
         $rootScope.app = this;
     }
 
-    addCategory(category) {
-        this.categories.push(category)
+    addCategory(name) {
+        $http.post('categories', {name: name}).then(res => this.categories.push(res.data), err => console.log(err))
+    }
+
+    updateCategory(category) {
+        $http.put('categories', {category: category})
+            .then(res => _.map(this.categories, cat => cat.id === category.id ? res.data : cat),
+                err => console.log(err))
     }
 
     removeCategory(category) {
-        _.remove(this.categories, category)
-    }
-
-    getCategory(name) {
-        return _.find(this.categories, q => q.name === name)
+        $http.delete('categories', {id: category.id})
+            .then(() => _.remove(this.categories, {id: category.id},
+                err => console.log(err)))
     }
 }
 
 angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
     .controller('AppCtrl', AppCtrl);
 
-function requireAll(r) { r.keys().forEach(r); }
+var requireAll = r => r.keys().forEach(r);
+
 requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");
