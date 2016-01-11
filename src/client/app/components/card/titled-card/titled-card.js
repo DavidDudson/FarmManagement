@@ -8,7 +8,10 @@ class CardDirective {
         this.transclude = true;
         this.scope = {
             title: '=',
-            description: '='
+            description: '=',
+            save: '=',
+            remove: '=',
+            help: '='
         }
     }
 }

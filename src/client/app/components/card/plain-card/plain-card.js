@@ -6,6 +6,11 @@ class CardDirective {
         this.restrict = 'E';
         this.replace = true;
         this.transclude = true;
+        this.scope = {
+            save: '=',
+            remove: '=',
+            help: '='
+        }
     }
 }
 
