@@ -8,9 +8,8 @@ var ngMaterial = require('angular-material');
 require('angular_material_css');
 require('angular_material_design_icons');
 
-var uiRouter = require('angular-ui-router');
-
-var ngTable = require('angular-material-data-table');
+require('angular-ui-router');
+require('angular-material-data-table');
 
 require("angular_data_table_css");
 
@@ -42,7 +41,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngTable, ngAnimate, ngMaterial, uiRouter])
+angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table'])
     .controller('AppCtrl', AppCtrl);
 
 var requireAll = r => r.keys().forEach(r);
