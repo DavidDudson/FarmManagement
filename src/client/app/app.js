@@ -34,6 +34,7 @@ class AppCtrl {
 
     save() {
         console.log("Saved"); //Todo
+        this.editable = false;
     }
 
     help() {

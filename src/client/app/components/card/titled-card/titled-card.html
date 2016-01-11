@@ -24,7 +24,7 @@
             <md-button ng-if="app.editable && !!add" ng-click="add()">Add</md-button>
             <md-button ng-if="app.editable && !!remove" ng-click="remove()">Delete</md-button>
             <md-button ng-if="app.editable && !!help" ng-click="help()">Help</md-button>
-            <md-button ng-click="app.editable=!app.editable">{{app.editable ? "Save" : "Edit"}}</md-button>
+            <md-button ng-click="app.editable ? save() : app.editable = true">{{app.editable ? "Save" : "Edit"}}</md-button>
         </md-card-actions>
     </md-card>
 </md-content>

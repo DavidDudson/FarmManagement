@@ -1,6 +1,7 @@
 var _ = require('lodash');
 
 var HTTP = undefined;
+var ROOT = undefined;
 
 class CategoryCtrl {
     constructor($http, $rootScope, topics, $stateParams) {
@@ -10,24 +11,26 @@ class CategoryCtrl {
         this.description = this.category.description;
         this.topics = topics;
         HTTP = $http;
+        ROOT = $rootScope;
         $rootScope.app.topics = this.topics;
     }
 
     add() {
         HTTP.post('categories', {name: "New Category"})
-            .then(res => this.categories.push(res.data),
+            .then(res => ROOT.categories.push(res.data),
                 err => console.log(err))
     }
 
     save() {
         HTTP.put('categories', {category: this.category})
-            .then(res => _.map(this.categories, cat => cat.id === this.category.id ? res.data : cat),
+            .then(res => _.map(ROOT.categories, cat => cat.id === this.category.id ? res.data : cat),
                 err => console.log(err))
+            ROOT.app.editable = false;
     }
 
     remove() {
         HTTP.delete('categories', {id: this.category.id})
-            .then(() => _.remove(this.categories, {id: this.category.id},
+            .then(() => _.remove(ROOT.categories, {id: this.category.id},
                 err => console.log(err)))
     }
 }

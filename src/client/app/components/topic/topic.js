@@ -4,6 +4,7 @@ var _ = require('lodash');
 
 var HTTP = undefined;
 var LOCATION = undefined;
+var ROOT = undefined;
 
 class TopicCtrl {
     constructor($location, $http, $rootScope, $stateParams) {
@@ -17,6 +18,7 @@ class TopicCtrl {
         this.current = undefined; // Can be undefined, tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
+        ROOT = $rootScope;
     }
 
     add() {
@@ -38,6 +40,8 @@ class TopicCtrl {
         HTTP.put("/topic", this.topic)
             .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
                 err => console.log(err));
+        ROOT.app.editable = false;
+
     }
 }
 
