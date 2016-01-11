@@ -4,6 +4,7 @@
             <md-content ng-transclude>
 
             </md-content>
+            <bottom-nav class="md-padding"></bottom-nav>
             <md-card-actions layout="row" layout-align="end center" ng-if="!app.isAdmin">
                 <md-button ng-if="app.editable && !!add" ng-click="add()">Add</md-button>
                 <md-button ng-if="app.editable && !!remove" ng-click="remove()">Delete</md-button>
