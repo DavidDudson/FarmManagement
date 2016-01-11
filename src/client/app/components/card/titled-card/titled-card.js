@@ -9,9 +9,10 @@ class CardDirective {
         this.scope = {
             title: '=',
             description: '=',
-            save: '=',
-            remove: '=',
-            help: '='
+            save: '=?',
+            add: '=?',
+            remove: '=?',
+            help: '=?'
         }
     }
 }

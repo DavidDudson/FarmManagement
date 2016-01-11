@@ -1,13 +1,34 @@
 var _ = require('lodash');
 
+var HTTP = undefined;
+
 class CategoryCtrl {
-    constructor($rootScope, topics, $stateParams) {
-        var category = _.find($rootScope.app.categories, {id: _.parseInt($stateParams.id)});
-        this.title = category.title;
-        this.id = category.id;
-        this.description = category.description;
+    constructor($http, $rootScope, topics, $stateParams) {
+        this.category = _.find($rootScope.app.categories, {id: _.parseInt($stateParams.id)});
+        this.title = this.category.title;
+        this.id = this.category.id;
+        this.description = this.category.description;
         this.topics = topics;
+        HTTP = $http;
         $rootScope.app.topics = this.topics;
+    }
+
+    add() {
+        HTTP.post('categories', {name: "New Category"})
+            .then(res => this.categories.push(res.data),
+                err => console.log(err))
+    }
+
+    save() {
+        HTTP.put('categories', {category: this.category})
+            .then(res => _.map(this.categories, cat => cat.id === this.category.id ? res.data : cat),
+                err => console.log(err))
+    }
+
+    remove() {
+        HTTP.delete('categories', {id: this.category.id})
+            .then(() => _.remove(this.categories, {id: this.category.id},
+                err => console.log(err)))
     }
 }
 

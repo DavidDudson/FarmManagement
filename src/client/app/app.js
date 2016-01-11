@@ -32,20 +32,12 @@ class AppCtrl {
         $rootScope.app = this;
     }
 
-    addCategory(name) {
-        $http.post('categories', {name: name}).then(res => this.categories.push(res.data), err => console.log(err))
+    save() {
+        console.log("Saved"); //Todo
     }
 
-    updateCategory(category) {
-        $http.put('categories', {category: category})
-            .then(res => _.map(this.categories, cat => cat.id === category.id ? res.data : cat),
-                err => console.log(err))
-    }
-
-    removeCategory(category) {
-        $http.delete('categories', {id: category.id})
-            .then(() => _.remove(this.categories, {id: category.id},
-                err => console.log(err)))
+    help() {
+        console.log("Help");
     }
 }
 

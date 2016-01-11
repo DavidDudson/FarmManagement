@@ -20,7 +20,7 @@
         <md-divider></md-divider>
         <md-content ng-transclude layout="column">
         </md-content>
-        <md-card-actions layout="row" layout-align="end center" ng-if="app.isAdmin">
+        <md-card-actions layout="row" layout-align="end center" ng-if="!app.isAdmin">
             <md-button ng-if="app.editable && !!add" ng-click="add()">Add</md-button>
             <md-button ng-if="app.editable && !!remove" ng-click="remove()">Delete</md-button>
             <md-button ng-if="app.editable && !!help" ng-click="help()">Help</md-button>

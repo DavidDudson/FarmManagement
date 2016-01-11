@@ -4,11 +4,11 @@
             <md-content ng-transclude>
 
             </md-content>
-            <md-card-actions layout="row" layout-align="end center" ng-if="app.isAdmin">
+            <md-card-actions layout="row" layout-align="end center" ng-if="!app.isAdmin">
                 <md-button ng-if="app.editable && !!add" ng-click="add()">Add</md-button>
                 <md-button ng-if="app.editable && !!remove" ng-click="remove()">Delete</md-button>
                 <md-button ng-if="app.editable && !!help" ng-click="help()">Help</md-button>
-                <md-button ng-click="app.editable=!app.editable">{{app.editable ? "Save" : "Edit"}}</md-button>
+                <md-button ng-click="save()">{{app.editable ? "Save" : "Edit"}}</md-button>
             </md-card-actions>
         </md-card>
     </div>
