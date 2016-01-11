@@ -6,10 +6,9 @@
     </head>
     <body ng-controller="AppCtrl as app" layout="column" layout-align="center center">
         <div class="iframe">
-            <div class="app" ng-init="app.populateCategories()">
+            <div class="app">
                 <nav-scroll layout-padding></nav-scroll>
                 <div ui-view ng-cloak></div>
-                <nav-footer></nav-footer>
             </div>
         </div>
         <script src="./bundle.js"></script>
