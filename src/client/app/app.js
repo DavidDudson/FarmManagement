@@ -25,7 +25,7 @@ class AppCtrl {
         this.yearOfCreation = 2015;
         this.editable = false;
         this.isMobile = false;
-        this.isAdmin = false;
+        this.isAdmin = true;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         this.categoryPromise = $http.get("/category");
         this.categories = this.categoryPromise.then(r => this.categories = r.data.categories, err => console.log(err));
