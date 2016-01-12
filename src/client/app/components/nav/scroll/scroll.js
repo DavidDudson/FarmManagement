@@ -14,7 +14,7 @@ class ScrollCtrl {
         // HACK: Dont init the controller until we are certain that the categories are available
         // Categories should really be in a service
         $rootScope.app.categoryPromise.then(() => {
-            this.index = 0;
+            this.index = undefined;
             this.displayCount = 5;
 
             this.centerIndex = function (id) {
