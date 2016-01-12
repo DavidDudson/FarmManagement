@@ -1,5 +1,5 @@
 <nav>
-    <md-list class="nav-list md-no-style" layout="row" layout-align="space-between center"> <!-- main display nav -->
+    <md-list class="nav-list" layout="row" layout-align="space-between center"> <!-- main display nav -->
         <md-list-item ng-if="!app.isMobile"> <!-- left control div -->
             <md-button ng-click="nav.scrollLeft()" class="nav-arrow">
                 <md-icon> keyboard_arrow_left </md-icon>
@@ -7,6 +7,11 @@
         </md-list-item>
         <md-list-item ng-repeat="category in nav.selected() track by $index">
             <md-button ui-sref-active="active" class="md-raised nav-tile"  ng-click="nav.centerIndex(category.id)" ui-sref="top({ id: category.id })">{{category.title}}</md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-button class="md-raised nav-tile" aria-label="Add">
+                <md-icon>add_circle_outline</md-icon>
+            </md-button>
         </md-list-item>
         <md-list-item ng-if="!app.isMobile"> <!-- left control div -->
             <md-button ng-click="nav.scrollRight()" class="nav-arrow">
