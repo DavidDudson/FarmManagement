@@ -22,12 +22,12 @@ class Success {
 
 function calculate(expression, table) {
     if (_.isUndefined(expression) || _.isUndefined(table)) {
-        console.error("Table or expression undefined")
-        console.log(table)
+        console.error("Table or expression undefined");
+        console.log(table);
         console.log(expression)
     } else if (/^\d+$/.test(expression)) {
         return new Success(expression);
-    } else if (expression.trim() === "") {
+    } else if (expression.trim() === "" || /^\?/.test(expression)) {
         return new Success("");
     } else {
         return _parseExpression(expression, table);
