@@ -1,26 +1,5 @@
 <titled-card title="topic.title" description="topic.description" add="topic.add" remove="topic.remove"
              help="topic.help" save="topic.save">
-    <div ng-if="topic.current === undefined" layout="row" layout-align="space-around center" class="md-padding">
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Tutorial" ng-click="topic.current = 'tutorial'" ng-disabled="!topic.tutorial">
-                <md-icon> cake </md-icon>
-            </md-button>
-            <h2>Tutorial</h2>
-        </div>
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Test" ng-click="topic.current = 'test'" ng-disabled="!topic.test">
-                <md-icon> cake </md-icon>
-            </md-button>
-            <h2>Test</h2>
-        </div>
-        <div layout="column" layout-align="center center">
-            <md-button class="md-fab" aria-label="Tool" ng-click="topic.current = 'tool'" ng-disabled="!topic.tool">
-                <md-icon> cake </md-icon>
-            </md-button>
-            <h2>Tool</h2>
-        </div>
-    </div>
-
     <div ng-if="topic.current === 'test'" layout="column">
         <p>{{topic.test.description}}</p>
         <spreadsheet data="topic.test.table" answer="topic.test.answer" ng-if="topic.test.type === 'table'"></spreadsheet>

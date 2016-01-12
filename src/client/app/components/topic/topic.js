@@ -15,7 +15,7 @@ class TopicCtrl {
         this.tutorial = this.topic.example;
         this.test = this.topic.test;
         this.tool = this.topic.tool;
-        this.current = undefined; // Can be undefined, tool, tutorial or test
+        this.current = 'tutorial'; // Can be undefined, tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
         ROOT = $rootScope;
