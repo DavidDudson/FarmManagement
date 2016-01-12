@@ -1,3 +1,5 @@
+@import "~app/colours";
+
 ol, li {
   margin: 0;
   padding: 0;
@@ -8,10 +10,18 @@ ol, li {
 }
 
 .nav-tile {
+  button[disabled] {
+    background-color: darken($MasseyBlue, 0%);
+  }
   height : 80px;
   width: 100%;
   max-width: none;
   white-space: normal;
+}
+
+.nav-sref {
+  height : 80px;
+  min-height: 0;
 }
 
 .nav-arrow {

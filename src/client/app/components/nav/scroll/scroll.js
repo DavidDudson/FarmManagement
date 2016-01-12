@@ -15,7 +15,7 @@ class ScrollCtrl {
         // Categories should really be in a service
         $rootScope.app.categoryPromise.then(() => {
             this.index = undefined;
-            this.displayCount = 5;
+            this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
 
             this.centerIndex = function (id) {
                 this.index = id;
@@ -35,10 +35,11 @@ class ScrollCtrl {
             };
             this.selected = function () {
                 var first = $rootScope.app.categories.slice(this.index);
-                if (first.length > this.displayCount) {
-                    first = first.slice(0, this.displayCount);
-                } else if (first.length < this.displayCount) {
-                    var toAdd = this.displayCount - first.length;
+                var displayCount = this.displayCount();
+                if (first.length > displayCount) {
+                    first = first.slice(0, displayCount);
+                } else if (first.length < displayCount) {
+                    var toAdd = displayCount - first.length;
                     var second = $rootScope.app.categories.slice(0, toAdd);
                     first = first.concat(second);
                 }

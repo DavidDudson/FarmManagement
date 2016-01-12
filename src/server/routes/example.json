@@ -31,7 +31,7 @@
                 "Family Labour & Management": ["40000 to 50000 inc 1000"],
                 "Operating Expenses": ["? 32183821903"],
                 "Operating Profit": ["? 32183821903"],
-                "Operating Profit Margin": ["? 32183821903"],
+                "Operating Profit Margin": ["? 32183821903"]
               }
             }
           ]
@@ -60,6 +60,10 @@
           "id": 0
         }
       ]
-    }
+    },
+    {"title": "Income", "id": 1},
+    {"title": "Liquidity", "id": 2},
+    {"title": "Profitability", "id": 3},
+    {"title": "Wealth", "id": 4}
   ]
 }

@@ -1,21 +1,21 @@
 <nav>
     <md-list layout="row" layout-align="space-between start" flex> <!-- main display nav -->
-        <md-list-item ng-if="!app.isMobile"> <!-- left control div -->
+        <md-list-item ng-if="$root.app.isMobile === false"> <!-- left control div -->
             <md-button ng-click="nav.scrollLeft()" class="nav-arrow">
                 <md-icon> keyboard_arrow_left </md-icon>
             </md-button>
         </md-list-item>
-        <md-list-item ng-repeat="category in nav.selected() track by $index" flex="15">
-            <a ui-sref="top({ id: category.id })" ng-click="nav.centerIndex(category.id)">
+        <md-list-item ng-repeat="category in nav.selected() track by $index" flex="15" layout="row" layout-align="stretch center">
+            <a ng-disabled="nav.index === category.id" class="nav-sref" ui-sref="top({ id: category.id })" ng-click="nav.centerIndex(category.id)" layout-fill>
                 <md-button ng-disabled="nav.index === category.id" class="md-padding md-raised nav-tile">{{category.title}}</md-button>
             </a>
         </md-list-item>
-        <md-list-item flex="15">
+        <md-list-item flex="15" ng-if="$root.app.editable">
             <md-button class="add md-raised nav-tile" aria-label="Add">
                 <md-icon>add_circle_outline</md-icon>
             </md-button>
         </md-list-item>
-        <md-list-item ng-if="!app.isMobile"> <!-- left control div -->
+        <md-list-item ng-if="$root.app.isMobile === false"> <!-- left control div -->
             <md-button ng-click="nav.scrollRight()" class="nav-arrow">
                 <md-icon> keyboard_arrow_right </md-icon>
             </md-button>
