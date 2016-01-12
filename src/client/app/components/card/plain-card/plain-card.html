@@ -5,13 +5,13 @@
 
             </md-content>
             <bottom-nav class="md-padding"></bottom-nav>
-            <md-card-actions layout="row" layout-align="end center" ng-if="!app.isAdmin">
-                <md-button ng-if="app.editable && !!add" ng-click="add()">Add</md-button>
-                <md-button ng-if="app.editable && !!remove" ng-click="remove()">Delete</md-button>
-                <md-button ng-if="app.editable && !!help" ng-click="help()">Help</md-button>
-                <md-button ng-if="app.editable" ng-click="app.editable = false">Cancel</md-button>
-                <md-button ng-click="app.editable ? save() : app.editable = true">{{app.editable ? "Save" : "Edit"}}</md-button>
-            </md-card-actions>
+            <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true">
+                <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
+                <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
+                <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>
+                <md-button ng-if="$root.app.editable" ng-click="$root.app.editable = false">Cancel</md-button>
+                <md-button ng-click="$root.app.editable ? save() : $root.app.editable = true">{{$root.app.editable == true ? "Save" : "Edit"}}</md-button>
+            </md-card-action>
         </md-card>
     </div>
 </md-content>
