@@ -53,6 +53,7 @@
     "style-loader": "latest",
     "ui-router": "latest",
     "url-loader": "latest",
+    "v-accordion": "^1.4.1",
     "walk": "latest",
     "webpack": "latest",
     "webpack-notifier": "latest"

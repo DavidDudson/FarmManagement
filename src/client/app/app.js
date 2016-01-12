@@ -9,8 +9,11 @@ require('angular_material_css');
 require('angular_material_design_icons');
 
 require('angular-ui-router');
-require('angular-material-data-table');
 
+require('accordion');
+require('accordion_css');
+
+require('angular-material-data-table');
 require("angular_data_table_css");
 
 require("./app.scss");
@@ -41,7 +44,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table'])
+angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion'])
     .controller('AppCtrl', AppCtrl);
 
 var requireAll = r => r.keys().forEach(r);

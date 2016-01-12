@@ -44,7 +44,9 @@ module.exports = {
             angular_material_css: "angular-material/angular-material.min.css",
             angular_data_table_css: "angular-material-data-table/dist/md-data-table.css",
             angular_carousel_css: "angular-carousel/src/css/angular-carousel.scss",
-            angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss"
+            angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss",
+            accordion: "v-accordion/dist/v-accordion.min.js",
+            accordion_css: "v-accordion/dist/v-accordion.min.css"
         },
         extensions: ['', '.js', '.scss', 'css', 'html']
     },
