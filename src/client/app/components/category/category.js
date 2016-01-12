@@ -12,7 +12,7 @@ class CategoryCtrl {
         this.id = this.category.id;
         this.description = this.category.description;
         this.topics = topics;
-        $rootScope.app.topics = this.category.topics;
+        $rootScope.app.topics = topics;
         HTTP = $http;
         ROOT = $rootScope;
     }

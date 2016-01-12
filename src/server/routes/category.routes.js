@@ -11,7 +11,7 @@ var _ = require('lodash');
 var categories = JSON.parse(JSON.stringify(example)).categories;
 
 var categorySummary = JSON.parse(JSON.stringify(example));
-categorySummary.categories.forEach(c => delete c.Topics);
+categorySummary.categories.forEach(c => delete c.topics);
 
 
     //get
@@ -19,7 +19,7 @@ router.get("/category", (req, res) => {
     if (!req.query.id) {
         res.json(categorySummary)
     } else {
-        res.json(_.get(_.find(categories, c => c.id == req.query.id), "Topics"))
+        res.json(_.get(_.find(categories, c => c.id == req.query.id), "topics"))
     }
 });
 
