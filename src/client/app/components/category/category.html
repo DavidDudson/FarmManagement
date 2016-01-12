@@ -1,13 +1,22 @@
 <titled-card title="category.title" description="category.description" add="category.add"
              remove="category.remove" help="category.help" save="category.save">
     <v-accordion>
-
-        <!-- add expanded attribute to open the section -->
-        <v-pane ng-repeat="topic in category.topics track by $index" layout="column" layout-align="start start">
+        <v-pane ng-repeat="topic in category.topics track by $index">
             <v-pane-header>
-                <md-button class="md-no-style md-list-item-text">
-                    <h3>{{ topic.title }}</h3>
-                    <h4 ng-if="topic.description">{{ topic.description }}</h4>
+                <md-button class="md-no-style md-list-item-text" layout="row">
+                    <div flex="70">
+                        <h3>{{ topic.title }}</h3>
+                        <h4 ng-if="topic.description">{{ topic.description }}</h4>
+                    </div>
+                    <md-button flex="10">
+                        <md-icon>cake</md-icon>
+                    </md-button>
+                    <md-button flex="10">
+                        <md-icon>cake</md-icon>
+                    </md-button>
+                    <md-button flex="10">
+                        <md-icon>cake</md-icon>
+                    </md-button>
                 </md-button>
             </v-pane-header>
             <v-pane-content>
