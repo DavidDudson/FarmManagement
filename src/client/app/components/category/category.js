@@ -1,4 +1,4 @@
-require('./category.scss')
+require('./category.scss');
 
 var _ = require('lodash');
 
@@ -12,9 +12,9 @@ class CategoryCtrl {
         this.id = this.category.id;
         this.description = this.category.description;
         this.topics = topics;
+        $rootScope.app.topics = this.category.topics;
         HTTP = $http;
         ROOT = $rootScope;
-        $rootScope.app.topics = this.topics;
     }
 
     add() {
@@ -26,7 +26,7 @@ class CategoryCtrl {
     save() {
         HTTP.put('categories', {category: this.category})
             .then(res => _.map(ROOT.categories, cat => cat.id === this.category.id ? res.data : cat),
-                err => console.log(err))
+                err => console.log(err));
             ROOT.app.editable = false;
     }
 

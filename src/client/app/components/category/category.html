@@ -5,7 +5,7 @@
             <a class="li" ui-sref="topic({id: topic.id})">
                 <md-button class="md-no-style md-list-item-text">
                     <h3>{{ topic.title }}</h3>
-                    <h4>{{ topic.description }}</h4>
+                    <h4 ng-if="topic.description">{{ topic.description }}</h4>
                 </md-button>
             </a>
             <md-divider></md-divider>

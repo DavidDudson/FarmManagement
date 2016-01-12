@@ -4,13 +4,13 @@
             <md-card-title-text>
                 <div ng-if="$root.app.editable === false" layout="column">
                     <span class="md-headline">{{title}}</span>
-                    <span class="md-subhead">{{description}}</span>
+                    <span class="md-subhead" ng-if="description">{{description}}</span>
                 </div>
                 <md-input-container ng-if="$root.app.editable === true">
                     <label>Title</label>
                     <input required type="text" ng-model="title">
                 </md-input-container>
-                <md-input-container ng-if="$root.app.editable === true">
+                <md-input-container ng-if="$root.app.editable === true && description">
                     <label>Description</label>
                     <textarea ng-model="description" md-maxlength="150"></textarea>
                 </md-input-container>
