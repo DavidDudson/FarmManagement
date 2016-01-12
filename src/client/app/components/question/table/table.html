@@ -3,10 +3,10 @@
         <thead md-head>
             <tr md-row>
                 <th md-column md-numeric ng-repeat="heading in table.getHeadings() track by $index">
-                    <span ng-if="$root.app.editable === false">{{heading}}</span>
+                    <span class="tableHeading" ng-if="$root.app.editable === false">{{heading}}</span>
                     <md-input-container ng-if="$root.app.editable == true">
                         <label>Row {{$index + 1}} Heading</label>
-                        <input required ng-model="heading" type="text">
+                        <input class="tableHeading" required ng-model="heading" type="text">
                     </md-input-container>
                 </th>
             </tr>
@@ -17,11 +17,11 @@
                     <md-input-container ng-if="$root.app.editable == true">
                         <label ng-if="$index > 0">{{table.calculate(item).value}}</label>
                         <input required type="text" ng-model="data[$parent.key][$index - 1]" ng-if="$index > 0">
-                        <input required type="text" ng-model="item" ng-if="$index === 0">
+                        <input class="tableHeading" required type="text" ng-model="item" ng-if="$index === 0">
                     </md-input-container>
+                    <p class="tableHeading" ng-if="$root.app.editable === false && $index === 0">{{item}}</p>
                     <p ng-if="$root.app.editable === false && $index > 0 && item[0] != '?'">{{table.calculate(item).value}}</p>
-                    <p ng-if="$root.app.editable === false && $index === 0">{{item}}</p>
-                    <md-input-container ng-if="item[0] == '?' && $root.app.editable === false">
+                    <md-input-container ng-if="item[0] == '?' && $root.app.editable === false && $index > 0">
                         <!--TODO ng-model-->
                         <input required type="text">
                     </md-input-container>
