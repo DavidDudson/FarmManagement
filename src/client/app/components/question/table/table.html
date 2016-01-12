@@ -9,6 +9,11 @@
                         <input class="tableHeading" required ng-model="heading" type="text">
                     </md-input-container>
                 </th>
+                <th md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
+                    <md-button class="md-icon-button" aria-label="Add">
+                        <md-icon>add_circle_outline</md-icon>
+                    </md-button>
+                </th>
             </tr>
         </thead>
         <tbody md-body>
@@ -26,7 +31,27 @@
                         <input required type="text">
                     </md-input-container>
                 </td>
+                <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
+                    <md-button class="md-icon-button" aria-label="Add">
+                        <md-icon>add_circle_outline</md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Remove">
+                        <md-icon>remove_circle_outline</md-icon>
+                    </md-button>
+                </td>
             </tr>
         </tbody>
+        <tfoot md-foot ng-if="$root.app.editable" >
+            <tr md-row>
+                <td ng-repeat="items in table.getTableWidthAsArray() track by $index" layout="row" layout-align="center center">
+                    <md-button class="md-icon-button" aria-label="Add">
+                        <md-icon>add_circle_outline</md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Remove" ng-if="$index > 0">
+                        <md-icon>remove_circle_outline</md-icon>
+                    </md-button>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 </md-table-container>
