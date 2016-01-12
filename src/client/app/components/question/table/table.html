@@ -33,10 +33,10 @@
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
-                        <md-icon>add_circle_outline</md-icon>
+                        <md-icon class="add">add_circle_outline</md-icon>
                     </md-button>
                     <md-button class="md-icon-button" aria-label="Remove">
-                        <md-icon>remove_circle_outline</md-icon>
+                        <md-icon class="remove">remove_circle_outline</md-icon>
                     </md-button>
                 </td>
             </tr>
@@ -45,10 +45,10 @@
             <tr md-row>
                 <td ng-repeat="items in table.getTableWidthAsArray() track by $index" layout="row" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
-                        <md-icon>add_circle_outline</md-icon>
+                        <md-icon class="add">add_circle_outline</md-icon>
                     </md-button>
                     <md-button class="md-icon-button" aria-label="Remove" ng-if="$index > 0">
-                        <md-icon>remove_circle_outline</md-icon>
+                        <md-icon class="remove">remove_circle_outline</md-icon>
                     </md-button>
                 </td>
             </tr>
