@@ -12,10 +12,9 @@ class TopicCtrl {
         this.id = this.topic.id;
         this.title = this.topic.title;
         this.description = this.topic.description;
-        this.tutorial = this.topic.example;
-        this.test = this.topic.test;
-        this.tool = this.topic.tool;
-        this.current = 'tutorial'; // Can be undefined, tool, tutorial or test
+        this.questions = this.topic.questions;
+        this.question = this.topic.questions[_.parseInt($stateParams.questionId)];
+        this.current = $stateParams.questionId ? $stateParams.questionId : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
         ROOT = $rootScope;
@@ -49,7 +48,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("topic" , {
-                url: '/topic/{id}',
+                url: '/topic/{id}/{questionId}/{part}',
                 template: require('./topic.html'),
                 controller: TopicCtrl,
                 controllerAs: "topic",
