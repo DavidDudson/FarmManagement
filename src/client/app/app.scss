@@ -34,11 +34,6 @@ body {
     .hidden {
       visibility: hidden;
     }
-
-    // HACK to add button background colour back in on hover in list
-    md-list md-list-item button.md-button:not([disabled]):hover {
-      background-color: rgba(158, 158, 158, 0.2);
-    }
   }
 
   img.ng-hide-add, img.ng-hide-remove {

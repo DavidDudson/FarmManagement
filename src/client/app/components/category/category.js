@@ -1,3 +1,5 @@
+require('./category.scss')
+
 var _ = require('lodash');
 
 var HTTP = undefined;

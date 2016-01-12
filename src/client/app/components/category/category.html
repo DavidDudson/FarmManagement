@@ -1,14 +1,13 @@
 <titled-card title="category.title" description="category.description" add="category.add"
              remove="category.remove" help="category.help" save="category.save">
     <md-list>
-        <md-list-item class="md-3-line" ng-repeat="topic in category.topics track by $index">
-                <div class="md-list-item-text" layout="column"
-                     ui-sref="topic({id: topic.id})">
-                    <button class="listButton">
-                        <h3>{{ topic.title }}</h3>
-                        <h4>{{ topic.description }}</h4>
-                    </button>
-                </div>
+        <md-list-item class="md-2-line" ng-repeat="topic in category.topics track by $index" layout="column" layout-align="start center">
+            <a ui-sref="topic({id: topic.id})" layout-fill>
+                <md-button class="md-no-style md-list-item-text" layout-fill>
+                    <h3>{{ topic.title }}</h3>
+                    <h4>{{ topic.description }}</h4>
+                </md-button>
+            </a>
             <md-divider></md-divider>
         </md-list-item>
     </md-list>
