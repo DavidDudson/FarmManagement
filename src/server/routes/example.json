@@ -1,192 +1,38 @@
 {
   "categories": [
     {
-      "title": "Example Category 1",
+      "title": "Financial",
       "id": 0,
-      "description": "This is a category that shows Topic types",
-      "Topics": [
+      "topics": [
         {
-          "title": "Example Topic 1",
-          "id": 1,
-          "description": "Test your maths knowledge",
-          "example": {
-            "type": "table",
-            "title": "Example 123",
-            "description": "Calculate 1 + 2",
-            "table": {
-              " ": [
-                1,
-                2,
-                3,
-                4,
-                5
-              ],
-              "1": [
-                2,
-                3,
-                4,
-                5,
-                6
-              ],
-              "2": [
-                3,
-                4,
-                5,
-                6,
-                7
-              ],
-              "3": [
-                4,
-                5,
-                6,
-                7,
-                8
-              ],
-              "4": [
-                5,
-                6,
-                7,
-                8,
-                9
-              ],
-              "5": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            "answer": 3
-          },
-          "test": {
-            "type": "table",
-            "title": "Test",
-            "description": "What is 1 + 2",
-            "table": {
-              " ": [
-                1,
-                2,
-                3,
-                4,
-                5
-              ],
-              "1": [
-                2,
-                "? 3",
-                4,
-                5,
-                6
-              ],
-              "2": [
-                "? 3",
-                4,
-                5,
-                6,
-                7
-              ],
-              "3": [
-                4,
-                5,
-                6,
-                7,
-                8
-              ],
-              "4": [
-                5,
-                6,
-                7,
-                8,
-                9
-              ],
-              "5": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            "answer": 3
-          },
-          "calculator": {
-            "type": "table",
-            "title": "Test",
-            "description": "What is 1 + 2",
-            "table": {
-              " ": [
-                1,
-                2,
-                3,
-                4,
-                5
-              ],
-              "1": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "2": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "3": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "4": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "5": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ]
+          "title": "Operating Profit Margin",
+          "id": 0,
+          "questions": [{
+            "title" : "Basic Operating Profit Margin",
+            "question": "A farmer receives a gross farm income of 448589 and incurs operating expenses of 184959. His expenses on rent are 44028. What is his opertaing profit margin?",
+            "table" : {
+              "Gross Farm Income" : ["400000 to 600000 inc 20000"],
+              "Operating Expenses" : ["170000 to 250000 inc 15000"],
+              "Operating Profit" : ["? 263630"],
+              "Operating Profit Margin" : ["58.8%"]
             }
-          }
+          }]
         },
         {
-          "title": "Example Topic 2",
-          "id": 2,
-          "description": "Test your maths knowledge",
-          "example": {
-            "type": "basic",
-            "title": "Example",
-            "description": "Calculate 5 + 3",
-            "answer": 2
-          },
-          "test": {
-            "type": "basic",
-            "title": "Test",
-            "description": "What is 7 + 2",
-            "answer": 5
-          }
+          "title": "Asset Turnover Ratio",
+          "id": 1
         },
         {
-          "title": "Example Topic 3",
-          "id": 3,
-          "description": "Test your maths knowledge",
-          "example": {
-            "type": "multichoice",
-            "title": "Example",
-            "description": "What is 5 + 3",
-            "options": [0, 21, 5, 15],
-            "answer": 15
-          }
+          "title": "Return On Assets",
+          "id": 2
+        },
+        {
+          "title": "Return On Equity",
+          "id": 3
+        },
+        {
+          "title": "Cost Of Production",
+          "id": 0
         }
       ]
     }
