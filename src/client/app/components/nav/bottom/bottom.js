@@ -1,3 +1,5 @@
+require('./bottom.scss');
+
 class BottomDirective {
     constructor() {
         this.template = require('./bottom.html');
