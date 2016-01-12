@@ -7,34 +7,59 @@
         {
           "title": "Operating Profit Margin",
           "id": 0,
-          "questions": [{
-            "title" : "Basic Operating Profit Margin",
-            "question": "A farmer receives a gross farm income of 448589 and incurs operating expenses of 184959. His expenses on rent are 44028. What is his opertaing profit margin?",
-            "table" : {
-              "Gross Farm Income" : ["400000 to 600000 inc 20000"],
-              "Operating Expenses" : ["170000 to 250000 inc 15000"],
-              "Operating Profit" : ["? 263630"],
-              "Operating Profit Margin" : ["58.8%"]
+          "questions": [
+            {
+              "title": "Basic Operating Profit Margin",
+              "question": "A farmer receives a gross farm income of 448589 and incurs operating expenses of 184959. His expenses on rent are 44028. What is his operating profit margin?",
+              "table": {
+                "Gross Farm Income": ["400000 to 600000 inc 20000"],
+                "Operating Expenses": ["170000 to 250000 inc 15000"],
+                "Operating Profit": ["? 263630"],
+                "Operating Profit Margin": ["? 58.8%"]
+              }
+            }, {
+              "title": "Advanced Operating Profit Margin",
+              "question": "A farmer receives a total income of 445391, which includes a loss from rental properties of -3198. The net profit for the business is 207942. Expenses on interest & rent are 58462 & 44028 respectively. Given that the value of unpaid family labour and management is 50000. What is his operating profit margin ?",
+              "table": {
+                "Total Income": ["400000 to 500000 inc 20000"],
+                "Income From Rental Properties": ["-5000 to 5000 inc 1000"],
+                "Gross Farm Income": ["? 32132131"],
+                "Net Profit": ["190000 to 250000 inc 15000"],
+                "Total Expenses": ["? 3219839201"],
+                "Interest": ["45000 to 60000 inc 5000"],
+                "Rent": ["40000 to 50000 inc 1000"],
+                "Family Labour & Management": ["40000 to 50000 inc 1000"],
+                "Operating Expenses": ["? 32183821903"],
+                "Operating Profit": ["? 32183821903"],
+                "Operating Profit Margin": ["? 32183821903"],
+              }
             }
-          }]
-        },
-        {
+          ]
+        }, {
           "title": "Asset Turnover Ratio",
-          "id": 1
-        },
-        {
+          "id": 1,
+          "questions": [
+            {
+              "title": "Basic Asset Turnover Ratio",
+              "question": "A farmer receives a gross farm income of 448589. The total assets of his business at opening is 2553101. What is the asset turnover ratio for the business?",
+              "table": {
+                "Gross Farm Income": ["400000 to 600000 inc 20000"],
+                "Total Assets": ["2500000 to 2750000 inc 50000"],
+                "Asset Turnover Ratio": ["? 58.8%"]
+              }
+            }
+          ]
+        }, {
           "title": "Return On Assets",
           "id": 2
-        },
-        {
+        }, {
           "title": "Return On Equity",
           "id": 3
-        },
-        {
+        }, {
           "title": "Cost Of Production",
           "id": 0
         }
       ]
     }
-    ]
+  ]
 }
