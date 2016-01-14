@@ -48,7 +48,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("topic" , {
-                url: '/topic/{id}/{questionId}/{part}',
+                url: '/topic/:id?questionId?part',
                 template: require('./topic.html'),
                 controller: TopicCtrl,
                 controllerAs: "topic",
