@@ -16,30 +16,32 @@ categorySummary.categories.forEach(c => delete c.topics);
 
     //get
 router.get("/category", (req, res) => {
-    if (!req.query.id) {
-        res.json(categorySummary)
-    } else {
-        res.json(_.get(_.find(categories, c => c.id == req.query.id), "topics"))
-    }
+    res.json(categorySummary)}
+);
+
+router.get("/category/:id", (req, res) => {
+    res.json(_.get(_.find(categories, c => c.id == req.params.id), "topics"))
 });
 
-
     //create
-router.post("/category/:id", function(req, res) {
-    //TODO waiting on database
-    res.json({"message": "to come"})
+router.post("/category/:id", (req, res) => {
+    var newObj = req.data;
+    newObj.id = 99;  //assign valid ID done by database
+    categories.push(newObj);
+    res.json({"id": newObj.id})
 });
 
     //update
-router.put("/category/:id", function(req, res) {
-    //TODO waiting on database
-    res.json({"message": "to come"});
+router.put("/category/:id", (req, res) => {
+    var newObj = req.data;
+    // update database
+    res.sendStatus(200);
 });
 
     //delete
-router.delete("/category/:id", function(req, res) {
-    //TODO waiting on database
-    res.json({"message": "to come"});
+router.delete("/category/:id", (req, res) => {
+    _.get(_.find(categories, c => c.id == req.params.id(delete c)));
+    res.sendStatus(200);
 });
 
 module.exports = router;

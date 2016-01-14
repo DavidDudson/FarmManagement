@@ -46,7 +46,7 @@ angular.module('app')
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topics: ($http, $stateParams) => $http.get("/category?id=" + $stateParams.id)
+                    topics: ($http, $stateParams) => $http.get("/category/" + $stateParams.id)
                         .then(res => res.data, err => console.log(err))
                 }
             })
