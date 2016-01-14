@@ -1,33 +1,42 @@
 <titled-card title="category.title" description="category.description" add="category.add"
              remove="category.remove" help="category.help" save="category.save">
-    <v-accordion>
+    <v-accordion control="accordion">
         <v-pane ng-repeat="topic in category.topics track by $index">
-            <v-pane-header>
-                <md-button class="md-no-style md-list-item-text" layout="row">
-                    <div flex="70">
-                        <h3>{{ topic.title }}</h3>
-                        <h4 ng-if="topic.description">{{ topic.description }}</h4>
-                    </div>
-                    <md-button flex="10">
-                        <md-icon>cake</md-icon>
-                    </md-button>
-                    <md-button flex="10">
-                        <md-icon>cake</md-icon>
-                    </md-button>
-                    <md-button flex="10">
-                        <md-icon>cake</md-icon>
-                    </md-button>
+            <v-pane-header layout="row">
+                <md-button class="md-no-style md-list-item-text" layout="column" layout-align="start start" flex="90">
+                        <h3 layout="row" layout-align="start start" class="md-subtitle" flex="100">{{ topic.title }}</h3>
+                        <h4 layout-align="start start" ng-if="topic.description">{{ topic.description }}</h4>
                 </md-button>
+                <md-button class="md-icon-button" flex="10">
+                    <md-icon> {{accordion.hasExpandedPane() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                </md-button>
+                <md-divider></md-divider>
             </v-pane-header>
             <v-pane-content>
                 <md-list>
-                    <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index" layout="column" layout-align="start start">
-                        <a class="li" ui-sref="topic({id: topic.id})">
+                    <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
+                                  layout="row" layout-align="start start" flex>
+                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tutorial'})"
+                           flex="70" layout-align="start start">
                             <md-button class="md-no-style md-list-item-text">
-                                <h3>{{ question.title }}</h3>
+                                <h3 class="md-subtitle">{{ question.title }}</h3>
                                 <h4 ng-if="question.description">{{ question.description }}</h4>
                             </md-button>
-                            <md-divider></md-divider>
+                        </a>
+                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tutorial'})" flex = 10>
+                            <md-button>
+                                <md-icon>cake</md-icon>
+                            </md-button>
+                        </a>
+                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'test'})" flex = 10>
+                            <md-button>
+                                <md-icon>cake</md-icon>
+                            </md-button>
+                        </a>
+                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tool'})" flex = 10>
+                            <md-button>
+                                <md-icon>cake</md-icon>
+                            </md-button>
                         </a>
                     </md-list-item>
                 </md-list>

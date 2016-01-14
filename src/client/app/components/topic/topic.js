@@ -14,7 +14,7 @@ class TopicCtrl {
         this.description = this.topic.description;
         this.questions = this.topic.questions;
         this.question = this.topic.questions[_.parseInt($stateParams.questionId)];
-        this.current = $stateParams.questionId ? $stateParams.questionId : 'tutorial'; // Can be tool, tutorial or test
+        this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
         ROOT = $rootScope;
