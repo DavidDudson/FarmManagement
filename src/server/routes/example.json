@@ -10,13 +10,15 @@
           "questions": [
             {
               "title": "Basic Operating Profit Margin",
+              "top_headings" : false,
+              "side_headings" : true,
               "question": "A farmer receives a gross farm income of 448589 and incurs operating expenses of 184959. His expenses on rent are 44028. What is his operating profit margin?",
-              "table": {
-                "Gross Farm Income": ["400000 to 600000 inc 20000"],
-                "Operating Expenses": ["170000 to 250000 inc 15000"],
-                "Operating Profit": ["? 263630"],
-                "Operating Profit Margin": ["? 58.8%"]
-              }
+              "table": [
+                ["Gross Farm Income", "400000 to 600000 inc 20000"],
+                ["Operating Expenses", "170000 to 250000 inc 15000"],
+                ["Operating Profit", "? 263630"],
+                ["Operating Profit Margin", "? 58.8%"]
+              ]
             }, {
               "title": "Advanced Operating Profit Margin",
               "question": "A farmer receives a total income of 445391, which includes a loss from rental properties of -3198. The net profit for the business is 207942. Expenses on interest & rent are 58462 & 44028 respectively. Given that the value of unpaid family labour and management is 50000. What is his operating profit margin ?",
@@ -42,11 +44,13 @@
             {
               "title": "Basic Asset Turnover Ratio",
               "question": "A farmer receives a gross farm income of 448589. The total assets of his business at opening is 2553101. What is the asset turnover ratio for the business?",
-              "table": {
-                "Gross Farm Income": ["400000 to 600000 inc 20000"],
-                "Total Assets": ["2500000 to 2750000 inc 50000"],
-                "Asset Turnover Ratio": ["? 58.8%"]
-              }
+              "top_headings" : false,
+              "side_headings" : true,
+              "table": [
+                ["Gross Farm Income", "400000 to 600000 inc 20000"],
+                ["Total Assets", "2500000 to 2750000 inc 50000"],
+                ["Asset Turnover Ratio", "? 58.8%"]
+              ]
             }
           ]
         }, {
