@@ -3,7 +3,7 @@ var Express = require('express');
 var path = require('path');
 var app = Express();
 
-var mongoose        = require('mongoose');
+var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/farmfi");
 require("./../database")();
 
