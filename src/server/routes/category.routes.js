@@ -3,7 +3,7 @@ var Express = require('express');
 
 var router = Express.Router();
 
-var example = require('./example.json');
+var example = require('./../../example.json');
 
 var _ = require('lodash');
 
