@@ -1,5 +1,5 @@
 
-var Promise     = require("bluebird");
+var Promise = require("bluebird");
 var _ = require('lodash');
 
 var Category = Promise.promisifyAll(require("./server/models/category.model"));
@@ -8,6 +8,11 @@ var Question = Promise.promisifyAll(require("./server/models/question.model"));
 
 var example = require("./example.json").categories;
 
+
+// TODO Turn this into multiple functions!!! ARRRGHHH ANTHONY!!!!!!! MY OCD WILL KILL ME!!!!
+// And you should make use of filter.
+// example.foreach should only call if examples length is > 0 anyway.
+// you can simplify this immensely
 module.exports = function() {
     console.log("establish all data in example.json in database if requested");
     if(example && example.length != 0) {
