@@ -13,6 +13,39 @@ var example = require("./example.json").categories;
 // And you should make use of filter.
 // example.foreach should only call if examples length is > 0 anyway.
 // you can simplify this immensely
+// It seems like It should be 3 functions.
+// SyncCategories, SyncTopics and SyncQuestions.
+//
+// Note: Keep in mind that if the server goes down for any reason
+// It will repopulate with the old data. This is wrong
+// This needs to be a separate script that can be run to populate the database if required.
+
+// This doesnt take into account the pushing cause im lazy.
+// #FunctionalProgrammingIsBoss
+// Omit:
+// All Categories
+// example
+//  .map(c -> _.omit(c, "topics"))
+//  .map(c -> new Category(c))
+//  .filter(c -> Category.findOne({"title": c.title}, (result, err) => !!result))
+//  .forEach(c -> c.save(err -> console.log(err))
+
+// All topics:
+// example
+//  .flatmap(c -> c.topics)
+//  .map(t -> _.omit(t, "questions"))
+//  .map(t -> new Topic(t))
+//  .filter(t -> Topic.findOne({"title": t.title}, (result, err) => !!result))
+//  .forEach(t -> t.save(err -> console.log(err))
+
+// All Questions:
+// example
+//  .flatmap(c -> c.topics.flatmap(t -> t.questions))
+//  .map(q -> new Question(q))
+//  .filter(q -> Question.findOne({"title": q.title}, (result, err) => !!result))
+//  .forEach(q -> q.save(err -> console.log(err))
+
+// After that, you dont need to check if things are in the database
 module.exports = function() {
     console.log("establish all data in example.json in database if requested");
     if(example && example.length != 0) {
