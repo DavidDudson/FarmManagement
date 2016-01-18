@@ -46,6 +46,36 @@ var example = require("./example.json").categories;
 //  .forEach(q -> q.save(err -> console.log(err))
 
 // After that, you dont need to check if things are in the database
+
+
+// #FunctionalProgrammingIsBossTake 2
+// In this case I think you will need to actually reassign t.questions at the end. I dont think filter alters the old list
+// But I could be wrong. Test it :P
+// All Categories
+// example
+//  .map(c -> syncTopics(c))
+//  .map(c -> new Category(c))
+//  .filter(c -> Category.findOne({"title": c.title}, (result, err) => !!result))
+//  .forEach(c -> c.save(err -> console.log(err))
+
+// All topics:
+// var syncTopics = c => {
+//  c.topics
+//   .map(c -> syncQuestions(c))
+//   .map(t -> new Topic(t))
+//   .filter(t -> Topic.findOne({"title": t.title}, (result, err) => !!result))
+//   .forEach(t -> t.save(err -> console.log(err))
+// }
+
+// All Questions:
+// var syncQuestions = t => {
+// t.questions
+//  .map(q -> new Question(q))
+//  .filter(q -> Question.findOne({"title": q.title}, (result, err) => !!result))
+//  .forEach(q -> q.save(err -> console.log(err))
+// }
+
+
 module.exports = function() {
     console.log("establish all data in example.json in database if requested");
     if(example && example.length != 0) {
