@@ -37,9 +37,7 @@ router.get("/category/:id", (req, res) => {
                                     });
                             });
                         }
-
                         res.json(fndCat);
-
                     });
             }
             if(!cData) {
@@ -52,7 +50,6 @@ router.get("/category/:id", (req, res) => {
 router.post("/category/", (req, res) => {
     if(req.body.title) {
         Category.findOne({"title": req.body.title}, function(err, result){}).exec()
-
             .then(function(data) {
                 if(!data) {
                     var newObj = new Category(req.body);
@@ -72,7 +69,6 @@ router.post("/category/", (req, res) => {
     //update
 router.put("/category/:id", (req, res) => {
     Category.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
-
         .then(function(data) {
             if(data) {
                 res.sendStatus(200);
