@@ -7,6 +7,8 @@ var Promise     = require("bluebird");
 var _ = require('lodash');
 
 var Category = Promise.promisifyAll(require("../models/category.model"));
+var Topic = Promise.promisifyAll(require("./server/models/topic.model"));
+var Question = Promise.promisifyAll(require("./server/models/question.model"));
 
     //setup
 router.get("/category", (req, res) => {
@@ -18,7 +20,32 @@ router.get("/category", (req, res) => {
 
     //get
 router.get("/category/:id", (req, res) => {
-    res.json();
+    Category.findOne({"title": req.params.id}, function(err, result){}).exec()
+        .then(function(cData) {
+            if(cData) {
+                var fndCat = cData;
+                Topic.find({"category": fndCat._id}, function(err, result){}).exec()
+                    .then(function(tData) {
+                        if(tData) {
+                            fndCat.topics = tData;
+                            fndCat.topics.forEach(function(t) {
+                                Question.find({"question": t._id}, function(err, result){}).exec()
+                                    .then(function(qData) {
+                                        if(qData) {
+                                            t.questions = qData;
+                                        }
+                                    });
+                            });
+                        }
+
+                        res.json(fndCat);
+
+                    });
+            }
+            if(!cData) {
+                res.sendStatus(400);
+            }
+        });
 });
 
     //create
