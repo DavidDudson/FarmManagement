@@ -4,11 +4,9 @@ var Express = require('express');
 var router = Express.Router();
 
 var Promise     = require("bluebird");
-var _ = require('lodash');
-
 var Category = Promise.promisifyAll(require("../models/category.model"));
-var Topic = Promise.promisifyAll(require("./server/models/topic.model"));
-var Question = Promise.promisifyAll(require("./server/models/question.model"));
+var Topic = Promise.promisifyAll(require("../models/topic.model"));
+var Question = Promise.promisifyAll(require("../models/question.model"));
 
     //setup
 router.get("/category", (req, res) => {
@@ -81,11 +79,16 @@ router.put("/category/:id", (req, res) => {
 
     //delete
 router.delete("/category/:id", (req, res) => {
-    Category.remove({"_id": req.params.id}, function(err){
-        if(!err){
-            res.sendStatus(200);
-        }
-    });
+    Category.remove({"_id": req.params.id}, function(err){}).exec()
+        .then(function() {
+            Topic.remove({"category": req.params.id}, function(err){}).exec()
+                .then(function() {
+                    Question.remove({"topic": req.params.id}, function(err){}).exec()
+                        .then(function(){
+                            res.sendStatus(200);
+                        });
+                });
+        });
 });
 
 module.exports = router;
