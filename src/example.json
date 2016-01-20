@@ -2,11 +2,9 @@
   "categories": [
     {
       "title": "Financial",
-      "id": 0,
       "topics": [
         {
           "title": "Operating Profit Margin",
-          "id": 0,
           "questions": [
             {
               "title": "Basic Operating Profit Margin",
@@ -39,7 +37,6 @@
           ]
         }, {
           "title": "Asset Turnover Ratio",
-          "id": 1,
           "questions": [
             {
               "title": "Basic Asset Turnover Ratio",
@@ -54,20 +51,17 @@
             }
           ]
         }, {
-          "title": "Return On Assets",
-          "id": 2
+          "title": "Return On Assets"
         }, {
-          "title": "Return On Equity",
-          "id": 3
+          "title": "Return On Equity"
         }, {
-          "title": "Cost Of Production",
-          "id": 0
+          "title": "Cost Of Production"
         }
       ]
     },
-    {"title": "Income", "id": 1},
-    {"title": "Liquidity", "id": 2},
-    {"title": "Profitability", "id": 3},
-    {"title": "Wealth", "id": 4}
+    {"title": "Income", "description": "Money makes the world taste good, because it shoud #noteapotshere"},
+    {"title": "Liquidity"},
+    {"title": "Profitability"},
+    {"title": "Wealth"}
   ]
 }

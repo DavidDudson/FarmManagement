@@ -8,16 +8,15 @@ var _ = require('lodash');
 
 var Category = Promise.promisifyAll(require("../models/category.model"));
 
-    //get
+    //setup
 router.get("/category", (req, res) => {
     Category.find({}, function(err, result){}).exec()
         .then(function(data){
-            console.log(data);
             res.json(data);
         });
 });
 
-    //setup
+    //get
 router.get("/category/:id", (req, res) => {
     res.json();
 });
