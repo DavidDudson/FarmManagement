@@ -16,6 +16,7 @@
     "start": "node ./src/start.js",
     "poststop": "mongo admin --eval 'db.shutdownServer()' > /dev/null",
     "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
+    "production": "webpack -p --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
     "develop": "npm run prestart && nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/ && npm run poststop",
