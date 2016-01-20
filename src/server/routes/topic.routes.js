@@ -31,7 +31,7 @@ router.get("/topic/:id", (req, res) => {
 });
 
     //create
-router.post("/category/", (req, res) => {
+router.post("/topic/", (req, res) => {
     if(req.body.title) {
         Topic.findOne({"title": req.body.title}, function(err, result){}).exec()
             .then(function(data) {
@@ -51,7 +51,7 @@ router.post("/category/", (req, res) => {
 });
 
     //update
-router.put("/category/:id", (req, res) => {
+router.put("/topic/:id", (req, res) => {
     Topic.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
         .then(function(data) {
             if(data) {
@@ -64,7 +64,7 @@ router.put("/category/:id", (req, res) => {
 });
 
     //delete
-router.delete("/category/:id", (req, res) => {
+router.delete("/topic/:id", (req, res) => {
     Topic.remove({"_id": req.params.id}, function(err){
         if(!err){
             res.sendStatus(200);
