@@ -3,45 +3,67 @@ var Express = require('express');
 
 var router = Express.Router();
 
-var example = require('./../../example.json');
-
+var Promise     = require("bluebird");
 var _ = require('lodash');
 
-//Define variables up here so they cache, rather than inside the get block
-var categories = JSON.parse(JSON.stringify(example)).categories;
-
-var categorySummary = JSON.parse(JSON.stringify(example));
-categorySummary.categories.forEach(c => delete c.topics);
-
+var Category = Promise.promisifyAll(require("../models/category.model"));
 
     //get
 router.get("/category", (req, res) => {
-    res.json(categorySummary)}
-);
+    Category.find({}, function(err, result){}).exec()
+        .then(function(data){
+            console.log(data);
+            res.json(data);
+        });
+});
 
+    //setup
 router.get("/category/:id", (req, res) => {
-    res.json(_.get(_.find(categories, c => c.id == req.params.id), "topics"))
+    res.json();
 });
 
     //create
-router.post("/category/:id", (req, res) => {
-    var newObj = req.data;
-    newObj.id = 99;  //assign valid ID done by database
-    categories.push(newObj);
-    res.json({"id": newObj.id})
+router.post("/category/", (req, res) => {
+    if(req.body.title) {
+        Category.findOne({"title": req.body.title}, function(err, result){}).exec()
+
+            .then(function(data) {
+                if(!data) {
+                    var newObj = new Category(req.body);
+                    newObj.save(function(err) {
+                        if(!err) {
+                            res.json(newObj._id);
+                        }
+                    });
+                }
+                if(data) {
+                    res.sendStatus(418);
+                }
+            });
+    }
 });
 
     //update
 router.put("/category/:id", (req, res) => {
-    var newObj = req.data;
-    // update database
-    res.sendStatus(200);
+    Category.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
+
+        .then(function(data) {
+            if(data) {
+                res.sendStatus(200);
+            }
+            if(!data) {
+                res.sendStatus(400);
+            }
+        });
 });
 
     //delete
 router.delete("/category/:id", (req, res) => {
-    _.get(_.find(categories, c => c.id == req.params.id(delete c)));
-    res.sendStatus(200);
+    Category.remove({"_id": req.params.id}, function(err){
+        if(!err){
+            res.sendStatus(200);
+        }
+    });
 });
 
 module.exports = router;
