@@ -11,7 +11,7 @@
     "copy:iframe": "cp src/client/iframe.css dist/public/iframe.css",
     "copy": "npm run copy:index && npm run copy:iframe",
     "quicktest": "open ./dist/public/test.html",
-    "prestart": "mongod --dbpath /data --fork --logpath /dev/null",
+    "prestart": "mongod --fork --logpath /dev/null",
     "start": "node ./src/start.js",
     "poststop": "mongo admin --eval 'db.shutdownServer()' > /dev/null",
     "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
