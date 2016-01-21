@@ -1,6 +1,5 @@
 
 var Promise = require("bluebird");
-var _ = require('lodash');
 
 var Category = Promise.promisifyAll(require("./server/models/category.model"));
 var Topic = Promise.promisifyAll(require("./server/models/topic.model"));
@@ -9,10 +8,8 @@ var Question = Promise.promisifyAll(require("./server/models/question.model"));
 var example = require("./example.json").categories;
 
 
-// TODO Turn this into multiple functions!!! ARRRGHHH ANTHONY!!!!!!! MY OCD WILL KILL ME!!!!
-
-
 module.exports = function() {
+    console.log("database script was executed");
     if(example && example.length > 0) {
         example.forEach(function (c) {
             var newCat = new Category(c);
@@ -45,4 +42,5 @@ module.exports = function() {
             }
         });
     }
+
 };

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "karma start",
     "clean": "rm -r dist/*",
+    "populate" : "node ./src/database.js",
     "mkdir": "mkdir -p dist/public",
     "copy:index": "cp src/client/index.html dist/public/index.html",
     "copy:iframe": "cp src/client/iframe.css dist/public/iframe.css",
