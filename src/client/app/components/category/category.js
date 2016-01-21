@@ -46,7 +46,7 @@ angular.module('app')
                 controllerAs: "category",
                 resolve: {
                     topics: ($http, $rootScope, $stateParams) => $http.get("/category/" + $stateParams.title)
-                        .then(res => $rootScope.app.categories[$stateParams.title].topics = res.data, err => console.log(err))
+                        .then(res => _.find($rootScope.app.categories, {title: $stateParams.title}).topics = res.data, err => console.log(err))
                 }
             })
     });
