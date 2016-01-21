@@ -9,7 +9,7 @@ var Topic = Promise.promisifyAll(require("../topic/topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
 
     //setup
-router.get("/category", (req, res) => {
+router.get("/categories", (req, res) => {
     Category.find({}, function(err, result){}).exec()
         .then(function(data){
             res.json(data);

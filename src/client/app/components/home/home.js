@@ -2,7 +2,7 @@ require('./home.scss');
 
 
 class HomeCtrl {
-    constructor() {
+    constructor($scope) {
         this.infographics = [];
         this.description = `Welcome to FarmFINANZ!
             Take your knowledge to the next level.The fundamentals in Farm Management are about getting the maths right.
@@ -30,7 +30,11 @@ angular.module('app')
                         controller: HomeCtrl,
                         controllerAs: 'home'
                     },
-                    'nav': require('components/nav/scroll/scroll.js')()
+                    'nav': require('components/nav/scroll/scroll.js')
+                },
+                resolve: {
+                    categories: ($http, $rootScope) => $http.get("/categories")
+                            .then(res => $rootScope.app.categories = res.data, err => console.log(err))
                 }
             });
     });

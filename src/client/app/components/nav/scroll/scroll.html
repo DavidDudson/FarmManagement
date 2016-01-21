@@ -5,7 +5,7 @@
                 <md-icon> keyboard_arrow_left </md-icon>
             </md-button>
         </md-list-item>
-        <md-list-item ng-repeat="category in nav.selected() track by $index" flex="15" layout="row" layout-align="stretch center">
+        <md-list-item ng-repeat="category in $root.app.categories track by $index" flex="15" layout="row" layout-align="stretch center">
             <a ng-disabled="nav.index === category.id" class="nav-sref" ui-sref="top({ id: category.id })" ng-click="nav.centerIndex(category.id)" layout-fill>
                 <md-button ng-disabled="nav.index === category.id" class="md-padding md-raised nav-tile">{{category.title}}</md-button>
             </a>
