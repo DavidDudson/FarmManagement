@@ -51,11 +51,6 @@ angular.module('app')
                 url: '/topic/:id?questionId?part',
                 template: require('./topic.html'),
                 controller: TopicCtrl,
-                controllerAs: "topic",
-                resolve: {
-                    categoryCheck: ($rootScope, $location) => {
-                        if (!$rootScope.app.categories) $location.path('/home');
-                    }
-                }
+                controllerAs: "topic"
             })
     });

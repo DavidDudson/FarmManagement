@@ -41,12 +41,12 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("main.category", {
-                url: '/category/{id}',
+                url: '/category/{title}',
                 template: require('./category.html'),
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topics: ($http, $stateParams) => $http.get("/category/" + $stateParams.id)
+                    topics: ($http, $stateParams) => $http.get("/category/" + $stateParams.title)
                         .then(res => res.data, err => console.log(err))
                 }
             })

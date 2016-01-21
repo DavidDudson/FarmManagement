@@ -17,8 +17,8 @@ router.get("/categories", (req, res) => {
 });
 
     //get
-router.get("/category/:id", (req, res) => {
-    Category.findOne({"title": req.params.id}, function(err, result){}).exec()
+router.get("/category/:title", (req, res) => {
+    Category.findOne({"title": req.params.title}, function(err, result){}).exec()
         .then(function(cData) {
             if(cData) {
                 var fndCat = cData;
