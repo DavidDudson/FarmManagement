@@ -7,8 +7,8 @@
     <body ng-controller="AppCtrl as app" layout="column" layout-align="center center">
         <div class="iframe">
             <div class="app">
-                <nav-scroll></nav-scroll>
-                <div ui-view ng-cloak></div>
+                <div ui-view="nav"></div>
+                <div ui-view="home" ng-cloak></div>
             </div>
         </div>
         <script src="./bundle.js"></script>

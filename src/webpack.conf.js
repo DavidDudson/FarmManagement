@@ -38,6 +38,7 @@ module.exports = {
         alias: {
             util: "src/client/app/util",
             app: "src/client/app",
+            components: "src/client/app/components",
             client: "src/client",
             images: "src/client/images",
             normalize: "normalize.css/normalize.css",

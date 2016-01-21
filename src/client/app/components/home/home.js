@@ -1,5 +1,6 @@
 require('./home.scss');
 
+
 class HomeCtrl {
     constructor() {
         this.infographics = [];
@@ -22,9 +23,14 @@ angular.module('app')
         $stateProvider
             .state("home" , {
                 url:'/home',
-                template: require('./home.html'),
-                replace: true,
-                controller: HomeCtrl,
-                controllerAs: 'home'
-            })
+                views: {
+                    'home': {
+                        template: require('./home.html'),
+                        replace: true,
+                        controller: HomeCtrl,
+                        controllerAs: 'home'
+                    },
+                    'nav': require('components/nav/scroll/scroll.js')()
+                }
+            });
     });
