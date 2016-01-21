@@ -19,7 +19,8 @@
     "production": "webpack -p --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
-    "develop": "npm run prestart && nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/ && npm run poststop",
+    "develop": "npm run prestart && npm run devNoServer && npm run poststop",
+    "devNoServer": "nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/",
     "webpackDevServer": "webpack-dev-server --config src/webpack.conf.js --content-base dist/public --hot --inline",
     "develop2": "(npm run clean || ! npm run clean) && npm run mkdir && npm run copy && npm run webpackDevServer & open http://localhost:8080"
   },
