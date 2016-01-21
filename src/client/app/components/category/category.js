@@ -40,7 +40,7 @@ class CategoryCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("top", {
+            .state("main.category", {
                 url: '/category/{id}',
                 template: require('./category.html'),
                 controller: CategoryCtrl,

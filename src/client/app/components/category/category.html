@@ -16,24 +16,24 @@
                 <md-list>
                     <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
                                   layout="row" layout-align="start start" flex>
-                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tutorial'})"
+                        <a class="li" ui-sref=".topic({id: topic.id, questionId: question.id, part: 'tutorial'})"
                            flex="70" layout-align="start start">
                             <md-button class="md-no-style md-list-item-text">
                                 <h3 class="md-subtitle">{{ question.title }}</h3>
                                 <h4 ng-if="question.description">{{ question.description }}</h4>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tutorial'})" flex = 10>
+                        <a class="li" ui-sref=".topic({id: topic.id, questionId: question.id, part: 'tutorial'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'test'})" flex = 10>
+                        <a class="li" ui-sref=".topic({id: topic.id, questionId: question.id, part: 'test'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({id: topic.id, questionId: question.id, part: 'tool'})" flex = 10>
+                        <a class="li" ui-sref=".topic({id: topic.id, questionId: question.id, part: 'tool'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>

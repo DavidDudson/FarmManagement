@@ -47,7 +47,7 @@ class TopicCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("topic" , {
+            .state("main.topic" , {
                 url: '/topic/:id?questionId?part',
                 template: require('./topic.html'),
                 controller: TopicCtrl,

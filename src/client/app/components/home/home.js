@@ -21,7 +21,7 @@ angular.module('app')
         });
 
         $stateProvider
-            .state("home" , {
+            .state("main" , {
                 url:'/home',
                 views: {
                     'home': {
