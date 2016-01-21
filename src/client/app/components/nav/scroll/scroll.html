@@ -6,7 +6,7 @@
             </md-button>
         </md-list-item>
         <md-list-item ng-repeat="category in $root.app.categories track by $index" flex="15" layout="row" layout-align="stretch center">
-            <a ng-disabled="nav.index === category.id" class="nav-sref" ui-sref=".category({ id: category.id })" ng-click="nav.centerIndex(category._id)" layout-fill>
+            <a ng-disabled="nav.index === category._id" class="nav-sref" ui-sref=".category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
                 <md-button ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">{{category.title}}</md-button>
             </a>
         </md-list-item>
