@@ -1,9 +1,9 @@
 
 var Promise = require("bluebird");
 
-var Category = Promise.promisifyAll(require("./server/models/category.model"));
-var Topic = Promise.promisifyAll(require("./server/models/topic.model"));
-var Question = Promise.promisifyAll(require("./server/models/question.model"));
+var Category = Promise.promisifyAll(require("./server/data/category/category.model"));
+var Topic = Promise.promisifyAll(require("./server/data/topic/topic.model"));
+var Question = Promise.promisifyAll(require("./server/data/question/question.model"));
 
 var example = require("./example.json").categories;
 

@@ -4,9 +4,9 @@ var Express = require('express');
 var router = Express.Router();
 
 var Promise     = require("bluebird");
-var Category = Promise.promisifyAll(require("../models/category.model"));
-var Topic = Promise.promisifyAll(require("../models/topic.model"));
-var Question = Promise.promisifyAll(require("../models/question.model"));
+var Category = Promise.promisifyAll(require("./category.model"));
+var Topic = Promise.promisifyAll(require("../topic/topic.model"));
+var Question = Promise.promisifyAll(require("../question/question.model"));
 
     //setup
 router.get("/category", (req, res) => {

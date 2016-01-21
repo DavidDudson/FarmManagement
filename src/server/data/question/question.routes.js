@@ -4,7 +4,7 @@ var Express = require('express');
 var router = Express.Router();
 
 var Promise     = require("bluebird");
-var Question = Promise.promisifyAll(require("../models/question.model"));
+var Question = Promise.promisifyAll(require("./question.model"));
 
 //get
 router.get("/question/:id", (req, res) => {
