@@ -43,6 +43,8 @@ module.exports = {
             images: "src/client/images",
             normalize: "normalize.css/normalize.css",
             angular_material_css: "angular-material/angular-material.min.css",
+            angular_chart_css: "angular-chart.js/dist/angular-chart.min.js",
+            angular_chart: "angular-chart.js/dist/angular-chart.min.css",
             angular_data_table_css: "angular-material-data-table/dist/md-data-table.css",
             angular_carousel_css: "angular-carousel/src/css/angular-carousel.scss",
             angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss",

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start",
     "clean": "rm -r dist/*",
-    "populate" : "node ./src/database.js",
+    "populate": "node ./src/database.js",
     "mkdir": "mkdir -p dist/public",
     "copy:index": "cp src/client/index.html dist/public/index.html",
     "copy:iframe": "cp src/client/iframe.css dist/public/iframe.css",
@@ -32,6 +32,7 @@
     "angular-animate": "latest",
     "angular-aria": "latest",
     "angular-carousel": "latest",
+    "angular-chart.js": "^0.8.8",
     "angular-data-table": "latest",
     "angular-material": "latest",
     "angular-material-data-table": "latest",

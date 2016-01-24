@@ -16,6 +16,9 @@ require('accordion_css');
 require('angular-material-data-table');
 require("angular_data_table_css");
 
+require("angular_chart_css");
+require("angular_chart");
+
 require("./app.scss");
 
 var _ = require('lodash');
@@ -42,7 +45,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion'])
+angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js'])
     .controller('AppCtrl', AppCtrl);
 
 var requireAll = r => r.keys().forEach(r);
