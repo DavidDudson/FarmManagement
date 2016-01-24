@@ -24,7 +24,7 @@ require("./app.scss");
 var _ = require('lodash');
 
 class AppCtrl {
-    constructor($http, $rootScope) {
+    constructor($rootScope) {
         this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
