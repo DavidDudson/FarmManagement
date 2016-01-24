@@ -3,7 +3,7 @@ var Express = require('express');
 
 var router = Express.Router();
 
-var Promise     = require("bluebird");
+var Promise = require("bluebird");
 var Category = Promise.promisifyAll(require("./category.model"));
 var Topic = Promise.promisifyAll(require("../topic/topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
@@ -17,19 +17,23 @@ router.get("/categories", (req, res) => {
 });
 
     //get
-router.get("/category/:title", (req, res) => {
-    Category.findOne({"title": req.params.title}, function(err, result){}).exec()
+router.get("/category/:id", (req, res) => {
+    console.log("Searching for category: " + req.params.id);
+    Category.findOne({"_id": req.params.id}, function(err, result){}).exec()
         .then(function(cData) {
             if(cData) {
+                console.log("Found Category: " + id);
                 var fndCat = cData;
                 Topic.find({"category": fndCat._id}, function(err, result){}).exec()
                     .then(function(tData) {
                         if(tData) {
+                            console.log("Found Topic: " + tData.title);
                             fndCat.topics = tData;
                             fndCat.topics.forEach(function(t) {
                                 Question.find({"question": t._id}, function(err, result){}).exec()
                                     .then(function(qData) {
                                         if(qData) {
+                                            console.log("Found Question");
                                             t.questions = qData;
                                         }
                                     });

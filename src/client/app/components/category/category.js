@@ -7,9 +7,9 @@ var ROOT = undefined;
 
 class CategoryCtrl {
     constructor($http, $rootScope, $stateParams) {
-        this.category = _.find($rootScope.app.categories, {title: $stateParams.title});
+        this.category = _.find($rootScope.app.categories, {id: $stateParams.id});
         this.title = this.category.title;
-        this.id = this.category.id;
+        this.id = this.category._id;
         this.description = this.category.description;
         this.topics = topics;
         HTTP = $http;
@@ -31,7 +31,7 @@ class CategoryCtrl {
 
     remove() {
         HTTP.delete('categories', {id: this.category.id})
-            .then(() => _.remove(ROOT.categories, {id: this.category.id},
+            .then(() => _.remove(ROOT.categories, {id: this.category._id},
                 err => console.log(err)))
     }
 }
@@ -40,13 +40,13 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("main.category", {
-                url: '/category/{title}',
+                url: '/category/{id}',
                 template: require('./category.html'),
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topics: ($http, $rootScope, $stateParams) => $http.get("/category/" + $stateParams.title)
-                        .then(res => _.find($rootScope.app.categories, {title: $stateParams.title}).topics = res.data, err => console.log(err))
+                    topics: ($http, $rootScope, $stateParams) => $http.get("/category/" + $stateParams.id)
+                        .then(res => _.find($rootScope.app.categories, {id: $stateParams.id}).topics = res.data, err => console.error(err))
                 }
             })
     });
