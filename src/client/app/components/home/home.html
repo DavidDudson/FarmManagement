@@ -5,7 +5,28 @@
             <label>Homepage Description</label>
             <textarea required type="text" ng-model="home.description"></textarea>
         </md-input-container>
-        <line-chart layout-padding layout-align="center center" flex="50" labels="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
-        data="[[65, 59, 80, 81, 56, 55, 40]]" title="SomeLineGraph"></line-chart>
+        <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50">
+            <uib-slide>
+                <line-chart layout-padding layout-align="center center" labels="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
+                            data="[[65, 59, 80, 81, 56, 55, 40]]" title="SomeLineGraph"></line-chart>
+                <div class="carousel-caption">
+                    <h4>Slide {{slide.id}}</h4>
+                    <p>{{slide.text}}</p>
+                </div>
+
+            </uib-slide>
+            <uib-slide>
+                <line-chart layout-padding layout-align="center center" labels="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
+                            data="[[43, 59, 80, 81, 56, 55, 40]]" title="SomeLineGraph"></line-chart>
+                <div class="carousel-caption">
+                    <h4>Slide 43</h4>
+                </div>
+            </uib-slide>
+            <uib-slide>
+                <line-chart layout-padding layout-align="center center" labels="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
+                            data="[[75, 59, 80, 81, 56, 55, 40]]" title="SomeLineGraph"></line-chart>
+
+            </uib-slide>
+        </uib-carousel>
     </md-content>
 </plain-card>

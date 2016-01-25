@@ -19,6 +19,11 @@ require("angular_data_table_css");
 require("angular_chart_css");
 require("angular_chart");
 
+require("bootstrap_css");
+
+
+var uibs = require('angular-ui-bootstrap');
+
 require("./app.scss");
 
 var _ = require('lodash');
@@ -41,7 +46,7 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js'])
+angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', uibs])
     .controller('AppCtrl', AppCtrl);
 
 var requireAll = r => r.keys().forEach(r);
