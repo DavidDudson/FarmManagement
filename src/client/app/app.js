@@ -27,6 +27,7 @@ var uibs = require('angular-ui-bootstrap');
 require("./app.scss");
 
 var _ = require('lodash');
+var ROOT = undefined;
 
 class AppCtrl {
     constructor($rootScope) {
@@ -38,6 +39,13 @@ class AppCtrl {
         this.isAdmin = true;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
+        ROOT = $rootScope
+    }
+
+    resetEdit() {
+        ROOT.edit = {};
+        ROOT.editingName = undefined;
+        ROOT.app.editable = false;
     }
 }
 

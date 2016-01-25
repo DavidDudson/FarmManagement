@@ -9,8 +9,8 @@
                 <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
                 <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
                 <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>
-                <md-button ng-if="$root.app.editable" ng-click="$root.edit = {}; $root.app.editable = false">Cancel</md-button>
-                <md-button ng-click="$root.app.editable ? save() : $root.app.editable = true">{{$root.app.editable == true ? "Save" : "Edit"}}</md-button>
+                <md-button ng-if="$root.app.editable" ng-click="$root.app.resetEdit()">Cancel</md-button>
+                <md-button ng-click="card.save(save)">{{$root.app.editable == true ? "Save" : "Edit"}}</md-button>
             </md-card-action>
         </md-card>
     </div>

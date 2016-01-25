@@ -12,13 +12,13 @@ class EditableController {
 
     showButton() {
         if (ROOT.app.editable) {
-            $scope.show = true;
+            SCOPE.show = true;
         }
     };
 
     hideButton() {
         if (ROOT.app.editable) {
-            $scope.show = false;
+            SCOPE.show = false;
         }
     };
 }
