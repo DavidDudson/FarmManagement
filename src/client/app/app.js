@@ -39,11 +39,6 @@ class AppCtrl {
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
     }
-
-    save() {
-        console.log("Saved"); //Todo
-        this.editable = false;
-    }
 }
 
 angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', uibs])
