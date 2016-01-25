@@ -3,15 +3,16 @@ var _ = require('lodash');
 
 class HomeCtrl {
     constructor($rootScope) {
-        this.infographics = [];
-        this.description = `Welcome to FarmFINANZ!\n\n Take your knowledge to the next level. The fundamentals in Farm Management are about getting the maths right.\n\nWe are here to assist you in every aspect of farm finance. We have a series of tutorials, Topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in every field of farm management, ultimately to identify business opportunities and define future goals. Best of all, you’ll be learning from Massey professionals in this field, who developed the Topics with you in mind.`;
+        this.description = `Welcome to FarmFINANZ!\n\nTake your knowledge to the next level. The fundamentals in Farm Management are about getting the maths right.\n\nWe are here to assist you in every aspect of farm finance. We have a series of tutorials, Topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in every field of farm management, ultimately to identify business opportunities and define future goals. Best of all, you’ll be learning from Massey professionals in this field, who developed the Topics with you in mind.`;
 
         this.save = () => {
-            console.log("This will be saved in the future");
+            this.description = $rootScope.edit.description;
+            console.log("This will be saved to the db in the future");
             $rootScope.app.editable = false;
         };
 
         this.shuffleGraphs = () => _.shuffle(this.graphs);
+
         this.graphs = [{
             title: "Price Indicators - Sheep - $ Per Head",
             labels: ["2006-07", "2007-08", "2008-09", "2009-10", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16"],

@@ -3,7 +3,7 @@
         <p id="hometext" class="md-headline" flex="50" layout-padding ng-if="!app.editable"> {{home.description}} </p>
         <md-input-container flex="50" layout-padding ng-if="app.editable">
             <label>Homepage Description</label>
-            <textarea required type="text" ng-model="home.description"></textarea>
+            <textarea required type="text" ng-model="$root.edit.description" ng-init="$root.edit.description=home.description"></textarea>
         </md-input-container>
         <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50" layout-align="center center" ng-init="home.graphs=home.shuffleGraphs()">
             <uib-slide ng-repeat="graph in home.graphs" layout="row" layout-align="space-between center">
