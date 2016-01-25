@@ -1,0 +1,10 @@
+<md-content ng-init="show=false" layout="column" layout-align="start start">
+    <div ng-mouseenter="editable.showButton()" ng-mouseleave="editable.hideButton()" ng-if="type==='textArea' && $root.editingName !== name" layout-align="start start" layout="column">
+        <p ng-if="show === false" layout-align="start start">{{value}}</p>
+        <md-button class="md-warn" ng-if="show===true" ng-click="$root.editingName=name; show=false"><md-icon>edit</md-icon></md-button>
+    </div>
+    <md-input-container ng-if="type==='textArea' && $root.editingName === name && app.editable === true">
+        <label>{{description}}</label>
+        <textarea required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"></textarea>
+    </md-input-container>
+</md-content>
