@@ -5,7 +5,7 @@
             <label>Homepage Description</label>
             <textarea required type="text" ng-model="home.description"></textarea>
         </md-input-container>
-        <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50" layout-align="center center">
+        <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50" layout-align="center center" ng-init="home.graphs=home.shuffleGraphs()">
             <uib-slide ng-repeat="graph in home.graphs" layout="row" layout-align="space-between center">
                 <p class="md-headline">{{graph.title}}</p>
                 <canvas layout-padding layout-align="center center" class="chart chart-line" chart-data="graph.data"

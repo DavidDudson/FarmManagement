@@ -1,11 +1,12 @@
 require('./home.scss');
-
+var _ = require('lodash');
 
 class HomeCtrl {
     constructor() {
         this.infographics = [];
         this.description = `Welcome to FarmFINANZ!\n\n Take your knowledge to the next level. The fundamentals in Farm Management are about getting the maths right.\n\nWe are here to assist you in every aspect of farm finance. We have a series of tutorials, Topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in every field of farm management, ultimately to identify business opportunities and define future goals. Best of all, you’ll be learning from Massey professionals in this field, who developed the Topics with you in mind.`;
 
+        this.shuffleGraphs = () => _.shuffle(this.graphs);
         this.graphs = [{
             title: "Price Indicators - Sheep - $ Per Head",
             labels: ["2006-07", "2007-08", "2008-09", "2009-10", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16"],
@@ -63,7 +64,7 @@ class HomeCtrl {
             title: "Shorn Wool Sold (kg)",
             labels: ["2006-07", "2007-08", "2008-09", "2009-10", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16"],
             series: ["Per Sheep", "Per Sheep su"],
-            data: [[4.55, 4.45, 4.17, 4.97, 4.65, 4.71, 4.84, 4.56, 4.62, 4.59]
+            data: [[4.55, 4.45, 4.17, 4.97, 4.65, 4.71, 4.84, 4.56, 4.62, 4.59],
                 [5.01, 4.88, 4.55, 5.42, 5.11, 5.19, 5.38, 5.08, 5.10, 5.06]]
         }, {
             title: "Economic Farm Surplus",
