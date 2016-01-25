@@ -39,10 +39,6 @@ class AppCtrl {
         console.log("Saved"); //Todo
         this.editable = false;
     }
-
-    help() {
-        console.log("Help");
-    }
 }
 
 angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js'])
@@ -53,3 +49,6 @@ var requireAll = r => r.keys().forEach(r);
 requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");
+
+// This doesnt work due to webpack.
+//Chart.defaults.global.colours = ["#004b8d", "#e4a024", "#c6bc89", "#d95f00", "#983222", "#a2ad00"];

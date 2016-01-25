@@ -5,6 +5,7 @@
             <label>Homepage Description</label>
             <textarea required type="text" ng-model="home.description"></textarea>
         </md-input-container>
-        <img flex="50" preload layout-padding ng-src="http://rdjpg.com/442/570">
+        <line-chart layout-padding layout-align="center center" flex="50" labels="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
+        data="[[65, 59, 80, 81, 56, 55, 40]]" title="SomeLineGraph"></line-chart>
     </md-content>
 </plain-card>
