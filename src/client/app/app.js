@@ -51,7 +51,9 @@ angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAc
     .config(ChartJsProvider => {
             ChartJsProvider.setOptions({
                 colours: ["#004b8d", "#e4a024", "#c6bc89", "#d95f00", "#983222", "#a2ad00"],
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill : false
             })
         });
 

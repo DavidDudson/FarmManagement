@@ -1,18 +1,16 @@
 <plain-card class="body-space" help="app.help" save="app.save">
     <md-content layout="row" layout-align="center start" layout-padding>
-        <p id="hometext" flex="50" layout-padding ng-if="!app.editable"> {{home.description}} </p>
+        <p id="hometext" class="md-headline" flex="50" layout-padding ng-if="!app.editable"> {{home.description}} </p>
         <md-input-container flex="50" layout-padding ng-if="app.editable">
             <label>Homepage Description</label>
             <textarea required type="text" ng-model="home.description"></textarea>
         </md-input-container>
-        <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50">
-            <uib-slide ng-repeat="graph in home.graphs">
+        <uib-carousel interval="5000" no-wrap="noWrapSlides" flex="50" layout-align="center center">
+            <uib-slide ng-repeat="graph in home.graphs" layout="row" layout-align="space-between center">
+                <p class="md-headline">{{graph.title}}</p>
                 <canvas layout-padding layout-align="center center" class="chart chart-line" chart-data="graph.data"
-                        chart-series="graph.series" chart-legend="true" chart-labels="graph.labels"></canvas>
+                        chart-series="graph.series" chart-legend="false" chart-labels="graph.labels"></canvas>
             </uib-slide>
-            <div class="carousel-caption">
-                <h3>{{graph.title}}</h3>
-            </div>
         </uib-carousel>
     </md-content>
 </plain-card>

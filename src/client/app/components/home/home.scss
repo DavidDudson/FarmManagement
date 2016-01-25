@@ -2,10 +2,13 @@
 
 #hometext {
   text-align: justify;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
 }
 
-line-chart {
-  min-height: 300px;
+canvas {
+  min-height: 50%;
 }
 
 .carousel-control {
@@ -13,7 +16,7 @@ line-chart {
 }
 
 .carousel-indicators li {
-  &:active, &:focus &:selection &:hover {
+  &:active, &:focus &:hover {
     background: $AgriTextGrey;
   }
   border: 1px solid $AgriTextGrey;
