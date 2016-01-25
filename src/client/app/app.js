@@ -47,13 +47,16 @@ class AppCtrl {
 }
 
 angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', uibs])
-    .controller('AppCtrl', AppCtrl);
+    .controller('AppCtrl', AppCtrl)
+    .config(ChartJsProvider => {
+            ChartJsProvider.setOptions({
+                colours: ["#004b8d", "#e4a024", "#c6bc89", "#d95f00", "#983222", "#a2ad00"],
+                responsive: true
+            })
+        });
 
 var requireAll = r => r.keys().forEach(r);
 
 requireAll(require.context('./components/', true, /\.js$/));
 
 require("util/preload/preload");
-
-// This doesnt work due to webpack.
-//Chart.defaults.global.colours = ["#004b8d", "#e4a024", "#c6bc89", "#d95f00", "#983222", "#a2ad00"];
