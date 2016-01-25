@@ -8,6 +8,7 @@ var Category = Promise.promisifyAll(require("./category.model"));
 var Topic = Promise.promisifyAll(require("../topic/topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
 
+var _ = "lodash";
     //setup
 router.get("/categories", (req, res) => {
     Category.find({}, function(err, result){}).exec()
@@ -19,28 +20,30 @@ router.get("/categories", (req, res) => {
     //get
 router.get("/category/:id", (req, res) => {
     console.log("Searching for category: " + req.params.id);
-    Category.findOne({"_id": req.params.id}, function(err, result){}).exec()
+    Category.findOne({"_id": req.params.id}, function(err, result){}).lean().exec()
         .then(function(cData) {
             if(cData) {
-                console.log("Found Category: " + id);
                 var fndCat = cData;
-                Topic.find({"category": fndCat._id}, function(err, result){}).exec()
+                Topic.find({"category": fndCat._id}, function(err, result){}).lean().exec()
                     .then(function(tData) {
                         if(tData) {
-                            console.log("Found Topic: " + tData.title);
                             fndCat.topics = tData;
-                            fndCat.topics.forEach(function(t) {
-                                Question.find({"question": t._id}, function(err, result){}).exec()
-                                    .then(function(qData) {
-                                        if(qData) {
-                                            console.log("Found Question");
-                                            t.questions = qData;
-                                        }
-                                    });
-                            });
+                            res.json(fndCat); // comment this to add questions
+                        } else {
+                            res.json(fndCat);
                         }
-                        res.json(fndCat);
                     });
+                //Question.find({"category": fndCat._id}, function(err, result){}).lean().exec()
+                //    .then(function(qData) {
+                //        if(qData) {
+                //            fndCat.topics.forEach(function(t) {
+                //                var fndList = _.differenceWith(qData, {"topic": t._id}, _.isEqual );
+                //                res.json(fndList);
+                //            });
+                //        } else {
+                //            res.json(fndCat);
+                //        }
+                //    });
             }
             if(!cData) {
                 res.sendStatus(400);

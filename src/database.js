@@ -30,6 +30,7 @@ module.exports = function() {
                     if(t.questions && t.questions.length > 0) {
                         t.questions.forEach(function(q) {
                             q.topic = newTop._id;
+                            q.category = newCat._id;
                             var newQue = new Question(q);
                             Question.findOne({"title": q.title}, function(err, result) {
                                 if(!result) {

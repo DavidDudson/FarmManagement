@@ -4,6 +4,7 @@ var mongoose    = require('mongoose');
 var questionSchema = new mongoose.Schema({
     title           : {type : String, unique : true},
     topic           : String,
+    category        : String,
     top_headings    : Boolean,
     side_headings   : Boolean,
     question        : String,
