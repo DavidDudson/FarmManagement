@@ -6,12 +6,12 @@ var HTTP = undefined;
 var ROOT = undefined;
 
 class CategoryCtrl {
-    constructor($http, $rootScope, $stateParams) {
-        this.category = _.find($rootScope.app.categories, {id: $stateParams.id});
+    constructor($http, $rootScope, catData) {
+        this.category = catData.data;
         this.title = this.category.title;
         this.id = this.category._id;
         this.description = this.category.description;
-        this.topics = topics;
+        this.topics = this.category.topics;
         HTTP = $http;
         ROOT = $rootScope;
     }
@@ -40,13 +40,15 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("main.category", {
-                url: '/category/{id}',
+                url: '/category/:id',
                 template: require('./category.html'),
                 controller: CategoryCtrl,
                 controllerAs: "category",
                 resolve: {
-                    topics: ($http, $rootScope, $stateParams) => $http.get("/category/" + $stateParams.id)
-                        .then(res => _.find($rootScope.app.categories, {id: $stateParams.id}).topics = res.data, err => console.error(err))
+                    catData: function($http, $stateParams) {
+                        //console.log($stateParams.id);
+                        return $http.get("/category/" + $stateParams.id);
+                    }
                 }
-            })
+            });
     });
