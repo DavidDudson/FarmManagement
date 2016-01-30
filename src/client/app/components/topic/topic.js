@@ -7,13 +7,14 @@ var LOCATION = undefined;
 var ROOT = undefined;
 
 class TopicCtrl {
-    constructor($location, $http, $rootScope, $stateParams) {
-        this.topic =  _.find($rootScope.app.topics, {id: _.parseInt($stateParams.id)});
-        this.id = this.topic.id;
+    constructor($location, $http, $rootScope, $stateParams, catData) {
+        this.category = catData.data;
+        this.topic = _.find(this.category.topics, {_id: $stateParams.topicId});
+        this.id = this.topic._id;
         this.title = this.topic.title;
         this.description = this.topic.description;
         this.questions = this.topic.questions;
-        this.question = this.topic.questions[_.parseInt($stateParams.questionId)];
+        this.question = _.find(this.category.topics, {_id: $stateParams.questionId});
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
@@ -48,7 +49,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("topic" , {
-                url: '/topic/:id?questionId?part',
+                url: '/topic/:categoryId?topicId?questionId?part',
                 views: {
                     '': {
                         template: require('./topic.html'),
@@ -58,7 +59,7 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
-                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.id),
+                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.categoryId),
                     categories: ($http, $rootScope) => $http.get("/categories")
                 }
             })
