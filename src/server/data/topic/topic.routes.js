@@ -8,8 +8,8 @@ var Topic = Promise.promisifyAll(require("./topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
 
     //get
-router.get("/topic/:title", (req, res) => {
-    Topic.findOne({"title": req.params.title}, function(err, result){}).exec()
+router.get("/topic/:id", (req, res) => {
+    Topic.findOne({"_id": req.params.id}, function(err, result){}).exec()
         .then(function(tData) {
             if(tData) {
                 var fndTop = tData;
