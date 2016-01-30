@@ -102,12 +102,11 @@ angular.module('app')
         });
 
         $stateProvider
-            .state("main", {
+            .state("home", {
                 url: '/home',
                 views: {
-                    'home': {
+                    '': {
                         template: require('./home.html'),
-                        replace: true,
                         controller: HomeCtrl,
                         controllerAs: 'home'
                     },

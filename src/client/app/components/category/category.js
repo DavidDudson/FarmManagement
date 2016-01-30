@@ -39,14 +39,18 @@ class CategoryCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("main.category", {
+            .state("category", {
                 url: '/category/:id',
-                template: require('./category.html'),
-                controller: CategoryCtrl,
-                controllerAs: "category",
+                views: {
+                    '': {
+                        template: require('./category.html'),
+                        controller: CategoryCtrl,
+                        controllerAs: "category"
+                    },
+                    'nav': require('components/nav/scroll/scroll.js')
+                },
                 resolve: {
                     catData: function($http, $stateParams) {
-                        //console.log($stateParams.id);
                         return $http.get("/category/" + $stateParams.id);
                     }
                 }

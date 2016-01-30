@@ -8,7 +8,7 @@
         <md-list-item ng-repeat="category in $root.app.categories track by $index" flex="15" layout="row" layout-align="stretch center" ng-if="$index < nav.displayCount()">
 
             <a ng-disabled="nav.index === category._id" class="nav-sref"
-               ui-sref=".category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
+               ui-sref="category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
 
                 <md-button ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">{{category.title}}</md-button>
             </a>

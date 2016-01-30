@@ -47,10 +47,15 @@ class TopicCtrl {
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("main.topic" , {
+            .state("topic" , {
                 url: '/topic/:id?questionId?part',
-                template: require('./topic.html'),
-                controller: TopicCtrl,
-                controllerAs: "topic"
+                views: {
+                    '': {
+                        template: require('./topic.html'),
+                        controller: TopicCtrl,
+                        controllerAs: "topic"
+                    },
+                    'nav': require('components/nav/scroll/scroll.js')
+                }
             })
     });
