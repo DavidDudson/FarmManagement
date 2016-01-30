@@ -9,7 +9,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("admin", {
-                url: '/home',
+                url: '/admin/home',
                 views: {
                     'home': {
                         template: require('./admin.html'),
