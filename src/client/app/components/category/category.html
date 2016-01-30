@@ -2,7 +2,7 @@
              remove="category.remove" help="category.help" save="category.save">
     <v-accordion control="accordion">
         <v-pane ng-repeat="topic in category.topics track by $index">
-            <v-pane-header layout="row">
+            <v-pane-header layout="row" flex>
                 <md-button class="md-no-style md-list-item-text" layout="column" layout-align="start start" flex="90">
                         <h3 layout="row" layout-align="start start" class="md-subtitle" flex="100">{{ topic.title }}</h3>
                         <h4 layout-align="start start" ng-if="topic.description">{{ topic.description }}</h4>

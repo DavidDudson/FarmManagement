@@ -1,26 +1,25 @@
 <md-content class="md-padding">
-    <md-card layout-fill>
-        <md-card-title>
+    <md-card layout-fill layout="column">
+        <md-card-title flex="20">
             <md-card-title-text>
                 <div layout="column">
                     <editable name="'Title'" value="title" type="'input'" description="'Title'"
                               flex="50" class="md-headline" layout-padding></editable>
-                    <editable name="'Description'" value="home.description" type="'input'" description="'Description'"
+                    <editable name="'Description'" value="description" type="'input'" description="'Description'"
                               flex="50" class="md-subtitle" layout-padding></editable>
                 </div>
             </md-card-title-text>
         </md-card-title>
-        <br>
         <md-divider></md-divider>
-        <md-content ng-transclude layout="column">
+        <md-content ng-transclude flex="50">
         </md-content>
-        <bottom-nav class="md-padding"></bottom-nav>
-        <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true">
+        <bottom-nav class="md-padding" flex="10"></bottom-nav>
+        <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true" flex="10">
             <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
             <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
             <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>
-            <md-button ng-if="$root.app.editable" ng-click="$root.app.editable = false">Cancel</md-button>
-            <md-button ng-click="$root.app.editable ? save() : $root.app.editable = true">{{$root.app.editable == true ? "Save" : "Edit"}}</md-button>
+            <md-button ng-if="$root.app.editable" ng-click="$root.app.resetEdit()">Cancel</md-button>
+            <md-button ng-click="card.save(save)">{{$root.app.editable == true ? "Save" : "Edit"}}</md-button>
         </md-card-action>
     </md-card>
 </md-content>
