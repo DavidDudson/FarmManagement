@@ -2,13 +2,14 @@ require('./scroll.scss');
 
 
 class ScrollCtrl {
-    constructor($rootScope) {
+    constructor($rootScope, categories) {
+
+        this.categories = categories.data;
 
         this.index = undefined;
         this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
 
         this.centerIndex = function (id) {
-            $rootScope.category = _.find(this.categories, {id: id});
             this.index = id;
             this.scrollLeft();
             this.scrollLeft();

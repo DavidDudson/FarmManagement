@@ -114,7 +114,6 @@ angular.module('app')
                 },
                 resolve: {
                     categories: ($http, $rootScope) => $http.get("/categories")
-                        .then(res => $rootScope.app.categories = res.data, err => console.log(err))
                 }
             });
     });

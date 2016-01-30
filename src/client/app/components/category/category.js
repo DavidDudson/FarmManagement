@@ -14,6 +14,7 @@ class CategoryCtrl {
         this.topics = this.category.topics;
         HTTP = $http;
         ROOT = $rootScope;
+        $rootScope.category = this.category;
     }
 
     add() {
@@ -50,9 +51,8 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
-                    catData: function($http, $stateParams) {
-                        return $http.get("/category/" + $stateParams.id);
-                    }
+                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.id),
+                    categories: ($http, $rootScope) => $http.get("/categories")
                 }
             });
     });

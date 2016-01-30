@@ -56,6 +56,10 @@ angular.module('app')
                         controllerAs: "topic"
                     },
                     'nav': require('components/nav/scroll/scroll.js')
+                },
+                resolve: {
+                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.id),
+                    categories: ($http, $rootScope) => $http.get("/categories")
                 }
             })
     });
