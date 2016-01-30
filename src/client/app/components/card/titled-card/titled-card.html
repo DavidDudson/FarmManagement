@@ -2,18 +2,12 @@
     <md-card layout-fill>
         <md-card-title>
             <md-card-title-text>
-                <div ng-if="$root.app.editable === false" layout="column">
-                    <span class="md-headline">{{title}}</span>
-                    <span class="md-subhead" ng-if="description">{{description}}</span>
+                <div layout="column">
+                    <editable name="'Title'" value="title" type="'input'" description="'Title'"
+                              flex="50" class="md-headline" layout-padding></editable>
+                    <editable name="'Description'" value="home.description" type="'input'" description="'Description'"
+                              flex="50" class="md-subtitle" layout-padding></editable>
                 </div>
-                <md-input-container ng-if="$root.app.editable === true">
-                    <label>Title</label>
-                    <input required type="text" ng-model="title">
-                </md-input-container>
-                <md-input-container ng-if="$root.app.editable === true && description">
-                    <label>Description</label>
-                    <textarea ng-model="description" md-maxlength="150"></textarea>
-                </md-input-container>
             </md-card-title-text>
         </md-card-title>
         <br>

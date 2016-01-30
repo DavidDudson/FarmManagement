@@ -6,6 +6,6 @@
     <md-input-container class="editable" ng-if="$root.editingName === name && $root.app.editable === true">
         <label>{{description}}</label>
         <textarea  ng-if="type === 'text_area'"required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"></textarea>
-        <input ng-if="type === 'text'"required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"/>
+        <input ng-if="type === 'input'"required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"/>
     </md-input-container>
 </md-content>

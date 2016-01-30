@@ -24,10 +24,11 @@ class CategoryCtrl {
     }
 
     save() {
-        HTTP.put('categories', {category: this.category})
-            .then(res => _.map(ROOT.categories, cat => cat.id === this.category.id ? res.data : cat),
-                err => console.log(err));
-            ROOT.app.editable = false;
+        this.category.title = ROOT.edit['Title'];
+        this.category.description = ROOT.edit['Description'];
+        HTTP.put('categories', {id: this.category._id, title: this.category.title, description: this.category.description})
+            .then((res, err) => err ? console.log(err) : alert("Saved Succesfully"));
+        ROOT.app.editable = false;
     }
 
     remove() {
