@@ -1,20 +1,8 @@
 <titled-card title="topic.title" description="topic.description" add="topic.add" remove="topic.remove"
-             help="topic.help" save="topic.save">
-    <div ng-if="topic.current === 'test'" layout="column">
-        <p>{{topic.test.description}}</p>
-        <spreadsheet data="topic.test.table" answer="topic.test.answer" ng-if="topic.test.type === 'table'"></spreadsheet>
-        <multichoice options="topic.test.options" answer="topic.test.answer" ng-if="topic.test.type === 'multichoice'"></multichoice>
-        <basic answer="topic.test.answer" ng-if="topic.test.type === 'basic'"></basic>
-        <md-button class="md-raised md-primary md-padding">Check Answer</md-button>
-    </div>
-    <div ng-if="topic.current === 'tool'">
-        <p>{{topic.tool.description}}</p>
-        <spreadsheet data="topic.tool.table" ng-if="topic.tool.type === 'table'"></spreadsheet>
-    </div>
-    <div ng-if="topic.current === 'tutorial'">
-        <p>{{topic.tutorial.description}}</p>
-        <spreadsheet data="topic.tutorial.table" ng-if="topic.tutorial.type === 'table'"></spreadsheet>
-        <basic answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'basic'"></basic>
-        <multichoice options="topic.tutorial.options" answer="topic.tutorial.answer" ng-if="topic.tutorial.type === 'multichoice'"></multichoice>
-    </div>
+             help="topic.help" save="topic.save" layout="column">
+        <spreadsheet data="topic.question.table" answer="topic.question.answer" ng-if="topic.question.table"></spreadsheet>
+        <!--Disabled temperarily-->
+        <!--<multichoice options="topic.test.options" answer="topic.test.answer" ng-if="topic.test.type === 'multichoice'"></multichoice>-->
+        <!--<basic answer="topic.test.answer" ng-if="topic.test.type === 'basic'"></basic>-->
+        <md-button ng-if="topic.current === 'test'" class="md-raised md-primary md-padding" ng-click="topic.checkAnswer()">Check Answer</md-button>
 </titled-card>

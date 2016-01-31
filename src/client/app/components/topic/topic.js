@@ -14,7 +14,7 @@ class TopicCtrl {
         this.title = this.topic.title;
         this.description = this.topic.description;
         this.questions = this.topic.questions;
-        this.question = _.find(this.category.topics, {_id: $stateParams.questionId});
+        this.question = _.find(this.questions, {_id: $stateParams.questionId});
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;
@@ -41,6 +41,9 @@ class TopicCtrl {
             .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
                 err => console.log(err));
         ROOT.app.editable = false;
+    }
+
+    checkAnswer() {
 
     }
 }
