@@ -15,6 +15,8 @@ class TopicCtrl {
         this.description = this.topic.description;
         this.questions = this.topic.questions;
         this.question = _.find(this.questions, {_id: $stateParams.questionId});
+        this.topHeader = this.question.top_headings;
+        this.sideHeader = this.question.side_headings;
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
         LOCATION = $location;

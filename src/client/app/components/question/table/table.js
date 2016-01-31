@@ -27,7 +27,9 @@ class TableDirective {
         this.replace = false;
         this.scope = {
             data : '=',
-            answer : '='
+            answer : '=',
+            topHeader : '=',
+            sideHeader : '='
         };
         this.link = $scope => SCOPE = $scope;
         this.controller = TableController;
