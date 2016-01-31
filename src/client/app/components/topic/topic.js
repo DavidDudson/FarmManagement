@@ -39,6 +39,8 @@ class TopicCtrl {
     }
 
     save() {
+        this.topic.title = ROOT.edit['Title'];
+        this.topic.description = ROOT.edit['Description'];
         HTTP.put("/topic", this.topic)
             .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
                 err => console.log(err));
