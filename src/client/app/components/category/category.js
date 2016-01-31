@@ -12,27 +12,26 @@ class CategoryCtrl {
         this.id = this.category._id;
         this.description = this.category.description;
         this.topics = this.category.topics;
+        $rootScope.category = this.category;
         HTTP = $http;
         ROOT = $rootScope;
-        $rootScope.category = this.category;
     }
 
     add() {
-        HTTP.post('categories', {name: "New Category"})
+        HTTP.post('category', {name: "New Category"})
             .then(res => ROOT.categories.push(res.data),
                 err => console.log(err))
     }
 
     save() {
-        this.category.title = ROOT.edit['Title'];
-        this.category.description = ROOT.edit['Description'];
-        HTTP.put('categories', {id: this.category._id, title: this.category.title, description: this.category.description})
-            .then((res, err) => err ? console.log(err) : alert("Saved Succesfully"));
+        ROOT.category.title = ROOT.edit['Title'];
+        ROOT.category.description = ROOT.edit['Description'];
+        HTTP.put('category', ROOT.category).then((res, err) => err ? console.log(err) : alert("Saved Succesfully"));
         ROOT.app.editable = false;
     }
 
     remove() {
-        HTTP.delete('categories', {id: this.category.id})
+        HTTP.delete('category', {id: this.category.id})
             .then(() => _.remove(ROOT.categories, {id: this.category._id},
                 err => console.log(err)))
     }
