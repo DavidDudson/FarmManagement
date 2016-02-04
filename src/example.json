@@ -8,13 +8,12 @@
           "questions": [
             {
               "title": "Basic Operating Profit Margin",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "question": "A farmer receives a gross farm income of [B1] and incurs operating expenses of [B2]. What is his operating profit margin?",
               "table": [
                 ["Gross Farm Income", "400000 to 600000 inc 20000"],
-                ["Operating Expenses", "170000 to 250000 inc 15000"],
-                ["Operating Profit", "? [B1] - [B2]"],
+                ["Operating Expenses", "170000 to 250000 inc 15000"], ["Operating Profit", "? [B1] - [B2]"],
                 ["Operating Profit Margin", "? ([B1] - [B3]) / [B1] * 100"]
               ]
             }, {
@@ -22,16 +21,11 @@
               "question": "A farmer receives a total income of [B1], which includes a loss from rental properties of [B2]. The net profit for the business is [B4]. Expenses on interest & rent are [B5] & [B6] respectively. Given that the value of unpaid family labour and management is [B7]. What is his operating profit margin ?",
               "table": [
                 ["Total Income", "400000 to 500000 inc 20000"],
-                ["Income From Rental Properties", "-5000 to 0 inc 1000"],
-                ["Gross Farm Income", "? [B1] + [B2]"],
-                ["Net Profit", "190000 to 250000 inc 15000"],
-                ["Total Expenses", "? [B3] - [B4]"],
-                ["Interest", "45000 to 60000 inc 5000"],
-                ["Rent", "40000 to 50000 inc 1000"],
-                ["Family Labour & Management", "40000 to 50000 inc 1000"],
-                ["Operating Expenses", "? ..."],
-                ["Operating Profit", "? ..."],
-                ["Operating Profit Margin", "? ..."]
+                ["Income From Rental Properties", "-5000 to 0 inc 1000"], ["Gross Farm Income", "? [B1] + [B2]"],
+                ["Net Profit", "190000 to 250000 inc 15000"], ["Total Expenses", "? [B3] - [B4]"],
+                ["Interest", "45000 to 60000 inc 5000"], ["Rent", "40000 to 50000 inc 1000"],
+                ["Family Labour & Management", "40000 to 50000 inc 1000"], ["Operating Expenses", "? ..."],
+                ["Operating Profit", "? ..."], ["Operating Profit Margin", "? ..."]
               ]
             }
           ]
@@ -41,23 +35,20 @@
             {
               "title": "Basic Asset Turnover Ratio",
               "question": "A farmer receives a gross farm income of [B1]. The total assets of his business at opening is [B2]. What is the asset turnover ratio for the business?",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "table": [
-                ["Gross Farm Income", "400000 to 600000 inc 20000"],
-                ["Total Assets", "2500000 to 2750000 inc 50000"],
+                ["Gross Farm Income", "400000 to 600000 inc 20000"], ["Total Assets", "2500000 to 2750000 inc 50000"],
                 ["Asset Turnover Ratio", "? ([B1] - [B2]) / [B1] * 100"]
               ]
             }, {
               "title": "Advanced Asset Turnover Ratio",
               "question": "A farmer receives a gross farm income of [B1]. The total liabilities & equity of the business are [B2] & [B3] respectively.  What is the asset turnover ratio for the business?",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "table": [
-                ["Gross Farm Income", "400000 to 600000 inc 20000"],
-                ["Liabilities", "800000 to 900000 inc 20000"],
-                ["Total Assets", "? ..."],
-                ["Asset Turnover Ratio", "? ..."]
+                ["Gross Farm Income", "400000 to 600000 inc 20000"], ["Liabilities", "800000 to 900000 inc 20000"],
+                ["Total Assets", "? ..."], ["Asset Turnover Ratio", "? ..."]
               ]
             }
           ]
@@ -67,14 +58,12 @@
             {
               "title": "Return on Assets",
               "question": "A farmer receives a gross farm income of [B1] and incurs operating expenses of [B2]. His expenses on rent are [B4]. The total assets of the business is [B5]. What is the return on asset for this business?",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "table": [
                 ["Gross Farm Income", "400000 to 600000 inc 20000"],
-                ["Operating Expenses", "170000 to 250000 inc 15000"],
-                ["Operating Profit", "? ..."],
-                ["Rent", "40000 to 50000 inc 1000"],
-                ["Total Assets", "250000 to 275000 inc 50000"],
+                ["Operating Expenses", "170000 to 250000 inc 15000"], ["Operating Profit", "? ..."],
+                ["Rent", "40000 to 50000 inc 1000"], ["Total Assets", "250000 to 275000 inc 50000"],
                 ["Return on Assets", "? ..."]
               ]
             }
@@ -85,36 +74,27 @@
             {
               "title": "Basic Return on Equity",
               "question": "A farmer receives a gross farm income of [B1] and incurs operating expenses of [B2]. His expenses on interest & rent are [B4] & [B5] respectively. The equity of the business is [B6]. What is the return on equity for this business?",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "table": [
                 ["Gross Farm Income", "400000 to 600000 inc 20000"],
-                ["Operating Expenses", "170000 to 250000 inc 15000"],
-                ["Operating Profit", "? ..."],
-                ["Rent", "40000 to 50000 inc 1000"],
-                ["Total Assets", "250000 to 275000 inc 50000"],
-                ["Equity", "1500000 to 2000000 inc 100000"],
-                ["Return on Equity", "? ..."]
+                ["Operating Expenses", "170000 to 250000 inc 15000"], ["Operating Profit", "? ..."],
+                ["Rent", "40000 to 50000 inc 1000"], ["Total Assets", "250000 to 275000 inc 50000"],
+                ["Equity", "1500000 to 2000000 inc 100000"], ["Return on Equity", "? ..."]
               ]
             }, {
               "title": "Advanced Return on Equity",
               "question": "A farmer receives a total income of [B1], which includes a loss from rental properties of [B2]. The net profit for the business is [b4]. Expenses on interest & rent are [B6] & [B7] respectively. The value of unpaid family labour and management is [B8]. The total assets & total liabilities of the business are [B11] & [B12] respectively. What is his return on equity for this farm?",
-              "top_headings" : false,
-              "side_headings" : true,
+              "top_headings": false,
+              "side_headings": true,
               "table": [
                 ["Total Income", "400000 to 600000 inc 20000"],
-                ["Income From Rental Properties", "-5000 to 0 inc 1000"],
-                ["Gross Farm Income", "? ..."],
-                ["Net Profit", "190000 to 250000 inc 15000"],
-                ["Total Expenses", "? ..."],
-                ["Interest", "45000 to 60000 inc 5000"],
-                ["Rent", "40000 to 50000 inc 1000"],
-                ["Family Labour & Management", "40000 to 50000 inc 1000"],
-                ["Operation Expenses", "? ..."],
-                ["Operation Profit", "? ..."],
-                ["Total Assets", "2500000 to 2750000 inc 500000"],
-                ["Total Liability", "250000 to 275000 inc 50000"],
-                ["Equity", "1500000 to 2000000 inc 100000"],
+                ["Income From Rental Properties", "-5000 to 0 inc 1000"], ["Gross Farm Income", "? ..."],
+                ["Net Profit", "190000 to 250000 inc 15000"], ["Total Expenses", "? ..."],
+                ["Interest", "45000 to 60000 inc 5000"], ["Rent", "40000 to 50000 inc 1000"],
+                ["Family Labour & Management", "40000 to 50000 inc 1000"], ["Operation Expenses", "? ..."],
+                ["Operation Profit", "? ..."], ["Total Assets", "2500000 to 2750000 inc 500000"],
+                ["Total Liability", "250000 to 275000 inc 50000"], ["Equity", "1500000 to 2000000 inc 100000"],
                 ["Return on Equity", "? ..."]
               ]
             }
@@ -122,15 +102,206 @@
         }, {
           "title": "Cost Of Production",
           "questions": [
-
           ]
-
         }
       ]
-    },
-    {"title": "Income", "description": "Money makes the world taste good, because it shoud #noteapotshere"},
-    {"title": "Liquidity"},
-    {"title": "Profitability"},
-    {"title": "Wealth"}
+    }, {
+      "title": "Income",
+      "description": "Money makes the world taste good, because it shoud #noteapotshere",
+      "topics": [
+        {
+          "title": "Sales",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Net Cash Income",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Income Level",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Terms of trade",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    }, {
+      "title": "Liquidity",
+      "topics": [
+        {
+          "title": "GST (Output)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "GST (Output)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "C.A. Intrest)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Closing Balance",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    }, {
+      "title": "Profitability",
+      "topics": [
+        {
+          "title": "Net Profit",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Operating Profit",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    }, {
+      "title": "Wealth",
+      "topics": [
+        {
+          "title": "Assets",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Liability",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Equity",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Working Capital",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Net Indebtedness",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }, {
+          "title": "Solvency (Ratio's)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            }, {
+              "title": "Dairy"
+            }, {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
