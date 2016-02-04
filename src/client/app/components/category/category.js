@@ -7,32 +7,34 @@ var ROOT = undefined;
 
 class CategoryCtrl {
     constructor($http, $rootScope, catData) {
-        this.category = catData.data;
-        this.title = this.category.title;
-        this.id = this.category._id;
-        this.description = this.category.description;
-        this.topics = this.category.topics;
-        $rootScope.category = this.category;
+        $rootScope.category = catData.data;
         HTTP = $http;
         ROOT = $rootScope;
     }
 
     add() {
-        HTTP.post('category', {name: "New Category"})
+        HTTP.post('category', {title: "New Category"})
             .then(res => ROOT.categories.push(res.data),
                 err => console.log(err))
     }
 
     save() {
-        ROOT.category.title = ROOT.edit['Title'];
-        ROOT.category.description = ROOT.edit['Description'];
-        HTTP.put('category', ROOT.category).then((res, err) => err ? console.log(err) : alert("Saved Succesfully"));
-        ROOT.app.editable = false;
+        if(!!ROOT.edit['Title']) {
+            ROOT.category.title = ROOT.edit["Title"]
+        }
+        if(!!ROOT.edit['Description']) {
+            ROOT.category.description = ROOT.edit['Description'];
+        }
+        HTTP.put('category/' + ROOT.category._id, {title: ROOT.category.title, description: ROOT.category.description})
+            .then((res, err) => {
+                !!err ? console.log(err) : alert("Saved Succesfully");
+                ROOT.app.editable = false;
+            });
     }
 
     remove() {
-        HTTP.delete('category', {id: this.category.id})
-            .then(() => _.remove(ROOT.categories, {id: this.category._id},
+        HTTP.delete('category/' + ROOT.category._id, {id: ROOT.category._id})
+            .then(() => _.remove(ROOT.nav.categories, {id: ROOT.category._id},
                 err => console.log(err)))
     }
 }
