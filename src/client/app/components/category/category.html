@@ -1,6 +1,6 @@
 <titled-card title="$root.category.title" description="$root.category.description" add="category.add"
              remove="category.remove" help="category.help" save="category.save">
-    <v-accordion control="accordion">
+    <v-accordion>
         <v-pane ng-repeat="topic in $root.category.topics track by $index">
             <v-pane-header layout="row" flex>
                 <md-button class="md-no-style md-list-item-text" layout="column" layout-align="start start" flex="90">
@@ -8,7 +8,7 @@
                         <h4 layout-align="start start" ng-if="topic.description">{{ topic.description }}</h4>
                 </md-button>
                 <md-button class="md-icon-button" flex="10">
-                    <md-icon> {{accordion.hasExpandedPane() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                    <md-icon> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
                 </md-button>
                 <md-divider></md-divider>
             </v-pane-header>
