@@ -11,16 +11,20 @@ class DeletableController {
     }
 
     static showButton() {
-        if (ROOT.app.editable) {
+        if (ROOT.app.editable === true) {
             SCOPE.show = true;
         }
     };
 
     static hideButton() {
-        if (ROOT.app.editable) {
+        if (ROOT.app.editable === true) {
             SCOPE.show = false;
         }
     };
+
+    deleteItem() {
+        SCOPE.deleteFunc(SCOPE._id);
+    }
 }
 
 class DeletableDirective {
@@ -31,11 +35,12 @@ class DeletableDirective {
         this.transclude = true;
         this.controller = DeletableController;
         this.controllerAs = "deletable";
-        this.scope = {
-            deleteFunc: '='
+        this.link = (scope, element, attrs) => {
+            scope.deleteFunc = scope.$eval(attrs.deleteFunc);
+            scope._id = scope.$eval(attrs._id);
         }
     }
 }
 
 angular.module('app')
-    .directive('editable', () => new DeletableDirective());
+    .directive('deletable', () => new DeletableDirective());
