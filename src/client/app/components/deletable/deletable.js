@@ -1,43 +1,41 @@
-require('./editable.scss');
+require('./deletable.scss');
 
 var ROOT = undefined;
 var SCOPE = undefined;
 
-class EditableController {
+class DeletableController {
 
     constructor($rootScope, $scope) {
         ROOT = $rootScope;
         SCOPE = $scope;
     }
 
-    showButton() {
+    static showButton() {
         if (ROOT.app.editable) {
             SCOPE.show = true;
         }
     };
 
-    hideButton() {
+    static hideButton() {
         if (ROOT.app.editable) {
             SCOPE.show = false;
         }
     };
 }
 
-class EditableDirective {
+class DeletableDirective {
     constructor() {
-        this.template = require('./editable.html');
+        this.template = require('./deletable.html');
         this.restrict = 'E';
         this.replace = true;
-        this.controller = EditableController;
-        this.controllerAs = "editable";
+        this.transclude = true;
+        this.controller = DeletableController;
+        this.controllerAs = "deletable";
         this.scope = {
-            value: '=',
-            name: '=',
-            type: '=',
-            description: '='
+            deleteFunc: '='
         }
     }
 }
 
 angular.module('app')
-    .directive('editable', () => new EditableDirective());
+    .directive('editable', () => new DeletableDirective());
