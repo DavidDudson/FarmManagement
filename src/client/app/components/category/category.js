@@ -12,8 +12,8 @@ class CategoryCtrl {
         ROOT = $rootScope;
     }
 
-    add() {
-        HTTP.post('category', {title: "New Category"})
+    addTopic() {
+        HTTP.post('topic', {title: "New Topic", description: "New Description"})
             .then(res => ROOT.categories.push(res.data),
                 err => console.log(err))
     }

@@ -1,9 +1,11 @@
 require('./scroll.scss');
 
+var HTTP = undefined;
 
 class ScrollCtrl {
-    constructor($rootScope, categories) {
+    constructor($rootScope, $http, categories) {
 
+        HTTP = $http;
         this.categories = categories.data;
 
         this.index = undefined;
@@ -42,6 +44,12 @@ class ScrollCtrl {
         };
 
         $rootScope.nav = this;
+    }
+
+    addCategory() {
+        HTTP.post('category', {title: "New Category", description: "New Description"})
+            .then(res => ROOT.categories.push(res.data),
+                err => console.log(err))
     }
 }
 

@@ -23,11 +23,16 @@ class TopicCtrl {
         ROOT = $rootScope;
     }
 
-    add() {
-        var exampleData = {title: "New Topic", description: "New Description"};
-        HTTP.post("/topic", exampleData)
+    addQuestion() {
+        var exampleData = {
+            title: "New Question",
+            question: "New Question",
+            topHeader: true,
+            sideHeader: true,
+            table: [["Example", "Data"], ["Test", 1], ["Data", 2]]};
+        HTTP.post("/question", exampleData)
             .then(res => {
-                this.topics.add(res.data);
+                this.questions.add(res.data);
                 LOCATION.path('/topic/' + res.data.id);
             }, err => console.log(err));
     }

@@ -40,15 +40,15 @@
                         </a>
                     </md-list-item>
                     <md-list-item ng-if="$root.app.editable">
-                        <md-button class="add md-raised" aria-label="Add">
-                            <md-icon>add_circle_outline</md-icon><span>      Question</span>
+                        <md-button class="add md-raised" aria-label="Add" ng-click="topic.addQuestion()">
+                            <md-icon>add_circle_outline</md-icon><span>Question</span>
                         </md-button>
                     </md-list-item>
                 </md-list>
             </v-pane-content>
         </v-pane>
     </v-accordion>
-    <md-button class="add md-raised" aria-label="Add">
+    <md-button class="add md-raised" aria-label="Add" ng-if="$root.app.editable" ng-click="$root.category.addTopic()">
         <md-icon>add_circle_outline</md-icon><span>  Topic</span>
     </md-button>
 </titled-card>
