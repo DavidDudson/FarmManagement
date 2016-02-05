@@ -16,31 +16,39 @@
                 <md-list>
                     <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
                                   layout="row" layout-align="start start" flex>
-                        <a class="li" ui-sref="topic({categoryId: category.id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
+                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
                            flex="70" layout-align="start start">
                             <md-button class="md-no-style md-list-item-text">
                                 <h3 class="md-subtitle">{{ question.title }}</h3>
                                 <h4 ng-if="question.description">{{ question.question }}</h4>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({categoryId: category.id, topicId: topic._id, questionId: question._id, part: 'tutorial'})" flex = 10>
+                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({categoryId: category.id, topicId: topic._id, questionId: question._id, part: 'test'})" flex = 10>
+                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'test'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>
                         </a>
-                        <a class="li" ui-sref="topic({categoryId: category.id, topicId: topic._id, questionId: question._id, part: 'tool'})" flex = 10>
+                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tool'})" flex = 10>
                             <md-button>
                                 <md-icon>cake</md-icon>
                             </md-button>
                         </a>
                     </md-list-item>
+                    <md-list-item ng-if="$root.app.editable">
+                        <md-button class="add md-raised" aria-label="Add">
+                            <md-icon>add_circle_outline</md-icon><span>      Question</span>
+                        </md-button>
+                    </md-list-item>
                 </md-list>
             </v-pane-content>
         </v-pane>
     </v-accordion>
+    <md-button class="add md-raised" aria-label="Add">
+        <md-icon>add_circle_outline</md-icon><span>  Topic</span>
+    </md-button>
 </titled-card>
