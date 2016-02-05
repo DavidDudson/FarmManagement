@@ -54,8 +54,13 @@ class ScrollCtrl {
                 ROOT.nav.categories.push(res.data);
                 ROOT.app.showToast("Create Category Succeeded");
             }, err => {
-                console.log(err);
-                ROOT.app.showToast("Create Category Failed");
+                if (err.status === 500) {
+                    ROOT.app.showToast("Create Category Failed: Server Crash");
+                } else if (err.status == 418) {
+                    ROOT.app.showToast("Create Category Failed: New Category already exists");
+                } else {
+                    ROOT.app.showToast("Create Category Failed: " + err.status);
+                }
             })
     }
 }

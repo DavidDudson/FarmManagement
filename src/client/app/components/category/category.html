@@ -1,5 +1,4 @@
-<titled-card title="$root.category.title" description="$root.category.description" add="category.add"
-             remove="category.remove" help="category.help" save="category.save">
+<titled-card title="$root.category.title" description="$root.category.description" help="category.help" save="category.save">
     <v-accordion>
         <v-pane ng-repeat="topic in $root.category.topics track by $index">
             <v-pane-header layout="row" flex>
@@ -40,7 +39,7 @@
                         </a>
                     </md-list-item>
                     <md-list-item ng-if="$root.app.editable">
-                        <md-button class="add md-raised" aria-label="Add" ng-click="topic.addQuestion()">
+                        <md-button class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
                             <md-icon>add_circle_outline</md-icon><span>Question</span>
                         </md-button>
                     </md-list-item>
@@ -48,7 +47,7 @@
             </v-pane-content>
         </v-pane>
     </v-accordion>
-    <md-button class="add md-raised" aria-label="Add" ng-if="$root.app.editable" ng-click="$root.category.addTopic()">
-        <md-icon>add_circle_outline</md-icon><span>  Topic</span>
+    <md-button class="add md-raised" aria-label="Add" ng-if="$root.app.editable" ng-click="category.addTopic()">
+        <md-icon>add_circle_outline</md-icon><span>Topic</span>
     </md-button>
 </titled-card>

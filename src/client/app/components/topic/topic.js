@@ -24,21 +24,31 @@ class TopicCtrl {
     }
 
     addQuestion() {
-        var exampleData = {
+        var example = {
             title: "New Question",
             question: "New Question",
             topHeader: true,
             sideHeader: true,
             table: [["Example", "Data"], ["Test", 1], ["Data", 2]]};
-        HTTP.post("/question", exampleData)
+
+        HTTP.post("/question", example)
             .then(res => {
-                this.questions.add(res.data);
-                LOCATION.path('/topic/' + res.data.id);
-            }, err => console.log(err));
+                example._id = res.data._id;
+                this.questions.add(example);
+                ROOT.app.showToast("Create Question Failed: Server Crash");
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Create Question Failed: Server Crash");
+                } else if (err.status == 418) {
+                    ROOT.app.showToast("Create Question Failed: New Question already exists");
+                } else {
+                    ROOT.app.showToast("Create Question Failed: " + err.status);
+                }
+            });
     }
 
     remove() {
-        HTTP.delete("/topic", {id: this.current.id})
+        HTTP.delete("/topic", {id: this.id})
             .then(res => this.topics.remove({id: this.id}),
                 err => console.log(err))
     }
@@ -66,7 +76,7 @@ angular.module('app')
                     '': {
                         template: require('./topic.html'),
                         controller: TopicCtrl,
-                        controllerAs: "topic"
+                        controllerAs: "top"
                     },
                     'nav': require('components/nav/scroll/scroll.js')
                 },
