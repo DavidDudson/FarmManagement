@@ -3,6 +3,9 @@ var Express = require('express');
 var path = require('path');
 var app = Express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/farmfi");
 require("./../database")();
