@@ -28,9 +28,10 @@ require("./app.scss");
 
 var _ = require('lodash');
 var ROOT = undefined;
+var TOAST = undefined;
 
 class AppCtrl {
-    constructor($rootScope) {
+    constructor($rootScope, $mdToast) {
         this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
         this.yearOfCreation = 2015;
@@ -39,7 +40,17 @@ class AppCtrl {
         this.isAdmin = true;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
+        TOAST = $mdToast
         ROOT = $rootScope
+    }
+
+    showToast(text) {
+        TOAST.show(
+            TOAST.simple()
+                .textContent(text)
+                .position("Top Left")
+                .hideDelay(1000)
+        );
     }
 
     resetEdit() {
