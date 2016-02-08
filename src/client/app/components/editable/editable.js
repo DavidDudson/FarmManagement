@@ -29,11 +29,10 @@ class EditableDirective {
         this.restrict = 'E';
         this.controller = EditableController;
         this.controllerAs = "editable";
-        this.link = (scope, element, attrs) => {
-            scope.value = scope.$eval(attrs.value);
-            scope.name = scope.$eval(attrs.name);
-            scope.type = attrs.type;
-            scope.description = scope.$eval(attrs.description);
+        this.scope = {
+            value : "=",
+            type : "=",
+            description : "="
         }
     }
 }

@@ -34,7 +34,7 @@ class CategoryCtrl {
     save() {
 
         var newTitle = !!ROOT.edit['Title'] ? ROOT.edit["Title"] : ROOT.category.title;
-        var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Desciption"] : ROOT.category.description;
+        var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Description"] : ROOT.category.description;
 
         HTTP.put('category/' + ROOT.category._id, {title: newTitle, description: newDescription})
             .then(res => {
