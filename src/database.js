@@ -7,8 +7,12 @@ var Question = Promise.promisifyAll(require("./server/data/question/question.mod
 
 var example = require("./example.json").categories;
 
+var mongoose = require('mongoose');
 
 module.exports = function() {
+
+    mongoose.connect("mongodb://localhost/farmfi");
+
     console.log("database script was executed");
     if(example && example.length > 0) {
         example.forEach(function (c) {
