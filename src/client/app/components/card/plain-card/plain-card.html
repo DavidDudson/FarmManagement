@@ -1,11 +1,11 @@
 <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
-    <div layout-fill layout="column">
-        <md-card layout-fill layout="column">
-            <md-content ng-transclude flex="70">
+    <div>
+        <md-card layout="column">
+            <md-content ng-transclude layout-align="start center">
 
             </md-content>
-            <bottom-nav class="md-padding" flex="20"></bottom-nav>
-            <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true" flex="10">
+            <bottom-nav class="md-padding" layout-align="end center"></bottom-nav>
+            <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true">
                 <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
                 <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
                 <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>
