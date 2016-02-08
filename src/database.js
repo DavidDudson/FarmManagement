@@ -10,7 +10,7 @@ var example = require("./example.json").categories;
 var mongoose = require('mongoose');
 
 module.exports = function() {
-
+    console.log("script turned on");
     mongoose.connect("mongodb://localhost/farmfi");
 
     console.log("database script was executed");

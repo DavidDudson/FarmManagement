@@ -18,6 +18,7 @@
     "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
     "production": "webpack -p --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
+    "populate": "node ./src/database.js",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
     "develop": "npm run prestart && npm run devNoServer && npm run poststop",
     "devNoServer": "nodemon --watch src src/start.js -r npm run babel-node -- ./src/server/",
