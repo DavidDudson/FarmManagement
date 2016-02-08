@@ -27,15 +27,13 @@ class EditableDirective {
     constructor() {
         this.template = require('./editable.html');
         this.restrict = 'E';
-        this.replace = true;
-        this.transclude = true;
         this.controller = EditableController;
         this.controllerAs = "editable";
-        this.scope = {
-            value: '=',
-            name: '=',
-            type: '=',
-            description: '='
+        this.link = (scope, element, attrs) => {
+            scope.value = scope.$eval(attrs.value);
+            scope.name = scope.$eval(attrs.name);
+            scope.type = attrs.type;
+            scope.description = scope.$eval(attrs.description);
         }
     }
 }

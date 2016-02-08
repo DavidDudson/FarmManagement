@@ -12,23 +12,41 @@ class CategoryCtrl {
         ROOT = $rootScope;
     }
 
-    add() {
-        HTTP.post('category', {title: "New Category"})
-            .then(res => ROOT.categories.push(res.data),
-                err => console.log(err))
+    addTopic() {
+        var example = {title: "New Topic", description: "New Description", category: ROOT.category._id};
+        HTTP.post('/topic', example)
+            .then(res => {
+                    example._id = res.data._id;
+                    ROOT.category.topics.push(example);
+                    ROOT.app.showToast("Create Topic Success")
+                },
+                err => {
+                    if (err.status === 500) {
+                        ROOT.app.showToast("Create Topic Failed: Server Crash");
+                    } else if (err.status == 418) {
+                        ROOT.app.showToast("Create Topic Failed: New Topic already exists");
+                    } else {
+                        ROOT.app.showToast("Create Topic Failed: " + err.status);
+                    }
+                })
     }
 
     save() {
-        if(!!ROOT.edit['Title']) {
-            ROOT.category.title = ROOT.edit["Title"]
-        }
-        if(!!ROOT.edit['Description']) {
-            ROOT.category.description = ROOT.edit['Description'];
-        }
-        HTTP.put('category/' + ROOT.category._id, {title: ROOT.category.title, description: ROOT.category.description})
-            .then((res, err) => {
-                !!err ? console.log(err) : alert("Saved Succesfully");
-                ROOT.app.editable = false;
+
+        var newTitle = !!ROOT.edit['Title'] ? ROOT.edit["Title"] : ROOT.category.title;
+        var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Desciption"] : ROOT.category.description;
+
+        HTTP.put('category/' + ROOT.category._id, {title: newTitle, description: newDescription})
+            .then(res => {
+                ROOT.app.showToast("Topic: " + ROOT.category.title + " saved successfully")
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Save Category Failed: Server Crash");
+                } else if (err.status == 418) {
+                    ROOT.app.showToast("Save Category Failed: New Topic already exists");
+                } else {
+                    ROOT.app.showToast("Create Topic Failed: " + err.status);
+                }
             });
     }
 

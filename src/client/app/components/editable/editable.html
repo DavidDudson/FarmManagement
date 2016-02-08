@@ -4,7 +4,7 @@
         <md-button class="md-raised md-warn editable" ng-if="show===true && $root.app.editable" ng-click="show=false; $root.editingName=name" layout-fill><md-icon>edit</md-icon></md-button>
     </div>
     <md-input-container class="editable" ng-if="$root.editingName === name && $root.app.editable === true">
-        <label>{{description}}</label>
+        <label>{{name}}</label>
         <textarea ng-if="type === 'text_area'" required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"></textarea>
         <input ng-if="type === 'input'" required type="text" ng-model="$root.edit[name]" ng-init="$root.edit[name]=value"/>
     </md-input-container>
