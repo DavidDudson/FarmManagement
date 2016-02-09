@@ -23,12 +23,18 @@ body {
       font-family: 'UniverseLT', sans-serif;
     }
 
+    h1 {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: $MasseyBlue;
+    }
+
     .md-card {
       padding: 2%;
     }
 
     .md-button {
       width: 100%;
+      text-transform: none !important;
     }
 
     .body-space {

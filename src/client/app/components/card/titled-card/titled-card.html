@@ -1,20 +1,18 @@
 <md-content class="md-padding">
     <md-card layout-fill layout="column">
-        <md-card-title flex="20">
+        <md-card-title layout-align="start center" flex="20">
             <md-card-title-text>
                 <div layout="column">
-                    <editable name="'Title'" value="title" type="'input'" description="'Title'"
-                              flex="50" class="md-headline" layout-padding></editable>
-                    <editable name="'Description'" value="description" type="'input'" description="'Description'"
-                              flex="50" class="md-subtitle" layout-padding></editable>
+                    <editable layout-align="start start" value="title" type="'input'" description="'Title'" class="md-headline" layout-padding></editable>
+                    <editable value="description" type="'text_area'" description="'Description'" class="md-subtitle" layout-padding ng-if="!!description"></editable>
                 </div>
             </md-card-title-text>
         </md-card-title>
         <md-divider></md-divider>
-        <md-content ng-transclude flex="50">
+        <md-content ng-transclude layout-align="start center" flex="60rs">
         </md-content>
-        <bottom-nav class="md-padding" flex="10"></bottom-nav>
-        <md-card-action layout="row" layout-align="end center" ng-if="$root.app.isAdmin === true" flex="10">
+        <bottom-nav class="md-padding" layout-align="end end"></bottom-nav>
+        <md-card-action layout="row" layout-align="end end" ng-if="$root.app.isAdmin === true">
             <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
             <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
             <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>

@@ -15,4 +15,13 @@ v-pane-header, .md-button{
 
 v-pane-header>div {
   width: 100%;
+  
+  h4 {
+    text-align: left;
+    display: flex;
+  }
+}
+
+md-list, .accordion {
+  width: 95%;
 }

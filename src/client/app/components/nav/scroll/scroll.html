@@ -9,8 +9,8 @@
             <deletable _id="category._id" deleteFunc="nav.deleteCategory">
                 <a ng-disabled="nav.index === category._id" class="nav-sref"
                    ui-sref="category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
-
-                    <md-button ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">{{category.title}}</md-button>
+                    <md-button ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">
+                        <h4>{{category.title}}</h4></md-button>
                 </a>
             </deletable>
         </md-list-item>

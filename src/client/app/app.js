@@ -40,7 +40,7 @@ class AppCtrl {
         this.isAdmin = true;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
-        TOAST = $mdToast
+        TOAST = $mdToast;
         ROOT = $rootScope
     }
 

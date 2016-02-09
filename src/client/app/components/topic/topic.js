@@ -3,11 +3,10 @@ require('./Topic.scss');
 var _ = require('lodash');
 
 var HTTP = undefined;
-var LOCATION = undefined;
 var ROOT = undefined;
 
 class TopicCtrl {
-    constructor($location, $http, $rootScope, $stateParams, catData) {
+    constructor($http, $rootScope, $stateParams, catData) {
         this.category = catData.data;
         this.topic = _.find(this.category.topics, {_id: $stateParams.topicId});
         this.id = this.topic._id;
@@ -19,8 +18,8 @@ class TopicCtrl {
         this.sideHeader = this.question.side_headings;
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         HTTP = $http;
-        LOCATION = $location;
         ROOT = $rootScope;
+
     }
 
     addQuestion() {
@@ -71,7 +70,7 @@ angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
             .state("topic" , {
-                url: '/topic/:categoryId?topicId?questionId?part',
+                url: 'topic/?categoryId?topicId?questionId?part',
                 views: {
                     '': {
                         template: require('./topic.html'),

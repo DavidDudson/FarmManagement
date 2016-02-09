@@ -1,53 +1,64 @@
-<titled-card title="$root.category.title" description="$root.category.description" help="category.help" save="category.save">
+<titled-card title="$root.category.title" description="$root.category.description" help="category.help"
+             save="category.save">
     <v-accordion>
         <v-pane ng-repeat="topic in $root.category.topics track by $index">
-            <v-pane-header layout="row" flex>
-                <md-button class="md-no-style md-list-item-text" layout="column" layout-align="start start" flex="90">
-                        <h3 layout="row" layout-align="start start" class="md-subtitle" flex="100">{{ topic.title }}</h3>
-                        <h4 layout-align="start start" ng-if="topic.description">{{ topic.description }}</h4>
-                </md-button>
-                <md-button class="md-icon-button" flex="10">
-                    <md-icon> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+            <v-pane-header>
+                <md-button class="md-list-item-text">
+                    <h4 id="vHead" layout="row" >
+                        <span flex="90">{{ topic.title }}</span>
+                        <md-icon flex="5" layout-align="end end"> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                    </h4>
                 </md-button>
                 <md-divider></md-divider>
             </v-pane-header>
             <v-pane-content>
-                <md-list>
-                    <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
-                                  layout="row" layout-align="start start" flex>
-                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
-                           flex="70" layout-align="start start">
-                            <md-button class="md-no-style md-list-item-text">
-                                <h3 class="md-subtitle">{{ question.title }}</h3>
-                                <h4 ng-if="question.description">{{ question.question }}</h4>
+                <md-content class="accordion">
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
+                                      layout="row" layout-align="start start" flex>
+                            <a class="li"
+                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
+                               flex="80" layout-align="start start">
+                                <md-button class="md-no-style md-list-item-text">
+                                    <h3 class="md-subtitle">{{ question.title }}</h3>
+                                    <h5 ng-if="question.description">{{ question.question }}</h5>
+                                </md-button>
+                            </a>
+                            <a class="li"
+                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
+                               flex="5">
+                                <md-button>
+                                    <md-icon>cake</md-icon>
+                                </md-button>
+                            </a>
+                            <a class="li"
+                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})"
+                               flex="5">
+                                <md-button>
+                                    <md-icon>cake</md-icon>
+                                </md-button>
+                            </a>
+                            <a class="li"
+                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})"
+                               flex="5">
+                                <md-button>
+                                    <md-icon>cake</md-icon>
+                                </md-button>
+                            </a>
+                        </md-list-item>
+                        <md-list-item ng-if="$root.app.editable">
+                            <md-button class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
+                                <md-icon>add_circle_outline</md-icon>
+                                <span>Question</span>
                             </md-button>
-                        </a>
-                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})" flex = 10>
-                            <md-button>
-                                <md-icon>cake</md-icon>
-                            </md-button>
-                        </a>
-                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'test'})" flex = 10>
-                            <md-button>
-                                <md-icon>cake</md-icon>
-                            </md-button>
-                        </a>
-                        <a class="li" ui-sref="topic({categoryId: category._id, topicId: topic._id, questionId: question._id, part: 'tool'})" flex = 10>
-                            <md-button>
-                                <md-icon>cake</md-icon>
-                            </md-button>
-                        </a>
-                    </md-list-item>
-                    <md-list-item ng-if="$root.app.editable">
-                        <md-button class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
-                            <md-icon>add_circle_outline</md-icon><span>Question</span>
-                        </md-button>
-                    </md-list-item>
-                </md-list>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
             </v-pane-content>
         </v-pane>
     </v-accordion>
     <md-button class="add md-raised" aria-label="Add" ng-if="$root.app.editable" ng-click="category.addTopic()">
-        <md-icon>add_circle_outline</md-icon><span>Topic</span>
+        <md-icon>add_circle_outline</md-icon>
+        <span>Topic</span>
     </md-button>
 </titled-card>
