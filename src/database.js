@@ -7,11 +7,15 @@ var Question = Promise.promisifyAll(require("./server/data/question/question.mod
 
 var example = require("./example.json").categories;
 
+var Express = require('express');
 var mongoose = require('mongoose');
 
 module.exports = function() {
     console.log("script turned on");
-    mongoose.connect("mongodb://localhost/farmfi");
+
+
+    //var app = Express();
+    //mongoose.connect("mongodb://localhost/farmfi");
 
     console.log("database script was executed");
     if(example && example.length > 0) {

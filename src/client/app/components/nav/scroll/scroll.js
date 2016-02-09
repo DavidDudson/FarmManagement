@@ -10,13 +10,13 @@ class ScrollCtrl {
         ROOT = $rootScope;
         this.categories = categories.data;
 
-        this.index = undefined;
+        this.index = 0;
         this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
 
         this.centerIndex = function (id) {
             this.index = id;
-            this.scrollLeft();
-            this.scrollLeft();
+            this.scrollRight();
+            this.scrollRight();
         };
 
         this.scrollLeft = function () {
@@ -30,6 +30,7 @@ class ScrollCtrl {
         this.scrollRight = function () {
             this.index += 1;
             this.index = this.index % this.categories.length;
+
         };
 
         this.selected = function () {
@@ -42,6 +43,7 @@ class ScrollCtrl {
                 var second = this.categories.slice(0, toAdd);
                 first = first.concat(second);
             }
+            console.log(first);
             return first
         };
 
