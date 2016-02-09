@@ -13,48 +13,45 @@
             </v-pane-header>
             <v-pane-content>
                 <md-content class="accordion">
-                    <md-list>
-                        <md-list-item class="md-2-line" ng-repeat="question in topic.questions track by $index"
+                    <md-list layout="column">
+                        <md-list-item ng-repeat="question in topic.questions track by $index"
                                       layout="row" layout-align="start start" flex>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
-                               flex="80" layout-align="start start">
+                               flex="65" layout-align="start start">
                                 <md-button class="md-no-style md-list-item-text">
                                     <h3 class="md-subtitle">{{ question.title }}</h3>
-                                    <h5 ng-if="question.description">{{ question.question }}</h5>
                                 </md-button>
                             </a>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
-                               flex="5">
+                               flex="10" layout-align="end end">
                                 <md-button>
                                     <md-icon>cake</md-icon>
                                 </md-button>
                             </a>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})"
-                               flex="5">
+                               flex="10" >
                                 <md-button>
                                     <md-icon>cake</md-icon>
                                 </md-button>
                             </a>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})"
-                               flex="5">
+                               flex="10">
                                 <md-button>
                                     <md-icon>cake</md-icon>
                                 </md-button>
                             </a>
-                        </md-list-item>
-                        <md-list-item ng-if="$root.app.editable">
-                            <md-button class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
-                                <md-icon>add_circle_outline</md-icon>
-                                <span>Question</span>
-                            </md-button>
-                        </md-list-item>
                     </md-list>
+                    <md-button ng-if="$root.app.editable === true" class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
+                        <md-icon>add_circle_outline</md-icon>
+                        <span>Question</span>
+                    </md-button>
                 </md-content>
             </v-pane-content>
+            <md-divider ng-if="$pane.isExpanded()"></md-divider>
         </v-pane>
     </v-accordion>
     <md-button class="add md-raised" aria-label="Add" ng-if="$root.app.editable" ng-click="category.addTopic()">
