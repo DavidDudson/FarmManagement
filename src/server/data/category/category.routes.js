@@ -17,7 +17,7 @@ router.get("/categories", (req, res) => {
 });
 
     //get
-router.get("/category/:id", (req, res) => {
+router.get("/cat/:id", (req, res) => {
     console.log("Searching for category: " + req.params.id);
     var fndCat = {};
     Category.findOne({"_id": req.params.id}, function(err, result){}).lean().exec()
@@ -56,7 +56,7 @@ router.get("/category/:id", (req, res) => {
 });
 
     //create
-router.post("/category/", (req, res) => {
+router.post("/cat", (req, res) => {
     if(req.body.title) {
         Category.findOne({"title": req.body.title}, function(err, result){}).exec()
             .then(function(data) {
@@ -76,7 +76,7 @@ router.post("/category/", (req, res) => {
 });
 
     //update
-router.put("/category/:id", (req, res) => {
+router.put("/cat/:id", (req, res) => {
     Category.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
         .then(function(data) {
             if(data) {
@@ -89,7 +89,7 @@ router.put("/category/:id", (req, res) => {
 });
 
     //delete
-router.delete("/category/:id", (req, res) => {
+router.delete("/cat/:id", (req, res) => {
     Category.remove({"_id": req.params.id}, function(err){}).exec()
         .then(function() {
             Topic.remove({"category": req.params.id}, function(err){}).exec()

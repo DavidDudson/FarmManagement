@@ -14,7 +14,7 @@ class CategoryCtrl {
 
     addTopic() {
         var example = {title: "New Topic", description: "New Description", category: ROOT.category._id};
-        HTTP.post('/topic', example)
+        HTTP.post('/top', example)
             .then(res => {
                     example._id = res.data._id;
                     ROOT.category.topics.push(example);
@@ -36,7 +36,7 @@ class CategoryCtrl {
         var newTitle = !!ROOT.edit['Title'] ? ROOT.edit["Title"] : ROOT.category.title;
         var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Description"] : ROOT.category.description;
 
-        HTTP.put('category/' + ROOT.category._id, {title: newTitle, description: newDescription})
+        HTTP.put('cat/' + ROOT.category._id, {title: newTitle, description: newDescription})
             .then(res => {
                 ROOT.app.showToast("Topic: " + ROOT.category.title + " saved successfully")
             }, err => {
@@ -51,7 +51,7 @@ class CategoryCtrl {
     }
 
     remove() {
-        HTTP.delete('category/' + ROOT.category._id, {id: ROOT.category._id})
+        HTTP.delete('cat/' + ROOT.category._id, {id: ROOT.category._id})
             .then(() => _.remove(ROOT.nav.categories, {id: ROOT.category._id},
                 err => console.log(err)))
     }
@@ -71,7 +71,7 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
-                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.id),
+                    catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.id),
                     categories: ($http, $rootScope) => $http.get("/categories")
                 }
             });

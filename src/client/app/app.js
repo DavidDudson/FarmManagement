@@ -37,7 +37,7 @@ class AppCtrl {
     constructor($rootScope, $mdToast) {
         this.name = 'farmFINANZ';
         this.authors = ['David J. Dudson', 'Anthony Crowcroft'];
-        this.yearOfCreation = 2015;
+        this.yearOfCreation = 2016;
         this.editable = false;
         this.isMobile = false;
         this.isAdmin = true;

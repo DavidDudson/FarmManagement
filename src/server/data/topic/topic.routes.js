@@ -8,7 +8,7 @@ var Topic = Promise.promisifyAll(require("./topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
 
     //get
-router.get("/topic/:id", (req, res) => {
+router.get("/top/:id", (req, res) => {
     Topic.findOne({"_id": req.params.id}, function(err, result){}).exec()
         .then(function(tData) {
             if(tData) {
@@ -28,7 +28,7 @@ router.get("/topic/:id", (req, res) => {
 });
 
     //create
-router.post("/topic/", (req, res) => {
+router.post("/top", (req, res) => {
     if(req.body.title) {
         Topic.findOne({"title": req.body.title}, function(err, result){}).exec()
             .then(function(data) {
@@ -48,7 +48,7 @@ router.post("/topic/", (req, res) => {
 });
 
     //update
-router.put("/topic/:id", (req, res) => {
+router.put("/top/:id", (req, res) => {
     Topic.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
         .then(function(data) {
             if(data) {
@@ -61,7 +61,7 @@ router.put("/topic/:id", (req, res) => {
 });
 
     //delete
-router.delete("/topic/:id", (req, res) => {
+router.delete("/top/:id", (req, res) => {
     Topic.remove({"_id": req.params.id}, function(err){}).exec()
         .then(function() {
             Question.remove({"topic": req.params.id}, function(err){}).exec()

@@ -2,7 +2,7 @@ var mongoose    = require('mongoose');
 
 
 var questionSchema = new mongoose.Schema({
-    title           : {type : String, unique : true},
+    title           : String,
     topic           : String,
     category        : String,
     top_headings    : Boolean,

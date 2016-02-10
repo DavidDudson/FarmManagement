@@ -30,7 +30,7 @@ class TopicCtrl {
             sideHeader: true,
             table: [["Example", "Data"], ["Test", 1], ["Data", 2]]};
 
-        HTTP.post("/question", example)
+        HTTP.post("/que", example)
             .then(res => {
                 example._id = res.data._id;
                 this.questions.add(example);
@@ -47,7 +47,7 @@ class TopicCtrl {
     }
 
     remove() {
-        HTTP.delete("/topic", {id: this.id})
+        HTTP.delete("/top", {id: this.id})
             .then(res => this.topics.remove({id: this.id}),
                 err => console.log(err))
     }
@@ -55,7 +55,7 @@ class TopicCtrl {
     save() {
         this.topic.title = ROOT.edit['Title'];
         this.topic.description = ROOT.edit['Description'];
-        HTTP.put("/topic", this.topic)
+        HTTP.put("/top", this.topic)
             .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
                 err => console.log(err));
         ROOT.app.editable = false;
@@ -80,7 +80,7 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
-                    catData: ($http, $stateParams) => $http.get("/category/" + $stateParams.categoryId),
+                    catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.categoryId),
                     categories: ($http, $rootScope) => $http.get("/categories")
                 }
             })

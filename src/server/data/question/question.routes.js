@@ -7,7 +7,7 @@ var Promise     = require("bluebird");
 var Question = Promise.promisifyAll(require("./question.model"));
 
 //get
-router.get("/question/:id", (req, res) => {
+router.get("/que/:id", (req, res) => {
     Question.findOne({"title": req.params.id}, function(err, result){}).exec()
         .then(function(qData) {
             if(qData) {
@@ -20,7 +20,7 @@ router.get("/question/:id", (req, res) => {
 });
 
 //create
-router.post("/question/", (req, res) => {
+router.post("/que", (req, res) => {
     if(req.body.title) {
         Question.findOne({"title": req.body.title}, function(err, result){}).exec()
             .then(function(data) {
@@ -40,7 +40,7 @@ router.post("/question/", (req, res) => {
 });
 
 //update
-router.put("/question/:id", (req, res) => {
+router.put("/que/:id", (req, res) => {
     Question.update({"_id": req.params.id}, req.body, function(err, result){}).exec()
         .then(function(data) {
             if(data) {
@@ -53,7 +53,7 @@ router.put("/question/:id", (req, res) => {
 });
 
 //delete
-router.delete("/question/:id", (req, res) => {
+router.delete("/que/:id", (req, res) => {
     Question.remove({"_id": req.params.id}, function(err){
         if(!err){
             res.sendStatus(200);

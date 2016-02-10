@@ -50,7 +50,7 @@ class ScrollCtrl {
     }
 
     addCategory() {
-        HTTP.post('/category', {"title": "New Category", "description": "New Description"})
+        HTTP.post('/cat', {"title": "New Category", "description": "New Description"})
             .then(res => {
                 ROOT.nav.categories.push(res.data);
                 ROOT.app.showToast("Create Category Succeeded");
