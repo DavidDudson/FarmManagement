@@ -43,7 +43,6 @@ class ScrollCtrl {
                 var second = this.categories.slice(0, toAdd);
                 first = first.concat(second);
             }
-            console.log(first);
             return first
         };
 

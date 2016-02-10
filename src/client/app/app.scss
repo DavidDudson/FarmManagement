@@ -20,7 +20,12 @@ body {
     line-height: 1.4;
 
     h1, h2, h3, h4, h5 {
+      color: $AgriTextGrey;
       font-family: 'UniverseLT', sans-serif;
+    }
+
+    .h3, h3 {
+      font-size: inherit !important;
     }
 
     h1 {
@@ -53,7 +58,7 @@ body {
         }
       }
 
-      md-icon {
+      .md-icon {
         color: $AgriBackgroundWhite;
       }
     }

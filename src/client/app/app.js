@@ -4,22 +4,23 @@ var angular = require('angular');
 
 var ngAnimate = require('angular-animate');
 
+require('accordion');
+require('accordion_css');
+
+
+require("bootstrap_css");
+
 var ngMaterial = require('angular-material');
 require('angular_material_css');
 require('angular_material_design_icons');
 
 require('angular-ui-router');
 
-require('accordion');
-require('accordion_css');
-
 require('angular-material-data-table');
 require("angular_data_table_css");
 
 require("angular_chart_css");
 require("angular_chart");
-
-require("bootstrap_css");
 
 
 var uibs = require('angular-ui-bootstrap');
