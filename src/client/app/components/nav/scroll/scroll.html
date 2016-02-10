@@ -6,15 +6,17 @@
             </md-button>
         </md-list-item>
         <md-list-item ng-repeat="category in nav.selected() track by $index" flex="15" layout="row" layout-align="stretch center" ng-if="$index < nav.displayCount()">
-            <deletable _id="category._id" deleteFunc="nav.deleteCategory">
-                <a ng-disabled="nav.index === category._id" class="nav-sref"
-                   ui-sref="category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
-                    <md-button ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">
-                        <h4>{{category.title}}</h4></md-button>
-                </a>
-            </deletable>
+            <a ng-disabled="nav.index === category._id" class="nav-sref"
+               ui-sref="category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
+                <md-button ng-class="$root.app.editable === true ? 'delete' : ''" ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">
+                    <h4>
+                        <md-icon ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
+                        <span> {{category.title}}</span>
+                    </h4>
+                </md-button>
+            </a>
         </md-list-item>
-        <md-list-item flex="15" ng-if="$root.app.editable">
+        <md-list-item flex="15" ng-if="$root.app.editable === true">
             <md-button class="add md-raised nav-tile" aria-label="Add" layout-fill ng-click="nav.addCategory()">
                 <md-icon>add_circle_outline</md-icon><span> Category</span>
             </md-button>

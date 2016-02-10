@@ -50,6 +50,15 @@ body {
       visibility: hidden;
     }
 
+    .delete {
+      background-color: $Volcano;
+      &.md-button {
+        &:hover, &:focus, &:active {
+          background-color: darken($Volcano, 10%);
+        }
+      }
+    }
+
     .add {
       background-color: $Ponga;
       &.md-button {
@@ -62,7 +71,6 @@ body {
         color: $AgriBackgroundWhite;
       }
     }
-
   }
 
   img.ng-hide-add, img.ng-hide-remove {
