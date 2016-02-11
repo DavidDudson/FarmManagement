@@ -1,8 +1,8 @@
 <plain-card class="body-space" save="home.save">
     <md-content layout="row" layout-align="center start" layout-padding>
         <a ng-if="$root.app.editable === true" href="#" editable-textarea="home.description" flex=50
-           class="md-headline hometext" layout-padding e-rows="7" e-cols="40" buttons="no" e-required
-           e-ng-model="$root.edit['Home']" e-onbeforesave="home.save($data)">
+           class="md-headline hometext" layout-padding e-rows="20" e-cols="70" buttons="no" e-required
+           e-ng-change="alert($data);home.updateModel($data)" e-name="name">
             <p class="md-headline hometext">{{ home.description || "" }} </p>
         </a>
         <p ng-if="$root.app.editable === false" flex=50 class="md-headline hometext" layout-padding>{{home.description || ""}}</p>

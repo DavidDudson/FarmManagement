@@ -5,14 +5,19 @@ class HomeCtrl {
     constructor($rootScope) {
         this.description = "Welcome to FarmFINANZ!\n\nTake your knowledge to the next level. The fundamentals in Farm Management are about getting the maths right.\n\nWe are here to assist you in every aspect of farm finance. We have a series of tutorials, Topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in every field of farm management, ultimately to identify business opportunities and define future goals. Best of all, you’ll be learning from Massey professionals in this field, who developed the Topics with you in mind.";
 
+        this.editDesc = null;
+
         this.save = () => {
-            if ($rootScope.edit['Home'] != null || $rootScope.edit['Home'] != "") {
+            if (this.editDesc != null || this.editDesc != "") {
                 $rootScope.app.showToast("This will be saved to the db in the future");
-                this.description = $rootScope.edit['Home'];
+                this.description = this.editDesc;
+                this.editDesc = null;
             } else {
                 $rootScope.app.showToast("Invalid Description");
             }
         };
+
+        this.updateModel = data => this.editDesc = data;
 
         this.shuffleGraphs = () => _.shuffle(this.graphs);
 
