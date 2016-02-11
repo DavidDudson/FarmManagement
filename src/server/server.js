@@ -8,7 +8,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/farmfi");
-require("./../database")();
+
 
     //static serving of all client-side files
 app.use(Express.static(path.resolve('./src/client/')));
