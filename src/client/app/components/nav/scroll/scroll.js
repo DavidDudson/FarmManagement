@@ -57,7 +57,7 @@ class ScrollCtrl {
         var data = {"title": "New Category", "description": "New Description"};
         HTTP.post('/cat', data)
             .then(res => {
-                data._id = res.data._id;
+                data._id = res.data;
                 ROOT.nav.categories.push(data);
                 ROOT.app.showToast("Create Category Succeeded");
             }, err => {

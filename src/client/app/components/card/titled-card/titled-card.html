@@ -3,8 +3,19 @@
         <md-card-title layout-align="start center" flex="20">
             <md-card-title-text>
                 <div layout="column">
-                    <editable layout-align="start start" value="title" type="'input'" description="'Title'" class="md-headline" layout-padding></editable>
-                    <editable value="description" type="'text_area'" description="'Description'" class="md-subtitle" layout-padding ng-if="!!description"></editable>
+                    <a ng-if="$root.app.editable === true" href="#" editable-text="title"
+                       class="md-headline" layout-padding buttons="no" e-required
+                       e-ng-change="card.updateModel('Title', $data)" e-name="name">
+                        <p class="md-headline">{{ title || "" }} </p>
+                    </a>
+                    <p ng-if="$root.app.editable === false" class="md-headline" layout-padding>{{title || ""}}</p>
+
+                    <a ng-if="$root.app.editable === true" href="#" editable-textarea="description"
+                       class="md-subtitle" layout-padding e-rows="5" e-cols="70" buttons="no" e-required
+                       e-ng-change="card.updateModel('Description', $data)" e-name="name">
+                        <p class="md-subtitle">{{ description || "" }} </p>
+                    </a>
+                    <p ng-if="$root.app.editable === false" ng-if="!!description"class="md-subtitle" layout-padding>{{description || ""}}</p>
                 </div>
             </md-card-title-text>
         </md-card-title>

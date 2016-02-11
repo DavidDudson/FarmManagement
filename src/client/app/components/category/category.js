@@ -22,7 +22,7 @@ class CategoryCtrl {
         var example = {title: "New Topic", description: "New Description", category: ROOT.category._id};
         HTTP.post('/top', example)
             .then(res => {
-                    example._id = res.data._id;
+                    example._id = res.data;
                     if (ROOT.category.topics == null) {
                         ROOT.category.topics = []
                     }

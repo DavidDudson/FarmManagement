@@ -32,7 +32,7 @@ class TopicCtrl {
 
         HTTP.post("/que", example)
             .then(res => {
-                example._id = res.data._id;
+                example._id = res.data;
                 this.questions.add(example);
                 ROOT.app.showToast("Create Question Failed: Server Crash");
             }, err => {
