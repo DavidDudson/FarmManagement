@@ -8,7 +8,7 @@ var Question = Promise.promisifyAll(require("./server/data/question/question.mod
 var example = require("./example.json").categories;
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/farmfi");
+mongoose.connect("mongodb://farmfi:hans23eva25@ds051665.mongolab.com:51665/heroku_g7bpvmg0");
 console.log("stuff1");
 if(example && example.length > 0) {
     console.log("stuff2");

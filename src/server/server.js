@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/farmfi");
+mongoose.connect("mongodb://farmfi:hans23eva25@ds051665.mongolab.com:51665/heroku_g7bpvmg0");
 
 
     //static serving of all client-side files
