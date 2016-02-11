@@ -77,9 +77,9 @@ class ScrollCtrl {
             return
         }
         $event.preventDefault();
-        HTTP.delete('cat/' + id, {id: id})
+        HTTP.delete('cat/' + id, {_id: id})
             .then(res => {
-                _.remove(ROOT.nav.categories, {id: id});
+                _.remove(ROOT.nav.categories, {_id: id});
                 ROOT.app.showToast("Delete Category Succeeded");
             }, err => {
                 if (err.status === 500) {

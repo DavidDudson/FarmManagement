@@ -8,6 +8,10 @@ class HomeCtrl {
         this.editDesc = null;
 
         this.save = () => {
+            if (ROOT.app.editable === false) {
+                console.log("Tried to make modifications while not editable");
+                return
+            }
             if (this.editDesc != null || this.editDesc != "") {
                 $rootScope.app.showToast("This will be saved to the db in the future");
                 this.description = this.editDesc;

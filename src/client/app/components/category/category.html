@@ -3,10 +3,11 @@
     <v-accordion>
         <v-pane ng-repeat="topic in $root.category.topics track by $index">
             <v-pane-header>
-                <md-button class="md-list-item-text">
+                <md-button class="md-list-item-text" ng-class="$root.app.editable === true ? 'delete' : ''" ng-click="$root.app.editable === true ? deleteTopic(topic._id) : {} ">
                     <h4 id="vHead" layout="row" >
-                        <span flex="95">{{ topic.title }}</span>
-                        <md-icon flex="5" layout-align="end end"> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                        <md-icon ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
+                        <span >{{ topic.title }}</span>
+                        <md-icon layout-align="end end"> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
                     </h4>
                 </md-button>
                 <md-divider></md-divider>
@@ -18,9 +19,13 @@
                                       layout="row" layout-align="start start" flex>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
+                               ng-click="$root.app.editable === true ? deleteQuestion(question._id) : {}"
                                flex="65" layout-align="start start">
-                                <md-button class="md-no-style md-list-item-text">
-                                    <h3 class="md-subtitle">{{ question.title }}</h3>
+                                <md-button class="md-no-style md-list-item-text" ng-class="$root.app.editable === true ? 'delete' : ''">
+                                    <h3>
+                                        <md-icon ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
+                                        <span> {{question.title}}</span>
+                                    </h3>
                                 </md-button>
                             </a>
                             <a class="li"

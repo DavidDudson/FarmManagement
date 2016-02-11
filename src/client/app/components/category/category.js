@@ -13,10 +13,19 @@ class CategoryCtrl {
     }
 
     addTopic() {
+
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
+
         var example = {title: "New Topic", description: "New Description", category: ROOT.category._id};
         HTTP.post('/top', example)
             .then(res => {
                     example._id = res.data._id;
+                    if (ROOT.category.topics == null) {
+                        ROOT.category.topics = []
+                    }
                     ROOT.category.topics.push(example);
                     ROOT.app.showToast("Create Topic Success")
                 },
@@ -31,7 +40,34 @@ class CategoryCtrl {
                 })
     }
 
+
+    deleteTopic(id, $event) {
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
+        $event.preventDefault();
+        HTTP.delete('cat/' + id, {id: id})
+            .then(res => {
+                _.remove(ROOT.nav.categories, {_id: id});
+                ROOT.app.showToast("Delete Topic Succeeded");
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Delete Topic Failed: Server Crash");
+                } else if (err.status == 400) {
+                    ROOT.app.showToast("Delete Topic Failed: Category already deleted");
+                } else {
+                    ROOT.app.showToast("Delete Topic Failed: " + err.status);
+                }
+            });
+    }
+
     save() {
+
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
 
         var newTitle = !!ROOT.edit['Title'] ? ROOT.edit["Title"] : ROOT.category.title;
         var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Description"] : ROOT.category.description;

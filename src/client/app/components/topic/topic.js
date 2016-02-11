@@ -46,13 +46,12 @@ class TopicCtrl {
             });
     }
 
-    remove() {
-        HTTP.delete("/top", {id: this.id})
-            .then(res => this.topics.remove({id: this.id}),
-                err => console.log(err))
-    }
-
     save() {
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
+
         this.topic.title = ROOT.edit['Title'];
         this.topic.description = ROOT.edit['Description'];
         HTTP.put("/top", this.topic)
