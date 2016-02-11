@@ -50,6 +50,8 @@ module.exports = {
             angular_material_design_icons: "material-design-icons-iconfont/dist/material-design-icons.scss",
             accordion: "v-accordion/dist/v-accordion.min.js",
             accordion_css: "v-accordion/dist/v-accordion.min.css",
+            xedit: "angular-xeditable-npm/dist/js/xeditable.min.js",
+            xedit_css: "angular-xeditable-npm/dist/css/xeditable.css"
         },
         extensions: ['', '.js', '.scss', 'css', 'html']
     },

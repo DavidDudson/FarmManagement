@@ -1,7 +1,11 @@
 <plain-card class="body-space" save="home.save">
     <md-content layout="row" layout-align="center start" layout-padding>
-        <editable id="hometext" value="home.description" type="'text_area'" description="'Home Description'"
-                  flex="50" class="md-headline" layout-padding></editable>
+        <a ng-if="$root.app.editable === true" href="#" editable-textarea="home.description" flex=50
+           class="md-headline hometext" layout-padding e-rows="7" e-cols="40" buttons="no" e-required
+           e-ng-model="$root.edit['Home']" e-onbeforesave="home.save($data)">
+            <p class="md-headline hometext">{{ home.description || "" }} </p>
+        </a>
+        <p ng-if="$root.app.editable === false" flex=50 class="md-headline hometext" layout-padding>{{home.description || ""}}</p>
         <div flex="50">
             <uib-carousel interval="5000" no-wrap="noWrapSlides" ng-init="home.graphs=home.shuffleGraphs()">
                 <uib-slide ng-repeat="graph in home.graphs" layout="column">

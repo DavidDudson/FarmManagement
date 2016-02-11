@@ -40,6 +40,7 @@
     "angular-touch": "latest",
     "angular-ui-bootstrap": "^1.1.0",
     "angular-ui-router": "latest",
+    "angular-xeditable-npm": "^0.1.9",
     "babel-loader": "latest",
     "bluebird": "latest",
     "body-parser": "^1.14.2",
