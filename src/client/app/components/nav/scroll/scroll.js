@@ -50,9 +50,15 @@ class ScrollCtrl {
     }
 
     addCategory() {
-        HTTP.post('/cat', {"title": "New Category", "description": "New Description"})
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
+        var data = {"title": "New Category", "description": "New Description"};
+        HTTP.post('/cat', data)
             .then(res => {
-                ROOT.nav.categories.push(res.data);
+                data._id = res.data._id;
+                ROOT.nav.categories.push(data);
                 ROOT.app.showToast("Create Category Succeeded");
             }, err => {
                 if (err.status === 500) {
@@ -66,6 +72,10 @@ class ScrollCtrl {
     }
 
     deleteCategory(id, $event) {
+        if (ROOT.app.editable === false) {
+            console.log("Tried to make modifications while not editable");
+            return
+        }
         $event.preventDefault();
         HTTP.delete('cat/' + id, {id: id})
             .then(res => {
