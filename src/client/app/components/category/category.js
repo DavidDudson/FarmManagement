@@ -49,12 +49,6 @@ class CategoryCtrl {
                 }
             });
     }
-
-    remove() {
-        HTTP.delete('cat/' + ROOT.category._id, {id: ROOT.category._id})
-            .then(() => _.remove(ROOT.nav.categories, {id: ROOT.category._id},
-                err => console.log(err)))
-    }
 }
 
 angular.module('app')

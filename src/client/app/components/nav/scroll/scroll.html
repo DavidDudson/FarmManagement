@@ -7,7 +7,7 @@
         </md-list-item>
         <md-list-item ng-repeat="category in nav.selected() track by $index" flex="15" layout="row" layout-align="stretch center" ng-if="$index < nav.displayCount()">
             <a ng-disabled="nav.index === category._id" class="nav-sref"
-               ui-sref="category({ id: category._id })" ng-click="nav.centerIndex(category._id)" layout-fill>
+               ui-sref="category({ id: category._id })" ng-click="$root.app.editable == true ? nav.centerIndex(category._id) : nav.deleteCategory(category._id, $event)" layout-fill>
                 <md-button ng-class="$root.app.editable === true ? 'delete' : ''" ng-disabled="nav.index === category._id" class="md-padding md-raised nav-tile">
                     <h4>
                         <md-icon ng-if="$root.app.editable === true">remove_circle_outline</md-icon>

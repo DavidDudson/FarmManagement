@@ -64,6 +64,23 @@ class ScrollCtrl {
                 }
             })
     }
+
+    deleteCategory(id, $event) {
+        $event.preventDefault();
+        HTTP.delete('cat/' + id, {id: id})
+            .then(res => {
+                _.remove(ROOT.nav.categories, {id: id});
+                ROOT.app.showToast("Delete Category Succeeded");
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Delete Category Failed: Server Crash");
+                } else if (err.status == 400) {
+                    ROOT.app.showToast("Delete Category Failed: Category already deleted");
+                } else {
+                    ROOT.app.showToast("Delete Category Failed: " + err.status);
+                }
+            });
+    }
 }
 
  module.exports = {
