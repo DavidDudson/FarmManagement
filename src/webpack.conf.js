@@ -4,9 +4,19 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 var homedir = path.resolve(__dirname + '/../');
 
+var fs = require('fs')
+
 console.log("Homedir: " + homedir);
 console.log("ThisDir: " + __dirname);
 
+function getDirectories(srcpath) {
+    return fs.readdirSync(srcpath).filter(function(file) {
+        return fs.statSync(path.join(srcpath, file)).isDirectory();
+    });
+}
+
+console.log(getDirectories(homedir));
+console.log(getDirectories(__dirname));
 
 console.log("Entry:" + path.resolve(homedir, 'src/client/app/app.js'));
 console.log("Output:" + path.resolve(homedir, 'dist/public'));
