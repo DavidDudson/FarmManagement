@@ -4,6 +4,13 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 var homedir = path.resolve(__dirname + '/../');
 
+console.log("Homedir: " + homedir);
+console.log("ThisDir: " + __dirname);
+
+
+console.log("Entry:" + path.resolve(homedir, 'src/client/app/app.js'));
+console.log("Output:" + path.resolve(homedir, 'dist/public'));
+
 module.exports = {
     entry: {
         bundle: path.resolve(homedir, 'src/client/app/app.js')
