@@ -44,7 +44,11 @@ class AppCtrl {
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
         TOAST = $mdToast;
-        ROOT = $rootScope
+        ROOT = $rootScope;
+        ROOT.getVector = function(string) {
+            var obj = require('../vector/'+ string +'.svg');
+            return obj
+        };
     }
 
     showToast(text) {

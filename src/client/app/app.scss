@@ -70,10 +70,17 @@ body {
       .md-icon {
         color: $AgriBackgroundWhite;
       }
+
+
     }
   }
 
   img.ng-hide-add, img.ng-hide-remove {
     transition: 0.5s linear all;
   }
+}
+
+.cust-icon{
+  height: 50px;
+  width: 50px;
 }

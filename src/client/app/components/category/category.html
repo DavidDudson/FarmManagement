@@ -27,21 +27,21 @@
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
                                flex="10" layout-align="end end">
                                 <md-button>
-                                    <md-icon>cake</md-icon>
+                                    <md-icon md-svg-src="{{getVector('tutBtn')}}" class="cust-icon"> </md-icon>
                                 </md-button>
                             </a>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})"
                                flex="10" >
                                 <md-button>
-                                    <md-icon>cake</md-icon>
+                                    <md-icon md-svg-src="{{getVector('tstBtn')}}" class="cust-icon"> </md-icon>
                                 </md-button>
                             </a>
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})"
                                flex="10">
                                 <md-button>
-                                    <md-icon>cake</md-icon>
+                                    <md-icon md-svg-src="{{getVector('toolBtn')}}" class="cust-icon"> </md-icon>
                                 </md-button>
                             </a>
                     </md-list>
