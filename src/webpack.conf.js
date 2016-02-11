@@ -4,7 +4,7 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 var homedir = path.resolve(__dirname + '/../');
 
-var fs = require('fs')
+var fs = require('fs');
 
 console.log("Homedir: " + homedir);
 console.log("ThisDir: " + __dirname);

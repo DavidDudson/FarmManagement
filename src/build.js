@@ -16,6 +16,8 @@ module.exports = () => {
 
     webpack(webpackConf, (err, stats) => {
 
+        console.log(stats.compilation.fileDependencies);
+
         if (err) console.warn(err);
 
         console.log("\nVendor modules: \n");
