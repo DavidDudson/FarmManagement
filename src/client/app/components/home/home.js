@@ -131,6 +131,9 @@ class HomeCtrl {
     }
 }
 
+HomeCtrl.$inject = ['$rootScope'];
+
+
 
 angular.module('app')
     .config(($stateProvider, $urlRouterProvider, $locationProvider) => {

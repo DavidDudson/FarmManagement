@@ -1,12 +1,10 @@
 require('../card.scss');
 
 var ROOT = undefined;
-var SCOPE = undefined;
 
 class CardCtrl {
-    constructor($rootScope, $scope) {
+    constructor($rootScope) {
         ROOT = $rootScope;
-        SCOPE = $scope;
     }
 
     save(fun) {
@@ -18,6 +16,9 @@ class CardCtrl {
         }
     }
 }
+
+CardCtrl.$inject = ['$rootScope'];
+
 
 class CardDirective {
     constructor() {
@@ -33,6 +34,7 @@ class CardDirective {
         };
     }
 }
+
 
 angular.module('app')
     .directive('plainCard', () => new CardDirective);

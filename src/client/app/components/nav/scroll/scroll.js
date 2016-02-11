@@ -93,6 +93,9 @@ class ScrollCtrl {
     }
 }
 
+ScrollCtrl.$inject = ['$rootScope', '$http', 'categories'];
+
+
  module.exports = {
         template: require('./scroll.html'),
         controller: ScrollCtrl,

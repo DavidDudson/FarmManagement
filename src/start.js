@@ -1,5 +1,5 @@
 // Run the build
-require('./build.js')();
+//require('./build.js')();
 
 var app = require('./server/server.js');
 

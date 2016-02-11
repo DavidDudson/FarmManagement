@@ -70,7 +70,9 @@ class AppCtrl {
     }
 }
 
-angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', 'xeditable',uibs])
+AppCtrl.$inject = ['$rootScope', '$mdToast'];
+
+angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', 'xeditable', uibs])
     .controller('AppCtrl', AppCtrl)
     .run((editableOptions) => editableOptions.theme = 'default')
     .config((ChartJsProvider) => {

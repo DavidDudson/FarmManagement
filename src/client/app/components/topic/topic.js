@@ -65,6 +65,9 @@ class TopicCtrl {
     }
 }
 
+TopicCtrl.$inject = ['$http',  '$rootScope', '$stateParams', 'catData'];
+
+
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider

@@ -93,6 +93,9 @@ class CategoryCtrl {
     }
 }
 
+CategoryCtrl.$inject = ['$http', '$rootScope',  'catData']
+
+
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider

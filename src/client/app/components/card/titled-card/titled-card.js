@@ -25,6 +25,9 @@ class CardCtrl {
     }
 }
 
+CardCtrl.$inject = ['$rootScope',  '$scope'];
+
+
 class CardDirective {
     constructor() {
         this.template = require('./titled-card.html');
