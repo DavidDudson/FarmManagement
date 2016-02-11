@@ -62,19 +62,25 @@ class CategoryCtrl {
             });
     }
 
-    save() {
+    save(data) {
 
         if (ROOT.app.editable === false) {
             console.log("Tried to make modifications while not editable");
             return
         }
 
-        var newTitle = !!ROOT.edit['Title'] ? ROOT.edit["Title"] : ROOT.category.title;
-        var newDescription = !!ROOT.edit['Description'] ? ROOT.edit["Description"] : ROOT.category.description;
+        console.log(data);
+        var newTitle = !!data['Title'] ? data['Title'] : ROOT.category.title;
+        var newDescription = data["Description"];
+
+        console.log(newTitle);
+        console.log(newDescription);
 
         HTTP.put('cat/' + ROOT.category._id, {title: newTitle, description: newDescription})
             .then(res => {
-                ROOT.app.showToast("Topic: " + ROOT.category.title + " saved successfully")
+                ROOT.app.showToast("Topic: " + ROOT.category.title + " saved successfully");
+                ROOT.category.title = newTitle;
+                ROOT.category.description = newDescription;
             }, err => {
                 if (err.status === 500) {
                     ROOT.app.showToast("Save Category Failed: Server Crash");

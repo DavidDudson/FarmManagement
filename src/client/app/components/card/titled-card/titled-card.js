@@ -5,17 +5,23 @@ var SCOPE = undefined;
 
 class CardCtrl {
     constructor($rootScope, $scope) {
-        ROOT = $rootScope
-        SCOPE = $scope
-    }
+        ROOT = $rootScope;
+        SCOPE = $scope;
+        this.edits = {};
 
-    save(fun) {
-        if(ROOT.app.editable){
-            fun();
-            ROOT.app.resetEdit()
-        } else {
-            ROOT.app.editable = true
+        this.updateModel = (name, data) => {
+            this.edits[name] = data;
+        };
+
+        this.save = fun => {
+            if(ROOT.app.editable){
+                fun(this.edits);
+                this.edits = {};
+            } else {
+                ROOT.app.editable = true
+            }
         }
+
     }
 }
 
