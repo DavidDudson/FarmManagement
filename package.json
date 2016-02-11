@@ -14,7 +14,7 @@
     "quicktest": "open ./dist/public/test.html",
     "start": "node ./src/start.js",
     "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
-    "production": "webpack -p --config=\"src/webpack.conf.js\" --progress",
+    "production": "webpack --config=\"src/webpack.conf.js\" --progress",
     "deploy": "git push heroku master",
     "stage": "npm run production && npm run start",
     "babel-node": "babel-node --stage 0 --ignore='node_modules|dist'",
