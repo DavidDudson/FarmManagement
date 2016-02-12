@@ -1,0 +1,29 @@
+<titled-card title="'All Questions'">
+    <md-list layout="column">
+        <md-list-item ng-repeat="question in all.questions track by $index" layout="row" layout-align="space-between center">
+            <a class="li" ui-sref="topic({categoryId: question.category, topicId: question.topic, questionId: question._id, part: 'tutorial'})">
+                <md-button class="md-no-style md-list-item-text">
+                    <h3>
+                        <span> {{question.title}}</span>
+                    </h3>
+                </md-button>
+            </a>
+            <div layout="row" flex="30">
+                <a class="li" ui-sref="topic({categoryId: question.category, topicId: question.topic, questionId: question._id, part: 'tutorial'})">
+                    <md-button>
+                        <md-icon md-svg-src="{{getVector('tutBtn')}}" class="cust-icon"> </md-icon>
+                    </md-button>
+                </a>
+                <a class="li" ui-sref="topic({categoryId: question.category, topicId: question.topic, questionId: question._id, part: 'test'})">
+                    <md-button>
+                        <md-icon md-svg-src="{{getVector('tstBtn')}}" class="cust-icon"> </md-icon>
+                    </md-button>
+                </a>
+                <a class="li" ui-sref="topic({categoryId: question.category, topicId: question.topic, questionId: question._id, part: 'tool'})">
+                    <md-button>
+                        <md-icon md-svg-src="{{getVector('toolBtn')}}" class="cust-icon"> </md-icon>
+                    </md-button>
+                </a>
+            </div>
+    </md-list>
+</titled-card>

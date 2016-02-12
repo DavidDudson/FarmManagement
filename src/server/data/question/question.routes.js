@@ -6,6 +6,14 @@ var router = Express.Router();
 var Promise     = require("bluebird");
 var Question = Promise.promisifyAll(require("./question.model"));
 
+//all
+router.get("/questions", (req, res) => {
+    Question.find({}, function(err, result){}).exec()
+        .then(function(data){
+            res.json(data);
+        });
+});
+
 //get
 router.get("/que/:id", (req, res) => {
     Question.findOne({"title": req.params.id}, function(err, result){}).exec()
