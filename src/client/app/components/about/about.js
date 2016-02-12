@@ -1,3 +1,6 @@
+require('./about.scss');
+
+
 angular.module('app')
     .config(($stateProvider) => {
 
