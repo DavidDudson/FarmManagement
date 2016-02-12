@@ -4,10 +4,14 @@
         <v-pane ng-repeat="topic in $root.category.topics track by $index">
             <v-pane-header>
                 <md-button class="md-list-item-text" ng-class="$root.app.editable === true ? 'delete' : ''" ng-click="$root.app.editable === true ? deleteTopic(topic._id) : {} ">
-                    <h4 id="vHead" layout="row" >
-                        <md-icon layout-align="start start" ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
-                        <span layout-align="start start">{{ topic.title }}</span>
-                        <md-icon layout-align="end end" flex="5"> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                    <h4 id="vHead" layout="row" layout-align="space-between center">
+                        <span layout-align="start center" >
+                             <md-icon layout-padding ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
+                            {{ topic.title }}
+                        </span>
+                        <span flex="10">
+                            <md-icon> {{$pane.isExpanded() ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</md-icon>
+                        </span>
                     </h4>
                 </md-button>
                 <md-divider></md-divider>
@@ -16,11 +20,10 @@
                 <md-content class="accordion">
                     <md-list layout="column">
                         <md-list-item ng-repeat="question in topic.questions track by $index"
-                                      layout="row" layout-align="start start" flex>
+                                      layout="row" layout-align="space-between center">
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
-                               ng-click="$root.app.editable === true ? deleteQuestion(question._id) : {}"
-                               flex="65" layout-align="start start">
+                               ng-click="$root.app.editable === true ? deleteQuestion(question._id) : {}">
                                 <md-button class="md-no-style md-list-item-text" ng-class="$root.app.editable === true ? 'delete' : ''">
                                     <h3>
                                         <md-icon ng-if="$root.app.editable === true">remove_circle_outline</md-icon>
@@ -28,27 +31,26 @@
                                     </h3>
                                 </md-button>
                             </a>
-                            <a class="li"
-                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
-                               flex="10" layout-align="end end">
-                                <md-button>
-                                    <md-icon md-svg-src="{{getVector('tutBtn')}}" class="cust-icon"> </md-icon>
-                                </md-button>
-                            </a>
-                            <a class="li"
-                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})"
-                               flex="10" >
-                                <md-button>
-                                    <md-icon md-svg-src="{{getVector('tstBtn')}}" class="cust-icon"> </md-icon>
-                                </md-button>
-                            </a>
-                            <a class="li"
-                               ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})"
-                               flex="10">
-                                <md-button>
-                                    <md-icon md-svg-src="{{getVector('toolBtn')}}" class="cust-icon"> </md-icon>
-                                </md-button>
-                            </a>
+                            <div layout="row" flex="30">
+                                <a class="li"
+                                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})">
+                                    <md-button>
+                                        <md-icon md-svg-src="{{getVector('tutBtn')}}" class="cust-icon"> </md-icon>
+                                    </md-button>
+                                </a>
+                                <a class="li"
+                                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})">
+                                    <md-button>
+                                        <md-icon md-svg-src="{{getVector('tstBtn')}}" class="cust-icon"> </md-icon>
+                                    </md-button>
+                                </a>
+                                <a class="li"
+                                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})">
+                                    <md-button>
+                                        <md-icon md-svg-src="{{getVector('toolBtn')}}" class="cust-icon"> </md-icon>
+                                    </md-button>
+                                </a>
+                            </div>
                     </md-list>
                     <md-button ng-if="$root.app.editable === true" class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
                         <md-icon>add_circle_outline</md-icon>
