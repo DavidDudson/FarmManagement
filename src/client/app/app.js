@@ -36,6 +36,8 @@ var _ = require('lodash');
 var ROOT = undefined;
 var TOAST = undefined;
 
+
+
 class AppCtrl {
     constructor($rootScope, $mdToast) {
         this.name = 'farmFINANZ';

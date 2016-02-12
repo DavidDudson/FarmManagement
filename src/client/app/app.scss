@@ -13,7 +13,7 @@
 
 body {
   background-color: $AgriBackgroundWhite;
-  font-family: arial, sans-serif;
+  font-family: 'UniverseLT', Arial, sans-serif !important;
 
   .app {
     background-color : white;
@@ -23,7 +23,6 @@ body {
 
     h1, h2, h3, h4, h5 {
       color: $AgriTextGrey;
-      font-family: 'UniverseLT', sans-serif;
     }
 
     .h3, h3 {
