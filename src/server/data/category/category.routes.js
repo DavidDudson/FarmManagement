@@ -13,6 +13,8 @@ router.get("/categories", (req, res) => {
     Category.find({}, function(err, result){}).exec()
         .then(function(data){
             res.json(data);
+        }).catch(function(){
+            res.sendStatus(400);
         });
 });
 
@@ -42,6 +44,8 @@ router.get("/cat/:id", (req, res) => {
                                     } else {
                                         res.json(fndCat);
                                     }
+                                }).catch(function(){
+                                    res.sendStatus(400);
                                 });
                         } else {
                             res.json(fndCat);
@@ -71,6 +75,8 @@ router.post("/cat", (req, res) => {
                 if(data) {
                     res.sendStatus(418);
                 }
+            }).catch(function(){
+                res.sendStatus(400);
             });
     }
 });
@@ -85,6 +91,8 @@ router.put("/cat/:id", (req, res) => {
             if(!data) {
                 res.sendStatus(400);
             }
+        }).catch(function(){
+            res.sendStatus(400);
         });
 });
 
@@ -94,7 +102,7 @@ router.delete("/cat/:id", (req, res) => {
         .then(function() {
             Topic.remove({"category": req.params.id}, function(err){}).exec()
                 .then(function() {
-                    Question.remove({"topic": req.params.id}, function(err){}).exec()
+                    Question.remove({"category": req.params.id}, function(err){}).exec()
                         .then(function(){
                             res.sendStatus(200);
                         });

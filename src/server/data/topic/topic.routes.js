@@ -7,6 +7,15 @@ var Promise = require("bluebird");
 var Topic = Promise.promisifyAll(require("./topic.model"));
 var Question = Promise.promisifyAll(require("../question/question.model"));
 
+router.get("/topics", (req, res) => {
+    Topic.find({}, function(err, result){}).exec()
+        .then(function(data){
+            res.json(data);
+        }).catch(function(){
+            res.sendStatus(400);
+        });
+});
+
     //get
 router.get("/top/:id", (req, res) => {
     Topic.findOne({"_id": req.params.id}, function(err, result){}).exec()
@@ -24,6 +33,8 @@ router.get("/top/:id", (req, res) => {
             if(!tData) {
                 res.sendStatus(400);
             }
+        }).catch(function(){
+            res.sendStatus(400);
         });
 });
 
@@ -43,6 +54,8 @@ router.post("/top", (req, res) => {
                 if(data) {
                     res.sendStatus(418);
                 }
+            }).catch(function(){
+                res.sendStatus(400);
             });
     }
 });
@@ -57,6 +70,8 @@ router.put("/top/:id", (req, res) => {
             if(!data) {
                 res.sendStatus(400);
             }
+        }).catch(function(){
+            res.sendStatus(400);
         });
 });
 
