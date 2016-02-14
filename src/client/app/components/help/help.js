@@ -1,15 +1,15 @@
-require('./about.scss');
+require('./help.scss');
 
 
 angular.module('app')
     .config(($stateProvider) => {
 
         $stateProvider
-            .state("about", {
-                url: '/about',
+            .state("help", {
+                url: '/help',
                 views: {
                     '': {
-                        template: require('./about.html')
+                        template: require('./help.html')
                     },
                     'nav': require('components/nav/scroll/scroll.js')
                 },
