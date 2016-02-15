@@ -17,6 +17,7 @@ router.get("/questions", (req, res) => {
         });
 });
 
+router
 //get
 router.get("/que/:id", (req, res) => {
     Question.findOne({"title": req.params.id}, function(err, result){}).exec()
