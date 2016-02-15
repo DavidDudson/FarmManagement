@@ -16,6 +16,23 @@ router.get("/categories", (req, res) => {
         })
 });
 
+router.get("/queSum", (req, res) => {
+    var bulk = {};
+    Category.find({}, {"description":0, "title":1, "_id":1}, function(err, result){}).exec()
+        .then(function(data){
+            bulk.categories = data;
+            Topic.find({},{"description":0,"category":0, "title":1, "_id":1}, function(err, result){}).exec()
+                .then(function(data){
+                    bulk.topics = data;
+                    Question.find({},{"question":0, "table": 0, "top_headings":0, "side_headings":0,"category":1, "topic":1, "title":1, "_id":1}, function(err, result){}).exec()
+                        .then(function(data){
+                            bulk.questions = data;
+                            res.json(bulk);
+                        });
+                });
+        });
+});
+
     //get
 router.get("/cat/:id", (req, res) => {
     console.log("Searching for category: " + req.params.id);

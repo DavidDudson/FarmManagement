@@ -15,9 +15,6 @@ router.get("/questions", (req, res) => {
         });
 });
 
-router.get("/queSum", (req, res) => {
-    res.json({"msg":"Coming Soon to a computer near you"});
-});
 
 //get
 router.get("/que/:id", (req, res) => {
