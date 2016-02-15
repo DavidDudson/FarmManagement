@@ -8,7 +8,9 @@ var questionSchema = new mongoose.Schema({
     top_headings    : Boolean,
     side_headings   : Boolean,
     question        : String,
-    table           : [[String]]
+    table           : [{row: Number,
+                        rowContent: [String]
+                       }]
 });
 
 module.exports = mongoose.model('Question', questionSchema);
