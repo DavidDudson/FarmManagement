@@ -64,8 +64,20 @@ class CategoryCtrl {
 
     save(data) {
 
+        if (!!data['Title'] && !!data['Description']) {
+            ROOT.app.showToast("No changes detected on save");
+            return
+        }
+
+        if (data['Title'] === ROOT.category.title && data['Description'] === ROOT.category.description) {
+            ROOT.app.showToast("Changes identical to what was already there");
+
+            return
+        }
+
         if (ROOT.app.editable === false) {
             console.log("Tried to make modifications while not editable");
+            ROOT.app.showToast("Tried to save while not editable");
             return
         }
 
