@@ -1,9 +1,8 @@
-{{table.getHeadings()}}
 <md-table-container class="md-padding">
     <table md-table ng-model="selected" md-progress="deferred">
         <thead md-head ng-if="topHeader === true">
             <tr md-row>
-                <th md-column md-numeric ng-repeat="heading in table.getHeadings() track by $index">
+                <th md-column md-numeric ng-repeat="heading in table.getTopHeadings() track by $index">
                     {{heading}}
                 </th>
                 <th md-cell ng-if="$root.app.editable === true" layout="column" layout-align="center center">
@@ -14,9 +13,12 @@
             </tr>
         </thead>
         <tbody md-body>
-            <tr md-row ng-repeat="row in getTableFromData() track by $index" ng-if="$index < table.dataSize - 1">
-                <td md-cell ng-repeat="cell in row track by $index" ng-if="topHeader === true && $index > 0">
-                    {{cell}}
+            <tr md-row ng-repeat="row in table.table track by $index">
+                <td md-cell ng-repeat="cell in row track by $index" ng-if="side === true && $first">
+                    <h4>{{cell}}</h4>
+                </td>
+                <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first">
+                    <p>{{cell}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
@@ -30,7 +32,7 @@
         </tbody>
         <tfoot md-foot ng-if="$root.app.editable === true">
             <tr md-row>
-                <td ng-repeat="items in table.getTableWidthAsArray() track by $index" layout="row" layout-align="center center">
+                <td ng-repeat="items in table.table[0] track by $index" layout="row" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
                         <md-icon class="add">add_circle_outline</md-icon>
                     </md-button>

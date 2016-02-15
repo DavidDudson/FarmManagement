@@ -2,24 +2,11 @@ var exprParser = require('util/expression_parser.js');
 
 require('./table.scss');
 
-var SCOPE = undefined;
-
 class TableController {
     constructor($scope) {
-        this.calculate = (expr) => exprParser.calculate(expr, $scope.data);
-        this.getHeadings = () => {
-            console.log($scope.data)
-            var sideHeadings = Object.keys($scope.data);
-            var topLeft = sideHeadings[sideHeadings.length - 1];
-            var concat = [topLeft].concat($scope.data[topLeft]);
-            console.log("Top Headings: " + concat);
-            return concat
-        };
-        this.dataSize = Object.keys($scope.data).length;
-    }
-
-    getTableWidthAsArray() {
-        return new Array(SCOPE.data[Object.keys(SCOPE.data)[0]].length + 1)
+        this.calculate = (expr) => exprParser.calculate(expr, this.table);
+        this.table = $scope.data.map(rowData => rowData.rowContent);
+        this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
     }
 }
 
@@ -31,10 +18,9 @@ class TableDirective {
         this.scope = {
             data : '=',
             mode : '=',
-            topHeader : '=',
-            sideHeader : '='
+            top : '=',
+            side : '='
         };
-        this.link = $scope => SCOPE = $scope;
         this.controller = TableController;
         this.controllerAs = 'table';
     }

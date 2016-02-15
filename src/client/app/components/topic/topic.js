@@ -10,8 +10,6 @@ class TopicCtrl {
         this.category = catData.data;
         this.topic = _.find(this.category.topics, {_id: $stateParams.topicId});
         this.question = _.find(this.topic.questions, {_id: $stateParams.questionId});
-        this.topHeader = this.question.top_headings;
-        this.sideHeader = this.question.side_headings;
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         console.log(this.topic);
         console.log(this.question);
