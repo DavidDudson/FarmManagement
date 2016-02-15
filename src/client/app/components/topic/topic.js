@@ -1,4 +1,4 @@
-require('./Topic.scss');
+require('./topic.scss');
 
 var _ = require('lodash');
 
