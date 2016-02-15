@@ -1,5 +1,5 @@
 <titled-card title="'All Questions'">
-    <md-list layout="column">
+    <md-list layout="column" layout-padding>
         <md-list-item ng-repeat="question in all.questions track by $index" layout="row" layout-align="space-between center">
             <a class="li" ui-sref="topic({categoryId: question.category, topicId: question.topic, questionId: question._id, part: 'tutorial'})">
                 <md-button class="md-no-style md-list-item-text">
