@@ -50,9 +50,7 @@ class AppCtrl {
         $rootScope.app = this;
         TOAST = $mdToast;
         ROOT = $rootScope;
-
-        $rootScope.getVector = s => require('../vector/' + s + '.svg');
-
+        $rootScope.getVector = s => require(`../vector/${s}.svg`);
     }
 
     showToast(text) {
