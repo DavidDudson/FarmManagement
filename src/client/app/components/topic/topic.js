@@ -72,8 +72,8 @@ TopicCtrl.$inject = ['$http',  '$rootScope', '$stateParams', 'catData'];
 angular.module('app')
     .config(($stateProvider) => {
         $stateProvider
-            .state("/topic" , {
-                url: '/topic/:categoryId?topicId?questionId?part',
+            .state("topic" , {
+                url: '/topic?categoryId&topicId&questionId&part',
                 views: {
                     '': {
                         template: require('./topic.html'),

@@ -6,10 +6,14 @@ var HTTP = undefined;
 var ROOT = undefined;
 
 class CategoryCtrl {
-    constructor($http, $rootScope, catData) {
+    constructor($http, $rootScope, catData, $state) {
         $rootScope.category = catData.data;
         HTTP = $http;
         ROOT = $rootScope;
+        this.goto = params => {
+            console.log(params);
+            $state.go("topic", params)
+        }
     }
 
     addTopic() {
