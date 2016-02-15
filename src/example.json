@@ -103,19 +103,19 @@
               "side_headings": true,
               "table": [
                 {"row": 1, "rowContent":["Total Income", "400000 to 600000 inc 20000"]},
-                {"row": 1, "rowContent":["Income From Rental Properties", "-5000 to 0 inc 1000"]},
-                {"row": 1, "rowContent":["Gross Farm Income", "? ..."]},
-                {"row": 1, "rowContent":["Net Profit", "190000 to 250000 inc 15000"]},
-                {"row": 1, "rowContent":["Total Expenses", "? ..."]},
-                {"row": 1, "rowContent":["Interest", "45000 to 60000 inc 5000"]},
-                {"row": 1, "rowContent":["Rent", "40000 to 50000 inc 1000"]},
-                {"row": 1, "rowContent":["Family Labour & Management", "40000 to 50000 inc 1000"]},
-                {"row": 1, "rowContent":["Operation Expenses", "? ..."]},
-                {"row": 1, "rowContent":["Operation Profit", "? ..."]},
-                {"row": 1, "rowContent":["Total Assets", "2500000 to 2750000 inc 500000"]},
-                {"row": 1, "rowContent":["Total Liability", "250000 to 275000 inc 50000"]},
-                {"row": 1, "rowContent":["Equity", "1500000 to 2000000 inc 100000"]},
-                {"row": 1, "rowContent":["Return on Equity", "? ..."]}
+                {"row": 2, "rowContent":["Income From Rental Properties", "-5000 to 0 inc 1000"]},
+                {"row": 3, "rowContent":["Gross Farm Income", "? ..."]},
+                {"row": 4, "rowContent":["Net Profit", "190000 to 250000 inc 15000"]},
+                {"row": 5, "rowContent":["Total Expenses", "? ..."]},
+                {"row": 6, "rowContent":["Interest", "45000 to 60000 inc 5000"]},
+                {"row": 7, "rowContent":["Rent", "40000 to 50000 inc 1000"]},
+                {"row": 8, "rowContent":["Family Labour & Management", "40000 to 50000 inc 1000"]},
+                {"row": 9, "rowContent":["Operation Expenses", "? ..."]},
+                {"row": 10, "rowContent":["Operation Profit", "? ..."]},
+                {"row": 11, "rowContent":["Total Assets", "2500000 to 2750000 inc 500000"]},
+                {"row": 12, "rowContent":["Total Liability", "250000 to 275000 inc 50000"]},
+                {"row": 13, "rowContent":["Equity", "1500000 to 2000000 inc 100000"]},
+                {"row": 14, "rowContent":["Return on Equity", "? ..."]}
               ]
             }
           ]
