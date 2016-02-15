@@ -12,8 +12,6 @@ router.get("/questions", (req, res) => {
     Question.find({}, function(err, result){}).exec()
         .then(function(data){
             res.json(data);
-        }).catch(function(){
-            res.sendStatus(400);
         });
 });
 
@@ -28,8 +26,6 @@ router.get("/que/:id", (req, res) => {
             if(!qData) {
                 res.sendStatus(400);
             }
-        }).catch(function(){
-            res.sendStatus(400);
         });
 });
 
@@ -49,8 +45,6 @@ router.post("/que", (req, res) => {
                 if(data) {
                     res.sendStatus(418);
                 }
-            }).catch(function(){
-                res.sendStatus(400);
             });
     }
 });
@@ -65,8 +59,6 @@ router.put("/que/:id", (req, res) => {
             if(!data) {
                 res.sendStatus(400);
             }
-        }).catch(function(){
-            res.sendStatus(400);
         });
 });
 

@@ -79,6 +79,7 @@ router.post("/cat", (req, res) => {
 
     //update
 router.put("/cat/:id", (req, res) => {
+    console.log(req.body);
     var upCat = new Category(req.body);
     Category.findOneAndUpdate({"_id": req.params.id}, upCat, function(err, result){}).exec()
         .then(function(data) {
