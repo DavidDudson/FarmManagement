@@ -1,11 +1,12 @@
+{{table.getHeadings()}}
 <md-table-container class="md-padding">
     <table md-table ng-model="selected" md-progress="deferred">
         <thead md-head ng-if="topHeader === true">
             <tr md-row>
                 <th md-column md-numeric ng-repeat="heading in table.getHeadings() track by $index">
-                    <editable name="'Heading[' + ($index + 1) + ']'" value="heading" type="'input'" description="'Heading[' + ($index + 1) + ']'" class="tableHeader"></editable>
+                    {{heading}}
                 </th>
-                <th md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
+                <th md-cell ng-if="$root.app.editable === true" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
                         <md-icon>add_circle_outline</md-icon>
                     </md-button>
@@ -13,9 +14,9 @@
             </tr>
         </thead>
         <tbody md-body>
-            <tr md-row ng-repeat="(key, values) in data track by $index" ng-if="$index < table.dataSize - 1">
-                <td md-cell ng-repeat="item in [key].concat(values) track by $index" ng-if="topHeader === true && $index > 0">
-                    <editable name="'Cell[' + $index + '][' +  $parent.$index + ']'" value="title" type="'input'" description="Cell[' + $index + '][' +  $parent.$index + ']'" class="tableHeader"></editable>
+            <tr md-row ng-repeat="row in getTableFromData() track by $index" ng-if="$index < table.dataSize - 1">
+                <td md-cell ng-repeat="cell in row track by $index" ng-if="topHeader === true && $index > 0">
+                    {{cell}}
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
@@ -27,7 +28,7 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot md-foot ng-if="$root.app.editable" >
+        <tfoot md-foot ng-if="$root.app.editable === true">
             <tr md-row>
                 <td ng-repeat="items in table.getTableWidthAsArray() track by $index" layout="row" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">

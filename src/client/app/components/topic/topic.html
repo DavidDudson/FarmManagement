@@ -1,4 +1,4 @@
 <titled-card title="top.topic.title" description="top.topic.description" save="top.save" layout="column">
-        <spreadsheet data="top.question.table" topHeader="top.topHeader" sideHeader="top.sideHeader" ng-if="topic.question.table"></spreadsheet>
+        <spreadsheet data="top.question.table" mode="top.current" topHeader="top.topHeader" sideHeader="top.sideHeader"></spreadsheet>
         <md-button ng-if="top.current === 'test'" class="md-raised md-primary md-padding" ng-click="topic.checkAnswer()">Check Answer</md-button>
 </titled-card>

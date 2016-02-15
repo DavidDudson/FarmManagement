@@ -8,9 +8,12 @@ class TableController {
     constructor($scope) {
         this.calculate = (expr) => exprParser.calculate(expr, $scope.data);
         this.getHeadings = () => {
+            console.log($scope.data)
             var sideHeadings = Object.keys($scope.data);
             var topLeft = sideHeadings[sideHeadings.length - 1];
-            return [topLeft].concat($scope.data[topLeft])
+            var concat = [topLeft].concat($scope.data[topLeft]);
+            console.log("Top Headings: " + concat);
+            return concat
         };
         this.dataSize = Object.keys($scope.data).length;
     }
@@ -27,7 +30,7 @@ class TableDirective {
         this.replace = false;
         this.scope = {
             data : '=',
-            answer : '=',
+            mode : '=',
             topHeader : '=',
             sideHeader : '='
         };
