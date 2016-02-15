@@ -15,7 +15,10 @@ router.get("/questions", (req, res) => {
         });
 });
 
-router
+router.get("/queSum", (req, res) => {
+    res.json({"msg":"Coming Soon to a computer near you"});
+});
+
 //get
 router.get("/que/:id", (req, res) => {
     Question.findOne({"title": req.params.id}, function(err, result){}).exec()

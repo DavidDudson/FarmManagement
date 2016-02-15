@@ -71,8 +71,6 @@ router.post("/cat", (req, res) => {
                 if(data) {
                     res.sendStatus(418);
                 }
-            }).catch(function(err){
-                res.sendStatus(400);
             });
     }
 });
@@ -80,8 +78,7 @@ router.post("/cat", (req, res) => {
     //update
 router.put("/cat/:id", (req, res) => {
     console.log(req.body);
-    var upCat = new Category(req.body);
-    Category.findOneAndUpdate({"_id": req.params.id}, upCat, function(err, result){}).exec()
+    Category.findOneAndUpdate({"_id": req.params.id}, {$set: req.body}).exec(function(err, result){})
         .then(function(data) {
             if(data) {
                 res.sendStatus(200);
