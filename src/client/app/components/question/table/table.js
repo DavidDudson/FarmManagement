@@ -7,6 +7,10 @@ class TableController {
         this.calculate = (expr) => exprParser.calculate(expr, this.table);
         this.table = $scope.data.map(rowData => rowData.rowContent);
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
+        this.isTutorialExample = s => $scope.mode === 'tutorial' && s.match(/^\?.*/);
+        this.isTestInput = s => $scope.mode === 'test' && s.match(/^\?.*/);
+        this.isToolInput = s => $scope.mode === 'tool' && !s.match(/^\?.*/);
+        this.isCalculateable = s => !this.isTutorialExample(s) && !this.isToolInput(s) && !this.isTestInput(s);
     }
 }
 
