@@ -9,8 +9,7 @@ class CardCtrl {
 
     save(fun) {
         if(ROOT.app.editable){
-            fun();
-            ROOT.app.resetEdit()
+            fun(this.edits);
         } else {
             ROOT.app.editable = true
         }

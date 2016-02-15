@@ -93,6 +93,7 @@ class CategoryCtrl {
                 ROOT.app.showToast("Topic: " + ROOT.category.title + " saved successfully");
                 ROOT.category.title = newTitle;
                 ROOT.category.description = newDescription;
+                ROOT.app.editable = false;
             }, err => {
                 if (err.status === 500) {
                     ROOT.app.showToast("Save Category Failed: Server Crash");

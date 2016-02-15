@@ -14,9 +14,8 @@ class CardCtrl {
         };
 
         this.save = fun => {
-            if(ROOT.app.editable){
+            if(ROOT.app.editable === true){
                 fun(this.edits);
-                this.edits = {};
             } else {
                 ROOT.app.editable = true
             }
