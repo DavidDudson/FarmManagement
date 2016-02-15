@@ -44,6 +44,13 @@ body {
       text-transform: none !important;
     }
 
+    .md-raised {
+      box-shadow: none !important;
+      border-radius: 0;
+      background-color: $AgriBackgroundWhite;
+
+    }
+
     .body-space {
       min-height: 673px;
     }
