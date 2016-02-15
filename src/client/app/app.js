@@ -14,7 +14,6 @@ require("bootstrap_css");
 
 var ngMaterial = require('angular-material');
 require('angular_material_css');
-require('angular_material_design_icons');
 
 require('angular-ui-router');
 

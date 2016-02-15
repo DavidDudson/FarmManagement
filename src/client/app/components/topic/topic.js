@@ -17,6 +17,7 @@ class TopicCtrl {
         this.topHeader = this.question.top_headings;
         this.sideHeader = this.question.side_headings;
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
+        console.log($stateParams);
         HTTP = $http;
         ROOT = $rootScope;
 
@@ -83,7 +84,8 @@ angular.module('app')
                 },
                 resolve: {
                     catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.categoryId),
-                    categories: ($http, $rootScope) => $http.get("/categories")
+                    categories: ($http, $rootScope) => $http.get("/categories"),
+                    test: ($stateParams) => console.log($stateParams)
                 }
             })
     });
