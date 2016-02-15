@@ -1,5 +1,4 @@
-<titled-card title="topic.title" description="topic.description" add="topic.add" remove="topic.remove"
-             help="topic.help" save="topic.save" layout="column">
-        <spreadsheet data="topic.question.table" answer="topic.question.answer" topHeader="topic.topHeader" sideHeader="topic.sideHeader" ng-if="topic.question.table"></spreadsheet>
-        <md-button ng-if="topic.current === 'test'" class="md-raised md-primary md-padding" ng-click="topic.checkAnswer()">Check Answer</md-button>
+<titled-card title="top.topic.title" description="top.topic.description" save="top.save" layout="column">
+        <spreadsheet data="top.question.table" topHeader="top.topHeader" sideHeader="top.sideHeader" ng-if="topic.question.table"></spreadsheet>
+        <md-button ng-if="top.current === 'test'" class="md-raised md-primary md-padding" ng-click="topic.checkAnswer()">Check Answer</md-button>
 </titled-card>

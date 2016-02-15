@@ -9,15 +9,12 @@ class TopicCtrl {
     constructor($http, $rootScope, $stateParams, catData) {
         this.category = catData.data;
         this.topic = _.find(this.category.topics, {_id: $stateParams.topicId});
-        this.id = this.topic._id;
-        this.title = this.topic.title;
-        this.description = this.topic.description;
-        this.questions = this.topic.questions;
-        this.question = _.find(this.questions, {_id: $stateParams.questionId});
+        this.question = _.find(this.topic.questions, {_id: $stateParams.questionId});
         this.topHeader = this.question.top_headings;
         this.sideHeader = this.question.side_headings;
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
-        console.log($stateParams);
+        console.log(this.topic);
+        console.log(this.question);
         HTTP = $http;
         ROOT = $rootScope;
 
@@ -84,8 +81,6 @@ angular.module('app')
                 },
                 resolve: {
                     catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.categoryId),
-                    categories: ($http, $rootScope) => $http.get("/categories"),
-                    test: ($stateParams) => console.log($stateParams)
-                }
+                    categories: ($http, $rootScope) => $http.get("/categories")}
             })
     });
