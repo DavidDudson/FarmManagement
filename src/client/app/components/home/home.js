@@ -6,7 +6,10 @@ var ROOT = undefined;
 class HomeCtrl {
     constructor($rootScope) {
         ROOT = $rootScope;
-        this.description = "Welcome to FarmFINANZ!\n\nTake your knowledge to the next level. The fundamentals in farm management are about getting the maths right.\n\nWe are here to assist you in every aspect of farm finance. We have a series of tutorials, topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in every field of farm management, ultimately to identify business opportunities and define future goals. Best of all, you’ll be learning from Massey professionals in this field, who developed the topics with you in mind.";
+        this.description = `Welcome to farmFINANZ!\n\n
+            Take your skills to the next level. The fundamentals in farm management are about getting the maths right.\n\n
+            We are here to assist you in every aspect of farm finance. We have a series of tutorials, topics and calculators that help you to get or refresh the knowledge you need to meet the challenges of farming today. We can help you to sharpen your maths skills in the finance field of farm management. Best of all, you’ll be learning from Massey farm business management professionals in this field, who developed the topics with you in mind.\n\n
+            Your options are to go in on a topic basis (see above) or farm type basis (“All questions” below).`;
 
         this.editDesc = null;
 
