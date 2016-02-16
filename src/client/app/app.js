@@ -67,12 +67,22 @@ class AppCtrl {
         ROOT.app.editable = false;
     }
 }
-
 AppCtrl.$inject = ['$rootScope', '$mdToast'];
 
 angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAccordion', 'chart.js', 'xeditable', uibs])
     .controller('AppCtrl', AppCtrl)
-    .run((editableOptions) => editableOptions.theme = 'default')
+    .run((editableOptions, $rootScope, $location, $window) => {
+            editableOptions.theme = 'default';
+
+            // initialise google analytics
+            $window.ga('create', 'UA-73855038-1', 'auto');
+
+            // track pageview on state change
+            $rootScope.$on('$stateChangeSuccess', function (event) {
+                $window.ga('send', 'pageview', $location.path());
+            });
+        }
+    )
     .config((ChartJsProvider) => {
             ChartJsProvider.setOptions({
                 colours: ["#004b8d", "#e4a024", "#c6bc89", "#d95f00", "#983222", "#a2ad00"],
