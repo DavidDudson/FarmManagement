@@ -12,13 +12,13 @@ class TableController {
             return x;
         };
         this.table = $scope.data.map(rowData => rowData.rowContent);
-        this.parse = s => this.calculate(this.replaceIfNotCyclic(_.trim(s, "? ")));
-        this.getVars = s => {
-            var x = s.match(/(\[[A-Z][0-9]])/g);
-            console.log("GetVars - Text: " + s);
-            console.log("GetVars: " + x);
-            return x;
-        };
+        this.getVars = s => s.match(/(\[[A-Z][0-9]])/g);
+        this.dependencyTable = this.table.map((row, i) => row.map((cell, j) => {
+            return {contents: cell, dependencies : this.getVars(cell), row : i, col : j};
+        }));
+        this.calculatedTable = Array.apply(null, new Array(this.table.length)).map(() => []);
+
+        this.parse = s => this.calculate(this.replaceIfNotCyclic(_.trim(s, "? "))).value;
         this.convertToIndex = s => {
             var x = [this.convertLetterToIndex(s.match(/([A-Z])/)[0]), _.parseInt(s.match(/([0-9])/)[0]) - 1];
             console.log("ConvertToIndex: " + x);
@@ -34,7 +34,14 @@ class TableController {
             console.log("getCell " + s);
             return this.table[indices[1]][indices[0]]
         };
-        this.isCyclic = s => false; //TODO
+        this.isCyclic = (wanted, current) => {
+            var vars = this.getVars(current);
+            if (!!vars) {
+                return _.some(vars, v => v === wanted)
+            } else {
+                return false
+            }
+        };
         this.getVarMapping = s => {
             var x = _.uniq(this.getVars(s)).map(v => [v, this.getCell(v)]);
             console.log("Var Mapping " + x);
@@ -63,6 +70,39 @@ class TableController {
         this.isToolInput = s => $scope.mode === 'tool' && !this.isSpecialCell(s);
         this.isSpecialCell = s => s.match(/^\?.*/);
         this.isCalculateable = s => !this.isTutorialExample(s) && !this.isToolInput(s) && !this.isTestInput(s);
+        this.computeTableValues = () => {
+            console.log("Computing table values");
+            var queue = _(this.dependencyTable).flatten().sortBy(o => _.size(o.dependencies)).value();
+
+            console.log(queue);
+
+            while(queue.length > 0){
+                var o = queue.shift();
+                console.log("Got object:");
+                console.log(o);
+
+                var result = this.computeValue(o);
+                if (result === false) {
+                    console.log("Pushing Back onto queue: " + o.contents);
+                    queue.push(o);
+                } else {
+                    console.log("Adding to calculated: " + result);
+                    this.calculatedTable[o.row][o.col] = result;
+                }
+                console.log(queue);
+            }
+        };
+        this.computeValue = o => {
+            if (o.contents.match(/^[A-Za-z ]+$/) !== null) {
+                console.log("Compute: Basic " + o.contents);
+                return o.contents
+            } else {
+                var x = (o.dependencies === null || this.dependenciesExist(o)) ? this.parse(o.contents) : false;
+                console.log("Compute: " + x);
+                console.log("Compute: " +  o.contents);
+            }
+        };
+        this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.calculatedTable, v => this.convertToIndex(d) === [v.col, v.row]));
     }
 }
 
