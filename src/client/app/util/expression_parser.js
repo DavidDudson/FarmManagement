@@ -37,7 +37,7 @@ function calculate(expression, table) {
 function _parseExpression(expression, table) {
     var words = _.words(expression);
         console.log(words);
-    if ((words.length === 3 || words.length === 4) && words[1].match(/to/i)) {
+    if ((words.length === 3 || words.length === 5) && words[1].match(/to/i)) {
         return _parseRange(words);
     } else if (words.length === 3 && words[0].match(/sum/i)) {
         return _parseSum(words, table);
@@ -72,12 +72,29 @@ function _parseSum(words, table) {
 }
 
 function _parseRange(words) {
-    var random = _.random(_.parseInt(words[0]), _.parseInt(words[2]));
 
-    if (!!words[3]) {
-        return new Success(random + words[3])
+    var start = _.parseInt(words[0]);
+    var end = _.parseInt(words[2]);
+    var inc = _.parseInt(words[4]);
+
+    if (start > end) {
+        return new Failure("End is greater than start")
+    }
+
+    if (inc > start) {
+        return new Failure("Increment not small enough")
+    }
+
+    if (!!words[4]) {
+        var numbers = [];
+        for(var n = _.parseInt(words[0]); n <= _.parseInt(words[2]); n += _.parseInt([words[4]])) {
+            numbers.push(n);
+        }
+
+        var randomIndex = Math.floor(Math.random() * numbers.length);
+        return new Success(numbers[randomIndex])
     } else {
-        return new Success(random)
+        return new Success(_.random(start, end))
     }
 }
 

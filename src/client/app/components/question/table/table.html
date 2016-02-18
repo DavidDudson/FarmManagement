@@ -18,10 +18,10 @@
                     <h4>{{cell}}</h4>
                 </td>
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first">
-                    <p ng-if="table.isTestInput(cell)">Test Input Cell {{cell}}</p>
-                    <p ng-if="table.isTutorialExample(cell)">Tutorial Hover Cell {{cell}}</p>
-                    <p ng-if="table.isToolInput(cell)">Tool Input Cell {{cell}}</p>
-                    <p ng-if="table.isCalculateable(cell)">Boring Calculated {{cell}}</p>
+                    <p ng-if="table.isTestInput(cell)">Test Input Cell {{table.parse(cell).value}}</p>
+                    <p ng-if="table.isTutorialExample(cell)">Tutorial Hover Cell {{table.parse(cell).value}}</p>
+                    <p ng-if="table.isToolInput(cell)">Tool Input Cell {{table.parse(cell).value}}</p>
+                    <p ng-if="table.isCalculateable(cell)">{{table.parse(cell).value}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
