@@ -9,7 +9,7 @@ class TableController {
         this.calculate = (expr) => {
             var x = exprParser.calculate(expr, this.table);
             console.log("calculate " + x.value);
-            return x;
+            return x.value;
         };
         this.table = $scope.data.map(rowData => rowData.rowContent);
         this.getVars = s => s.match(/(\[[A-Z][0-9]])/g);
@@ -18,7 +18,7 @@ class TableController {
         }));
         this.calculatedTable = Array.apply(null, new Array(this.table.length)).map(() => []);
 
-        this.parse = s => this.calculate(this.replaceIfNotCyclic(_.trim(s, "? "))).value;
+        this.parse = s => this.calculate(this.replaceIfNotCyclic(_.trim(s, "? ")));
         this.convertToIndex = s => {
             var x = [this.convertLetterToIndex(s.match(/([A-Z])/)[0]), _.parseInt(s.match(/([0-9])/)[0]) - 1];
             console.log("ConvertToIndex: " + x);
@@ -29,11 +29,6 @@ class TableController {
             console.log(x);
             return x;
         };
-        this.getCell = s => {
-            var indices = this.convertToIndex(s);
-            console.log("getCell " + s);
-            return this.table[indices[1]][indices[0]]
-        };
         this.isCyclic = (wanted, current) => {
             var vars = this.getVars(current);
             if (!!vars) {
@@ -42,26 +37,17 @@ class TableController {
                 return false
             }
         };
-        this.getVarMapping = s => {
-            var x = _.uniq(this.getVars(s)).map(v => [v, this.getCell(v)]);
-            console.log("Var Mapping " + x);
-            return x;
-        };
         this.replaceIfNotCyclic = s => {
             var x = this.isCyclic === true ? undefined : this.replaceVars(s);
             console.log("RINC " + x);
             return x;
         };
-        this.replaceVars = s => {
-            if(s.includes("[")) {
-                var mapping = this.getVarMapping(s);
-                console.log("Mapping: " + mapping);
-                var re = new RegExp(mapping.map(m => _.escapeRegExp(m[0])).join("|"),"g");
-                console.log("Regex " + re);
-                s = s.replace(re, m => this.parse(_.find(mapping, v => v[0] === m)[1]));
-                console.log("ReplaceVars S " + s);
-                return s;
-            }
+        this.replaceVars = o => {
+            console.log("Mapping: " + mapping);
+            var re = new RegExp(mapping.map(m => _.escapeRegExp(m[0])).join("|"),"g");
+            console.log("Regex " + re);
+            s = s.replace(re, m => table);
+            console.log("ReplaceVars S " + s);
             return s;
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
@@ -84,10 +70,10 @@ class TableController {
                 var result = this.computeValue(o);
                 if (result === false) {
                     console.log("Pushing Back onto queue: " + o.contents);
-                    queue.push(o);
+                        // queue.push(o);
                 } else {
                     console.log("Adding to calculated: " + result);
-                    this.calculatedTable[o.row][o.col] = result;
+                    o.calculated = result;
                 }
                 console.log(queue);
             }
@@ -97,12 +83,15 @@ class TableController {
                 console.log("Compute: Basic " + o.contents);
                 return o.contents
             } else {
-                var x = (o.dependencies === null || this.dependenciesExist(o)) ? this.parse(o.contents) : false;
+                var x = (o.dependencies === null || this.dependenciesExist(o)) ? this.parse(this.replaceVars(o)) : false;
                 console.log("Compute: " + x);
                 console.log("Compute: " +  o.contents);
+                return x;
             }
         };
-        this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.calculatedTable, v => this.convertToIndex(d) === [v.col, v.row]));
+        this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.table, v => {
+            return this.convertToIndex[v.row][v.col].calculated != undefined;
+        }));
     }
 }
 
