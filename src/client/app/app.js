@@ -86,4 +86,4 @@ var requireAll = r => r.keys().forEach(r);
 
 requireAll(require.context('./components/', true, /\.js$/));
 
-require("util/preload/preload");
+require("utilities/preload/preload");

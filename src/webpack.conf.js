@@ -53,7 +53,7 @@ module.exports = {
     resolve: {
         root: [homedir, path.resolve(homedir + "/node_modules")],
         alias: {
-            util: "src/client/app/util",
+            utilities: "src/client/app/util",
             app: "src/client/app",
             components: "src/client/app/components",
             client: "src/client",
