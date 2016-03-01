@@ -4,7 +4,8 @@ var _ = require('lodash');
 var math = require('mathjs');
 
 module.exports = {
-    calculate: calculate
+    calculate: calculate,
+    parseRange: _parseRange
 };
 
 class Failure {
@@ -23,12 +24,14 @@ class Success {
 function calculate(expression, table) {
     if (_.isUndefined(expression) || _.isUndefined(table)) {
         console.error("Table or expression undefined");
-        console.log(table);
-        console.log(expression)
+        console.error(table);
+        console.error(expression)
+    } else if (/^[a-zA-Z\s]+$/.test(expression)) {
+        return new Success(expression);
     } else if (/^\d+$/.test(expression)) {
         return new Success(expression);
-    } else if (expression.trim() === "" || /^\?/.test(expression)) {
-        return new Success("");
+    } else if (expression.trim() === "") {
+        return new Success("Empty");
     } else {
         return _parseExpression(expression, table);
     }
@@ -36,7 +39,6 @@ function calculate(expression, table) {
 
 function _parseExpression(expression, table) {
     var words = _.words(expression);
-        console.log(words);
     if ((words.length === 3 || words.length === 5) && words[1].match(/to/i)) {
         return _parseRange(words);
     } else if (words.length === 3 && words[0].match(/sum/i)) {
@@ -51,7 +53,7 @@ function _parseExpression(expression, table) {
 }
 
 function _parseAverage(words, table) {
-    var values = _getList(words, table).value;
+    var values = _getList(words, table).value();
     if (_.all(values, v => /^\d+$/.test(v))) {
         return new Success(_.sum(values) / values.length);
     } else {
@@ -62,7 +64,7 @@ function _parseAverage(words, table) {
 
 function _parseSum(words, table) {
     console.log("Sum");
-    var values = _getList(words, table).value;
+    var values = _getList(words, table).value();
     console.log(values);
     if (_.all(values, v => /^\d+$/.test(v))) {
         return new Success(_.sum(values));
