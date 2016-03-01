@@ -94,9 +94,12 @@ class TableController {
                     if (find == undefined) {
                         c.calculated = "Variable not found: " + d
                     } else {
-                        c.calculated = c.current.split("[" + d + "]").join(find.calculated)
+                        c.calculated = c.calculated.split("[" + d + "]").join(find.calculated)
                     }
                 });
+                if (c.calculated.match(/\[/)) {
+                    console.error("Something is out of whack")
+                }
             } else {
                 console.log("Not String: ");
                 console.log(c.current);
@@ -105,7 +108,7 @@ class TableController {
         this.refreshValues = () => {
             this.flatTable
                 .filter(cell => cell.dependencies.length === 0)
-                .forEach(cell => cell.calculated = exprParser.calculate(cell.current, this.table).value);
+                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
             this.sortedGraph.forEach(cellIndex => {
                 var cell = _.find(this.flatTable, {index: cellIndex});
                 this.replaceVars(cell);
@@ -113,7 +116,7 @@ class TableController {
                     cell.calculated = "Unknown cell: " + cellIndex
                 } else {
                     this.replaceVars(cell);
-                    cell.calculated = exprParser.calculate(cell.raw, this.table).value;
+                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
                 }
             })
         };
