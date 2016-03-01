@@ -15,6 +15,10 @@ body {
   background-color: $AgriBackgroundWhite;
   font-family: 'UniverseLT', Arial, sans-serif !important;
 
+  #copy {
+    text-align: center;
+  }
+
   .app {
     background-color : white;
     line-height: 1.4;
