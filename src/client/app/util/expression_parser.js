@@ -11,7 +11,7 @@ module.exports = {
 class Failure {
     constructor(tooltip) {
         this.tooltip = tooltip;
-        this.value = "Invalid"
+        this.value = 1;
     }
 }
 
@@ -26,14 +26,30 @@ function calculate(expression, table) {
         console.error("Table or expression undefined");
         console.error(table);
         console.error(expression)
-    } else if (/^[a-zA-Z\s]+$/.test(expression)) {
-        return new Success(expression);
     } else if (/^\d+$/.test(expression)) {
         return new Success(expression);
     } else if (expression.trim() === "") {
         return new Success("Empty");
     } else {
-        return _parseExpression(expression, table);
+        console.log("Calculate");
+        try {
+            var result = _parseExpression(expression, table);
+            console.log(expression);
+            console.log(result);
+            if (result.value == "Invalid") {
+                console.log("End Invalid");
+                return new Success(expression);
+            } else {
+                console.log("End Valid");
+                console.log(result.value);
+                return result
+            }
+        } catch(err) {
+            console.log("End Error");
+            console.log(expression);
+            console.log(err);
+            return new Success(expression);
+        }
     }
 }
 
@@ -79,18 +95,27 @@ function _parseRange(words) {
     var end = _.parseInt(words[2]);
     var inc = _.parseInt(words[4]);
 
-    if (start > end) {
-        return new Failure("End is greater than start")
+    console.log(words)
+
+    if (end < start) {
+        var x = end;
+        end = start;
+        start = x;
     }
 
-    if (inc > start) {
+    if (inc > Math.abs(end - start)) {
         return new Failure("Increment not small enough")
     }
 
     if (!!words[4]) {
         var numbers = [];
-        for(var n = _.parseInt(words[0]); n <= _.parseInt(words[2]); n += _.parseInt([words[4]])) {
+        for(var n = start; n <= end; n += inc) {
             numbers.push(n);
+        }
+        if (numbers.length == 0) {
+            console.log(start);
+            console.log(end);
+            console.log(inc);
         }
 
         var randomIndex = Math.floor(Math.random() * numbers.length);
@@ -111,7 +136,6 @@ function _getList(words, table) {
 
 function _getCol(table, key) {
     var index = _.indexOf(table[' '], key);
-    console.log(index);
     if (~index) {
         return _(table)
             .map((v, k) => table[k][index])

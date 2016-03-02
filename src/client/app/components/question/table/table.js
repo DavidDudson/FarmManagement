@@ -57,10 +57,10 @@ class TableController {
         this.getInitial = (cell) => {
             if (cell.type === "input"){
                 return 0;
-            } else if (cell.raw.includes(" to ")) {
+            } else if (cell.raw.includes(" to ") && cell.raw.match(/[0-9]/)) {
                 return exprParser.parseRange(_.words(cell.raw)).value;
             } else {
-                return _.trim(cell.raw, "? ")
+                return cell.raw
             }
         };
         this.generateTable = () => {
@@ -77,7 +77,12 @@ class TableController {
                     };
 
                     cellData.current = this.getInitial(cellData);
-                    cellData.calculated = cellData.current;
+
+                    if (_.isString(cellData) && cellData.current.includes("? ")) {
+                        cellData.calculated = _.trim(cellData.current, "? ")
+                    } else {
+                        cellData.calculated = cellData.current;
+                    }
 
                     return cellData;
                 })
@@ -87,8 +92,6 @@ class TableController {
         this.flatTable = _(this.table).flatten().value();
         this.replaceVars = c => {
             if (_.isString(c.calculated)) {
-                console.log("replace");
-                console.log(c.calculated);
                 c.dependencies.forEach(d => {
                     var find = _.find(this.flatTable, {"index" : d});
                     if (find == undefined) {
@@ -108,7 +111,10 @@ class TableController {
         this.refreshValues = () => {
             this.flatTable
                 .filter(cell => cell.dependencies.length === 0)
-                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
+                .forEach(cell => {
+                    console.log(cell.calculated)
+                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value
+                });
             this.sortedGraph.forEach(cellIndex => {
                 var cell = _.find(this.flatTable, {index: cellIndex});
                 this.replaceVars(cell);
