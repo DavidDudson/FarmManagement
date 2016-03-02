@@ -46,8 +46,7 @@ class TableController {
                 return o.current
             } else {
                 var x = (o.dependencies === [] || this.dependenciesExist(o)) ? this.parse(this.replaceVars(o)) : false;
-                console.log("Compute: " + x);
-                console.log("Compute: " +  o.current);
+
                 return x;
             }
         };
@@ -111,10 +110,7 @@ class TableController {
         this.refreshValues = () => {
             this.flatTable
                 .filter(cell => cell.dependencies.length === 0)
-                .forEach(cell => {
-                    console.log(cell.calculated)
-                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value
-                });
+                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
             this.sortedGraph.forEach(cellIndex => {
                 var cell = _.find(this.flatTable, {index: cellIndex});
                 this.replaceVars(cell);

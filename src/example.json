@@ -20,6 +20,8 @@
             }, {
               "title": "Advanced Operating Profit Margin",
               "question": "A farmer receives a total income of [B1], which includes a loss from rental properties of [B2]. The net profit for the business is [B4]. Expenses on interest & rent are [B5] & [B6] respectively. Given that the value of unpaid family labour and management is [B7]. What is his operating profit margin ?",
+              "top_headings": false,
+              "side_headings": true,
               "table": [
                 {"row": 1, "rowContent":["Total Income", "400000 to 500000 inc 20000"]},
                 {"row": 2, "rowContent":["Income From Rental Properties", "-5000 to 0 inc 1000"]},
