@@ -1,7 +1,7 @@
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-var User       = require('../app/models/user');
+var User       = require('./user.model.js');
 
 module.exports = function(passport) {
 
@@ -18,9 +18,9 @@ module.exports = function(passport) {
     });
     passport.use(new GoogleStrategy({
 
-            clientID        : "",
-            clientSecret    : "",
-            callbackURL     : ""
+            clientID        : "911793977773-qa1mfgou85kuqqkqhd56d8066u2ehp04.apps.googleusercontent.com",
+            clientSecret    : "5gK4y-G49w8G4oR7VoUvv7MZ",
+            callbackURL     : "http://farmfinanz.herokuapp.com/auth/google/callback"
 
         },
         function(token, refreshToken, profile, done) {
