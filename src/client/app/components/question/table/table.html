@@ -21,8 +21,8 @@
                     <md-input-container ng-if="cell.type=='input'">
                         <input value=0 ng-model="cell.input" type="text"/>
                     </md-input-container>
-                    <div ng-if="cell.type=='hover'">Tutorial Hover Cell {{table.formatNumbers(cell.calculated)}}</div>
-                    <p ng-if="cell.type=='computed'">{{table.formatNumbers(cell.calculated)}}</p>
+                    <div ng-if="cell.type=='hover'">Tutorial Hover Cell {{$root.app.formatNumbers(cell.calculated)}}</div>
+                    <p ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell.calculated)}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">

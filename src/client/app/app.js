@@ -29,6 +29,8 @@ require("angular_chart");
 
 var uibs = require('angular-ui-bootstrap');
 
+var numeral = require('numeral');
+
 require("./app.scss");
 
 var _ = require('lodash');
@@ -50,6 +52,15 @@ class AppCtrl {
         TOAST = $mdToast;
         ROOT = $rootScope;
         $rootScope.getVector = s => require(`../vector/${s}.svg`);
+
+        this.formatNumbers = s => {
+            if (!_.isString(s)) {
+                s = _.toString(s)
+            }
+            var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
+            numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format()));
+            return s;
+        };
     }
 
     showToast(text) {
