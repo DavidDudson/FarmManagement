@@ -8,7 +8,7 @@ var tsort = require('tsort');
 require('./table.scss');
 
 class TableController {
-    constructor($scope) {
+    constructor($scope, $rootScope) {
         this.rawTable = $scope.data.map(rowData => rowData.rowContent);
         this.getDependencies = s => {
             var deps = s.match(/(\[[A-Z][0-9]])/g);
@@ -125,17 +125,17 @@ class TableController {
             this.updateQuestion()
         };
         this.updateQuestion = () => {
-            $scope.question.dependencies.forEach(d => {
+            $rootScope.question.dependencies.forEach(d => {
                 var find = _.find(this.flatTable, {"index" : d});
                 if (find == undefined) {
                     console.error("Variable not found: " + d);
                 } else {
-                    $scope.question.calculated = $scope.question.calculated.split("[" + d + "]").join(find.calculated)
+                    $rootScope.question.calculated = $rootScope.question.calculated.split("[" + d + "]").join(find.calculated)
                 }
             });
         };
         this.generateQuestion = () => {
-            $scope.question = {
+            $rootScope.question = {
                 raw: $scope.question,
                 calculated : $scope.question,
                 dependencies: this.getDependencies($scope.question)

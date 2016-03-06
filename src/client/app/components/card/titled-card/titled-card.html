@@ -15,7 +15,7 @@
                        e-ng-change="card.updateModel('Description', $data)" e-name="name">
                         <p class="md-subtitle">{{ description || "" }} </p>
                     </a>
-                    <p ng-if="$root.app.editable === false" ng-if="!!description"class="md-subtitle" layout-padding>{{description || ""}}</p>
+                    <p ng-if="$root.app.editable === false && !!description" class="md-subtitle" layout-padding>{{description || ""}}</p>
                 </div>
             </md-card-title-text>
         </md-card-title>
