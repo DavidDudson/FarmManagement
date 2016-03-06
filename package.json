@@ -70,6 +70,7 @@
     "node-sass": "latest",
     "normalize.css": "latest",
     "npm": "^3.5.3",
+    "numeral": "^1.5.3",
     "passport": "^0.3.2",
     "passport-google-oauth": "^0.2.0",
     "phantomjs": "latest",

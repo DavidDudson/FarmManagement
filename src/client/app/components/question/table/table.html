@@ -19,10 +19,10 @@
                 </td>
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first">
                     <md-input-container ng-if="cell.type=='input'">
-                        <input value=0 ng-model="cell.input" type="text" ng/>
+                        <input value=0 ng-model="cell.input" type="text"/>
                     </md-input-container>
-                    <div ng-if="cell.type=='hover'">Tutorial Hover Cell {{cell.calculated | number : 2}}</div>
-                    <p ng-if="cell.type=='computed'">{{cell.calculated | number : 2}}</p>
+                    <div ng-if="cell.type=='hover'">Tutorial Hover Cell {{table.formatNumbers(cell.calculated)}}</div>
+                    <p ng-if="cell.type=='computed'">{{table.formatNumbers(cell.calculated)}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">

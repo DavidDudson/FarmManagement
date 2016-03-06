@@ -5,6 +5,8 @@ var _ = require('lodash');
 // Use Topological Sort to correctly order the dependecy graph and detect cycles
 var tsort = require('tsort');
 
+var numeral = require('numeral');
+
 require('./table.scss');
 
 class TableController {
@@ -142,6 +144,14 @@ class TableController {
             };
             this.updateQuestion();
             console.log("Update")
+        };
+        this.formatNumbers = s => {
+            if (!_.isString(s)) {
+                s = _.toString(s)
+            }
+            var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
+            numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format()));
+            return s;
         };
         this.generateQuestion();
     }
