@@ -42,12 +42,9 @@ class TableController {
         };
         this.computeValue = o => {
             if (o.current.match(/^[A-Za-z ]+$/) !== null) {
-                console.log("Compute: Basic " + o.current);
                 return o.current
             } else {
-                var x = (o.dependencies === [] || this.dependenciesExist(o)) ? this.parse(this.replaceVars(o)) : false;
-
-                return x;
+                return (o.dependencies === [] || this.dependenciesExist(o)) ? this.parse(this.replaceVars(o)) : false;
             }
         };
         this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.table, v => {
@@ -107,20 +104,24 @@ class TableController {
                 console.log(c.current);
             }
         };
-        this.refreshValues = () => {
-            this.flatTable
-                .filter(cell => cell.dependencies.length === 0)
-                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
-            this.sortedGraph.forEach(cellIndex => {
-                var cell = _.find(this.flatTable, {index: cellIndex});
-                this.replaceVars(cell);
-                if (cell == undefined) {
-                    cell.calculated = "Unknown cell: " + cellIndex
+        this.calculateValues = cell => {
+            this.replaceVars(cell);
+            if (cell == undefined) {
+                cell.calculated = "Unknown cell: " + cell.index
+            } else {
+                if (cell.type == "input") {
+
                 } else {
                     this.replaceVars(cell);
                     cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
                 }
-            })
+            }
+        };
+        this.refreshAllValues = () => {
+            this.flatTable
+                .filter(cell => cell.dependencies.length === 0)
+                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
+            this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
         this.sortTable = () => {
@@ -132,10 +133,17 @@ class TableController {
                         graph.add(cell.index, dep);
                     });
                 });
-            return graph.sort();
+            return graph.sort().reverse();
         };
-        this.sortedGraph = this.sortTable().reverse();
-        this.refreshValues();
+        this.sortedGraph = this.sortTable();
+        this.refreshAllValues();
+        this.updateCell = cell => {
+            this.sortedGraph = this.sortTable();
+            var indexOf = _.indexOf(this.sortedGraph, cell.index);
+            this.sortedGraph
+                .filter(c => _.indexOf(this.sortedGraph, cell.index) >= indexOf)
+                .forEach(c => this.calculateValues(c));
+        }
     }
 }
 
