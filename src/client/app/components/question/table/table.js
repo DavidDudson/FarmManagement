@@ -35,18 +35,6 @@ class TableController {
         this.isToolInput = s => $scope.mode === 'tool' && !this.isSpecialCell(s);
         this.isSpecialCell = s => s.match(/^\?.*/);
         this.isInput = s => this.isToolInput(s) || this.isTestInput(s);
-        this.computeTableValues = () => {
-            _(this.table).flatten().filter(c => c.dependencies === []).forEach(c => this.computeValue(c));
-            console.log(this.sortedGraph);
-            //TODO
-        };
-        this.computeValue = o => {
-            if (o.current.match(/^[A-Za-z ]+$/) !== null) {
-                return o.current
-            } else {
-                return (o.dependencies === [] || this.dependenciesExist(o)) ? this.parse(this.replaceVars(o)) : false;
-            }
-        };
         this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.table, v => {
             return this.convertToIndex[v.row][v.col].calculated != undefined;
         }));
@@ -79,7 +67,6 @@ class TableController {
                     } else {
                         cellData.calculated = cellData.current;
                     }
-
                     return cellData;
                 })
             );
@@ -109,12 +96,8 @@ class TableController {
             if (cell == undefined) {
                 cell.calculated = "Unknown cell: " + cell.index
             } else {
-                if (cell.type == "input") {
-
-                } else {
-                    this.replaceVars(cell);
-                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
-                }
+                this.replaceVars(cell);
+                cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
             }
         };
         this.refreshAllValues = () => {
@@ -128,11 +111,7 @@ class TableController {
             var graph = tsort();
             _(this.table).flatten()
                 .filter(c => c.dependencies != [])
-                .forEach(cell => {
-                    cell.dependencies.forEach(dep => {
-                        graph.add(cell.index, dep);
-                    });
-                });
+                .forEach(cell => cell.dependencies.forEach(dep => graph.add(cell.index, dep)));
             return graph.sort().reverse();
         };
         this.sortedGraph = this.sortTable();
@@ -143,7 +122,28 @@ class TableController {
             this.sortedGraph
                 .filter(c => _.indexOf(this.sortedGraph, cell.index) >= indexOf)
                 .forEach(c => this.calculateValues(c));
-        }
+            this.updateQuestion()
+        };
+        this.updateQuestion = () => {
+            $scope.question.dependencies.forEach(d => {
+                var find = _.find(this.flatTable, {"index" : d});
+                if (find == undefined) {
+                    console.error("Variable not found: " + d);
+                } else {
+                    $scope.question.calculated = $scope.question.calculated.split("[" + d + "]").join(find.calculated)
+                }
+            });
+        };
+        this.generateQuestion = () => {
+            $scope.question = {
+                raw: $scope.question,
+                calculated : $scope.question,
+                dependencies: this.getDependencies($scope.question)
+            };
+            this.updateQuestion();
+            console.log("Update")
+        };
+        this.generateQuestion();
     }
 }
 
@@ -156,7 +156,8 @@ class TableDirective {
             data : '=',
             mode : '=',
             top : '=',
-            side : '='
+            side : '=',
+            question : '='
         };
         this.controller = TableController;
         this.controllerAs = 'table';
