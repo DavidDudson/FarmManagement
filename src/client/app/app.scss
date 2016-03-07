@@ -51,8 +51,18 @@ body {
     .md-raised {
       box-shadow: none !important;
       border-radius: 0;
-      background-color: $MasseyBlue;
+      background-color: lighten($MasseyBlue, 10%);
+      &:hover , &:focus , &:active {
+        background-color: $MasseyBlue
+      }
+      color: white !important;
+      h1, h2, h3, h4, h5, md-icon {
+        color: white !important;;
+      }
+    }
 
+    md-toolbar {
+      background-color: $MasseyGold;
     }
 
     .body-space {
