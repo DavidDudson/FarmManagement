@@ -34,9 +34,6 @@ class TableController {
         this.isToolInput = s => $scope.mode === 'tool' && !this.isSpecialCell(s);
         this.isSpecialCell = s => s.match(/^\?.*/);
         this.isInput = s => this.isToolInput(s) || this.isTestInput(s);
-        this.dependenciesExist = o => _.every(o.dependencies, d => _.some(this.table, v => {
-            return this.convertToIndex[v.row][v.col].calculated != undefined;
-        }));
         this.getInitial = (cell) => {
             if (cell.type === "input"){
                 return 0;

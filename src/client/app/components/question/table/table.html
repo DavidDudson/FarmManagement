@@ -21,8 +21,9 @@
                     <md-input-container ng-if="cell.type=='input'">
                         <input value=0 ng-model="cell.input" type="number">
                     </md-input-container>
-                    <div ng-if="cell.type=='hover'">Tutorial Hover Cell {{$root.app.formatNumbers(cell.calculated)}}</div>
-                    <p ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell.calculated)}}</p>
+                    <md-button ng-if="cell.type=='hover'" ng-click="cell.shown=!cell.shown">
+                        {{!cell.shown ? '?' : $root.app.formatNumbers(cell.calculated)}}</md-button>
+                    <p id="example" ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell.calculated)}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Add">
@@ -48,3 +49,30 @@
         </tfoot>
     </table>
 </md-table-container>
+<md-toolbar layout="row" layout-align="end center">
+    <md-button class="md-icon-button" aria-label="Refresh">
+        <md-icon>refresh</md-icon>
+    </md-button>
+    <a ng-if="!(top.current=='tutorial')" class="li"
+       ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})">
+        <md-button>
+            <md-tooltip>Tool</md-tooltip>
+
+            <md-icon md-svg-src="{{$root.getVector('tutBtn')}}" class="cust-icon"> </md-icon>
+        </md-button>
+    </a>
+    <a ng-if="!(top.current=='test')" class="li"
+       ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})">
+        <md-button>
+            <md-tooltip>Test</md-tooltip>
+            <md-icon md-svg-src="{{$root.getVector('tstBtn')}}" class="cust-icon"> </md-icon>
+        </md-button>
+    </a>
+    <a ng-if="!(top.current=='tool')" class="li"
+       ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})">
+        <md-button>
+            <md-tooltip>Tool</md-tooltip>
+            <md-icon md-svg-src="{{$root.getVector('toolBtn')}}" class="cust-icon"> </md-icon>
+        </md-button>
+    </a>
+</md-toolbar>
