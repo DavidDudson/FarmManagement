@@ -59,13 +59,11 @@ class TableController {
                         type: this.getType(cell)
                     };
 
-                    cellData.current = cell.raw(cellData);
+                    cellData.current = cellData.raw;
                     cellData.calculated = this.getInitial(cellData);
 
-                    if (_.isString(cellData) && cellData.current.includes("? ")) {
-                        cellData.calculated = _.trim(cellData.current, "? ")
-                    } else {
-                        cellData.calculated = cellData.current;
+                    if (_.isString(cellData.calculated) && cellData.calculated.includes("? ")) {
+                        cellData.calculated = _.trim(cellData.calculated, "? ")
                     }
                     return cellData;
                 })
@@ -92,6 +90,7 @@ class TableController {
             }
         };
         this.calculateValues = cell => {
+            console.log("Calculating " + cell.index);
             this.replaceVars(cell);
             if (cell == undefined) {
                 cell.calculated = "Unknown cell: " + cell.index
