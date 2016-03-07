@@ -17,8 +17,8 @@
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === true && $first">
                     <h4>{{cell.raw}}</h4>
                 </td>
-                <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first">
-                    <md-input-container ng-if="cell.type=='input'">
+                <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first" layout="row" layout-align="center center">
+                    <md-input-container ng-if="cell.type=='input'" layout-align="center center">
                         <input value=0 ng-model="cell.input" type="number">
                     </md-input-container>
                     <md-button ng-if="cell.type=='hover'" ng-click="cell.shown=!cell.shown">

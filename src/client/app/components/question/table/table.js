@@ -27,7 +27,6 @@ class TableController {
             }
         };
         this.convertFromIndex = (row,col) => [String.fromCharCode(row + 65), col + 1].join("");
-        this.convertToIndex = s => [this.convertLetterToIndex(s.match(/([A-Z])/)[0]), _.parseInt(s.match(/([0-9])/)[0]) - 1];
         this.convertLetterToIndex = s => s.charCodeAt(0) - 65;
         this.isTutorialExample = s => $scope.mode === 'tutorial' && this.isSpecialCell(s);
         this.isTestInput = s => $scope.mode === 'test' && this.isSpecialCell(s);
@@ -35,9 +34,7 @@ class TableController {
         this.isSpecialCell = s => s.match(/^\?.*/);
         this.isInput = s => this.isToolInput(s) || this.isTestInput(s);
         this.getInitial = (cell) => {
-            if (cell.type === "input"){
-                return 0;
-            } else if (cell.raw.includes(" to ") && cell.raw.match(/[0-9]/)) {
+            if (cell.raw.includes(" to ") && cell.raw.match(/[0-9]/)) {
                 return exprParser.parseRange(_.words(cell.raw)).value;
             } else {
                 return cell.raw
@@ -138,8 +135,15 @@ class TableController {
             this.updateQuestion();
             console.log("Update")
         };
+        this.answeredCorrectly = false;
+        this.checkAnswer = () => {
+          this.answeredCorrectly = _(this.flatTable)
+              .filter(c => c.raw.includes("? "))
+              .every(c => c.input === c.calculated)
+        };
         this.refreshAllValues();
         this.generateQuestion();
+        $rootScope.spreadsheet = this;
     }
 }
 

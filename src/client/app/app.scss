@@ -51,7 +51,7 @@ body {
     .md-raised {
       box-shadow: none !important;
       border-radius: 0;
-      background-color: $AgriBackgroundWhite;
+      background-color: $MasseyBlue;
 
     }
 
@@ -64,7 +64,7 @@ body {
     }
 
     .delete {
-      background-color: $Volcano;
+      background-color: $Volcano !important;
       &.md-button {
         &:hover, &:focus, &:active {
           background-color: darken($Volcano, 10%);
@@ -73,7 +73,7 @@ body {
     }
 
     .add {
-      background-color: $Ponga;
+      background-color: $Ponga !important;
       &.md-button {
         &:hover , &:focus , &:active {
           background-color: darken($Ponga, 5%);
