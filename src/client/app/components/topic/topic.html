@@ -1,4 +1,31 @@
 <titled-card title="top.topic.title" description="app.formatNumbers($root.question.calculated)" save="top.save" layout="column">
         <spreadsheet data="top.question.table" mode="top.current" top="top.question.top_headings" side="top.question.side_headings" question="top.question.question"></spreadsheet>
         <md-button ng-if="top.current === 'test'" class="md-raised md-primary md-padding" ng-click="topic.checkAnswer()">Check Answer</md-button>
+        <md-toolbar layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Refresh">
+                        <md-icon>refresh</md-icon>
+                </md-button>
+                <a ng-if="!(top.current=='tutorial')" class="li"
+                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})">
+                        <md-button>
+                                <md-tooltip>Tool</md-tooltip>
+
+                                <md-icon md-svg-src="{{$root.getVector('tutBtn')}}" class="cust-icon"> </md-icon>
+                        </md-button>
+                </a>
+                <a ng-if="!(top.current=='test')" class="li"
+                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})">
+                        <md-button>
+                                <md-tooltip>Test</md-tooltip>
+                                <md-icon md-svg-src="{{$root.getVector('tstBtn')}}" class="cust-icon"> </md-icon>
+                        </md-button>
+                </a>
+                <a ng-if="!(top.current=='tool')" class="li"
+                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})">
+                        <md-button>
+                                <md-tooltip>Tool</md-tooltip>
+                                <md-icon md-svg-src="{{$root.getVector('toolBtn')}}" class="cust-icon"> </md-icon>
+                        </md-button>
+                </a>
+        </md-toolbar>
 </titled-card>
