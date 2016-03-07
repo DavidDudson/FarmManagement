@@ -59,7 +59,8 @@ class TableController {
                         type: this.getType(cell)
                     };
 
-                    cellData.current = this.getInitial(cellData);
+                    cellData.current = cell.raw(cellData);
+                    cellData.calculated = this.getInitial(cellData);
 
                     if (_.isString(cellData) && cellData.current.includes("? ")) {
                         cellData.calculated = _.trim(cellData.current, "? ")
@@ -114,7 +115,6 @@ class TableController {
             return graph.sort().reverse();
         };
         this.sortedGraph = this.sortTable();
-        this.refreshAllValues();
         this.updateCell = cell => {
             this.sortedGraph = this.sortTable();
             var indexOf = _.indexOf(this.sortedGraph, cell.index);
@@ -142,6 +142,7 @@ class TableController {
             this.updateQuestion();
             console.log("Update")
         };
+        this.refreshAllValues();
         this.generateQuestion();
     }
 }
