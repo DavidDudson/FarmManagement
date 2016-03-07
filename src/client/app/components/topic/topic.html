@@ -6,7 +6,7 @@
                         <md-icon>refresh</md-icon>
                 </md-button>
                 <a ng-if="!(top.current=='tutorial')" class="li"
-                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})">
+                   ui-sref="topic({categoryId: top.category._id, topicId: top.topic._id, questionId: top.question._id, part: 'tutorial'})">
                         <md-button>
                                 <md-tooltip>Tool</md-tooltip>
 
@@ -14,14 +14,14 @@
                         </md-button>
                 </a>
                 <a ng-if="!(top.current=='test')" class="li"
-                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'test'})">
+                   ui-sref="topic({categoryId: top.category._id, topicId: top.topic._id, questionId: top.question._id, part: 'test'})">
                         <md-button>
                                 <md-tooltip>Test</md-tooltip>
                                 <md-icon md-svg-src="{{$root.getVector('tstBtn')}}" class="cust-icon"> </md-icon>
                         </md-button>
                 </a>
                 <a ng-if="!(top.current=='tool')" class="li"
-                   ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tool'})">
+                   ui-sref="topic({categoryId: top.category._id, topicId: top.topic._id, questionId: top.question._id, part: 'tool'})">
                         <md-button>
                                 <md-tooltip>Tool</md-tooltip>
                                 <md-icon md-svg-src="{{$root.getVector('toolBtn')}}" class="cust-icon"> </md-icon>
