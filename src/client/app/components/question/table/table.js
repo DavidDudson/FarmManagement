@@ -137,9 +137,12 @@ class TableController {
         };
         this.answeredCorrectly = false;
         this.checkAnswer = () => {
-          this.answeredCorrectly = _(this.flatTable)
-              .filter(c => c.raw.includes("? "))
-              .every(c => c.input > c.calculated * 0.95 && c.input < c.calculated * 1.05)
+            var correct = _(this.flatTable).filter(c => c.raw.includes("? "))
+                .every(c => c.input > c.calculated * 0.95 && c.input < c.calculated * 1.05);
+            if (correct) {
+                $rootScope.correctQuestions.push($scope.question._id)
+            }
+            this.answeredCorrectly = correct;
         };
         this.refreshAllValues();
         this.generateQuestion();
