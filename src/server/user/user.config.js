@@ -8,7 +8,6 @@
 
 var Promise = require("bluebird");
 var User    = Promise.promisifyAll(require("./user.model"));
-var config  = require("./../server.config.json").adminUsers;
 
     // create admin account from the server.config.json
 module.exports = function() {
@@ -21,7 +20,7 @@ module.exports = function() {
                 newUser.local.password   = newUser.generateHash(user.password);
                 newUser.meta.privilege   = user.privilege;
                 newUser.meta.firstName   = user.firstName;
-                newUser.meta.created     = Date.now()
+                newUser.meta.created     = Date.now();
                 newUser.save(function(err) {
                     if(!err) {
                         console.log("account created for " + user.email);

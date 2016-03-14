@@ -27,16 +27,16 @@ module.exports = function(app, passport) {
     });
 
         // signup new user
-    app.post("/local/signup", function (req, res) {
-        passport.authenticate('local-signup', function(err, user) {
-            if(!user) {
-                res.send("signup failed");
-            }
-            if(user) {
-                res.send("signup was successful");
-            }
-        })(req, res);
-    });
+    //app.post("/local/signup", function (req, res) {
+    //    passport.authenticate('local-signup', function(err, user) {
+    //        if(!user) {
+    //            res.send("signup failed");
+    //        }
+    //        if(user) {
+    //            res.send("signup was successful");
+    //        }
+    //    })(req, res);
+    //});
 
         // logout user
     app.post("/local/logout", function (req, res) {

@@ -7,7 +7,6 @@
  */
 
 var LocalStrategy   = require('passport-local').Strategy;
-var config          = require('./../server.config.json').passportAuthConfig;
 var User            = require('./user.model');
 
 module.exports = function(passport) {
