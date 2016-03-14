@@ -17,7 +17,7 @@ angular.module('app')
                         controller: AdminCtrl,
                         controllerAs: 'admin'
                     },
-                    'nav': require('components/nav/scroll/scroll.js')
+                    'nav': ''
                 }
             });
     });

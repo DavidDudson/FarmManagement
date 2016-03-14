@@ -1,63 +1,36 @@
+/**
+ * Filename:    config.js
+ * Package:     User
+ * Author:      Anthony Crowcroft
+ *              Fourth Wall
+ * Created:     02/08/15.
+ */
 
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var Promise = require("bluebird");
+var User    = Promise.promisifyAll(require("./user.model"));
+var config  = require("./../server.config.json").adminUsers;
 
-var User       = require('./user.model.js');
+    // create admin account from the server.config.json
+module.exports = function() {
+    Promise.map(config, function(user) {
+        User.findOne({"local.email": user.email}, function(err, result){
 
-module.exports = function(passport) {
-
-    // used to serialize the user for the session
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
-    });
-
-    // used to deserialize the user
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            done(err, user);
-        });
-    });
-    passport.use(new GoogleStrategy({
-
-            clientID        : "911793977773-qa1mfgou85kuqqkqhd56d8066u2ehp04.apps.googleusercontent.com",
-            clientSecret    : "5gK4y-G49w8G4oR7VoUvv7MZ",
-            callbackURL     : "http://farmfinanz.herokuapp.com/auth/google/callback"
-
-        },
-        function(token, refreshToken, profile, done) {
-
-            // make the code asynchronous
-            // User.findOne won't fire until we have all our data back from Google
-            process.nextTick(function() {
-
-                // try to find the user based on their google id
-                User.findOne({ 'google.id' : profile.id }, function(err, user) {
-                    if (err)
-                        return done(err);
-
-                    if (user) {
-
-                        // if a user is found, log them in
-                        return done(null, user);
-                    } else {
-                        // if the user isnt in our database, create a new user
-                        var newUser          = new User();
-
-                        // set all of the relevant information
-                        newUser.google.id    = profile.id;
-                        newUser.google.token = token;
-                        newUser.google.name  = profile.displayName;
-                        newUser.google.email = profile.emails[0].value; // pull the first email
-
-                        // save the user
-                        newUser.save(function(err) {
-                            if (err)
-                                throw err;
-                            return done(null, newUser);
-                        });
+            if(!result) {
+                var newUser = new User();
+                newUser.local.email      = user.email;
+                newUser.local.password   = newUser.generateHash(user.password);
+                newUser.meta.privilege   = user.privilege;
+                newUser.meta.firstName   = user.firstName;
+                newUser.meta.created     = Date.now()
+                newUser.save(function(err) {
+                    if(!err) {
+                        console.log("account created for " + user.email);
                     }
                 });
-            });
-
-        }));
-
+            }
+            else {
+                console.log("account already existing for " + user.email);
+            }
+        });
+    });
 };
