@@ -12,12 +12,12 @@ canvas {
 }
 
 .carousel-control {
-  background : none !important;
+  display : none !important;
 }
 
 .carousel-indicators li {
   &:active, &:focus &:hover {
-    background: $AgriTextGrey;
+    display: none;
   }
-  border: 1px solid $AgriTextGrey;
+  display: none;
 }
