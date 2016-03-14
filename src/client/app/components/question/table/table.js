@@ -139,7 +139,7 @@ class TableController {
         this.checkAnswer = () => {
           this.answeredCorrectly = _(this.flatTable)
               .filter(c => c.raw.includes("? "))
-              .every(c => c.input === c.calculated)
+              .every(c => c.input > c.calculated * 0.95 && c.input < c.calculated * 1.05)
         };
         this.refreshAllValues();
         this.generateQuestion();
