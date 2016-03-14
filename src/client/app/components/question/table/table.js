@@ -114,7 +114,8 @@ class TableController {
             this.sortedGraph
                 .filter(c => _.indexOf(this.sortedGraph, cell.index) >= indexOf)
                 .forEach(c => this.calculateValues(c));
-            this.updateQuestion()
+            this.updateQuestion();
+            this.answeredCorrectly = null;
         };
         this.updateQuestion = () => {
             $rootScope.question.dependencies.forEach(d => {
