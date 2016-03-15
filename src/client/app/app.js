@@ -52,6 +52,54 @@ class AppCtrl {
         TOAST = $mdToast;
         ROOT = $rootScope;
         $rootScope.getVector = s => require(`../vector/${s}.svg`);
+
+        this.formatNumbers = cell => {
+
+            var stringToParse = "";
+            if (!_.isString(cell.calculated)) {
+                stringToParse = _.toString(cell.calculated)
+            } else {
+                stringToParse = cell.calculated
+            }
+
+            if (stringToParse.match(/(\$|\?|%)/) != undefined) {
+                console.error("This shouldnt happen")
+                return;
+            }
+
+            var numbers = stringToParse.match(/[-+]?[0-9]*\.?[0-9]+/g);
+            console.log(stringToParse);
+
+            console.log(numbers);
+            if (cell.isDollar) {
+                console.log("Dollar");
+                numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format('$0,0')));
+            } else if (cell.isPercentage) {
+                console.log("Percentage");
+                numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format('0.00%')));
+            } else {
+                numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format()));
+            }
+
+            console.log(stringToParse);
+
+            return stringToParse;
+        };
+
+        this.basicFormatNumbers = s => {
+
+            if (!_.isString(s)) {
+                s = _.toString(s);
+            }
+
+            var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
+
+            numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format('0,0')));
+            
+            return s;
+        };
+        
+        
     }
 
     showToast(text) {
