@@ -18,6 +18,7 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
+                    load : ($rootScope) => $rootScope.startLoad(),
                     questions: ($http, $rootScope) => $http.get("/queSum"),
                     categories: ($http, $rootScope) => $http.get("/categories")
                 }

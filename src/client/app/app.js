@@ -1,6 +1,6 @@
 require('normalize');
 
-require('jquery');
+var $ = require('jquery');
 
 var angular = require('angular');
 
@@ -52,15 +52,6 @@ class AppCtrl {
         TOAST = $mdToast;
         ROOT = $rootScope;
         $rootScope.getVector = s => require(`../vector/${s}.svg`);
-
-        this.formatNumbers = s => {
-            if (!_.isString(s)) {
-                s = _.toString(s)
-            }
-            var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
-            numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format()));
-            return s;
-        };
     }
 
     showToast(text) {
@@ -87,12 +78,23 @@ angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAc
         // initialise google analytics
         $window.ga('create', 'UA-73855038-1', 'auto');
 
-        // track pageview on state change
-        $rootScope.$on('$locationChangeSuccess', e => {
-            console.log("test");
+        $rootScope.endLoad = () => {
+            $rootScope.loading = false;
+            $(".page-loading").addClass("hidden");
+            $("#ui-view").removeClass("hidden");
+        };
 
+        $rootScope.startLoad = () => {
+            $rootScope.loading = true;
+            $("#ui-view").addClass("hidden");
+            $(".page-loading").removeClass("hidden");
+        };
+        
+        // track pageview on state change
+        $rootScope.$on('$locationChangeSuccess', () => {
             $window.ga('send', 'pageview', $location.path());
-        })
+            $rootScope.endLoad();
+        });
     })
     .config((ChartJsProvider) => {
             ChartJsProvider.setOptions({

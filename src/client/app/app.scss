@@ -101,6 +101,15 @@ body {
   img.ng-hide-add, img.ng-hide-remove {
     transition: 0.5s linear all;
   }
+
+  .page-loading {
+    height : 100%;
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .cust-icon{
