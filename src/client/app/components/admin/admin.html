@@ -1,7 +1,7 @@
 <div>
         <div>
             <h1> Administrator Login</h1>
-            <form name="userForm" ng-submit="login.submit()">
+            <form name="userForm" ng-submit="admin.login()">
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" ng-model="login.user.email" placeholder="Email Address">
                     <p ng-show="userForm.email.$invalid && userForm.email.$dirty"  ng-hide="userForm.email.$pristine" class="help-block">Email address is invalid</p>

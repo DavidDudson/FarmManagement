@@ -1,6 +1,21 @@
 class AdminCtrl {
     constructor() {
-        this.data = undefined;
+        this.login = function(){
+            if (this.user.email && this.user.password) {
+                $http.post('/local/login', {
+                    "email": this.user.email,
+                    "password": this.user.password
+                }).then(function (response) {
+                    if (response) {
+                        if (response.data.user != false) {
+                            $rootScope.user = response.data.user;
+                        }
+                    }
+                });
+            } else {
+                console.log("A field did not pass validation");
+            }
+        };
     }
 
 }
