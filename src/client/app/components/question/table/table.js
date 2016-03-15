@@ -10,7 +10,7 @@ class TableController {
     constructor($scope, $rootScope) {
         this.rawTable = $scope.data.map(rowData => rowData.rowContent);
         this.getDependencies = s => {
-            var deps = s.match(/(\[[A-Z][0-9]])/g);
+            var deps = s.match(/(\[[A-Z][0-9]+])/g);
             if (deps == null) {
                 return [];
             } else {
