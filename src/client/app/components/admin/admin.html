@@ -3,15 +3,21 @@
             <h1> Administrator Login</h1>
             <form name="userForm" ng-submit="admin.login()">
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" ng-model="login.user.email" placeholder="Email Address">
+                    <input type="email" class="form-control" name="email" ng-model="admin.user.email" placeholder="Email Address">
                     <p ng-show="userForm.email.$invalid && userForm.email.$dirty"  ng-hide="userForm.email.$pristine" class="help-block">Email address is invalid</p>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" ng-enter="login.signIn()" ng-model="login.user.password" placeholder="Password">
+                    <input type="password" class="form-control" ng-enter="login.signIn()" ng-model="admin.user.password" placeholder="Password">
                 </div>
                 <div class="login-btn-block">
                     <input class="btn btn-success width-full" type="submit" id="login" value="Login" />
                 </div>
             </form>
         </div>
+
+    <button type="button" class="btn btn-danger width-full" ng-click="admin.logout()"> Logout </button>
+    {{user}}
+    <button ui-sref="home" id="brand" class="btn btn-success" >
+       farmFINANZ
+    </button>
 </div>

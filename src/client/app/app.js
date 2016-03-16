@@ -46,7 +46,7 @@ class AppCtrl {
         this.yearOfCreation = 2016;
         this.editable = false;
         this.isMobile = false;
-        this.isAdmin = true;
+        this.isAdmin = false;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
         TOAST = $mdToast;

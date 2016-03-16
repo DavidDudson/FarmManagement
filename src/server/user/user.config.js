@@ -6,12 +6,15 @@
  * Created:     02/08/15.
  */
 
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://farmfi:hans23eva25@ds051665.mongolab.com:51665/heroku_g7bpvmg0");
+
 var Promise = require("bluebird");
 var User    = Promise.promisifyAll(require("./user.model"));
 
     // create admin account from the server.config.json
-module.exports = function() {
-    Promise.map(config, function(user) {
+var addUser = function(user) {
+
         User.findOne({"local.email": user.email}, function(err, result){
 
             if(!result) {
@@ -31,5 +34,14 @@ module.exports = function() {
                 console.log("account already existing for " + user.email);
             }
         });
-    });
+
 };
+
+var defaultUser = {
+    email: "farmfinanz@gmail.com",
+    password: "hans23eva25",
+    privilege: 5,
+    firstName: "farmFINANZ"
+};
+
+addUser(defaultUser);

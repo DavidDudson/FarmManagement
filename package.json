@@ -11,6 +11,7 @@
     "copy:index": "cp src/client/index.html dist/public/index.html",
     "copy:iframe": "cp src/client/iframe.css dist/public/iframe.css",
     "copy": "npm run copy:index && npm run copy:iframe",
+    "user": "node ./src/server/user/user.config.js",
     "quicktest": "open ./dist/public/test.html",
     "webpack": "webpack --config=\"src/webpack.conf.js\" --progress",
     "production": "webpack --config=\"src/webpack.conf.js\"",
