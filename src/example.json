@@ -234,22 +234,118 @@
           "title": "Net Profit",
           "questions": [
             {
-              "title": "Beef and Lamb"
+              "title": "Beef and Lamb",
+              "question": "A sheep & beef farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Total Income", "?$ 400000 to 550000 inc 25000"]},
+                {"row": 2, "rowContent":["Total Expenditure", "?$ 175000 to 300000 inc 25000"]},
+                {"row": 3, "rowContent":["Net Profit", "?$ [B1] - [B2]"]}
+              ]
             }, {
-              "title": "Dairy"
+              "title": "Dairy",
+              "question": "A dairy farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Total Income", "?$ 400000 to 550000 inc 25000"]},
+                {"row": 2, "rowContent":["Total Expenditure", "?$ 175000 to 300000 inc 25000"]},
+                {"row": 3, "rowContent":["Net Profit", "?$ [B1] - [B2]"]}
+              ]
             }, {
-              "title": "Horticulture"
+              "title": "Horticulture",
+              "question": "A cut flower grower receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Total Income", "?$ 400000 to 550000 inc 25000"]},
+                {"row": 2, "rowContent":["Total Expenditure", "?$ 175000 to 300000 inc 25000"]},
+                {"row": 3, "rowContent":["Net Profit", "?$ [B1] - [B2]"]}
+              ]
             }
           ]
         }, {
           "title": "Operating Profit",
           "questions": [
             {
-              "title": "Beef and Lamb"
+              "title": "Beef and Lamb Basic",
+              "question": "A sheep & beef farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["Operating Expenditure", "?$ 100000 to 200000 inc 20000"]},
+                {"row": 3, "rowContent":["Operating Profit", "?$ [B1] - [B2]"]}
+              ]
             }, {
-              "title": "Dairy"
+              "title": "Beef and Lamb Advanced",
+              "question": "A sheep & beef farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["FWE (including family labour and management)", "?$ 85000 to 120000 inc 5000"]},
+                {"row": 3, "rowContent":["R & M", "?$ 30000 to 35000 inc 1000"]},
+                {"row": 4, "rowContent":["Vehicle Expenses", "?$ 5000 to 7000 inc 500"]},
+                {"row": 5, "rowContent":["Admin Expenses", "?$ 4000 to 6500 inc 2500"]},
+                {"row": 6, "rowContent":["Standing Charges", "?$ 7500 to 15000 inc 2500"]},
+                {"row": 7, "rowContent":["Deprecation", "?$ 10000 to 15000 inc 1000"]},
+                {"row": 8, "rowContent":["Operating Expenses", "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"]},
+                {"row": 9, "rowContent":["Operating Profit", "?$ [B1] - [B8]"]}
+              ]
             }, {
-              "title": "Horticulture"
+              "title": "Dairy Basic",
+              "question": "A dairy farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["Operating Expenditure", "?$ 100000 to 200000 inc 20000"]},
+                {"row": 3, "rowContent":["Operating Profit", "?$ [B1] - [B2]"]}
+              ]
+            }, {
+              "title": "Dairy Advanced",
+              "question": "A dairy farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["FWE (including family labour and management)", "?$ 85000 to 120000 inc 5000"]},
+                {"row": 3, "rowContent":["R & M", "?$ 30000 to 35000 inc 1000"]},
+                {"row": 4, "rowContent":["Vehicle Expenses", "?$ 5000 to 7000 inc 500"]},
+                {"row": 5, "rowContent":["Admin Expenses", "?$ 4000 to 6500 inc 2500"]},
+                {"row": 6, "rowContent":["Standing Charges", "?$ 7500 to 15000 inc 2500"]},
+                {"row": 7, "rowContent":["Deprecation", "?$ 10000 to 15000 inc 1000"]},
+                {"row": 8, "rowContent":["Operating Expenses", "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"]},
+                {"row": 9, "rowContent":["Operating Profit", "?$ [B1] - [B8]"]}
+              ]
+            }, {
+              "title": "Horticulture Basic",
+              "question": "A cut flower grower receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["Operating Expenditure", "?$ 100000 to 200000 inc 20000"]},
+                {"row": 3, "rowContent":["Operating Profit", "?$ [B1] - [B2]"]}
+              ]
+            }, {
+              "title": "Horticulture Advanced",
+              "question": "A cut flower grower receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {"row": 1, "rowContent":["Gross Farm Income", "?$ 400000 to 600000 inc 20000"]},
+                {"row": 2, "rowContent":["FWE (including family labour and management)", "?$ 85000 to 120000 inc 5000"]},
+                {"row": 3, "rowContent":["R & M", "?$ 30000 to 35000 inc 1000"]},
+                {"row": 4, "rowContent":["Vehicle Expenses", "?$ 5000 to 7000 inc 500"]},
+                {"row": 5, "rowContent":["Admin Expenses", "?$ 4000 to 6500 inc 2500"]},
+                {"row": 6, "rowContent":["Standing Charges", "?$ 7500 to 15000 inc 2500"]},
+                {"row": 7, "rowContent":["Deprecation", "?$ 10000 to 15000 inc 1000"]},
+                {"row": 8, "rowContent":["Operating Expenses", "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"]},
+                {"row": 9, "rowContent":["Operating Profit", "?$ [B1] - [B8]"]}
+              ]
             }
           ]
         }
