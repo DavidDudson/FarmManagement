@@ -54,11 +54,7 @@ class TableController {
                     };
 
                     if (this.flatTable != undefined) {
-                        console.log("Setting input");
-                        console.log(this.flatTable);
-                        var old = _.find(this.flatTable, {index : cellData.index});
-                        console.log(old);
-                        cellData.input = old.input;
+                        cellData.input = _.find(this.flatTable, {index : cellData.index}).input;
                     }
 
                     cellData.calculated = _.toString(cellData.raw);
