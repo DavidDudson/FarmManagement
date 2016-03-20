@@ -139,7 +139,7 @@ angular.module('app', [ngAnimate, ngMaterial, 'ui.router', 'md.data.table', 'vAc
         };
         
         // track pageview on state change
-        $rootScope.$on('$locationChangeSuccess', () => {
+        $rootScope.$on('$viewContentLoaded', () => {
             $window.ga('send', 'pageview', $location.path());
             $rootScope.endLoad();
         });
