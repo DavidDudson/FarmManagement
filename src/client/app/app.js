@@ -29,9 +29,9 @@ require("angular_chart");
 
 var uibs = require('angular-ui-bootstrap');
 
-var numeral = require('numeral');
-
 require("./app.scss");
+
+var numeral = require('numeral');
 
 var _ = require('lodash');
 var ROOT = undefined;

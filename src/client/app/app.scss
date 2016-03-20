@@ -59,11 +59,21 @@ body {
       border-radius: 0;
       background-color: lighten($MasseyBlue, 10%);
       &:hover , &:focus , &:active {
-        background-color: $MasseyBlue
+        background-color: $MasseyBlue !important;
       }
-      color: white !important;
-      h1, h2, h3, h4, h5, md-icon {
-        color: white !important;;
+      color: white;
+      h2, h3, h4, h5 {
+        color: white;
+      }
+
+      md-icon {
+        color: white !important;
+      }
+
+      #brand {
+        h1 {
+          color: $MasseyBlue !important;
+        }
       }
     }
 
