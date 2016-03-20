@@ -98,6 +98,10 @@ class TableController {
             this.table = this.generateTable();
             this.flatTable = _(this.table).flatten().value();
             this.sortedGraph = this.sortTable();
+            this.flatTable
+                .filter(cell => cell.dependencies.length === 0)
+                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
+            this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
             this.generateQuestion();
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
@@ -129,6 +133,9 @@ class TableController {
             });
         };
         this.generateQuestion = () => {
+            if (_.isUndefined($scope.question)) {
+                console.log("Question Undefined")
+            }
             $rootScope.question = {
                 raw: $scope.question,
                 calculated : $scope.question,

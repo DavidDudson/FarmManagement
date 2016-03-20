@@ -81,7 +81,7 @@ class AppCtrl {
             } else {
                 numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format()));
             }
-            
+
             return stringToParse;
         };
 
@@ -91,11 +91,14 @@ class AppCtrl {
                 s = _.toString(s);
             }
 
+            if (_.isEmpty(s)) {
+                console.log("Empty Question String")
+            }
+
             var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
 
             if (numbers == null) {
-                console.error("Numbers null: " + s);
-                return "Error";
+                return s;
             }
 
             numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format('0,0')));
