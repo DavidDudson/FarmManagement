@@ -9,15 +9,12 @@ module.exports = () => {
 
 
     rm(path.resolve('./dist'), (err) => {
-        if (err) console.log("Failed to delete dist")
+        if (err) console.error("Failed to delete dist")
     });
 
     console.log("Webpack Rebuilding...\n");
 
     webpack(webpackConf, (err, stats) => {
-
-        console.log(stats.compilation.fileDependencies);
-
         if (err) console.warn(err);
 
         console.log("\nVendor modules: \n");
