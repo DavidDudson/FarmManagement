@@ -29,13 +29,14 @@ class TableController {
         this.convertFromIndex = (row,col) => [String.fromCharCode(row + 65), col + 1].join("");
         this.convertLetterToIndex = s => s.charCodeAt(0) - 65;
         this.getInitial = (cell) => {
-            if (cell.raw.includes(" to ") && cell.raw.match(/[0-9]/)) {
+            if ($scope.mode == 'tool' && cell.type == 'input') {
+                return 0;
+            } else if (cell.raw.includes(" to ") && cell.raw.match(/[0-9]/)) {
                 return exprParser.parseRange(_.words(cell.raw)).value;
             } else {
                 return cell.calculated
             }
         };
-        
         this.generateTable = () => {
             return this.rawTable.map((row, i) =>
                 row.map((cell, j) => {
@@ -49,7 +50,16 @@ class TableController {
                         isQuestion: cell.includes("?"),
                         isPercentage: cell.includes("%"),
                         isDollar: cell.includes("$")
+
                     };
+
+                    if (this.flatTable != undefined) {
+                        console.log("Setting input");
+                        console.log(this.flatTable);
+                        var old = _.find(this.flatTable, {index : cellData.index});
+                        console.log(old);
+                        cellData.input = old.input;
+                    }
 
                     cellData.calculated = _.toString(cellData.raw);
 
@@ -77,7 +87,12 @@ class TableController {
                     if (find == undefined) {
                         c.calculated = "Variable not found: " + d
                     } else {
-                        c.calculated = c.calculated.split("[" + d + "]").join(find.calculated)
+                        if (c.isQuestion && $scope.mode == 'tool' && !!find.input) {
+                            c.calculated = c.calculated.split("[" + d + "]").join(find.input);
+                            console.log("Used input")
+                        } else {
+                            c.calculated = c.calculated.split("[" + d + "]").join(find.calculated)
+                        }
                     }
                 });
                 if (c.calculated.match(/\[/)) {
@@ -103,6 +118,10 @@ class TableController {
                 .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
             this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
             this.generateQuestion();
+        };
+        this.updateInput = () => {
+            this.refreshAllValues();
+            // this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
         this.sortTable = () => {

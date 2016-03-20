@@ -19,7 +19,7 @@
                 </td>
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first" layout="row" layout-align="center center">
                     <md-input-container ng-if="cell.type=='input'" layout-align="center center">
-                        <input value=0 ng-model="cell.input" type="number">
+                        <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.input" type="number">
                     </md-input-container>
                     <md-button ng-if="cell.type=='hover'" ng-click="cell.shown=!cell.shown">
                         {{!cell.shown ? '?' : $root.app.formatNumbers(cell)}}</md-button>
