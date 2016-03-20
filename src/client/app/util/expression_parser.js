@@ -31,23 +31,15 @@ function calculate(expression, table) {
     } else if (expression.trim() === "") {
         return new Success("Empty");
     } else {
-        console.log("Calculate");
         try {
             var result = _parseExpression(expression, table);
-            console.log(expression);
-            console.log(result);
             if (result.value == "Invalid") {
-                console.log("End Invalid");
                 return new Success(expression);
             } else {
-                console.log("End Valid");
-                console.log(result.value);
                 return result
             }
         } catch(err) {
-            console.log("End Error");
-            console.log(expression);
-            console.log(err);
+
             return new Success(expression);
         }
     }
@@ -79,9 +71,7 @@ function _parseAverage(words, table) {
 }
 
 function _parseSum(words, table) {
-    console.log("Sum");
     var values = _getList(words, table).value();
-    console.log(values);
     if (_.all(values, v => /^\d+$/.test(v))) {
         return new Success(_.sum(values));
     } else {
@@ -94,8 +84,6 @@ function _parseRange(words) {
     var start = _.parseInt(words[0]);
     var end = _.parseInt(words[2]);
     var inc = _.parseInt(words[4]);
-
-    console.log(words)
 
     if (end < start) {
         var x = end;
@@ -111,11 +99,6 @@ function _parseRange(words) {
         var numbers = [];
         for(var n = start; n <= end; n += inc) {
             numbers.push(n);
-        }
-        if (numbers.length == 0) {
-            console.log(start);
-            console.log(end);
-            console.log(inc);
         }
 
         var randomIndex = Math.floor(Math.random() * numbers.length);

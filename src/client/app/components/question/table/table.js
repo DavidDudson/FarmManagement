@@ -51,7 +51,6 @@ class TableController {
                         isDollar: cell.includes("$")
                     };
 
-                    console.log(cellData);
                     cellData.calculated = _.toString(cellData.raw);
 
                     cellData.calculated = cellData.calculated.split("?").join("");
@@ -64,9 +63,7 @@ class TableController {
                     cellData.current = cellData.raw;
 
                     cellData.calculated = this.getInitial(cellData);
-
-                    console.log(cellData);
-
+                    
                     return cellData;
                 })
             );
@@ -86,13 +83,9 @@ class TableController {
                 if (c.calculated.match(/\[/)) {
                     console.error("Something is out of whack")
                 }
-            } else {
-                console.log("Not String: ");
-                console.log(c.calculated);
             }
         };
         this.calculateValues = cell => {
-            console.log("Calculating " + cell.index);
             this.replaceVars(cell);
             if (cell == undefined) {
                 cell.calculated = "Unknown cell: " + cell.index
@@ -142,7 +135,6 @@ class TableController {
                 dependencies: this.getDependencies($scope.question)
             };
             this.updateQuestion();
-            console.log("Update")
         };
         this.answeredCorrectly = false;
         this.checkAnswer = () => {

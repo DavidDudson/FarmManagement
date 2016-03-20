@@ -15,7 +15,7 @@ class HomeCtrl {
 
         this.save = () => {
             if (ROOT.app.editable === false) {
-                console.log("Tried to make modifications while not editable");
+                console.error("Tried to make modifications while not editable");
                 return
             }
             if (this.editDesc != null || this.editDesc != "") {

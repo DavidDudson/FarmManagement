@@ -42,7 +42,7 @@ class TopicCtrl {
 
     save() {
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             return
         }
 
@@ -50,7 +50,7 @@ class TopicCtrl {
         this.topic.description = ROOT.edit['Description'];
         HTTP.put("/top", this.topic)
             .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
-                err => console.log(err));
+                err => console.error(err));
         ROOT.app.editable = false;
     }
 

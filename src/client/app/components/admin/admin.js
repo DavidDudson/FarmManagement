@@ -16,7 +16,7 @@ class AdminCtrl {
                     }
                 });
             } else {
-                console.log("A field did not pass validation");
+                console.err("A field did not pass validation");
             }
         };
         this.logout = function() {

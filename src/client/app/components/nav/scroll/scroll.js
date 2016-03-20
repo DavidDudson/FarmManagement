@@ -51,7 +51,7 @@ class ScrollCtrl {
 
     addCategory() {
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             return
         }
         var data = {"title": "New Category", "description": "New Description"};
@@ -73,7 +73,7 @@ class ScrollCtrl {
 
     deleteCategory(id, $event) {
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             return
         }
         $event.preventDefault();

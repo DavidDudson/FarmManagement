@@ -10,16 +10,13 @@ class CategoryCtrl {
         $rootScope.category = catData.data;
         HTTP = $http;
         ROOT = $rootScope;
-        this.goto = params => {
-            console.log(params);
-            $state.go("topic", params)
-        }
+        this.goto = params => $state.go("topic", params);
     }
 
     addTopic() {
 
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             return
         }
 
@@ -47,7 +44,7 @@ class CategoryCtrl {
 
     deleteTopic(id, $event) {
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             return
         }
         $event.preventDefault();
@@ -80,17 +77,13 @@ class CategoryCtrl {
         }
 
         if (ROOT.app.editable === false) {
-            console.log("Tried to make modifications while not editable");
+            console.error("Tried to make modifications while not editable");
             ROOT.app.showToast("Tried to save while not editable");
             return
         }
 
-        console.log(data);
         var newTitle = !!data['Title'] ? data['Title'] : ROOT.category.title;
         var newDescription = data["Description"];
-
-        console.log(newTitle);
-        console.log(newDescription);
 
         HTTP.put('cat/' + ROOT.category._id, {title: newTitle, description: newDescription})
             .then(res => {
