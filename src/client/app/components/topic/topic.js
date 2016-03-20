@@ -11,11 +11,9 @@ class TopicCtrl {
         this.topic = _.find(this.category.topics, {_id: $stateParams.topicId});
         this.question = _.find(this.topic.questions, {_id: $stateParams.questionId});
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
-        console.log(this.topic);
-        console.log(this.question);
+        this.reload = true;
         HTTP = $http;
         ROOT = $rootScope;
-
     }
 
     addQuestion() {

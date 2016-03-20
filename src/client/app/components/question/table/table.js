@@ -102,10 +102,10 @@ class TableController {
             }
         };
         this.refreshAllValues = () => {
-            this.flatTable
-                .filter(cell => cell.dependencies.length === 0)
-                .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
-            this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
+            this.table = this.generateTable();
+            this.flatTable = _(this.table).flatten().value();
+            this.sortedGraph = this.sortTable();
+            this.generateQuestion();
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
         this.sortTable = () => {
@@ -154,7 +154,6 @@ class TableController {
             this.answeredCorrectly = correct;
         };
         this.refreshAllValues();
-        this.generateQuestion();
         $rootScope.spreadsheet = this;
     }
 }

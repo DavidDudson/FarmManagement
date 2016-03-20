@@ -63,26 +63,25 @@ class AppCtrl {
             }
 
             if (stringToParse.match(/(\$|\?|%)/) != undefined) {
-                console.error("This shouldnt happen")
-                return;
+                console.error("This shouldnt happen");
+                return "Error";
             }
 
             var numbers = stringToParse.match(/[-+]?[0-9]*\.?[0-9]+/g);
-            console.log(stringToParse);
 
-            console.log(numbers);
+            if (numbers == null) {
+                console.error("Numbers null: " + stringToParse);
+                return "Error";
+            }
+
             if (cell.isDollar) {
-                console.log("Dollar");
                 numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format('$0,0')));
             } else if (cell.isPercentage) {
-                console.log("Percentage");
                 numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format('0.00%')));
             } else {
                 numbers.forEach(n => stringToParse = stringToParse.split(n).join(numeral(_.toNumber(n)).format()));
             }
-
-            console.log(stringToParse);
-
+            
             return stringToParse;
         };
 
@@ -93,6 +92,11 @@ class AppCtrl {
             }
 
             var numbers = s.match(/[-+]?[0-9]*\.?[0-9]+/g);
+
+            if (numbers == null) {
+                console.error("Numbers null: " + s);
+                return "Error";
+            }
 
             numbers.forEach(n => s = s.split(n).join(numeral(_.toNumber(n)).format('0,0')));
             
