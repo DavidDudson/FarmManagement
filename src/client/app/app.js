@@ -49,6 +49,7 @@ class AppCtrl {
         this.isAdmin = false;
         this.images = [require('images/Cows.jpg'), require('images/CowshedDude.jpg')];
         $rootScope.app = this;
+        $rootScope.correctQuestions = [];
         TOAST = $mdToast;
         ROOT = $rootScope;
         $rootScope.getVector = s => require(`../vector/${s}.svg`);
