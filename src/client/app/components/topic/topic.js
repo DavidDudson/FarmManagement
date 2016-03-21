@@ -12,6 +12,15 @@ class TopicCtrl {
         this.question = _.find(this.topic.questions, {_id: $stateParams.questionId});
         this.current = $stateParams.part ? $stateParams.part : 'tutorial'; // Can be tool, tutorial or test
         this.reload = true;
+        this.getCSSClass = () => {
+            if (_.isUndefined($rootScope.spreadsheet.answeredCorrectly)) {
+                return ""
+            } else if ($rootScope.spreadsheet.answeredCorrectly === true) {
+                return 'add'
+            } else {
+                return 'delete'
+            }
+        };
         HTTP = $http;
         ROOT = $rootScope;
     }

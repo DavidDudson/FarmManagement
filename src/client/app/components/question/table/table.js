@@ -135,7 +135,7 @@ class TableController {
                 .filter(c => _.indexOf(this.sortedGraph, cell.index) >= indexOf)
                 .forEach(c => this.calculateValues(c));
             this.updateQuestion();
-            this.answeredCorrectly = null;
+            this.answeredCorrectly = undefined;
         };
         this.updateQuestion = () => {
             $rootScope.question.dependencies.forEach(d => {
@@ -158,7 +158,7 @@ class TableController {
             };
             this.updateQuestion();
         };
-        this.answeredCorrectly = false;
+        this.answeredCorrectly = undefined;
         this.checkAnswer = () => {
             var correct = _(this.flatTable).filter(c => c.raw.includes("?"))
                 .every(c => c.input > c.calculated * 0.95 && c.input < c.calculated * 1.05);
