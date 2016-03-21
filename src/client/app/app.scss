@@ -96,7 +96,7 @@ body {
       background-color: $Volcano !important;
       &.md-button {
         &:hover, &:focus, &:active {
-          background-color: darken($Volcano, 10%);
+          background-color: darken($Volcano, 10%) !important;
         }
       }
     }
