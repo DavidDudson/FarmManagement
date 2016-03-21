@@ -9,8 +9,8 @@ class ScrollCtrl {
         HTTP = $http;
         ROOT = $rootScope;
         this.categories = categories.data;
-        console.log(userData);
-        if(userData){if(user.meta.privilege == 5) $rootScope.app.isAdmin = true;}
+        $rootScope.app.isAdmin = !!userData.data && userData.data.data.meta.privilege == 5;
+        
         this.index = 0;
         this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
 
@@ -94,7 +94,7 @@ class ScrollCtrl {
     }
 }
 
-ScrollCtrl.$inject = ['$rootScope', '$http', 'categories'];
+ScrollCtrl.$inject = ['$rootScope', '$http', 'categories', 'userData'];
 
 
  module.exports = {
