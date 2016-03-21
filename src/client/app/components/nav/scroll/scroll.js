@@ -9,7 +9,8 @@ class ScrollCtrl {
         HTTP = $http;
         ROOT = $rootScope;
         this.categories = categories.data;
-        $rootScope.app.isAdmin = !!userData.data && userData.data.data.meta.privilege == 5;
+
+        $rootScope.app.isAdmin = !!userData.data.data && userData.data.data.meta.privilege == 5;
 
         this.index = 0;
         this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
