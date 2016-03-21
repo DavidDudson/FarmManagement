@@ -54,6 +54,10 @@ body {
       text-transform: none !important;
     }
 
+    h2, h3, h4, h5 {
+      color: white;
+    }
+
     .md-raised {
       box-shadow: none !important;
       border-radius: 0;
@@ -62,18 +66,18 @@ body {
         background-color: $MasseyBlue !important;
       }
       color: white;
-      h2, h3, h4, h5 {
-        color: white;
-      }
 
       md-icon {
         color: white !important;
       }
+    }
 
-      #brand {
-        h1 {
-          color: $MasseyBlue !important;
-        }
+    #brand {
+      h1 {
+        color: $MasseyBlue !important;
+      }
+      &:hover , &:focus , &:active {
+        background-color: darken($AgriBackgroundWhite, 5%) !important;
       }
     }
 
@@ -102,7 +106,7 @@ body {
       background-color: $Ponga !important;
       &.md-button {
         &:hover , &:focus , &:active {
-          background-color: darken($Ponga, 5%);
+          background-color: darken($Ponga, 5%) !important;
         }
       }
 
