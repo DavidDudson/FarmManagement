@@ -76,8 +76,10 @@ angular.module('app')
                     'nav': require('components/nav/scroll/scroll.js')
                 },
                 resolve: {
-                    load : ($rootScope) => $rootScope.startLoad(),
+                    load: ($rootScope) => $rootScope.startLoad(),
                     catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.categoryId),
-                    categories: ($http, $rootScope) => $http.get("/categories")}
+                    categories: ($http, $rootScope) => $http.get("/categories"),
+                    userData: ($http) => $http.get("/local/check").success(n => n.data)
+                }
             })
     });

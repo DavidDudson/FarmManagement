@@ -20,7 +20,8 @@ angular.module('app')
                 resolve: {
                     load : ($rootScope) => $rootScope.startLoad(),
                     questions: ($http, $rootScope) => $http.get("/queSum"),
-                    categories: ($http, $rootScope) => $http.get("/categories")
+                    categories: ($http, $rootScope) => $http.get("/categories"),
+                    userData: ($http) => $http.get("/local/check").success(n => n.data)
                 }
             });
     });

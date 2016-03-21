@@ -122,7 +122,8 @@ angular.module('app')
                 resolve: {
                     load : ($rootScope) => $rootScope.startLoad(),
                     catData: ($http, $stateParams) => $http.get("/cat/" + $stateParams.id),
-                    categories: ($http, $rootScope) => $http.get("/categories")
+                    categories: ($http, $rootScope) => $http.get("/categories"),
+                    userData: ($http) => $http.get("/local/check").success(n => n.data)
                 }
             });
     });

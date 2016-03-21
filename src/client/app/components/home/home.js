@@ -160,7 +160,7 @@ angular.module('app')
                 },
                 resolve: {
                     categories: ($http) => $http.get("/categories"),
-                    userData: ($http) => $http.get("/local/check").success(n => n.data)
+                    userData: ($http) => $http.get("/local/check").success(n => n.data),
                 }
             });
     });
