@@ -116,8 +116,9 @@ class TableController {
             this.generateQuestion();
         };
         this.updateInput = () => {
-            this.refreshAllValues();
-            // this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
+            if ($scope.mode != 'test') {
+                this.refreshAllValues();
+            }
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
         this.sortTable = () => {
