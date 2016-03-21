@@ -54,10 +54,6 @@ body {
       text-transform: none !important;
     }
 
-    h2, h3, h4, h5 {
-      color: white;
-    }
-
     .md-raised {
       box-shadow: none !important;
       border-radius: 0;
@@ -66,6 +62,9 @@ body {
         background-color: $MasseyBlue !important;
       }
       color: white;
+      h2, h3, h4, h5 {
+        color: white;
+      }
 
       md-icon {
         color: white !important;
