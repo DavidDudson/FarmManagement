@@ -1,7 +1,7 @@
 <titled-card title="top.topic.title" description="app.basicFormatNumbers($root.question.calculated)" save="top.save" layout="column" layout-align="center center">
         <spreadsheet data="top.question.table" mode="top.current" top="top.question.top_headings" side="top.question.side_headings" question="top.question.question"></spreadsheet>
         <md-button id="check" ng-if="top.current === 'test'" class="md-raised md-primary md-padding" ng-class="top.getCSSClass()"
-                   ng-click="$root.spreadsheet.checkAnswer()" layout-margin>Check Answer</md-button>
+                   ng-click="$root.spreadsheet.checkAnswer()" layout-margin>{{top.getCheckText()}}</md-button>
         <md-toolbar layout="row" layout-align="center center" layout-margin>
                 <md-button class="md-icon-button" aria-label="Refresh" ng-click="$root.spreadsheet.refreshAllValues()">
                         <md-tooltip>New Question</md-tooltip>

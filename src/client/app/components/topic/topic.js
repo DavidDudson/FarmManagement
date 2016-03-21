@@ -20,6 +20,16 @@ class TopicCtrl {
             } else {
                 return 'delete'
             }
+
+        };
+        this.getCheckText = () => {
+            if (_.isUndefined($rootScope.spreadsheet.answeredCorrectly)) {
+                return "Check Answer"
+            } else if ($rootScope.spreadsheet.answeredCorrectly === true) {
+                return "Answered Correctly"
+            } else {
+                return "Try Again"
+            }
         };
         HTTP = $http;
         ROOT = $rootScope;
