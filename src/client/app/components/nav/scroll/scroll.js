@@ -4,12 +4,13 @@ var HTTP = undefined;
 var ROOT = undefined;
 
 class ScrollCtrl {
-    constructor($rootScope, $http, categories) {
+    constructor($rootScope, $http, categories, userData) {
 
         HTTP = $http;
         ROOT = $rootScope;
         this.categories = categories.data;
-
+        console.log(userData);
+        if(userData){if(user.meta.privilege == 5) $rootScope.app.isAdmin = true;}
         this.index = 0;
         this.displayCount = () => $rootScope.app.editable === true ? 4 : 5;
 

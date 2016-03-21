@@ -9,9 +9,11 @@ class AdminCtrl {
                     if (response) {
                         if (response.data.user != false) {
                             $rootScope.user = response.data.user;
-                            if ($rootScope.user.privilege) {
+                            console.log($rootScope.user);
+                            if ($rootScope.user.meta.privilege) {
                                 $rootScope.app.isAdmin = true;
                             }
+                            console.log($rootScope.app.isAdmin);
                         }
                     }
                 });

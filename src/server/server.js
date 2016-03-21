@@ -3,6 +3,10 @@ var Express = require('express');
 var path = require('path');
 var app = Express();
 
+//static serving of all client-side files
+app.use(Express.static(path.resolve('./src/client/')));
+app.use(Express.static(path.resolve('./dist/public')));
+
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://farmfi:hans23eva25@ds051665.mongolab.com:51665/heroku_g7bpvmg0");
 
@@ -17,16 +21,18 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var session = require('express-session');
-app.use(session({secret  : 'MassEy4ThEw1n'}));
+app.use(session({
+    secret: 'MassEy4ThEw1n',
+    resave: true,
+    saveUninitialized: true
+}));
 
 var passport = require('passport');
-require('./user/user.logic.js')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+require('./user/user.logic.js')(passport);
 
-    //static serving of all client-side files
-app.use(Express.static(path.resolve('./src/client/')));
-app.use(Express.static(path.resolve('./dist/public')));
+
 
     //APIs
 app.use("/", require("./data/category/category.routes"));

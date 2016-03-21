@@ -8,6 +8,7 @@
 
 module.exports = function(app, passport) {
 
+
         // login user
     app.post("/local/login", function (req, res) {
         passport.authenticate('local-login', function(err, user) {
@@ -16,7 +17,7 @@ module.exports = function(app, passport) {
                 res.send("login failed");
             }
             if(user) {
-                req.login(user, function(err) {
+                req.logIn(user, function(err) {
                     if(!err) {
                         console.log("User Logged In");
                         return res.json({user: req.user});
@@ -25,7 +26,11 @@ module.exports = function(app, passport) {
             }
         })(req, res);
     });
+    app.get("/local/check", function (req, res) {
+        console.log(req.user);
+        res.json({data: req.user});
 
+    });
         // signup new user
     //app.post("/local/signup", function (req, res) {
     //    passport.authenticate('local-signup', function(err, user) {
