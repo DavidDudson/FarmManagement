@@ -1,6 +1,7 @@
-<md-table-container class="md-padding">
-    <table md-table ng-model="selected" md-progress="deferred" ng-init="table.computeTableValues()">
-        <thead md-head ng-if="topHeader === true">
+<md-content class="md-padding" layout="row" layout-align="end center">
+    <md-table-container flex="95">
+        <table md-table ng-model="selected" md-progress="deferred" ng-init="table.computeTableValues()">
+            <thead md-head ng-if="topHeader === true">
             <tr md-row>
                 <th md-column md-numeric ng-repeat="heading in table.getTopHeadings() track by $index">
                     {{heading}}
@@ -11,8 +12,8 @@
                     </md-button>
                 </th>
             </tr>
-        </thead>
-        <tbody md-body>
+            </thead>
+            <tbody md-body>
             <tr md-row ng-repeat="row in table.table track by $index">
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === true && $first">
                     <h4>{{cell.raw}}</h4>
@@ -37,8 +38,8 @@
                     </md-button>
                 </td>
             </tr>
-        </tbody>
-        <tfoot md-foot ng-if="$root.app.editable === true">
+            </tbody>
+            <tfoot md-foot ng-if="$root.app.editable === true">
             <tr md-row>
                 <td ng-repeat="items in table.table[0] track by $index" layout="row" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Remove" ng-if="$index > 0">
@@ -46,14 +47,15 @@
                     </md-button>
                 </td>
             </tr>
-            <tr md-row>
-                <md-button class="md-icon-button" aria-label="Add">
-                    <md-icon class="add">add_circle_outline</md-icon>
+            <tr md-row ng-if="$root.app.editable === true">
+                <md-button class="md-raised add md-icon-button" aria-label="Add">
+                    <md-icon>add_circle_outline</md-icon> Add Row
                 </md-button>
             </tr>
-        </tfoot>
-    </table>
-    <md-button class="md-icon-button" aria-label="Add">
-        <md-icon class="add">add_circle_outline</md-icon>
+            </tfoot>
+        </table>
+    </md-table-container>
+    <md-button class="md-raised add md-icon-button" aria-label="Add" flex="5">
+        <md-icon>add_circle_outline</md-icon> Add Column
     </md-button>
-</md-table-container>
+</md-content>
