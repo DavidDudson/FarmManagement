@@ -35,30 +35,6 @@ class TopicCtrl {
         ROOT = $rootScope;
     }
 
-    addQuestion() {
-        var example = {
-            title: "New Question",
-            question: "New Question",
-            topHeader: true,
-            sideHeader: true,
-            table: [["Example", "Data"], ["Test", 1], ["Data", 2]]};
-
-        HTTP.post("/que", example)
-            .then(res => {
-                example._id = res.data;
-                this.questions.add(example);
-                ROOT.app.showToast("Create Question Failed: Server Crash");
-            }, err => {
-                if (err.status === 500) {
-                    ROOT.app.showToast("Create Question Failed: Server Crash");
-                } else if (err.status == 418) {
-                    ROOT.app.showToast("Create Question Failed: New Question already exists");
-                } else {
-                    ROOT.app.showToast("Create Question Failed: " + err.status);
-                }
-            });
-    }
-
     save() {
         if (ROOT.app.editable === false) {
             console.error("Tried to make modifications while not editable");

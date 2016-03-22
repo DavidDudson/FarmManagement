@@ -13,6 +13,35 @@ class CategoryCtrl {
         this.goto = params => $state.go("topic", params);
     }
 
+    addQuestion(topic) {
+        var example = {
+            title: "New Question",
+            question: "New Question",
+            category: ROOT.category._id,
+            topic: topic,
+            top_headings: true,
+            side_headings: true,
+            table: [{row: 1, rowContent: ["Example Content", "0"]},
+                {row: 2, rowContent: ["Example Content", "0"]}]
+        };
+
+        HTTP.post("/que", example)
+            .then(res => {
+                example._id = res.data;
+                _.find(ROOT.category.topics, {_id: topic}).questions.push(example);
+                console.log(example);
+                ROOT.app.showToast("Create Question Success");
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Create Question Failed: Server Crash");
+                } else if (err.status == 418) {
+                    ROOT.app.showToast("Create Question Failed: New Question already exists");
+                } else {
+                    ROOT.app.showToast("Create Question Failed: " + err.status);
+                }
+            });
+    }
+
     addTopic() {
 
         if (ROOT.app.editable === false) {

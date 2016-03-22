@@ -1,4 +1,4 @@
-<titled-card title="top.topic.title" description="app.basicFormatNumbers($root.question.calculated)" save="top.save" layout="column" layout-align="center center">
+<titled-card title="top.question.title" description="app.basicFormatNumbers($root.question.calculated)" save="top.save" layout="column" layout-align="center center">
         <spreadsheet data="top.question.table" mode="top.current" top="top.question.top_headings" side="top.question.side_headings" question="top.question.question"></spreadsheet>
         <md-button id="check" ng-if="top.current === 'test'" class="md-raised md-primary md-padding" ng-class="top.getCSSClass()"
                    ng-click="$root.spreadsheet.checkAnswer()" layout-margin>{{top.getCheckText()}}</md-button>

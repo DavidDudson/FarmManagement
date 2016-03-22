@@ -52,7 +52,7 @@
                                 </a>
                             </div>
                     </md-list>
-                    <md-button ng-if="$root.app.editable === true" class="add md-raised" aria-label="Add" ng-click="$parent.top.addQuestion()">
+                    <md-button ng-if="$root.app.editable === true" class="add md-raised" aria-label="Add" ng-click="category.addQuestion(topic._id)">
                         <md-icon>add_circle_outline</md-icon>
                         <span>Question</span>
                     </md-button>
