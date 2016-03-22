@@ -24,7 +24,7 @@
             <md-content ng-transclude flex="100"></md-content>
         </div>
         <bottom-nav class="md-padding"></bottom-nav>
-        <md-card-action layout="row" layout-align="end end" ng-if="$root.app.isAdmin === true">
+        <md-card-action layout="row" layout-align="end end"><!-- ng-if="$root.app.isAdmin === true" -->
             <md-button ng-if="$root.app.editable && !!add" ng-click="add()">Add</md-button>
             <md-button ng-if="$root.app.editable && !!remove" ng-click="remove()">Delete</md-button>
             <md-button ng-if="$root.app.editable && !!help" ng-click="help()">Help</md-button>
