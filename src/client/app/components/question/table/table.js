@@ -54,7 +54,9 @@ class TableController {
                     };
 
                     if (this.flatTable != undefined) {
-                        cellData.input = _.find(this.flatTable, {index : cellData.index}).input;
+                        var old = _.find(this.flatTable, {index : cellData.index});
+                        cellData.input = old.input;
+                        cellData.raw = old.raw;
                     }
 
                     cellData.calculated = _.toString(cellData.raw);
@@ -116,7 +118,7 @@ class TableController {
             this.generateQuestion();
         };
         this.updateInput = () => {
-            if ($scope.mode != 'test') {
+            if ($rootScope.app.editable === true || $scope.mode != 'test') {
                 this.refreshAllValues();
             }
         };

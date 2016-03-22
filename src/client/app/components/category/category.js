@@ -16,7 +16,7 @@ class CategoryCtrl {
     addQuestion(topic) {
         var example = {
             title: "New Question",
-            question: "New Question",
+            question: "New Question Details",
             category: ROOT.category._id,
             topic: topic,
             top_headings: true,
@@ -38,6 +38,26 @@ class CategoryCtrl {
                     ROOT.app.showToast("Create Question Failed: New Question already exists");
                 } else {
                     ROOT.app.showToast("Create Question Failed: " + err.status);
+                }
+            });
+    }
+
+    deleteQuestion(topic, question) {
+        if (ROOT.app.editable === false) {
+            console.error("Tried to make modifications while not editable");
+            return
+        }
+        HTTP.delete('que/' + question, {id: question})
+            .then(res => {
+                _.remove(_.find(ROOT.category.topics, {_id: topic}), {_id: question});
+                ROOT.app.showToast("Delete Question Succeeded");
+            }, err => {
+                if (err.status === 500) {
+                    ROOT.app.showToast("Delete Question Failed: Server Crash");
+                } else if (err.status == 400) {
+                    ROOT.app.showToast("Delete Question Failed: Question already deleted");
+                } else {
+                    ROOT.app.showToast("Delete Question Failed: " + err.status);
                 }
             });
     }
@@ -77,15 +97,15 @@ class CategoryCtrl {
             return
         }
         $event.preventDefault();
-        HTTP.delete('cat/' + id, {id: id})
+        HTTP.delete('top/' + id, {id: id})
             .then(res => {
-                _.remove(ROOT.nav.categories, {_id: id});
+                _.remove(ROOT.category.topics, {_id: id});
                 ROOT.app.showToast("Delete Topic Succeeded");
             }, err => {
                 if (err.status === 500) {
                     ROOT.app.showToast("Delete Topic Failed: Server Crash");
                 } else if (err.status == 400) {
-                    ROOT.app.showToast("Delete Topic Failed: Category already deleted");
+                    ROOT.app.showToast("Delete Topic Failed: Topic already deleted");
                 } else {
                     ROOT.app.showToast("Delete Topic Failed: " + err.status);
                 }
@@ -94,6 +114,7 @@ class CategoryCtrl {
 
     save(data) {
 
+        console.log(data)
         if (!!data['Title'] && !!data['Description']) {
             ROOT.app.showToast("No changes detected on save");
             return

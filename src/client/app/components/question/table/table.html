@@ -18,17 +18,20 @@
                     <h4>{{cell.raw}}</h4>
                 </td>
                 <td md-cell ng-repeat="cell in row track by $index" ng-if="side === false || !$first" layout="row" layout-align="center center">
-                    <md-input-container ng-if="cell.type=='input'" layout-align="center center">
-                        <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.input" type="number">
+                    <div ng-if="$root.app.editable===false">
+                        <md-input-container ng-if="cell.type=='input'" layout-align="center center">
+                            <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.input" type="number">
+                        </md-input-container>
+                        <md-button ng-if="cell.type=='hover'" ng-click="cell.shown=!cell.shown">
+                            {{!cell.shown ? '?' : $root.app.formatNumbers(cell)}}</md-button>
+                        <p id="example" ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell)}}</p>
+                    </div>
+                    <md-input-container ng-if="$root.app.editable===true" layout-align="center center">
+                        <label>{{$root.app.formatNumbers(cell)}}</label>
+                        <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.raw">
                     </md-input-container>
-                    <md-button ng-if="cell.type=='hover'" ng-click="cell.shown=!cell.shown">
-                        {{!cell.shown ? '?' : $root.app.formatNumbers(cell)}}</md-button>
-                    <p id="example" ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell)}}</p>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
-                    <md-button class="md-icon-button" aria-label="Add">
-                        <md-icon class="add">add_circle_outline</md-icon>
-                    </md-button>
                     <md-button class="md-icon-button" aria-label="Remove">
                         <md-icon class="remove">remove_circle_outline</md-icon>
                     </md-button>
@@ -38,14 +41,19 @@
         <tfoot md-foot ng-if="$root.app.editable === true">
             <tr md-row>
                 <td ng-repeat="items in table.table[0] track by $index" layout="row" layout-align="center center">
-                    <md-button class="md-icon-button" aria-label="Add">
-                        <md-icon class="add">add_circle_outline</md-icon>
-                    </md-button>
                     <md-button class="md-icon-button" aria-label="Remove" ng-if="$index > 0">
                         <md-icon class="remove">remove_circle_outline</md-icon>
                     </md-button>
                 </td>
             </tr>
+            <tr md-row>
+                <md-button class="md-icon-button" aria-label="Add">
+                    <md-icon class="add">add_circle_outline</md-icon>
+                </md-button>
+            </tr>
         </tfoot>
     </table>
+    <md-button class="md-icon-button" aria-label="Add">
+        <md-icon class="add">add_circle_outline</md-icon>
+    </md-button>
 </md-table-container>
