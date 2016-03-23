@@ -31,26 +31,22 @@ class TopicCtrl {
                 return "Try Again"
             }
         };
+        this.save = (edits) => {
+            if (ROOT.app.editable === false) {
+                console.error("Tried to make modifications while not editable");
+                return
+            }
+
+            this.topic.title = edits['Title'];
+            this.topic.description = edits['Description'];
+            HTTP.put("/top", this.topic)
+                .then(res => console.log("Success"),
+                    err => console.error(err));
+            $rootScope.spreadsheet.save();
+            ROOT.app.editable = false;
+        };
         HTTP = $http;
         ROOT = $rootScope;
-    }
-
-    save() {
-        if (ROOT.app.editable === false) {
-            console.error("Tried to make modifications while not editable");
-            return
-        }
-
-        this.topic.title = ROOT.edit['Title'];
-        this.topic.description = ROOT.edit['Description'];
-        HTTP.put("/top", this.topic)
-            .then(res => _.map(this.topics, top => top.id === top.id ? res.data : top),
-                err => console.error(err));
-        ROOT.app.editable = false;
-    }
-
-    checkAnswer() {
-
     }
 }
 

@@ -10,6 +10,7 @@ class CardCtrl {
         this.edits = {};
 
         this.updateModel = (name, data) => {
+            console.log(data)
             this.edits[name] = data;
         };
 

@@ -26,6 +26,9 @@ class TableController {
                 return "computed"
             }
         };
+        this.save = () => {
+            console.log("Savingas")
+        };
         this.convertFromIndex = (row,col) => [String.fromCharCode(row + 65), col + 1].join("");
         this.convertLetterToIndex = s => s.charCodeAt(0) - 65;
         this.getInitial = (cell) => {

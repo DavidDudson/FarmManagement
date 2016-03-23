@@ -1,4 +1,4 @@
-<md-content class="md-padding" layout="row" layout-align="end center">
+<md-content class="md-padding" layout="row" layout-align="end center" flex-grow="0">
     <md-table-container flex="95">
         <table md-table ng-model="selected" md-progress="deferred" ng-init="table.computeTableValues()">
             <thead md-head ng-if="topHeader === true">
@@ -27,10 +27,12 @@
                             {{!cell.shown ? '?' : $root.app.formatNumbers(cell)}}</md-button>
                         <p id="example" ng-if="cell.type=='computed'">{{$root.app.formatNumbers(cell)}}</p>
                     </div>
-                    <md-input-container ng-if="$root.app.editable===true" layout-align="center center">
-                        <label>{{$root.app.formatNumbers(cell)}}</label>
-                        <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.raw">
-                    </md-input-container>
+                    <div ng-if="$root.app.editable===true" layout-align="center center">
+                        <md-input-container>
+                            <label>{{$root.app.formatNumbers(cell)}}</label>
+                            <input ng-change="table.updateInput()" ng-model-options="{ debounce: 250 }" value=0 ng-model="cell.raw">
+                        </md-input-container>
+                    </div>
                 </td>
                 <td md-cell ng-if="$root.app.editable" layout="column" layout-align="center center">
                     <md-button class="md-icon-button" aria-label="Remove">
@@ -47,15 +49,13 @@
                     </md-button>
                 </td>
             </tr>
-            <tr md-row ng-if="$root.app.editable === true">
-                <md-button class="md-raised add md-icon-button" aria-label="Add">
-                    <md-icon>add_circle_outline</md-icon> Add Row
-                </md-button>
-            </tr>
             </tfoot>
+            <md-button class="md-raised add md-icon-button" aria-label="Add" ng-if="$root.app.editable === true">
+                <md-icon>add_circle_outline</md-icon> Add Row
+            </md-button>
         </table>
     </md-table-container>
-    <md-button class="md-raised add md-icon-button" aria-label="Add" flex="5">
+    <md-button id="addCol" class="md-raised add md-icon-button" aria-label="Add" flex ng-if="$root.app.editable === true">
         <md-icon>add_circle_outline</md-icon> Add Column
     </md-button>
 </md-content>

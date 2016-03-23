@@ -144,10 +144,8 @@ class CategoryCtrl {
             }, err => {
                 if (err.status === 500) {
                     ROOT.app.showToast("Save Category Failed: Server Crash");
-                } else if (err.status == 418) {
-                    ROOT.app.showToast("Save Category Failed: New Topic already exists");
                 } else {
-                    ROOT.app.showToast("Create Topic Failed: " + err.status);
+                    ROOT.app.showToast("Save Topic Failed: " + err.status);
                 }
             });
     }
