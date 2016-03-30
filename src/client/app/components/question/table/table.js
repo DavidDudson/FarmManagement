@@ -102,13 +102,9 @@ class TableController {
             }
         };
         this.calculateValues = cell => {
-            this.replaceVars(cell);
-            if (cell == undefined) {
-                cell.calculated = "Unknown cell: " + cell.index
-                if (cell.calculated != "") {
-                    this.replaceVars(cell);
-                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
-                }
+            if (cell.calculated != "") {
+                this.replaceVars(cell);
+                cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
             }
         };
         this.refreshAllValues = () => {
@@ -118,7 +114,13 @@ class TableController {
             this.flatTable
                 .filter(cell => cell.dependencies.length === 0)
                 .forEach(cell => cell.calculated = exprParser.calculate(cell.calculated, this.table).value);
-            this.sortedGraph.forEach(cellIndex => this.calculateValues(_.find(this.flatTable, {index: cellIndex})));
+            this.sortedGraph.forEach(cellIndex => {
+                var variable = _.find(this.flatTable, {index: cellIndex});
+                if (variable === undefined) {
+                    $rootScope.app.showToast("Variable Not Found: " + cellIndex)
+                }
+                this.calculateValues(variable)
+            });
             this.generateQuestion();
         };
         this.updateInput = () => {
