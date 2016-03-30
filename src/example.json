@@ -1070,11 +1070,142 @@
               "title": "Assets",
               "questions": [
                 {
-                  "title": "Beef and Lamb"
+                  "title": "Beef and Lamb Basic",
+                  "question": "On 30th of June 2015 (closing), a sheep and beef farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+                  "top_headings": false,
+                  "side_headings": true,
+                  "table": [
+                    {
+                      "row": 1,
+                      "rowContent": ["Current Assets", "$ 15000 to 26000 inc 1500"]
+                    }, {
+                      "row": 2,
+                      "rowContent": ["Non-current Assets", "?$ 438329 + 4538 + 2145000"]
+                    }, {
+                      "row": 3,
+                      "rowContent": ["Total Assets", "?$ [B1] - [B2]"]
+                    }
+                  ]
                 }, {
-                  "title": "Dairy"
+                  "title": "Beef and Lamb Advanced",
+                  "question": "On 30th of June 2015 (closing), a sheep & beef farmer has accounts receiveable of  21,966,  bank balance over-draft of 39,373, investments of 4,538, accounts payable of 33,343,  hire purchase of 6,157, and term loans of 666,000. Information on livestock inventory  (numbers & price) aswell as value of fixed assets is provided in the table below. What are the Total Assets at closing ?",
+                  "top_headings": true,
+                  "side_headings": true,
+                  "table": [
+                    {
+                      "row": 1,
+                      "rowContent": ["Livestock Inventory", "Closing Nos.", "$ per Head", ""]
+                    }, {
+                      "row": 2,
+                      "rowContent": ["Sheep", "", "", ""]
+                    }, {
+                      "row": 3,
+                      "rowContent": ["Ewe Hoggets", "500 to 750 inc 50", "$94.00", "?$ [B3] * [C3]"]
+                    }, {
+                      "row": 4,
+                      "rowContent": ["Two Tooth", "600 to 800 inc 50", "$131.00", "?$ [B4] * [B4]"]
+                    }, {
+                      "row": 5,
+                      "rowContent": ["M.A. Ewes", "1100 to 1400 inc 50", "$118.00", "?$ [B5] * [C5]"]
+                    }, {
+                      "row": 6,
+                      "rowContent": ["5yr+ Ewes", "250 to 350 inc 25", "$118.00", "?$ [B6] * [C6]"]
+                    }, {
+                      "row": 7,
+                      "rowContent": ["Wether Hoggets", "0 to 50 inc 25", "$94.00", "?$ [B7] * [C7]"]
+                    }, {
+                      "row": 8,
+                      "rowContent": ["Rams", "20 to 30 inc 2", "$257.00", "?$ [B8] * [C8]"]
+                    }, {
+                      "row": 9,
+                      "rowContent": ["Beef Cattle", "", "", ""]
+                    }, {
+                      "row": 10,
+                      "rowContent": ["Rising 1yr heifers", "55 to 75 inc 5", "$407", "?$ [B10] * [C10]"]
+                    }, {
+                      "row": 11,
+                      "rowContent": ["Rising 2yr heifers", "40 to 55 inc 5", "$469", "?$ [B11] * [B11]"]
+                    }, {
+                      "row": 12,
+                      "rowContent": ["Breeding Cows", "100 to 125 inc 5", "$859", "?$ [B12] * [C12]"]
+                    }, {
+                      "row": 13,
+                      "rowContent": ["Rising 1yr steers", "130 to 150 inc 5", "$471", "?$ [B13] * [C13]"]
+                    }, {
+                      "row": 14,
+                      "rowContent": ["Rising 2yr steers", "10 to 30 inc 5", "$393", "?$ [B14] * [C14]"]
+                    }, {
+                      "row": 15,
+                      "rowContent": ["Breeding Bulls", "8 to 10 inc 1", "$1941", "?$ [B15] * [C15]"]
+                    }, {
+                      "row": 16,
+                      "rowContent": ["", "", "", ""]
+                    }, {
+                      "row": 17,
+                      "rowContent": ["Valuations of Fixed Assets", "", "", ""]
+                    }, {
+                      "row": 18,
+                      "rowContent": ["Fixed Assets as per Schedule", "$ 1000000 to 1500000 inc 100000", "", ""]
+                    }, {
+                      "row": 19,
+                      "rowContent": ["Revaluation Adjustment", "$ 1000000 to 1500000 inc 100000", "", ""]
+                    }, {
+                      "row": 20,
+                      "rowContent": ["Current Assets", "", "", ""]
+                    }, {
+                      "row": 21,
+                      "rowContent": ["Accounts Receivable", "$ 15000 to 25000 inc 1000", "", ""]
+                    }, {
+                      "row": 22,
+                      "rowContent": ["Non-current Assets", "", "", ""]
+                    }, {
+                      "row": 23,
+                      "rowContent": ["Livestock", "?$ [D3]+[D4]+[D5]+[D6]+[D7]+[D8]+[D10]+[D11]+[D12]+[D13]+[D14]+[D15]", "", ""]
+                    }, {
+                      "row": 24,
+                      "rowContent": ["Investments", "$4538 ", "", ""]
+                    }, {
+                      "row": 25,
+                      "rowContent": ["Market Value of Fixed Assets", "?$ [B18]+[B19] ", "", ""]
+                    }, {
+                      "row": 26,
+                      "rowContent": ["Total Assets", "?$ [B21]+[B23]+[B24]+[B25]", "", ""]
+                    }
+                  ]
                 }, {
-                  "title": "Horticulture"
+                  "title": "Dairy Basic",
+                  "question": "On 30th of June 2015 (closing), a dairy farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+                  "top_headings": false,
+                  "side_headings": true,
+                  "table": [
+                    {
+                      "row": 1,
+                      "rowContent": ["Current Assets", "$ 15000 to 26000 inc 1500"]
+                    }, {
+                      "row": 2,
+                      "rowContent": ["Non-current Assets", "?$ 438329 + 4538 + 2145000"]
+                    }, {
+                      "row": 3,
+                      "rowContent": ["Total Assets", "?$ [B1] - [B2]"]
+                    }
+                  ]
+                }, {
+                  "title": "Dairy Basic",
+                  "question": "On 30th of June 2015 (closing), a grape grower has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+                  "top_headings": false,
+                  "side_headings": true,
+                  "table": [
+                    {
+                      "row": 1,
+                      "rowContent": ["Current Assets", "$ 15000 to 26000 inc 1500"]
+                    }, {
+                      "row": 2,
+                      "rowContent": ["Non-current Assets", "?$ 438329 + 4538 + 2145000"]
+                    }, {
+                      "row": 3,
+                      "rowContent": ["Total Assets", "?$ [B1] - [B2]"]
+                    }
+                  ]
                 }
               ]
             }, {
