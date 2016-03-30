@@ -105,9 +105,10 @@ class TableController {
             this.replaceVars(cell);
             if (cell == undefined) {
                 cell.calculated = "Unknown cell: " + cell.index
-            } else {
-                this.replaceVars(cell);
-                cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
+                if (cell.calculated != "") {
+                    this.replaceVars(cell);
+                    cell.calculated = exprParser.calculate(cell.calculated, this.table).value;
+                }
             }
         };
         this.refreshAllValues = () => {

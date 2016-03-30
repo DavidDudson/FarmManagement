@@ -71,8 +71,7 @@ class AppCtrl {
             var numbers = stringToParse.match(/[-+]?[0-9]*\.?[0-9]+/g);
 
             if (numbers == null) {
-                console.error("Numbers null: " + stringToParse);
-                return "Error";
+                return "";
             }
 
             if (cell.isDollar) {
