@@ -514,13 +514,13 @@
                   "rowContent": ["Dries sold", "250"]
                 }, {
                   "row": 4,
-                  "rowContent": ["Total ewes mated", "[?B1] + [B2] + [B3]"]
+                  "rowContent": ["Total ewes mated", "? [B1] + [B2] + [B3]"]
                 }, {
                   "row": 5,
                   "rowContent": ["Lambs docked", "7675"]
                 }, {
                   "row": 6,
-                  "rowContent": ["Lambing percentage", "?% [E5] / [E4]"]
+                  "rowContent": ["Lambing percentage", "?% [B5] / [B4]"]
                 }
               ]
             }, {
@@ -546,7 +546,7 @@
                   "rowContent": ["Calves docked", "430"]
                 }, {
                   "row": 6,
-                  "rowContent": ["Calving percentage percentage", "?% [E5] / [E4]"]
+                  "rowContent": ["Calving percentage percentage", "?% [B5] / [B4]"]
                 }
               ]
             }, {
