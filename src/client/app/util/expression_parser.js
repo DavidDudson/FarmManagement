@@ -28,7 +28,7 @@ function calculate(expression, table) {
         console.error(expression)
     } else if (/^\d+$/.test(expression)) {
         return new Success(expression);
-    } else if (expression.trim() === "") {
+    } else if (_.toString(expression).trim() === "") {
         return new Success("Empty");
     } else {
         try {
