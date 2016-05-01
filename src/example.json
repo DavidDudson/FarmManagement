@@ -1385,823 +1385,315 @@
                     "$ 3.50",
                     "? $[B2] * [C2]"
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "title": "Advanced Sheep and Beef Sales",
+              "top_headings": true,
+              "side_headings": true,
+              "question": "Using the information in the table below calculate the total sales income for the year.",
+              "table": [
                 {
-                  "title": "Advanced Sheep and Beef Sales",
-                  "top_headings": true,
-                  "side_headings": true,
-                  "question": "Using the information in the table below calculate the total sales income for the year.",
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "",
-                        "Quantity (Nos)",
-                        "Price / Head",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Lambs",
-                        "$ 4000 to 5000 inc 50",
-                        "$ 90",
-                        "? $[B2] * [C2]"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Ewe Hoggets",
-                        "$ 50 to 250 inc 10",
-                        "$ 100",
-                        "? $[B3] * [C3]"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Two Tooths",
-                        "$ 75 to 200 inc 25",
-                        "$ 115",
-                        "? $[B4] * [C5]"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "MA Ewes",
-                        "$ 300 to 500 inc 50",
-                        "$ 120",
-                        "? $[B5] * [C5]"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "5+ yr Ewes",
-                        "$ 175 to 350 inc 25",
-                        "$ 100",
-                        "? $[B6] * [C6]"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Wool",
-                        "15000 to 30000 inc 1000",
-                        "$ 3.50",
-                        "? $[B7] * [C7]"
-                      ]
-                    },
-                    {
-                      "row": 8,
-                      "rowContent": [
-                        "R1 Heifers",
-                        "35 to 50 inc 5",
-                        "$ 400",
-                        "? $[B8] * [C8]"
-                      ]
-                    },
-                    {
-                      "row": 9,
-                      "rowContent": [
-                        "R2 Heifers",
-                        "5 to 15 inc 2",
-                        "$ 900",
-                        "? $[B9] * [C9]"
-                      ]
-                    },
-                    {
-                      "row": 10,
-                      "rowContent": [
-                        "Breeding Cows",
-                        "50 to 90 inc 5",
-                        "$ 986",
-                        "? $[B10] * [C10]"
-                      ]
-                    },
-                    {
-                      "row": 11,
-                      "rowContent": [
-                        "R1 Steers",
-                        "100 to 150 inc 10",
-                        "$ 614",
-                        "? $[B11] * [C11]"
-                      ]
-                    },
-                    {
-                      "row": 12,
-                      "rowContent": [
-                        "R2 Steers",
-                        "0 to 15 inc 5",
-                        "$ 933",
-                        "? $[B12] * [C12]"
-                      ]
-                    },
-                    {
-                      "row": 13,
-                      "rowContent": [
-                        "Breeding Bulls",
-                        "0 to 5 inc 1",
-                        "$ 2031",
-                        "? $[B13] * [C13]"
-                      ]
-                    },
-                    {
-                      "row": 14,
-                      "rowContent": [
-                        "Cash Income from sales",
-                        "",
-                        "",
-                        "? $[D2] + [D3] + [D4] + [D5] + [D6] + [D7] + [D8] + [D9] + [D11] + [D12] + [D13]"
-                      ]
-                    }
+                  "row": 1,
+                  "rowContent": [
+                    "",
+                    "Quantity (Nos)",
+                    "Price / Head",
+                    ""
                   ]
                 },
                 {
-                  "title": "Basic Dairy Sales",
-                  "top_headings": true,
-                  "side_headings": true,
-                  "question": "A dairy farmer produces [B2] kgMS per year and is paid $[C2] per kg. What is the farmers milk income for the year?",
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "",
-                        "Quantity (kg MS)",
-                        "Price / KgMS",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Milk",
-                        "250000 to 600000 inc 10000",
-                        "$5.50",
-                        "? $ [B2] * [C2]"
-                      ]
-                    }
+                  "row": 2,
+                  "rowContent": [
+                    "Lambs",
+                    "$ 4000 to 5000 inc 50",
+                    "$ 90",
+                    "? $[B2] * [C2]"
                   ]
                 },
                 {
-                  "title": "Advanced Dairy Sales",
-                  "top_headings": true,
-                  "side_headings": true,
-                  "question": "Using the information below calculate the stock and milk sales income for the year.",
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "",
-                        "Quantity (No's)",
-                        "Price / Head",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "R1 Heifers",
-                        "35 to 50 inc 5",
-                        "$ 1234",
-                        "? $ [B2] * [C2]"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "R2 Heifers",
-                        "5 to 20 inc 5",
-                        "$ 1806",
-                        "? $ [B3] * [C3]"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Mixed Age Cows",
-                        "50 to 100 inc 5",
-                        "$2155",
-                        "? $ [B4] * [C4]"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "Total Stock Sales",
-                        "",
-                        "",
-                        "? $ [D2] + [D2] + [D4]"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "Milk Sales",
-                        "250000 to 600000 inc 10000",
-                        "$5.50",
-                        "? $ [B6] * [C6]"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Total Sales",
-                        "",
-                        "",
-                        "? $ [D5] + [D6]"
-                      ]
-                    },
+                  "row": 3,
+                  "rowContent": [
+                    "Ewe Hoggets",
+                    "$ 50 to 250 inc 10",
+                    "$ 100",
+                    "? $[B3] * [C3]"
                   ]
                 },
                 {
-                  "title": "Basic Horticulture Sales",
-                  "top_headings": true,
-                  "side_headings": true,
-                  "question": "A nursery sells [B2] bulbs at $[B3]. What is his total sales from bulbs",
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "",
-                        "Quantity (kg)",
-                        "Price / Kg",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Bulbs",
-                        "10000 to 50000 inc 5000",
-                        "$5.50",
-                        "?$ [B2] * [C2]"
-                      ]
-                    }
+                  "row": 4,
+                  "rowContent": [
+                    "Two Tooths",
+                    "$ 75 to 200 inc 25",
+                    "$ 115",
+                    "? $[B4] * [C5]"
                   ]
                 },
                 {
-                  "title": "Advanced Horticulture Sales",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "question": "Using the information below calculate the total sales for the year for the grower. ",
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Seeds",
-                        "8000 to 20000 inc 2000",
-                        "$ 0.9",
-                        "? $ [B1] * [C1]"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Pot Plants",
-                        "10000 to 20000 inc 2000",
-                        "$ 1.5",
-                        "? $ [B2] * [C2]"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Cut Flowers",
-                        "30000 to 40000 inc 5000",
-                        "$5",
-                        "? $ [B3] * [C3]"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Dried Flowers",
-                        "20000 to 35000 inc 3000",
-                        "$7.5",
-                        "? $ [B4] * [C4]"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Total Sales",
-                        "",
-                        "",
-                        "? $ [D1] + [D2] + [D3] + [D4]"
-                      ]
-                    },
+                  "row": 5,
+                  "rowContent": [
+                    "MA Ewes",
+                    "$ 300 to 500 inc 50",
+                    "$ 120",
+                    "? $[B5] * [C5]"
+                  ]
+                },
+                {
+                  "row": 6,
+                  "rowContent": [
+                    "5+ yr Ewes",
+                    "$ 175 to 350 inc 25",
+                    "$ 100",
+                    "? $[B6] * [C6]"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Wool",
+                    "15000 to 30000 inc 1000",
+                    "$ 3.50",
+                    "? $[B7] * [C7]"
+                  ]
+                },
+                {
+                  "row": 8,
+                  "rowContent": [
+                    "R1 Heifers",
+                    "35 to 50 inc 5",
+                    "$ 400",
+                    "? $[B8] * [C8]"
+                  ]
+                },
+                {
+                  "row": 9,
+                  "rowContent": [
+                    "R2 Heifers",
+                    "5 to 15 inc 2",
+                    "$ 900",
+                    "? $[B9] * [C9]"
+                  ]
+                },
+                {
+                  "row": 10,
+                  "rowContent": [
+                    "Breeding Cows",
+                    "50 to 90 inc 5",
+                    "$ 986",
+                    "? $[B10] * [C10]"
+                  ]
+                },
+                {
+                  "row": 11,
+                  "rowContent": [
+                    "R1 Steers",
+                    "100 to 150 inc 10",
+                    "$ 614",
+                    "? $[B11] * [C11]"
+                  ]
+                },
+                {
+                  "row": 12,
+                  "rowContent": [
+                    "R2 Steers",
+                    "0 to 15 inc 5",
+                    "$ 933",
+                    "? $[B12] * [C12]"
+                  ]
+                },
+                {
+                  "row": 13,
+                  "rowContent": [
+                    "Breeding Bulls",
+                    "0 to 5 inc 1",
+                    "$ 2031",
+                    "? $[B13] * [C13]"
+                  ]
+                },
+                {
+                  "row": 14,
+                  "rowContent": [
+                    "Cash Income from sales",
+                    "",
+                    "",
+                    "? $[D2] + [D3] + [D4] + [D5] + [D6] + [D7] + [D8] + [D9] + [D11] + [D12] + [D13]"
                   ]
                 }
               ]
             },
             {
-              "title": "Net Cash Income",
-              "description:": "Todo",
-              "questions": [
+              "title": "Basic Dairy Sales",
+              "top_headings": true,
+              "side_headings": true,
+              "question": "A dairy farmer produces [B2] kgMS per year and is paid $[C2] per kg. What is the farmers milk income for the year?",
+              "table": [
                 {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            },
-            {
-              "title": "Income Level",
-              "description:": "Todo",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            },
-            {
-              "title": "Terms of trade",
-              "description:": "Todo",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Liquidity",
-          "topics": [
-            {
-              "title": "GST (Output)",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            },
-            {
-              "title": "GST (Output)",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            },
-            {
-              "title": "C.A. Interest)",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            },
-            {
-              "title": "Closing Balance",
-              "questions": [
-                {
-                  "title": "Beef and Lamb"
-                },
-                {
-                  "title": "Dairy"
-                },
-                {
-                  "title": "Horticulture"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Profitability",
-          "topics": [
-            {
-              "title": "Net Profit",
-              "questions": [
-                {
-                  "title": "Beef and Lamb",
-                  "question": "A sheep & beef farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Total Income",
-                        "$ 400000 to 550000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Total Expenditure",
-                        "$ 175000 to 300000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Net Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 1,
+                  "rowContent": [
+                    "",
+                    "Quantity (kg MS)",
+                    "Price / KgMS",
+                    ""
                   ]
                 },
                 {
-                  "title": "Dairy",
-                  "question": "A dairy farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Total Income",
-                        "$ 400000 to 550000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Total Expenditure",
-                        "$ 175000 to 300000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Net Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "Horticulture",
-                  "question": "A cut flower grower receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Total Income",
-                        "$ 400000 to 550000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Total Expenditure",
-                        "$ 175000 to 300000 inc 25000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Net Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 2,
+                  "rowContent": [
+                    "Milk",
+                    "250000 to 600000 inc 10000",
+                    "$5.50",
+                    "? $ [B2] * [C2]"
                   ]
                 }
               ]
             },
             {
-              "title": "Operating Profit",
-              "questions": [
+              "title": "Advanced Dairy Sales",
+              "top_headings": true,
+              "side_headings": true,
+              "question": "Using the information below calculate the stock and milk sales income for the year.",
+              "table": [
                 {
-                  "title": "Beef and Lamb Basic",
-                  "question": "A sheep & beef farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Operating Expenditure",
-                        "$ 100000 to 200000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 1,
+                  "rowContent": [
+                    "",
+                    "Quantity (No's)",
+                    "Price / Head",
+                    ""
                   ]
                 },
                 {
-                  "title": "Beef and Lamb Advanced",
-                  "question": "A sheep & beef farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "FWE (including family labour and management)",
-                        "$ 85000 to 120000 inc 5000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "R & M",
-                        "$ 30000 to 35000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Vehicle Expenses",
-                        "$ 5000 to 7000 inc 500"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "Admin Expenses",
-                        "$ 4000 to 6500 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "Standing Charges",
-                        "$ 7500 to 15000 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Deprecation",
-                        "$ 10000 to 15000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 8,
-                      "rowContent": [
-                        "Operating Expenses",
-                        "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
-                      ]
-                    },
-                    {
-                      "row": 9,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B8]"
-                      ]
-                    }
+                  "row": 2,
+                  "rowContent": [
+                    "R1 Heifers",
+                    "35 to 50 inc 5",
+                    "$ 1234",
+                    "? $ [B2] * [C2]"
                   ]
                 },
                 {
-                  "title": "Dairy Basic",
-                  "question": "A dairy farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Operating Expenditure",
-                        "$ 100000 to 200000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 3,
+                  "rowContent": [
+                    "R2 Heifers",
+                    "5 to 20 inc 5",
+                    "$ 1806",
+                    "? $ [B3] * [C3]"
                   ]
                 },
                 {
-                  "title": "Dairy Advanced",
-                  "question": "A dairy farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "FWE (including family labour and management)",
-                        "$ 85000 to 120000 inc 5000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "R & M",
-                        "$ 30000 to 35000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Vehicle Expenses",
-                        "$ 5000 to 7000 inc 500"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "Admin Expenses",
-                        "$ 4000 to 6500 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "Standing Charges",
-                        "$ 7500 to 15000 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Deprecation",
-                        "$ 10000 to 15000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 8,
-                      "rowContent": [
-                        "Operating Expenses",
-                        "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
-                      ]
-                    },
-                    {
-                      "row": 9,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B8]"
-                      ]
-                    }
+                  "row": 4,
+                  "rowContent": [
+                    "Mixed Age Cows",
+                    "50 to 100 inc 5",
+                    "$2155",
+                    "? $ [B4] * [C4]"
                   ]
                 },
                 {
-                  "title": "Horticulture Basic",
-                  "question": "A cut flower grower receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Operating Expenditure",
-                        "$ 100000 to 200000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 5,
+                  "rowContent": [
+                    "Total Stock Sales",
+                    "",
+                    "",
+                    "? $ [D2] + [D2] + [D4]"
                   ]
                 },
                 {
-                  "title": "Horticulture Advanced",
-                  "question": "A cut flower grower receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Gross Farm Income",
-                        "$ 400000 to 600000 inc 20000"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "FWE (including family labour and management)",
-                        "$ 85000 to 120000 inc 5000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "R & M",
-                        "$ 30000 to 35000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Vehicle Expenses",
-                        "$ 5000 to 7000 inc 500"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "Admin Expenses",
-                        "$ 4000 to 6500 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "Standing Charges",
-                        "$ 7500 to 15000 inc 2500"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Deprecation",
-                        "$ 10000 to 15000 inc 1000"
-                      ]
-                    },
-                    {
-                      "row": 8,
-                      "rowContent": [
-                        "Operating Expenses",
-                        "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
-                      ]
-                    },
-                    {
-                      "row": 9,
-                      "rowContent": [
-                        "Operating Profit",
-                        "?$ [B1] - [B8]"
-                      ]
-                    }
+                  "row": 6,
+                  "rowContent": [
+                    "Milk Sales",
+                    "250000 to 600000 inc 10000",
+                    "$5.50",
+                    "? $ [B6] * [C6]"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Total Sales",
+                    "",
+                    "",
+                    "? $ [D5] + [D6]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Basic Horticulture Sales",
+              "top_headings": true,
+              "side_headings": true,
+              "question": "A nursery sells [B2] bulbs at $[B3]. What is his total sales from bulbs",
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "",
+                    "Quantity (kg)",
+                    "Price / Kg",
+                    ""
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Bulbs",
+                    "10000 to 50000 inc 5000",
+                    "$5.50",
+                    "?$ [B2] * [C2]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Advanced Horticulture Sales",
+              "top_headings": false,
+              "side_headings": true,
+              "question": "Using the information below calculate the total sales for the year for the grower. ",
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Seeds",
+                    "8000 to 20000 inc 2000",
+                    "$ 0.9",
+                    "? $ [B1] * [C1]"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Pot Plants",
+                    "10000 to 20000 inc 2000",
+                    "$ 1.5",
+                    "? $ [B2] * [C2]"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Cut Flowers",
+                    "30000 to 40000 inc 5000",
+                    "$5",
+                    "? $ [B3] * [C3]"
+                  ]
+                },
+                {
+                  "row": 4,
+                  "rowContent": [
+                    "Dried Flowers",
+                    "20000 to 35000 inc 3000",
+                    "$7.5",
+                    "? $ [B4] * [C4]"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Total Sales",
+                    "",
+                    "",
+                    "? $ [D1] + [D2] + [D3] + [D4]"
                   ]
                 }
               ]
@@ -2209,418 +1701,928 @@
           ]
         },
         {
-          "title": "Wealth",
-          "topics": [
+          "title": "Net Cash Income",
+          "description:": "Todo",
+          "questions": [
             {
-              "title": "Assets",
-              "questions": [
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Income Level",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Terms of trade",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Liquidity",
+      "topics": [
+        {
+          "title": "GST (Output)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "GST (Output)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "C.A. Interest)",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Closing Balance",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Profitability",
+      "topics": [
+        {
+          "title": "Net Profit",
+          "questions": [
+            {
+              "title": "Beef and Lamb",
+              "question": "A sheep & beef farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb Basic",
-                  "question": "On 30th of June 2015 (closing), a sheep and beef farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Current Assets",
-                        "$ 15000 to 26000 inc 1500"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Non-current Assets",
-                        "?$ 438329 + 4538 + 2145000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Total Assets",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 1,
+                  "rowContent": [
+                    "Total Income",
+                    "$ 400000 to 550000 inc 25000"
                   ]
                 },
                 {
-                  "title": "Beef and Lamb Advanced",
-                  "question": "On 30th of June 2015 (closing), a sheep & beef farmer has accounts receiveable of  21,966,  bank balance over-draft of 39,373, investments of 4,538, accounts payable of 33,343,  hire purchase of 6,157, and term loans of 666,000. Information on livestock inventory  (numbers & price) aswell as value of fixed assets is provided in the table below. What are the Total Assets at closing ?",
-                  "top_headings": true,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Livestock Inventory",
-                        "Closing Nos.",
-                        "$ per Head",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Sheep",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Ewe Hoggets",
-                        "500 to 750 inc 50",
-                        "$94.00",
-                        "?$ [B3] * [C3]"
-                      ]
-                    },
-                    {
-                      "row": 4,
-                      "rowContent": [
-                        "Two Tooth",
-                        "600 to 800 inc 50",
-                        "$131.00",
-                        "?$ [B4] * [B4]"
-                      ]
-                    },
-                    {
-                      "row": 5,
-                      "rowContent": [
-                        "M.A. Ewes",
-                        "1100 to 1400 inc 50",
-                        "$118.00",
-                        "?$ [B5] * [C5]"
-                      ]
-                    },
-                    {
-                      "row": 6,
-                      "rowContent": [
-                        "5yr+ Ewes",
-                        "250 to 350 inc 25",
-                        "$118.00",
-                        "?$ [B6] * [C6]"
-                      ]
-                    },
-                    {
-                      "row": 7,
-                      "rowContent": [
-                        "Wether Hoggets",
-                        "0 to 50 inc 25",
-                        "$94.00",
-                        "?$ [B7] * [C7]"
-                      ]
-                    },
-                    {
-                      "row": 8,
-                      "rowContent": [
-                        "Rams",
-                        "20 to 30 inc 2",
-                        "$257.00",
-                        "?$ [B8] * [C8]"
-                      ]
-                    },
-                    {
-                      "row": 9,
-                      "rowContent": [
-                        "Beef Cattle",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 10,
-                      "rowContent": [
-                        "Rising 1yr heifers",
-                        "55 to 75 inc 5",
-                        "$407",
-                        "?$ [B10] * [C10]"
-                      ]
-                    },
-                    {
-                      "row": 11,
-                      "rowContent": [
-                        "Rising 2yr heifers",
-                        "40 to 55 inc 5",
-                        "$469",
-                        "?$ [B11] * [B11]"
-                      ]
-                    },
-                    {
-                      "row": 12,
-                      "rowContent": [
-                        "Breeding Cows",
-                        "100 to 125 inc 5",
-                        "$859",
-                        "?$ [B12] * [C12]"
-                      ]
-                    },
-                    {
-                      "row": 13,
-                      "rowContent": [
-                        "Rising 1yr steers",
-                        "130 to 150 inc 5",
-                        "$471",
-                        "?$ [B13] * [C13]"
-                      ]
-                    },
-                    {
-                      "row": 14,
-                      "rowContent": [
-                        "Rising 2yr steers",
-                        "10 to 30 inc 5",
-                        "$393",
-                        "?$ [B14] * [C14]"
-                      ]
-                    },
-                    {
-                      "row": 15,
-                      "rowContent": [
-                        "Breeding Bulls",
-                        "8 to 10 inc 1",
-                        "$1941",
-                        "?$ [B15] * [C15]"
-                      ]
-                    },
-                    {
-                      "row": 16,
-                      "rowContent": [
-                        "",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 17,
-                      "rowContent": [
-                        "Valuations of Fixed Assets",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 18,
-                      "rowContent": [
-                        "Fixed Assets as per Schedule",
-                        "$ 1000000 to 1500000 inc 100000",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 19,
-                      "rowContent": [
-                        "Revaluation Adjustment",
-                        "$ 1000000 to 1500000 inc 100000",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 20,
-                      "rowContent": [
-                        "Current Assets",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 21,
-                      "rowContent": [
-                        "Accounts Receivable",
-                        "$ 15000 to 25000 inc 1000",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 22,
-                      "rowContent": [
-                        "Non-current Assets",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 23,
-                      "rowContent": [
-                        "Livestock",
-                        "?$ [D3]+[D4]+[D5]+[D6]+[D7]+[D8]+[D10]+[D11]+[D12]+[D13]+[D14]+[D15]",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 24,
-                      "rowContent": [
-                        "Investments",
-                        "$4538 ",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 25,
-                      "rowContent": [
-                        "Market Value of Fixed Assets",
-                        "?$ [B18]+[B19] ",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "row": 26,
-                      "rowContent": [
-                        "Total Assets",
-                        "?$ [B21]+[B23]+[B24]+[B25]",
-                        "",
-                        ""
-                      ]
-                    }
+                  "row": 2,
+                  "rowContent": [
+                    "Total Expenditure",
+                    "$ 175000 to 300000 inc 25000"
                   ]
                 },
                 {
-                  "title": "Dairy Basic",
-                  "question": "On 30th of June 2015 (closing), a dairy farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Current Assets",
-                        "$ 15000 to 26000 inc 1500"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Non-current Assets",
-                        "?$ 438329 + 4538 + 2145000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Total Assets",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "Dairy Basic",
-                  "question": "On 30th of June 2015 (closing), a grape grower has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
-                  "top_headings": false,
-                  "side_headings": true,
-                  "table": [
-                    {
-                      "row": 1,
-                      "rowContent": [
-                        "Current Assets",
-                        "$ 15000 to 26000 inc 1500"
-                      ]
-                    },
-                    {
-                      "row": 2,
-                      "rowContent": [
-                        "Non-current Assets",
-                        "?$ 438329 + 4538 + 2145000"
-                      ]
-                    },
-                    {
-                      "row": 3,
-                      "rowContent": [
-                        "Total Assets",
-                        "?$ [B1] - [B2]"
-                      ]
-                    }
+                  "row": 3,
+                  "rowContent": [
+                    "Net Profit",
+                    "?$ [B1] - [B2]"
                   ]
                 }
               ]
             },
             {
-              "title": "Liability",
-              "description:": "Todo",
-              "questions": [
+              "title": "Dairy",
+              "question": "A dairy farmer receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb"
+                  "row": 1,
+                  "rowContent": [
+                    "Total Income",
+                    "$ 400000 to 550000 inc 25000"
+                  ]
                 },
                 {
-                  "title": "Dairy"
+                  "row": 2,
+                  "rowContent": [
+                    "Total Expenditure",
+                    "$ 175000 to 300000 inc 25000"
+                  ]
                 },
                 {
-                  "title": "Horticulture"
+                  "row": 3,
+                  "rowContent": [
+                    "Net Profit",
+                    "?$ [B1] - [B2]"
+                  ]
                 }
               ]
             },
             {
-              "title": "Equity",
-              "description:": "Todo",
-              "questions": [
+              "title": "Horticulture",
+              "question": "A cut flower grower receives a total income of $[B1], and incurs total expenditure of $[B2]. What is the Net Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb"
+                  "row": 1,
+                  "rowContent": [
+                    "Total Income",
+                    "$ 400000 to 550000 inc 25000"
+                  ]
                 },
                 {
-                  "title": "Dairy"
+                  "row": 2,
+                  "rowContent": [
+                    "Total Expenditure",
+                    "$ 175000 to 300000 inc 25000"
+                  ]
                 },
                 {
-                  "title": "Horticulture"
+                  "row": 3,
+                  "rowContent": [
+                    "Net Profit",
+                    "?$ [B1] - [B2]"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Operating Profit",
+          "questions": [
+            {
+              "title": "Beef and Lamb Basic",
+              "question": "A sheep & beef farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Operating Expenditure",
+                    "$ 100000 to 200000 inc 20000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B2]"
+                  ]
                 }
               ]
             },
             {
-              "title": "Working Capital",
-              "description:": "Todo",
-              "questions": [
+              "title": "Beef and Lamb Advanced",
+              "question": "A sheep & beef farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb"
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
                 },
                 {
-                  "title": "Dairy"
+                  "row": 2,
+                  "rowContent": [
+                    "FWE (including family labour and management)",
+                    "$ 85000 to 120000 inc 5000"
+                  ]
                 },
                 {
-                  "title": "Horticulture"
+                  "row": 3,
+                  "rowContent": [
+                    "R & M",
+                    "$ 30000 to 35000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 4,
+                  "rowContent": [
+                    "Vehicle Expenses",
+                    "$ 5000 to 7000 inc 500"
+                  ]
+                },
+                {
+                  "row": 5,
+                  "rowContent": [
+                    "Admin Expenses",
+                    "$ 4000 to 6500 inc 2500"
+                  ]
+                },
+                {
+                  "row": 6,
+                  "rowContent": [
+                    "Standing Charges",
+                    "$ 7500 to 15000 inc 2500"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Deprecation",
+                    "$ 10000 to 15000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 8,
+                  "rowContent": [
+                    "Operating Expenses",
+                    "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
+                  ]
+                },
+                {
+                  "row": 9,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B8]"
+                  ]
                 }
               ]
             },
             {
-              "title": "Net Indebtedness",
-              "description:": "Todo",
-              "questions": [
+              "title": "Dairy Basic",
+              "question": "A dairy farmer receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb"
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
                 },
                 {
-                  "title": "Dairy"
+                  "row": 2,
+                  "rowContent": [
+                    "Operating Expenditure",
+                    "$ 100000 to 200000 inc 20000"
+                  ]
                 },
                 {
-                  "title": "Horticulture"
+                  "row": 3,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B2]"
+                  ]
                 }
               ]
             },
             {
-              "title": "Solvency (Ratio's)",
-              "description:": "Todo",
-              "questions": [
+              "title": "Dairy Advanced",
+              "question": "A dairy farmer receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
                 {
-                  "title": "Beef and Lamb"
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
                 },
                 {
-                  "title": "Dairy"
+                  "row": 2,
+                  "rowContent": [
+                    "FWE (including family labour and management)",
+                    "$ 85000 to 120000 inc 5000"
+                  ]
                 },
                 {
-                  "title": "Horticulture"
+                  "row": 3,
+                  "rowContent": [
+                    "R & M",
+                    "$ 30000 to 35000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 4,
+                  "rowContent": [
+                    "Vehicle Expenses",
+                    "$ 5000 to 7000 inc 500"
+                  ]
+                },
+                {
+                  "row": 5,
+                  "rowContent": [
+                    "Admin Expenses",
+                    "$ 4000 to 6500 inc 2500"
+                  ]
+                },
+                {
+                  "row": 6,
+                  "rowContent": [
+                    "Standing Charges",
+                    "$ 7500 to 15000 inc 2500"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Deprecation",
+                    "$ 10000 to 15000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 8,
+                  "rowContent": [
+                    "Operating Expenses",
+                    "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
+                  ]
+                },
+                {
+                  "row": 9,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B8]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Horticulture Basic",
+              "question": "A cut flower grower receives a gross farm income of $[B1], and incurs operating expenses of $[B2]. What is the Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Operating Expenditure",
+                    "$ 100000 to 200000 inc 20000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B2]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Horticulture Advanced",
+              "question": "A cut flower grower receives a gross farm income of $[B1]. Additionally he receives income (loss) from rental properties of -$3198. His expenses include Farm Working Expenses of $[B2], R & M of [B3], Vehicle expenses of $B4, Admin expenses of $[B5], Standing charges (ACC, Insurance & rates) of $[B6], interest of $58462, rent of $44028, depreciaton of $[B7]. The value of unpaid family labour & management is $50000. What is the farms Operating Profit?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Gross Farm Income",
+                    "$ 400000 to 600000 inc 20000"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "FWE (including family labour and management)",
+                    "$ 85000 to 120000 inc 5000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "R & M",
+                    "$ 30000 to 35000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 4,
+                  "rowContent": [
+                    "Vehicle Expenses",
+                    "$ 5000 to 7000 inc 500"
+                  ]
+                },
+                {
+                  "row": 5,
+                  "rowContent": [
+                    "Admin Expenses",
+                    "$ 4000 to 6500 inc 2500"
+                  ]
+                },
+                {
+                  "row": 6,
+                  "rowContent": [
+                    "Standing Charges",
+                    "$ 7500 to 15000 inc 2500"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Deprecation",
+                    "$ 10000 to 15000 inc 1000"
+                  ]
+                },
+                {
+                  "row": 8,
+                  "rowContent": [
+                    "Operating Expenses",
+                    "?$ [B2] + [B3] + [B4] + [B5] + [B6] + [B7] - 3198 + 58462 + 44028 + 50000"
+                  ]
+                },
+                {
+                  "row": 9,
+                  "rowContent": [
+                    "Operating Profit",
+                    "?$ [B1] - [B8]"
+                  ]
                 }
               ]
             }
           ]
         }
       ]
+    },
+    {
+      "title": "Wealth",
+      "topics": [
+        {
+          "title": "Assets",
+          "questions": [
+            {
+              "title": "Beef and Lamb Basic",
+              "question": "On 30th of June 2015 (closing), a sheep and beef farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Current Assets",
+                    "$ 15000 to 26000 inc 1500"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Non-current Assets",
+                    "?$ 438329 + 4538 + 2145000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Total Assets",
+                    "?$ [B1] - [B2]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Beef and Lamb Advanced",
+              "question": "On 30th of June 2015 (closing), a sheep & beef farmer has accounts receiveable of  21,966,  bank balance over-draft of 39,373, investments of 4,538, accounts payable of 33,343,  hire purchase of 6,157, and term loans of 666,000. Information on livestock inventory  (numbers & price) aswell as value of fixed assets is provided in the table below. What are the Total Assets at closing ?",
+              "top_headings": true,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Livestock Inventory",
+                    "Closing Nos.",
+                    "$ per Head",
+                    ""
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Sheep",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Ewe Hoggets",
+                    "500 to 750 inc 50",
+                    "$94.00",
+                    "?$ [B3] * [C3]"
+                  ]
+                },
+                {
+                  "row": 4,
+                  "rowContent": [
+                    "Two Tooth",
+                    "600 to 800 inc 50",
+                    "$131.00",
+                    "?$ [B4] * [B4]"
+                  ]
+                },
+                {
+                  "row": 5,
+                  "rowContent": [
+                    "M.A. Ewes",
+                    "1100 to 1400 inc 50",
+                    "$118.00",
+                    "?$ [B5] * [C5]"
+                  ]
+                },
+                {
+                  "row": 6,
+                  "rowContent": [
+                    "5yr+ Ewes",
+                    "250 to 350 inc 25",
+                    "$118.00",
+                    "?$ [B6] * [C6]"
+                  ]
+                },
+                {
+                  "row": 7,
+                  "rowContent": [
+                    "Wether Hoggets",
+                    "0 to 50 inc 25",
+                    "$94.00",
+                    "?$ [B7] * [C7]"
+                  ]
+                },
+                {
+                  "row": 8,
+                  "rowContent": [
+                    "Rams",
+                    "20 to 30 inc 2",
+                    "$257.00",
+                    "?$ [B8] * [C8]"
+                  ]
+                },
+                {
+                  "row": 9,
+                  "rowContent": [
+                    "Beef Cattle",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 10,
+                  "rowContent": [
+                    "Rising 1yr heifers",
+                    "55 to 75 inc 5",
+                    "$407",
+                    "?$ [B10] * [C10]"
+                  ]
+                },
+                {
+                  "row": 11,
+                  "rowContent": [
+                    "Rising 2yr heifers",
+                    "40 to 55 inc 5",
+                    "$469",
+                    "?$ [B11] * [B11]"
+                  ]
+                },
+                {
+                  "row": 12,
+                  "rowContent": [
+                    "Breeding Cows",
+                    "100 to 125 inc 5",
+                    "$859",
+                    "?$ [B12] * [C12]"
+                  ]
+                },
+                {
+                  "row": 13,
+                  "rowContent": [
+                    "Rising 1yr steers",
+                    "130 to 150 inc 5",
+                    "$471",
+                    "?$ [B13] * [C13]"
+                  ]
+                },
+                {
+                  "row": 14,
+                  "rowContent": [
+                    "Rising 2yr steers",
+                    "10 to 30 inc 5",
+                    "$393",
+                    "?$ [B14] * [C14]"
+                  ]
+                },
+                {
+                  "row": 15,
+                  "rowContent": [
+                    "Breeding Bulls",
+                    "8 to 10 inc 1",
+                    "$1941",
+                    "?$ [B15] * [C15]"
+                  ]
+                },
+                {
+                  "row": 16,
+                  "rowContent": [
+                    "",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 17,
+                  "rowContent": [
+                    "Valuations of Fixed Assets",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 18,
+                  "rowContent": [
+                    "Fixed Assets as per Schedule",
+                    "$ 1000000 to 1500000 inc 100000",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 19,
+                  "rowContent": [
+                    "Revaluation Adjustment",
+                    "$ 1000000 to 1500000 inc 100000",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 20,
+                  "rowContent": [
+                    "Current Assets",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 21,
+                  "rowContent": [
+                    "Accounts Receivable",
+                    "$ 15000 to 25000 inc 1000",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 22,
+                  "rowContent": [
+                    "Non-current Assets",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 23,
+                  "rowContent": [
+                    "Livestock",
+                    "?$ [D3]+[D4]+[D5]+[D6]+[D7]+[D8]+[D10]+[D11]+[D12]+[D13]+[D14]+[D15]",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 24,
+                  "rowContent": [
+                    "Investments",
+                    "$4538 ",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 25,
+                  "rowContent": [
+                    "Market Value of Fixed Assets",
+                    "?$ [B18]+[B19] ",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "row": 26,
+                  "rowContent": [
+                    "Total Assets",
+                    "?$ [B21]+[B23]+[B24]+[B25]",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Dairy Basic",
+              "question": "On 30th of June 2015 (closing), a dairy farmer has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Current Assets",
+                    "$ 15000 to 26000 inc 1500"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Non-current Assets",
+                    "?$ 438329 + 4538 + 2145000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Total Assets",
+                    "?$ [B1] - [B2]"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Dairy Basic",
+              "question": "On 30th of June 2015 (closing), a grape grower has accounts receiveable of  [B1],  bank balance over-draft of 39,373, accounts payable of 33,343,  hire purchase of 6,157, term loans of 666,000; and livestock, investments and fixed assets worth 438,329, 4,538 and 2,145,000 respectively. What are the Total Assets at closing ?",
+              "top_headings": false,
+              "side_headings": true,
+              "table": [
+                {
+                  "row": 1,
+                  "rowContent": [
+                    "Current Assets",
+                    "$ 15000 to 26000 inc 1500"
+                  ]
+                },
+                {
+                  "row": 2,
+                  "rowContent": [
+                    "Non-current Assets",
+                    "?$ 438329 + 4538 + 2145000"
+                  ]
+                },
+                {
+                  "row": 3,
+                  "rowContent": [
+                    "Total Assets",
+                    "?$ [B1] - [B2]"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Liability",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Equity",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Working Capital",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Net Indebtedness",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        },
+        {
+          "title": "Solvency (Ratio's)",
+          "description:": "Todo",
+          "questions": [
+            {
+              "title": "Beef and Lamb"
+            },
+            {
+              "title": "Dairy"
+            },
+            {
+              "title": "Horticulture"
+            }
+          ]
+        }
+      ]
     }
+  ]
+}
