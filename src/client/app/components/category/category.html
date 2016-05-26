@@ -1,7 +1,7 @@
 <titled-card title="$root.category.title" description="$root.category.description" help="category.help"
              save="category.save">
     <v-accordion>
-        <v-pane ng-repeat="topic in $root.category.topics track by $index">
+        <v-pane ng-repeat="topic in $root.category.topics | orderBy:'title' track by $index">
             <v-pane-header>
                 <md-button class="md-list-item-text" ng-class="$root.app.editable === true ? 'delete' : ''" ng-click="$root.app.editable === true ? deleteTopic(topic._id) : {} ">
                     <h4 id="vHead" layout="row" layout-align="space-between center">
@@ -19,7 +19,7 @@
             <v-pane-content>
                 <md-content class="accordion">
                     <md-list layout="column">
-                        <md-list-item ng-repeat="question in topic.questions track by $index"
+                        <md-list-item ng-repeat="question in topic.questions | orderBy:'title' track by $index"
                                       layout="row" layout-align="space-between center">
                             <a class="li"
                                ui-sref="topic({categoryId: $root.category._id, topicId: topic._id, questionId: question._id, part: 'tutorial'})"
