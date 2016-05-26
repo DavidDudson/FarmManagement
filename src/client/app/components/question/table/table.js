@@ -155,6 +155,8 @@ class TableController {
                     $rootScope.question.calculated = $rootScope.question.calculated.split("[" + d + "]").join(find.calculated)
                 }
             });
+
+            $rootScope.question.calculated = $rootScope.app.basicFormatNumbers($rootScope.question.calculated);
         };
         this.generateQuestion = () => {
             if (_.isUndefined($scope.question)) {

@@ -36,11 +36,11 @@ class CardDirective {
         this.transclude = true;
         this.controller = CardCtrl;
         this.controllerAs = 'card';
-        this.link = (scope, element, attrs) => {
-            scope.save = scope.$eval(attrs.save);
-            scope.help = scope.$eval(attrs.help);
-            scope.title = scope.$eval(attrs.title);
-            scope.description = scope.$eval(attrs.description);
+        this.scope = {
+            save: '=save',
+            help: '=help',
+            title: '=title',
+            description: '=description'
         };
     }
 }
