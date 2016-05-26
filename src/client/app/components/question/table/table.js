@@ -165,6 +165,9 @@ class TableController {
             });
 
             $rootScope.question.calculated = $rootScope.app.basicFormatNumbers($rootScope.question.calculated);
+            if ($scope.mode = 'tool') {
+                $rootScope.question.calculated = "Please enter your own data into the fields below."
+            }
         };
         this.generateQuestion = () => {
             if (_.isUndefined($scope.question)) {
