@@ -122,10 +122,16 @@ class TableController {
                 this.calculateValues(variable)
             });
             this.generateQuestion();
+            if ($rootScope.spreadsheet != undefined) {
+                $rootScope.spreadsheet.answeredCorrectly = undefined;
+            }
         };
         this.updateInput = () => {
             if ($rootScope.app.editable === true || $scope.mode != 'test') {
                 this.refreshAllValues();
+            }
+            if ($rootScope.spreadsheet != undefined) {
+                $rootScope.spreadsheet.answeredCorrectly = undefined;
             }
         };
         this.getTopHeadings = () => $scope.top == true ? this.table[0] : undefined;
@@ -144,7 +150,9 @@ class TableController {
                 .filter(c => _.indexOf(this.sortedGraph, cell.index) >= indexOf)
                 .forEach(c => this.calculateValues(c));
             this.updateQuestion();
-            this.answeredCorrectly = undefined;
+            if ($rootScope.spreadsheet != undefined) {
+                $rootScope.spreadsheet.answeredCorrectly = undefined;
+            }
         };
         this.updateQuestion = () => {
             $rootScope.question.dependencies.forEach(d => {
